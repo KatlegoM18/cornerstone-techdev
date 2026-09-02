@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply | Barc House</title>
+
+<link rel="stylesheet" href="style.css">
+
+    <style>
+    /* =========================================
+       BARC HOUSE APPLICATION PAGE COLOURS
+       ========================================= */
+
+    html,
+    body {
+        background: #f7f5ef !important;
+        color: #182235 !important;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    /* Main application area */
+    main,
+    section,
+    .application,
+    .application-section,
+    .application-container,
+    .container {
+        color: #182235;
+    }
+
+    /* Main headings */
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #182235 !important;
+    }
+
+    /* Small gold section headings */
+    .section-label,
+    .eyebrow,
+    .label {
+        color: #d8b84c !important;
+    }
+
+    /* Normal paragraph text */
+    p {
+        color: #5f6878 !important;
+    }
+
+    /* Form labels */
+    label {
+        color: #182235 !important;
+    }
+
+    /* Form inputs */
+    input,
+    select,
+    textarea {
+        background: #ffffff !important;
+        color: #182235 !important;
+        border: 1px solid #d6d9df !important;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #9299a5 !important;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #d8b84c !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px rgba(216, 184, 76, 0.15) !important;
+    }
+
+    /* Application form/card */
+    form {
+        color: #182235;
+    }
+
+    /* Gold buttons */
+    button[type="submit"],
+    .primary-button,
+    .submit-button {
+        background: #d8b84c !important;
+        color: #182235 !important;
+        border: 1px solid #d8b84c !important;
+    }
+
+    button[type="submit"]:hover,
+    .primary-button:hover,
+    .submit-button:hover {
+        background: #c6a83f !important;
+        border-color: #c6a83f !important;
+    }
+
+    /* Navy header/footer areas */
+    footer {
+        background: #111827 !important;
+        color: #ffffff !important;
+    }
+
+    footer h1,
+    footer h2,
+    footer h3,
+    footer p {
+        color: #ffffff !important;
+    }
+
+/* ==========================================
+   APPLICATION SUCCESS MESSAGE
+   ========================================== */
+
+#application-success {
+    display: none !important;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin: 60px auto;
+
+    padding: 0;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    text-align: center;
+}
+
+#application-success.show {
+    display: block !important;
+}
+
+
+/* Success card */
+
+#application-success .success-card {
+    background: #ffffff;
+
+    padding: 55px 45px;
+
+    border: 1px solid #e0e0e0;
+
+    border-radius: 4px;
+
+    box-shadow: 0 15px 40px rgba(20, 30, 50, 0.10);
+}
+
+
+/* Gold success icon */
+
+#application-success .form-success-icon {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d8b84c;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* Heading */
+
+#application-success h3 {
+    margin: 0 0 15px;
+
+    color: #182235 !important;
+
+    font-size: 32px;
+
+    font-weight: 700;
+}
+
+
+/* Message */
+
+#application-success p {
+    margin: 0 auto;
+
+    max-width: 500px;
+
+    color: #687386 !important;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="brand">
+    <span class="brand-logo">BH</span>
+    <span class="brand-name">BARC HOUSE</span>
+</a>
+
+      
+
+        <a href="index.html" class="apply-button">
+            Back to Barc House
+        </a>
+
+    </header>
+
+
+    <!-- ==========================================
+         APPLICATION HERO
+    =========================================== -->
+
+    <section class="application-page">
+
+        <div class="application-container">
+
+            <div class="application-heading">
+
+                <p class="section-label">
+                    ROOM ENQUIRY
+                </p>
+
+                <h1>
+                    Interested in staying at Barc House?
+                </h1>
+
+                <p id="application-intro">
+    Tell us a little about yourself and the accommodation you're interested in.
+    We will get back to you regarding availability and the next steps.
+</p>
+            </div>
+
+
+            <!-- ==========================================
+                 APPLICATION FORM
+            =========================================== -->
+
+            <form id="application-form"
+                  class="application-form">
+
+
+                <!-- PERSONAL DETAILS -->
+
+                <div class="form-section">
+
+                    <h2>
+                        Your Details
+                    </h2>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your full name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Your phone number"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email address"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="occupation">Occupation</label>
+<input
+    type="text"
+    id="occupation"
+    name="occupation"
+    placeholder="e.g. Student, Working">
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOMMODATION -->
+
+                <div class="form-section">
+
+                    <h2>
+                        Accommodation
+                    </h2>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="residence">
+                                Residence
+                            </label>
+
+                            <select
+                                id="residence"
+                                name="residence"
+                                required>
+
+                                <option value="">
+                                    Select residence
+                                </option>
+
+                                <option value="Irene">
+                                    Irene
+                                </option>
+
+                                <option value="Karoo">
+                                    Karoo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="room">
+                                Room
+                            </label>
+
+                            <select
+                                id="room"
+                                name="room">
+
+                                <option value="">
+                                    Select a room
+                                </option>
+
+
+                                <option value="Karoo Room 7 - R7 000 per month">
+    Karoo Room 7 - R7 000 per month
+</option>
+
+<option value="Karoo Room 12 - R6 750 per month">
+    Karoo Room 12 - R6 750 per month
+</option>
+
+<option value="Irene Room 3 - R6 000 per month">
+    Irene Room 3 - R6 000 per month
+</option>
+
+<option value="Irene Room 7 - R 7 250 per month">
+    Irene Room 7 - R 7 250 per month
+</option>
+
+<option value="Irene Room 10 - R 5 750 per month">
+    Irene Room 10 - R 5 750 per month
+</option>
+
+<option value="Irene Room 14 - R4 900 per month">
+    Irene Room 14 - R4 900 per month
+</option>
+
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-section">
+
+                    <h2>
+                        Additional Information
+                    </h2>
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tell us anything else you'd like us to know..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <div class="application-submit">
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Send Application
+
+                    </button>
+
+                    <p>
+                        Your information will be sent to
+                        Barc House management.
+                    </p>
+
+                </div>
+
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div id="application-success">
+
+    <div class="success-card">
+
+        <div class="form-success-icon">
+            ✓
+        </div>
+
+        <h3>Thank you!</h3>
+
+        <p id="application-intro">
+    Tell us a little about yourself and the accommodation you're interested in.
+    We will get back to you regarding availability and the next steps.
+</p>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <h2>BARC HOUSE</h2>
+
+            <p>
+                Student accommodation in Kempenville,
+                Cape Town.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <h3>Explore</h3>
+               <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#rooms">Rooms</a>
+                <a href="#amenities">Amenities</a>
+            </div>
+
+            <div>
+                <h3>Information</h3>
+                 <a href="#gallery">Gallery</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+
+                <a href="application.html">Apply Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Barc House. All rights reserved.</p>
+    </div>
+
+</footer>
+
+    <!-- ==========================================
+         APPLICATION SUBMISSION
+    =========================================== -->
+
+    <script>
+
+        document
+            .getElementById("application-form")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                // ==========================================
+                // COLLECT APPLICATION DETAILS
+                // ==========================================
+
+                const application = {
+
+                    name:
+                        document
+                            .getElementById("name")
+                            .value
+                            .trim(),
+
+                    phone:
+                        document
+                            .getElementById("phone")
+                            .value
+                            .trim(),
+
+                    email:
+                        document
+                            .getElementById("email")
+                            .value
+                            .trim(),
+
+                    occupation:
+                        document
+                            .getElementById("occupation")
+                            .value
+                            .trim(),
+
+                    residence:
+                        document
+                            .getElementById("residence")
+                            .value,
+
+                    room:
+                        document
+                            .getElementById("room")
+                            .value,
+
+                    message:
+                        document
+                            .getElementById("message")
+                            .value
+                            .trim()
+                };
+
+
+                // ==========================================
+                // SEND TO SPRING BOOT
+                // ==========================================
+
+                fetch("http://localhost:8080/api/applications", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(application)
+
+                })
+
+
+                // ==========================================
+                // PROCESS RESPONSE
+                // ==========================================
+
+                .then(response => {
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "Application submission failed."
+                        );
+                    }
+
+                    return response.json();
+                })
+
+
+                // ==========================================
+                // SUCCESS
+                // ==========================================
+
+                .then(data => {
+
+    console.log("Application submitted:", data);
+
+    // Hide application form
+    const form =
+        document.getElementById("application-form");
+
+    form.style.setProperty(
+        "display",
+        "none",
+        "important"
+    );
+
+        document.getElementById(
+            "application-intro"
+        
+        ).
+        style.display = "none";
+
+    // Show success message
+    const success =
+        document.getElementById(
+            "application-success"
+        );
+
+    success.classList.add("show");
+
+})
+
+
+                // ==========================================
+                // ERROR
+                // ==========================================
+
+                .catch(error => {
+
+                    console.error(
+                        "Application submission error:",
+                        error
+                    );
+
+
+                    alert(
+                        "Unable to submit your application. " +
+                        "Please make sure the Barc House server " +
+                        "is running and try again."
+                    );
+
+                });
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>

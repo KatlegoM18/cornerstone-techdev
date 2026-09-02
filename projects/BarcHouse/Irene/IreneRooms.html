@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Rooms | Irene Student Accommodation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         NAVIGATION
+         ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-box">
+                BH
+            </span>
+
+            <span>
+                BARC HOUSE
+            </span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="karoo.html">
+                Karoo
+            </a>
+
+            <a href="irene.html">
+                Irene
+            </a>
+
+            <a href="application.html">
+                Apply Now
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         ROOMS HERO
+         ========================================== -->
+
+    <section class="room-detail-hero">
+
+        <div class="room-detail-heading">
+
+            <p class="section-label">
+                IRENE ACCOMMODATION
+            </p>
+
+            <h1>
+                Find your room.
+            </h1>
+
+            <p>
+                Explore the rooms available at Irene and find
+                a comfortable space to call your own.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ROOMS
+         ========================================== -->
+
+    <section class="rooms karoo-rooms">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                AVAILABLE ROOMS
+            </p>
+
+            <h2>
+                Choose your space.
+            </h2>
+
+            <p>
+                Explore the rooms currently available at Irene.
+            </p>
+
+        </div>
+
+
+        <div class="room-grid karoo-room-grid">
+
+
+            <!-- ==========================================
+                 ROOM 3
+                 ========================================== -->
+
+            <div class="room-card">
+
+                <div class="room-info">
+
+                    <p class="room-type">
+                        IRENE
+                    </p>
+
+                    <h3>
+    Room 3
+</h3>
+
+<p class="room-price">
+    R6 000 per month
+</p>
+                    <p class="room-description">
+                        A comfortable, private space designed for
+                        student living, studying and relaxing.
+                    </p>
+
+
+                    <div class="room-details">
+
+                        <span>
+                            Private Room
+                        </span>
+
+                        <span>
+                            Furnished
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="room-button"
+                        onclick="openGallery('room3')">
+
+                        View Room →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 ROOM 7
+                 ========================================== -->
+
+            <div class="room-card">
+
+                <div class="room-info">
+
+                    <p class="room-type">
+                        IRENE
+                    </p>
+
+                    <h3>
+    Room 7
+</h3>
+
+<p class="room-price">
+    R7 250 per month
+</p>
+                    <p class="room-description">
+                        A comfortable, private space designed for
+                        student living, studying and relaxing.
+                    </p>
+
+
+                    <div class="room-details">
+
+                        <span>
+                            Private Room
+                        </span>
+
+                        <span>
+                            Furnished
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="room-button"
+                        onclick="openGallery('room7')">
+
+                        View Room →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 ROOM 10
+                 ========================================== -->
+
+            <div class="room-card">
+
+                <div class="room-info">
+
+                    <p class="room-type">
+                        IRENE
+                    </p>
+
+                    <h3>
+    Room 10
+</h3>
+
+<p class="room-price">
+    R5 750 per month
+</p>
+                    <p class="room-description">
+                        A comfortable, private space designed for
+                        student living, studying and relaxing.
+                    </p>
+
+
+                    <div class="room-details">
+
+                        <span>
+                            Private Room
+                        </span>
+
+                        <span>
+                            Furnished
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="room-button"
+                        onclick="openGallery('room10')">
+
+                        View Room →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 ROOM 14
+                 ========================================== -->
+
+            <div class="room-card">
+
+                <div class="room-info">
+
+                    <p class="room-type">
+                        IRENE
+                    </p>
+
+                   <h3>
+    Room 14
+</h3>
+
+<p class="room-price">
+    R4 900 per month
+</p>
+                    <p class="room-description">
+                        A comfortable, private space designed for
+                        student living, studying and relaxing.
+                    </p>
+
+
+                    <div class="room-details">
+
+                        <span>
+                            Private Room
+                        </span>
+
+                        <span>
+                            Furnished
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="room-button"
+                        onclick="openGallery('room14')">
+
+                        View Room →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ROOM GALLERY MODAL
+         ========================================== -->
+
+    <div
+        class="room-gallery-modal"
+        id="roomGalleryModal"
+        aria-hidden="true">
+
+
+        <button
+            type="button"
+            class="gallery-close"
+            onclick="closeGallery()"
+            aria-label="Close gallery">
+
+            ×
+
+        </button>
+
+
+        <button
+            type="button"
+            class="gallery-arrow gallery-prev"
+            onclick="previousImage()"
+            aria-label="Previous image">
+
+            ‹
+
+        </button>
+
+
+        <div class="gallery-modal-content">
+
+
+            <p
+                class="gallery-modal-label"
+                id="galleryRoomLabel">
+
+                ROOM 3
+
+            </p>
+
+
+            <img
+                id="galleryImage"
+                src=""
+                alt="Room photograph">
+
+
+            <div class="gallery-counter">
+
+                <span id="galleryCurrent">
+                    1
+                </span>
+
+                /
+
+                <span id="galleryTotal">
+                    3
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="gallery-arrow gallery-next"
+            onclick="nextImage()"
+            aria-label="Next image">
+
+            ›
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==========================================
+         APPLY
+         ========================================== -->
+
+    <section class="room-apply">
+
+        <p class="section-label">
+            MAKE IT YOUR HOME
+        </p>
+
+        <h2>
+            Interested in an Irene room?
+        </h2>
+
+        <p>
+            Submit an application and take the next step
+            toward securing your accommodation.
+        </p>
+
+        <a
+            href="application.html"
+            class="room-button">
+
+            Apply Now
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         GALLERY JAVASCRIPT
+         ========================================== -->
+
+    <script>
+
+        const roomGalleries = {
+
+            room3: {
+
+                name: "ROOM 3",
+
+                images: [
+                    "irene/iroom3a.jpg",
+                    "irene/iroom3b.jpg",
+                    "irene/iroom3c.jpg"
+                ]
+
+            },
+
+
+            room7: {
+
+                name: "ROOM 7",
+
+                images: [
+                    "irene/iroom7a.jpg",
+                    "irene/iroom7b.jpg",
+                    "irene/iroom7c.jpg"
+                ]
+
+            },
+
+
+            room10: {
+
+                name: "ROOM 10",
+
+                images: [
+                    "irene/iroom10a.jpg",
+                    "irene/iroom10b.jpg",
+                    "irene/iroom10c.jpg"
+                ]
+
+            },
+
+
+            room14: {
+
+                name: "ROOM 14",
+
+                images: [
+                    "irene/iroom14a.jpg",
+                    "irene/iroom14b.jpg"
+                ]
+
+            }
+
+        };
+
+
+        let currentRoom = null;
+
+        let currentImage = 0;
+
+
+        const modal =
+            document.getElementById("roomGalleryModal");
+
+        const galleryImage =
+            document.getElementById("galleryImage");
+
+        const galleryRoomLabel =
+            document.getElementById("galleryRoomLabel");
+
+        const galleryCurrent =
+            document.getElementById("galleryCurrent");
+
+        const galleryTotal =
+            document.getElementById("galleryTotal");
+
+
+
+        function openGallery(room) {
+
+            currentRoom = room;
+
+            currentImage = 0;
+
+            const gallery =
+                roomGalleries[currentRoom];
+
+
+            galleryRoomLabel.textContent =
+                gallery.name;
+
+
+            galleryTotal.textContent =
+                gallery.images.length;
+
+
+            updateGallery();
+
+
+            modal.classList.add("active");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+
+        function closeGallery() {
+
+            modal.classList.remove("active");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+
+        function updateGallery() {
+
+            const gallery =
+                roomGalleries[currentRoom];
+
+
+            galleryImage.src =
+                gallery.images[currentImage];
+
+
+            galleryCurrent.textContent =
+                currentImage + 1;
+
+
+            galleryImage.alt =
+                gallery.name + " photograph";
+
+        }
+
+
+
+        function nextImage() {
+
+            const gallery =
+                roomGalleries[currentRoom];
+
+
+            currentImage =
+                (currentImage + 1)
+                % gallery.images.length;
+
+
+            updateGallery();
+
+        }
+
+
+
+        function previousImage() {
+
+            const gallery =
+                roomGalleries[currentRoom];
+
+
+            currentImage =
+                (currentImage - 1 +
+                gallery.images.length)
+                % gallery.images.length;
+
+
+            updateGallery();
+
+        }
+
+
+
+        /* Close when clicking outside image */
+
+        modal.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === modal) {
+
+                    closeGallery();
+
+                }
+
+            }
+        );
+
+
+
+        /* Keyboard controls */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (!modal.classList.contains("active")) {
+                    return;
+                }
+
+
+                if (event.key === "Escape") {
+
+                    closeGallery();
+
+                }
+
+
+                if (event.key === "ArrowRight") {
+
+                    nextImage();
+
+                }
+
+
+                if (event.key === "ArrowLeft") {
+
+                    previousImage();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

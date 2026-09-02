@@ -1,0 +1,2189 @@
+/* ==========================================================
+   BARC HOUSE — IRENE RESIDENCE
+   STANDALONE IRENE STYLESHEET
+   ========================================================== */
+
+
+/* ==========================================================
+   ROOT VARIABLES
+   ========================================================== */
+
+:root {
+    --black: #111827;
+    --dark: #1f2937;
+    --navy: #151c2b;
+    --navy-light: #1f2937;
+
+    --gold: #d4af37;
+    --gold-light: #e2c45a;
+
+    --cream: #f4f1e8;
+
+    --white: #ffffff;
+
+    --grey: #6b7280;
+    --light-grey: #e5e7eb;
+}
+
+
+/* ==========================================================
+   GLOBAL
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--navy);
+    color: #1f2937;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+
+    border-bottom: 1px solid #eee;
+
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: #111827;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.bh-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: #1f2937;
+    color: #d4a72c;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 14px;
+
+    text-decoration: none;
+
+    color: var(--navy);
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.apply-button {
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    background: var(--navy);
+    color: white;
+
+    border: 1px solid var(--navy);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background: var(--gold);
+    color: var(--navy);
+
+    border-color: var(--gold);
+}
+
+
+/* ==========================================================
+   HERO — IRENE
+   ========================================================== */
+
+.hero {
+    min-height: 650px;
+
+    padding: 80px 10%;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        linear-gradient(
+            rgba(104, 110, 53, 0.342),
+            rgba(15, 23, 42, 0.82)
+        ),
+        url("../images/karoo/k-streetview2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.irene-hero {
+    background-image:
+        linear-gradient(
+            rgba(104, 110, 53, 0.342),
+            rgba(15, 23, 42, 0.82)
+        ),
+        url("../images/karoo/k-streetview2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-label {
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    color: white;
+
+    font-size: clamp(52px, 7vw, 92px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    max-width: 520px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+
+/* ==========================================================
+   HERO BUTTONS
+   ========================================================== */
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background: #d8b84c;
+    color: #111827;
+
+    border: 1px solid #d8b84c;
+}
+
+.primary-button:hover {
+    background: #c5a63d;
+
+    border-color: #c5a63d;
+}
+
+.secondary-button {
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 1px solid #d8b84c;
+}
+
+.secondary-button:hover {
+    background: #d8b84c;
+
+    color: #111827;
+}
+
+
+/* ==========================================================
+   FEATURES / ABOUT
+   ========================================================== */
+
+.features {
+    padding: 120px 10%;
+
+    background: #f8f7f3;
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin-bottom: 60px;
+}
+
+.section-label {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 56px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--light-grey);
+    border-left: 1px solid var(--light-grey);
+}
+
+.feature-card {
+    padding: 40px 30px;
+
+    min-height: 260px;
+
+    border-right: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    background: rgba(212, 175, 55, 0.08);
+}
+
+.feature-icon {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--grey);
+}
+
+
+/* ==========================================================
+   ROOMS
+   ========================================================== */
+
+.rooms {
+    padding: 120px 10%;
+
+    background: #f1eee6;
+}
+
+.rooms-heading {
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rooms-heading .section-label {
+    text-align: center;
+}
+
+.rooms-heading h2 {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.rooms-heading > p:last-child {
+    text-align: center;
+
+    width: 100%;
+}
+
+.room-grid {
+    display: flex;
+
+    justify-content: center;
+}
+
+.room-card {
+    width: 780px;
+
+    background: #fff;
+
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.room-image {
+    min-height: 420px;
+
+    background: #f1f1f1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.room-info {
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.room-type {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.room-info h3 {
+    font-size: 36px;
+
+    margin-bottom: 20px;
+}
+
+.room-description {
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.room-details {
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.room-details span {
+    font-size: 13px;
+
+    color: #555;
+}
+
+.room-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 14px 24px;
+
+    background: var(--navy);
+
+    color: white;
+
+    border: 1px solid var(--gold);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.room-button:hover {
+    background: var(--gold);
+
+    color: var(--navy);
+}
+
+
+/* ==========================================================
+   LIFE AT IRENE
+   ========================================================== */
+
+.about-preview {
+    padding: 120px 10%;
+
+    background: #f1eee6;
+}
+
+.about-image {
+    display: none;
+}
+
+.about-content {
+    max-width: 750px;
+}
+
+.about-content h2 {
+    max-width: 550px;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 30px;
+}
+
+.about-content p:not(.section-label) {
+    max-width: 550px;
+
+    color: var(--grey);
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    color: var(--black);
+
+    border-bottom: 1px solid var(--black);
+
+    padding-bottom: 5px;
+
+    align-self: flex-start;
+
+    transition: opacity 0.3s ease;
+}
+
+.text-button:hover {
+    opacity: 0.6;
+}
+
+
+/* ==========================================================
+   AMENITIES
+   ========================================================== */
+
+.amenities {
+    padding: 120px 10%;
+
+    background: var(--white);
+}
+
+.amenities-heading {
+    max-width: 700px;
+}
+
+.amenities-heading > p:last-child {
+    max-width: 600px;
+
+    color: var(--grey);
+
+    line-height: 1.8;
+
+    margin-top: 20px;
+}
+
+.amenities-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--light-grey);
+    border-left: 1px solid var(--light-grey);
+}
+
+.amenity-card {
+    min-height: 250px;
+
+    padding: 35px;
+
+    border-right: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.amenity-card:hover {
+    background: rgba(212, 175, 55, 0.08);
+
+    transform: translateY(-4px);
+}
+
+.amenity-icon {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+}
+
+.amenity-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+.amenity-card p {
+    color: var(--grey);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   SHARED FACILITIES
+   ========================================================== */
+
+.shared-facilities {
+    padding: 100px 6%;
+
+    background: #f1eee6;
+}
+
+.shared-facilities .section-heading {
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.shared-facilities-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.shared-facility {
+    padding: 35px;
+
+    background: white;
+
+    text-align: center;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.shared-facility .feature-icon {
+    margin-bottom: 15px;
+}
+
+.shared-facility h3 {
+    margin-bottom: 12px;
+}
+
+.shared-facility p {
+    line-height: 1.7;
+
+    color: var(--grey);
+}
+
+
+/* ==========================================================
+   GALLERY
+   ========================================================== */
+
+.gallery {
+    padding: 120px 10%;
+
+    background: #f8f7f3;
+}
+
+.gallery-heading {
+    max-width: 650px;
+
+    margin-bottom: 50px;
+}
+
+.gallery-heading > p:last-child {
+    max-width: 550px;
+
+    color: var(--grey);
+
+    line-height: 1.8;
+
+    margin-top: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 1fr;
+
+    grid-template-rows: 260px 260px;
+
+    gap: 12px;
+}
+
+.gallery-item {
+    background: #ddd;
+
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+
+/* ==========================================================
+   KAROO GALLERY PREVIEW
+   ========================================================== */
+
+.gallery-preview {
+    width: 100%;
+
+    height: 532px;
+
+    background: #ddd;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-preview img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.gallery-button {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.gallery-button a {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background-color: #d8b84c;
+
+    color: #111827;
+
+    border: 1px solid #d8b84c;
+
+    border-radius: 0;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+.gallery-button a:hover {
+    background-color: #c9a93f;
+
+    color: #111827;
+}
+
+
+/* ==========================================================
+   FULL-SCREEN GALLERY MODAL
+   ========================================================== */
+
+body.gallery-modal-open {
+    overflow: hidden;
+}
+
+.gallery-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5000;
+
+    padding: 40px 80px;
+}
+
+.gallery-modal.is-open {
+    display: flex;
+}
+
+.gallery-modal-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-image-wrap {
+    width: min(1100px, 82vw);
+
+    height: min(78vh, 700px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.gallery-modal-arrow,
+.gallery-modal-close {
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    position: absolute;
+
+    z-index: 2;
+}
+
+.gallery-modal-arrow {
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 70px;
+
+    font-size: 42px;
+}
+
+.gallery-modal-prev {
+    left: 15px;
+}
+
+.gallery-modal-next {
+    right: 15px;
+}
+
+.gallery-modal-close {
+    top: 10px;
+    right: 15px;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 38px;
+}
+
+.gallery-modal-arrow:hover,
+.gallery-modal-close:hover {
+    opacity: 0.7;
+}
+
+.gallery-modal-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 10px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    color: #fff;
+
+    font-size: 13px;
+}
+
+#ireneGalleryCounter {
+    opacity: 0.75;
+}
+
+
+/* ==========================================================
+   LOCATION
+   ========================================================== */
+
+.location {
+    padding: 120px 10%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    background: var(--white);
+}
+
+.location-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.location-content h2 {
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 25px;
+}
+
+.location-content > p:not(.section-label) {
+    max-width: 600px;
+
+    color: var(--grey);
+
+    line-height: 1.8;
+
+    margin-bottom: 45px;
+}
+
+.location-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    margin-bottom: 45px;
+}
+
+.location-details h3 {
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.location-details p {
+    color: var(--grey);
+
+    line-height: 1.8;
+}
+
+.map-placeholder {
+    min-height: 450px;
+
+    background: #ddd;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #777;
+}
+
+.location-button {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 22px;
+
+    background-color: #d8b84c;
+
+    color: #111827;
+
+    border: none;
+
+    border-radius: 0;
+
+    text-decoration: none;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+.location-button:hover {
+    background-color: #c9a93f;
+
+    color: #111827;
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.cta {
+    padding: 120px 10%;
+
+    background: #f1eee6;
+
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.cta-content .section-label {
+    margin-bottom: 20px;
+}
+
+.cta-content h2 {
+    font-size: clamp(42px, 6vw, 68px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 30px;
+}
+
+.cta-content p:not(.section-label) {
+    max-width: 550px;
+
+    margin: 0 auto 40px;
+
+    color: var(--grey);
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   CONTACT
+   ========================================================== */
+
+.contact {
+    padding: 100px 10%;
+
+    background: #f8f7f3;
+}
+
+.contact-heading {
+    max-width: 650px;
+
+    margin-bottom: 60px;
+}
+
+.contact-heading h2 {
+    font-size: 46px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.contact-heading > p:not(.section-label) {
+    color: #666;
+
+    line-height: 1.7;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 80px;
+}
+
+.contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    color: #666;
+
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+}
+
+.contact-form button {
+    border: none;
+
+    cursor: pointer;
+
+    align-self: flex-start;
+}
+
+/* ==========================================
+   CONTACT FORM SUCCESS POPUP
+   ========================================== */
+
+.form-success {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(24, 34, 53, 0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Show popup */
+.form-success.show {
+    display: flex;
+}
+
+/* White popup box */
+.form-success-content {
+    width: 100%;
+    max-width: 500px;
+
+    background: #ffffff;
+
+    padding: 55px 45px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: successPopup 0.25s ease-out;
+}
+
+/* Check circle */
+.form-success-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 20px;
+
+    background: #d8b84c;
+    color: #182235;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* Heading */
+.form-success h3 {
+    margin: 0 0 12px;
+
+    color: #182235;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Message */
+.form-success p {
+    margin: 0;
+
+    color: #626b79;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Popup animation */
+@keyframes successPopup {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Prevent page scrolling while popup is open */
+body.success-popup-open {
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.footer {
+    background: #0d1420;
+
+    color: white;
+
+    padding: 70px 10% 25px;
+}
+
+.footer-main {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 60px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand h2 {
+    font-size: 24px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: #aaa;
+
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 100px;
+}
+
+.footer-links div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-links h3 {
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   BACK TO TOP
+   ========================================================== */
+
+.back-to-top {
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--navy);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+
+    z-index: 1001;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--gold);
+
+    color: var(--navy);
+
+    transform: translateY(-4px);
+}
+
+.back-to-top.in-footer {
+    background: white;
+
+    color: var(--navy);
+}
+
+
+/* ==========================================================
+   WHATSAPP
+   ========================================================== */
+
+.whatsapp-float {
+    position: fixed;
+
+    right: 30px;
+    bottom: 90px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+
+    z-index: 1001;
+}
+
+.whatsapp-float svg {
+    width: 27px;
+    height: 27px;
+
+    display: block;
+
+    fill: currentColor;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================================
+   IRENE ROOM CARD — FINAL LAYOUT
+   ========================================================== */
+
+.rooms .room-grid {
+    display: flex;
+
+    justify-content: center;
+}
+
+.rooms .room-card {
+    width: 780px;
+
+    background: #fff;
+}
+
+.rooms .room-info {
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.rooms .room-description {
+    max-width: 650px;
+}
+
+.rooms .room-details {
+    justify-content: center;
+}
+
+.rooms .room-button {
+    align-self: center;
+}
+
+
+/* ==========================================================
+   IRENE ROOMS — TWO CARD GRID
+   ========================================================== */
+
+.irene-rooms .irene-room-grid,
+.rooms.irene-rooms .irene-room-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 40px;
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    align-items: stretch;
+}
+
+.irene-rooms .room-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    width: 100%;
+
+    height: auto;
+
+    overflow: hidden;
+}
+
+.irene-rooms .room-card .room-info {
+    width: 100%;
+
+    min-height: 420px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 35px;
+}
+
+.irene-rooms .room-card .room-description {
+    width: 100%;
+
+    max-width: 460px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.7;
+}
+
+.irene-rooms .room-card .room-details {
+    justify-content: center;
+
+    width: 100%;
+
+    margin-bottom: 30px;
+}
+
+.irene-rooms .room-card .room-button {
+    align-self: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.irene-room-grid {
+    max-width: 1100px !important;
+
+    gap: 40px !important;
+}
+
+.irene-room-grid .room-card {
+    width: 100% !important;
+}
+
+.irene-room-grid .room-info {
+    padding: 60px 35px !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box;
+}
+
+.irene-room-grid .room-description {
+    width: 100% !important;
+
+    max-width: 460px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    line-height: 1.7 !important;
+}
+
+.irene-room-grid .room-price {
+    margin-bottom: 18px !important;
+}
+
+.irene-room-grid .room-details {
+    margin-bottom: 30px !important;
+}
+
+
+/* ==========================================================
+   ROOM GALLERY MODAL
+   ========================================================== */
+
+.room-gallery-modal {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 50px 90px !important;
+
+    background: rgba(0, 0, 0, 0.94) !important;
+
+    opacity: 0 !important;
+
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    z-index: 99999 !important;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease !important;
+}
+
+.room-gallery-modal.active {
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+}
+
+.room-gallery-modal .gallery-modal-content {
+    position: relative !important;
+
+    width: min(1000px, 90vw) !important;
+
+    height: min(780px, 88vh) !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+}
+
+.room-gallery-modal .gallery-modal-content img {
+    display: block !important;
+
+    max-width: 100% !important;
+
+    max-height: 78vh !important;
+
+    width: auto !important;
+
+    height: auto !important;
+
+    object-fit: contain !important;
+}
+
+.room-gallery-modal .gallery-modal-label {
+    margin: 0 0 18px !important;
+
+    color: #fff !important;
+}
+
+.room-gallery-modal .gallery-counter {
+    margin-top: 16px !important;
+
+    color: #fff !important;
+}
+
+.room-gallery-modal .gallery-close,
+.room-gallery-modal .gallery-arrow {
+    position: absolute !important;
+
+    z-index: 100000 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    color: #fff !important;
+
+    cursor: pointer !important;
+}
+
+.room-gallery-modal .gallery-close {
+    top: 22px !important;
+
+    right: 28px !important;
+
+    font-size: 42px !important;
+
+    line-height: 1 !important;
+}
+
+.room-gallery-modal .gallery-prev {
+    left: 28px !important;
+
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    font-size: 52px !important;
+}
+
+.room-gallery-modal .gallery-next {
+    right: 28px !important;
+
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    font-size: 52px !important;
+}
+
+.room-gallery-modal .gallery-close:hover,
+.room-gallery-modal .gallery-arrow:hover {
+    opacity: 0.7 !important;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — 900px
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 25px 6%;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-image {
+        min-height: 400px;
+    }
+
+    .about-preview {
+        padding: 80px 7%;
+    }
+
+    .location {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .map-placeholder {
+        min-height: 350px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+            250px 250px 250px;
+    }
+
+    .gallery-large {
+        grid-row: span 2;
+    }
+
+    .gallery-wide {
+        grid-column: span 2;
+    }
+
+    .gallery-preview {
+        height: 500px;
+    }
+
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .shared-facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .irene-rooms .irene-room-grid,
+    .rooms.irene-rooms .irene-room-grid {
+        grid-template-columns: 1fr;
+
+        width: min(560px, 100%);
+    }
+
+    .irene-rooms .room-card .room-info {
+        min-height: 380px;
+
+        padding: 45px 28px;
+    }
+
+    .room-gallery-modal {
+        padding: 45px 45px !important;
+    }
+
+    .room-gallery-modal .gallery-prev {
+        left: 10px !important;
+
+        font-size: 40px !important;
+    }
+
+    .room-gallery-modal .gallery-next {
+        right: 10px !important;
+
+        font-size: 40px !important;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — 700px
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 17px;
+
+        letter-spacing: 2px;
+    }
+
+    .apply-button {
+        padding: 11px 16px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .features,
+    .rooms,
+    .location,
+    .cta {
+        padding: 80px 7%;
+    }
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .feature-card {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+    .room-image {
+        min-height: 300px;
+    }
+
+    .room-info {
+        padding: 35px 25px;
+    }
+
+    .room-info h3 {
+        font-size: 32px;
+    }
+
+    .about-content {
+        padding: 70px 7%;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+    .location-details {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .map-placeholder {
+        min-height: 300px;
+    }
+
+    .cta-content h2 {
+        font-size: 46px;
+    }
+
+    .gallery {
+        padding: 80px 7%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            repeat(5, 250px);
+    }
+
+    .gallery-large,
+    .gallery-wide {
+        grid-column: auto;
+
+        grid-row: auto;
+    }
+
+    .amenities {
+        padding: 80px 7%;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .amenity-card {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+    .shared-facilities {
+        padding: 70px 20px;
+    }
+
+    .shared-facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-preview {
+        height: 350px;
+    }
+
+    .gallery-modal {
+        padding: 20px;
+    }
+
+    .gallery-modal-image-wrap {
+        width: 92vw;
+
+        height: 75vh;
+    }
+
+    .gallery-modal-arrow {
+        width: 44px;
+
+        height: 54px;
+
+        font-size: 30px;
+    }
+
+    .gallery-modal-prev {
+        left: 0;
+    }
+
+    .gallery-modal-next {
+        right: 0;
+    }
+
+    .gallery-modal-close {
+        top: 0;
+
+        right: 0;
+
+        font-size: 30px;
+    }
+
+    .gallery-modal-caption {
+        bottom: 0;
+
+        font-size: 12px;
+    }
+
+    .whatsapp-float {
+        right: 16px;
+
+        bottom: 74px;
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+    .back-to-top {
+        right: 16px;
+
+        bottom: 16px;
+    }
+
+    .room-gallery-modal {
+        padding: 45px 45px !important;
+    }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .gallery-button a,
+    .gallery-modal,
+    .room-gallery-modal,
+    .whatsapp-float,
+    .back-to-top {
+        transition: none;
+    }
+}

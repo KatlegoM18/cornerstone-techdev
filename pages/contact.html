@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================
+         PAGE INFORMATION
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Contact | CornerStone TechDev
+    </title>
+
+    <meta
+        name="description"
+        content="Get in touch with CornerStone TechDev for websites and digital solutions."
+    >
+
+
+    <!-- ==========================================
+         STYLESHEETS
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/contact.css"
+    >
+
+
+    <!-- ==========================================
+         BACKGROUND
+    =========================================== -->
+
+    <script
+        type="module"
+        src="../js/molten-metal.js"
+    ></script>
+
+
+    <!-- ==========================================
+         3D CT LOGO
+    =========================================== -->
+
+    <script
+        type="module"
+        src="../js/ct-logo-3d.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         MOLTEN METAL BACKGROUND
+    =========================================== -->
+
+    <div class="molten-background">
+
+        <canvas id="molten-canvas"></canvas>
+
+    </div>
+
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <header class="navbar">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <a href="../index.html">
+
+                <div class="ct-3d-logo">
+
+                    <canvas
+                        id="ct-logo-canvas"
+                    ></canvas>
+
+                </div>
+
+                <span>
+                    CornerStone
+                    <strong>TechDev</strong>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- ======================================
+             MOBILE MENU BUTTON
+        ======================================= -->
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- ======================================
+             NAVIGATION LINKS
+        ======================================= -->
+
+        <nav
+            class="nav-links"
+            id="nav-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="../index.html#portfolio">
+                Portfolio
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-contact active"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main>
+
+
+        <!-- ======================================
+             CONTACT HERO
+        ======================================= -->
+
+        <section class="contact-hero">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="contact-intro">
+
+                <p class="section-label">
+                    GET IN TOUCH
+                </p>
+
+                <h1>
+
+                    LET'S BUILD
+                    <span>
+                        SOMETHING GREAT
+                    </span>
+
+                </h1>
+
+                <p class="contact-description">
+
+                    Have an idea for a website or digital
+                    solution? Tell us what you're looking to
+                    build, and let's turn the idea into
+                    something real.
+
+                </p>
+
+
+                <!-- CONTACT DETAILS -->
+
+                <div class="contact-details">
+
+                    <a
+                        href="mailto:kmokgofa333@gmail.com"
+                        class="contact-detail"
+                    >
+
+                        <span class="detail-icon">
+                            @
+                        </span>
+
+                        <div>
+
+                            <small>
+                                EMAIL
+                            </small>
+
+                            <strong>
+                                kmokgofa333@gmail.com
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/27846600618"
+                        class="contact-detail"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="detail-icon">
+                            ↗
+                        </span>
+
+                        <div>
+
+                            <small>
+                                WHATSAPP
+                            </small>
+
+                            <strong>
+                                Let's chat directly
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 CONTACT FORM
+            =================================== -->
+
+            <div class="contact-form-wrapper">
+
+                <div class="form-heading">
+
+                    <p class="section-label">
+                        START A CONVERSATION
+                    </p>
+
+                    <h2>
+                        Tell us about your project.
+                    </h2>
+
+                </div>
+
+
+                <form
+                    class="contact-form"
+                    id="contact-form"
+                >
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="John Doe"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone / WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+27 XX XXX XXXX"
+                        >
+
+                    </div>
+
+
+                    <!-- BUSINESS -->
+
+                    <div class="form-group">
+
+                        <label for="business">
+                            Business Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="business"
+                            name="business"
+                            placeholder="Your Business"
+                        >
+
+                    </div>
+
+
+                    <!-- PROJECT TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="project">
+                            What do you need?
+                        </label>
+
+                        <select
+                            id="project"
+                            name="project"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                disabled
+                                selected
+                            >
+                                Select a service
+                            </option>
+
+                            <option value="new-website">
+                                New Website
+                            </option>
+
+                            <option value="website-redesign">
+                                Website Redesign
+                            </option>
+
+                            <option value="ecommerce">
+                                E-Commerce Website
+                            </option>
+
+                            <option value="web-application">
+                                Web Application
+                            </option>
+
+                            <option value="other">
+                                Something Else
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Tell us about your project
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us what you're looking to build..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="form-submit"
+                    >
+
+                        Send Enquiry
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             WHATSAPP CTA
+        ======================================= -->
+
+        <section class="contact-cta">
+
+            <div>
+
+                <p class="section-label">
+                    PREFER A QUICK CHAT?
+                </p>
+
+                <h2>
+                    Let's talk directly.
+                </h2>
+
+                <p>
+                    Sometimes it's easier to explain an idea
+                    over a conversation.
+                </p>
+
+            </div>
+
+            <a
+                href="https://wa.me/0846600618"
+                class="whatsapp-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                Chat on WhatsApp
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+        </section>
+
+
+        <!-- ======================================
+             PROCESS
+        ======================================= -->
+
+        <section class="contact-process">
+
+            <div class="process-heading">
+
+                <p class="section-label">
+                    WHAT HAPPENS NEXT?
+                </p>
+
+                <h2>
+                    From idea to
+                    <span>
+                        reality.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="process-grid">
+
+
+                <article class="process-item">
+
+                    <span class="process-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Tell Us
+                    </h3>
+
+                    <p>
+                        Send an enquiry and tell us what
+                        you're looking to create.
+                    </p>
+
+                </article>
+
+
+                <article class="process-item">
+
+                    <span class="process-number">
+                        02
+                    </span>
+
+                    <h3>
+                        We Discuss
+                    </h3>
+
+                    <p>
+                        We'll discuss your goals, ideas,
+                        requirements and budget.
+                    </p>
+
+                </article>
+
+
+                <article class="process-item">
+
+                    <span class="process-number">
+                        03
+                    </span>
+
+                    <h3>
+                        I Build
+                    </h3>
+
+                    <p>
+                        Once everything is agreed, I'll turn
+                        your idea into the finished website.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CornerStone TechDev.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ==========================================
+         WHATSAPP ENQUIRY FORM
+    =========================================== -->
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contact-form");
+
+        if (contactForm) {
+
+            contactForm.addEventListener(
+                "submit",
+                (event) => {
+
+                    event.preventDefault();
+
+                    const name =
+                        document.getElementById("name").value.trim();
+
+                    const email =
+                        document.getElementById("email").value.trim();
+
+                    const phone =
+                        document.getElementById("phone").value.trim();
+
+                    const business =
+                        document.getElementById("business").value.trim();
+
+                    const projectSelect =
+                        document.getElementById("project");
+
+                    const projectType =
+                        projectSelect.options[
+                            projectSelect.selectedIndex
+                        ].text;
+
+                    const message =
+                        document.getElementById("message").value.trim();
+
+                    const whatsappMessage =
+`*NEW CORNERSTONE ENQUIRY*
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone / WhatsApp:* ${phone || "Not provided"}
+*Business:* ${business || "Not provided"}
+*Project:* ${projectType}
+
+*Project Details:*
+${message}`;
+
+                    const whatsappURL =
+                        "https://wa.me/27846600618?text=" +
+                        encodeURIComponent(
+                            whatsappMessage
+                        );
+
+                    window.open(
+                        whatsappURL,
+                        "_blank"
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+    <!-- ==========================================
+         MOBILE MENU
+    =========================================== -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const navLinks =
+            document.getElementById("nav-links");
+
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener(
+                "click",
+                () => {
+
+                    const isOpen =
+                        navLinks.classList.toggle(
+                            "active"
+                        );
+
+                    menuToggle.classList.toggle(
+                        "active",
+                        isOpen
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        isOpen
+                            ? "Close navigation menu"
+                            : "Open navigation menu"
+                    );
+
+                }
+            );
+
+
+            navLinks
+                .querySelectorAll("a")
+                .forEach(
+                    (link) => {
+
+                        link.addEventListener(
+                            "click",
+                            () => {
+
+                                navLinks.classList.remove(
+                                    "active"
+                                );
+
+                                menuToggle.classList.remove(
+                                    "active"
+                                );
+
+                                menuToggle.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

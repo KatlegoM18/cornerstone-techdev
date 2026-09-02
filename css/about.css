@@ -1,0 +1,626 @@
+/* =========================================================
+   CORNERSTONE TECHDEV — ABOUT PAGE
+   Palette + typography matched to the supplied design
+   ========================================================= */
+
+/* Font used throughout the About page */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --about-cream: #F3EEE6;
+    --about-white: #FAF7F1;
+    --about-orange: #D9943F;
+    --about-orange-bright: #E0A04A;
+    --about-muted: #B9B2A8;
+    --about-border: rgba(217, 148, 63, 0.28);
+    --about-border-soft: rgba(217, 148, 63, 0.18);
+    --about-dark: #1C1814;
+}
+
+.about-page {
+    font-family: "Manrope", sans-serif;
+    color: var(--about-cream);
+}
+
+
+
+/* =========================================================
+   PAGE FOUNDATION
+   ========================================================= */
+
+.about-page main {
+    position: relative;
+    z-index: 2;
+}
+
+.about-page section {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-page section > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SHARED TYPOGRAPHY
+   ========================================================= */
+
+.about-page .section-label {
+    margin: 0 0 24px;
+    color: var(--about-orange);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page p {
+    margin-top: 0;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+    color: var(--about-white);
+}
+
+.about-page h1 span,
+.about-page h2 span {
+    color: var(--about-orange);
+}
+
+
+/* Typography hierarchy */
+.about-page p {
+    font-family: "Manrope", sans-serif;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page .section-label,
+.about-page .work-link,
+.about-page .cta-button {
+    font-family: "Manrope", sans-serif;
+}
+
+.about-page .section-label {
+    font-weight: 800;
+}
+
+.about-page .about-hero-description,
+.about-page .story-content p,
+.about-page .approach-card p,
+.about-page .why-item p,
+.about-page .about-work .work-content > p:not(.section-label) {
+    font-weight: 500;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-page .about-hero {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 8vw 120px;
+    border-bottom: 1px solid rgba(217, 148, 63, 0.22);
+    overflow: hidden;
+}
+
+.about-page .about-hero-content {
+    width: min(100%, 1050px);
+}
+
+.about-page .about-hero h1 {
+    max-width: 950px;
+    margin: 0;
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+.about-page .about-hero-description {
+    max-width: 680px;
+    margin: 38px 0 0;
+    color: var(--about-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.about-page .about-story {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.5fr);
+    gap: 8vw;
+    padding: 150px 8vw;
+    border-bottom: 1px solid rgba(217, 148, 63, 0.22);
+}
+
+.about-page .story-label {
+    padding-top: 8px;
+}
+
+.about-page .story-content {
+    max-width: 850px;
+}
+
+.about-page .story-content h2 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(3rem, 5.2vw, 5.8rem);
+    font-weight: 800;
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+}
+
+.about-page .story-content p {
+    max-width: 760px;
+    margin: 30px 0 0;
+    color: var(--about-muted);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   APPROACH
+   ========================================================= */
+
+.about-page .about-approach {
+    padding: 150px 8vw;
+    border-bottom: 1px solid rgba(217, 148, 63, 0.22);
+}
+
+.about-page .approach-heading {
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+.about-page .approach-heading h2 {
+    margin: 0;
+    font-size: clamp(3rem, 5.5vw, 6rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.about-page .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.about-page .approach-card {
+    min-height: 330px;
+    padding: 38px 34px;
+    box-sizing: border-box;
+    border: 1px solid rgba(217, 148, 63, 0.28);
+    background: rgba(18, 15, 12, 0.42);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.about-page .approach-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--about-orange);
+    background: rgba(25, 20, 15, 0.58);
+}
+
+.about-page .approach-card > span {
+    display: block;
+    margin-bottom: 90px;
+    color: var(--about-orange);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.about-page .approach-card h3 {
+    margin: 0 0 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.about-page .approach-card p {
+    max-width: 350px;
+    margin: 0;
+    color: var(--about-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   WHY CORNERSTONE
+   ========================================================= */
+
+.about-page .why-cornerstone {
+    padding: 150px 8vw;
+    border-bottom: 1px solid rgba(217, 148, 63, 0.22);
+}
+
+.about-page .why-heading {
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+.about-page .why-heading h2 {
+    margin: 0;
+    font-size: clamp(3rem, 5.5vw, 6rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.about-page .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgba(217, 148, 63, 0.24);
+    border-left: 1px solid rgba(217, 148, 63, 0.24);
+}
+
+.about-page .why-item {
+    display: grid;
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 24px;
+    min-height: 250px;
+    padding: 38px 35px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(217, 148, 63, 0.24);
+    border-bottom: 1px solid rgba(217, 148, 63, 0.24);
+    background: rgba(15, 12, 10, 0.18);
+    transition: background 0.25s ease;
+}
+
+.about-page .why-item:hover {
+    background: rgba(217, 148, 63, 0.035);
+}
+
+.about-page .why-item > span {
+    display: block;
+    margin-top: 3px;
+    color: var(--about-orange);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.about-page .why-item h3 {
+    margin: 0 0 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.about-page .why-item p {
+    max-width: 450px;
+    margin: 0;
+    color: var(--about-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   WORK
+   ========================================================= */
+
+.about-page .about-work {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 150px 8vw;
+    border-bottom: 1px solid rgba(217, 148, 63, 0.22);
+}
+
+.about-page .work-content {
+    max-width: 900px;
+}
+
+.about-page .about-work h2 {
+    margin: 0;
+    font-size: clamp(3.2rem, 6vw, 7rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.about-page .about-work .work-content > p:not(.section-label) {
+    max-width: 760px;
+    margin: 32px 0 0;
+    color: var(--about-muted);
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   OUTLINED BUTTONS
+   ========================================================= */
+
+.about-page .work-link,
+.about-page .cta-button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    min-width: 235px;
+    min-height: 56px;
+    padding: 0 22px;
+    box-sizing: border-box;
+
+    border: 1px solid var(--gold-light);
+    background: transparent;
+
+    color: var(--about-orange);
+    text-decoration: none;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    text-transform: uppercase;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.about-page .work-link > span:last-child,
+.about-page .cta-button > span:last-child {
+    font-size: 1.2rem;
+    letter-spacing: 0;
+}
+
+.about-page .work-link:hover,
+.about-page .cta-button:hover {
+    background: var(--about-orange);
+    color: #211a13;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.about-page .about-cta {
+    padding: 160px 8vw 170px;
+}
+
+.about-page .about-cta > .section-label {
+    margin-bottom: 28px;
+}
+
+.about-page .about-cta h2 {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(3.5rem, 7vw, 8rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+}
+
+.about-page .about-cta .cta-button {
+    margin-top: 48px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.about-page footer {
+    position: relative;
+    z-index: 3;
+    padding: 38px 8vw;
+    border-top: 1px solid rgba(217, 148, 63, 0.22);
+    background: rgba(13, 11, 9, 0.94);
+    text-align: center;
+}
+
+.about-page footer p {
+    margin: 0;
+    color: var(--about-muted);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-page .about-hero {
+        min-height: 65vh;
+        padding: 120px 6vw 100px;
+    }
+
+    .about-page .about-story {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 110px 6vw;
+    }
+
+    .about-page .about-approach,
+    .about-page .why-cornerstone {
+        padding: 110px 6vw;
+    }
+
+    .about-page .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .approach-card {
+        min-height: 260px;
+    }
+
+    .about-page .approach-card > span {
+        margin-bottom: 55px;
+    }
+
+    .about-page .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .about-work {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 110px 6vw;
+    }
+
+    .about-page .about-cta {
+        padding: 120px 6vw;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-page .about-hero {
+        min-height: 65vh;
+        padding: 105px 24px 80px;
+    }
+
+    .about-page .about-hero h1 {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+    }
+
+    .about-page .about-hero-description {
+        margin-top: 30px;
+        font-size: 0.92rem;
+        line-height: 1.75;
+    }
+
+    .about-page .about-story {
+        padding: 90px 24px;
+    }
+
+    .about-page .story-content h2,
+    .about-page .approach-heading h2,
+    .about-page .why-heading h2 {
+        font-size: clamp(2.7rem, 13vw, 4.5rem);
+    }
+
+    .about-page .story-content p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+    }
+
+    .about-page .about-approach,
+    .about-page .why-cornerstone {
+        padding: 90px 24px;
+    }
+
+    .about-page .approach-heading,
+    .about-page .why-heading {
+        margin-bottom: 55px;
+    }
+
+    .about-page .approach-card {
+        min-height: auto;
+        padding: 32px 25px;
+    }
+
+    .about-page .approach-card > span {
+        margin-bottom: 45px;
+    }
+
+    .about-page .why-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 15px;
+        min-height: auto;
+        padding: 30px 22px;
+    }
+
+    .about-page .why-item h3 {
+        font-size: 1.15rem;
+    }
+
+    .about-page .about-work {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 38px;
+        padding: 90px 24px;
+    }
+
+    .about-page .about-work h2 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .about-page .about-cta {
+        padding: 90px 24px 100px;
+    }
+
+    .about-page .about-cta h2 {
+        font-size: clamp(3.2rem, 15vw, 5.5rem);
+    }
+
+    .about-page .work-link,
+    .about-page .cta-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-page footer {
+        padding: 30px 24px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-page .about-hero,
+    .about-page .about-story,
+    .about-page .about-approach,
+    .about-page .why-cornerstone,
+    .about-page .about-work,
+    .about-page .about-cta {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .about-page .about-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-page .story-content h2,
+    .about-page .approach-heading h2,
+    .about-page .why-heading h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-page .about-work h2,
+    .about-page .about-cta h2 {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================
+         PAGE INFORMATION
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CornerStone TechDev | Digital Solutions
+    </title>
+
+
+    <!-- ==========================================
+         STYLESHEETS
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/folder.css"
+    >
+
+
+    <!-- ==========================================
+         BACKGROUND
+    =========================================== -->
+
+    <script
+        type="module"
+        src="js/molten-metal.js"
+    ></script>
+
+
+    <!-- ==========================================
+         3D CT LOGO
+    =========================================== -->
+
+    <script
+        type="module"
+        src="js/ct-logo-3d.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         MOLTEN METAL BACKGROUND
+    =========================================== -->
+
+    <div class="molten-background">
+
+        <canvas id="molten-canvas"></canvas>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                <div class="ct-3d-logo">
+
+                    <canvas
+                        id="ct-logo-canvas"
+                    ></canvas>
+
+                </div>
+
+
+                <span>
+                    CornerStone
+                    <strong>TechDev</strong>
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ======================================
+             MOBILE MENU BUTTON
+        ======================================= -->
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- ======================================
+             NAVIGATION LINKS
+        ======================================= -->
+
+        <nav
+            class="nav-links"
+            id="nav-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="pages/services.html">
+                Services
+            </a>
+
+            <a
+    href="#"
+    id="portfolio-nav-btn"
+>
+    Portfolio
+</a>
+
+            <a href="pages/about.html">
+                About
+            </a>
+
+            <a
+                href="pages/contact.html"
+                class="nav-contact"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+
+</div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main>
+
+
+        <!-- ======================================
+             HERO
+        ======================================= -->
+
+        <section class="hero">
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <p class="hero-subtitle">
+                    WEB DEVELOPMENT • DIGITAL SOLUTIONS
+                </p>
+
+
+                <h1>
+
+                    Building Digital
+
+                    <span>
+                        Foundations.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Modern websites and digital solutions built
+                    for businesses ready to grow.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 DESIGN INTRO
+            =================================== -->
+
+            <div class="hero-intro">
+
+                <p class="intro-label">
+                    THE PERSON BEHIND THE DESIGN
+                </p>
+
+
+                <h2>
+
+                    Design is
+
+                    <span>
+                        digital art.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Web design is more than making
+                    something look good. It is a form of art —
+                    a way of turning an idea, a feeling, and a
+                    vision into something people can experience.
+
+                </p>
+
+
+                <p>
+
+                    Our job is to take your vision and bring it
+                    to life. We don't just want to know
+                    <strong>
+                        what you want your website to look like
+                    </strong>.
+
+                    We want to know
+                    <strong>
+                        how you want it to feel
+                    </strong> —
+
+                    for you, for your clients, and for everyone
+                    who experiences it.
+
+                </p>
+
+
+                <p>
+
+                    We combine creativity, technology, and purpose
+                    to create digital experiences that feel like
+                    <em>you.</em>
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             SERVICES PREVIEW
+        ======================================= -->
+
+        <section class="services-preview">
+
+
+            <div class="services-content">
+
+                <p class="section-label">
+                    WHAT WE BUILD
+                </p>
+
+
+                <h2>
+
+                    DIGITAL SOLUTIONS DESIGNED
+
+                    <span>
+                        WITH PURPOSE.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ACTION BUTTONS
+            =================================== -->
+
+            <div class="services-buttons">
+
+
+                <!-- START PROJECT -->
+
+                <a
+                    href="pages/contact.html"
+                    class="btn btn-primary"
+                >
+                    Start A Project
+                </a>
+
+
+                <!-- VIEW OUR WORK -->
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="view-work-btn"
+                >
+                    View Our Work
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         PORTFOLIO POPUP
+    =========================================== -->
+
+    <div
+        class="portfolio-overlay"
+        id="portfolio-overlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="portfolio-popup"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Portfolio projects"
+        >
+
+            <!-- CLOSE -->
+
+            <button
+                type="button"
+                class="portfolio-close"
+                id="portfolio-close"
+                aria-label="Close portfolio"
+            >
+                ×
+            </button>
+
+
+            <!-- ==================================
+                 FOLDER
+            =================================== -->
+
+            <div class="folder-container">
+
+                <div
+                    class="folder"
+                    id="portfolio-folder"
+                    tabindex="0"
+                    role="button"
+                    aria-expanded="false"
+                    aria-label="Open portfolio folder"
+                >
+
+                    <div class="folder__back">
+
+
+                        <!-- PROJECT 1 -->
+
+                        <div class="paper paper-1">
+
+                            <div class="paper-content">
+
+                                <span>01</span>
+
+                                <strong>
+                                    Business Website
+                                </strong>
+
+                                <small>
+                                    Web Design
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROJECT 2 -->
+
+                        <div class="paper paper-2">
+
+                            <div class="paper-content">
+
+                                <span>02</span>
+
+                                <strong>
+                                    Portfolio Website
+                                </strong>
+
+                                <small>
+                                    Development
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROJECT 3 — BARC HOUSE -->
+
+                        <div
+                            class="paper paper-3"
+                            tabindex="0"
+                            role="link"
+                            aria-label="Open Barc House project"
+                        >
+
+                            <div class="paper-preview">
+
+                                <div class="preview-window">
+
+                                    <div class="preview-bar">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+
+                                    <img
+                                        src="images/barc-house-preview.jpg"
+                                        alt="Barc House student accommodation website preview"
+                                    >
+
+                                </div>
+
+                                <div class="preview-info">
+
+                                    <span>03</span>
+
+                                    <strong>
+                                        Barc House
+                                    </strong>
+
+                                    <small>
+                                        Student Accommodation
+                                    </small>
+
+                                    <b>
+                                        VIEW PROJECT →
+                                    </b>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FOLDER FRONT -->
+
+                        <div class="folder__front"></div>
+
+                        <div
+                            class="folder__front right"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLICK ME -->
+
+                <p class="folder-hint">
+                    CLICK ME
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CornerStone TechDev.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         MOBILE MENU + HERO ANIMATION
+    =========================================== -->
+
+    <script type="module">
+
+        import {
+            animate,
+            inView
+        } from
+        "https://cdn.jsdelivr.net/npm/motion/+esm";
+
+
+        /* ==========================================
+           MOBILE MENU
+        =========================================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menu-toggle"
+            );
+
+        const navLinks =
+            document.getElementById(
+                "nav-links"
+            );
+
+
+        if (
+            menuToggle &&
+            navLinks
+        ) {
+
+            menuToggle.addEventListener(
+                "click",
+                () => {
+
+                    const isOpen =
+                        navLinks.classList.toggle(
+                            "active"
+                        );
+
+
+                    menuToggle.classList.toggle(
+                        "active",
+                        isOpen
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        isOpen
+                            ? "Close navigation menu"
+                            : "Open navigation menu"
+                    );
+
+                }
+            );
+
+
+            navLinks
+                .querySelectorAll("a")
+                .forEach(
+                    (link) => {
+
+                        link.addEventListener(
+                            "click",
+                            () => {
+
+                                navLinks.classList.remove(
+                                    "active"
+                                );
+
+
+                                menuToggle.classList.remove(
+                                    "active"
+                                );
+
+
+                                menuToggle.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+
+                                menuToggle.setAttribute(
+                                    "aria-label",
+                                    "Open navigation menu"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* ==========================================
+           HERO ANIMATION
+        =========================================== */
+
+        inView(
+            ".hero-content",
+            (element) => {
+
+                animate(
+
+                    element,
+
+                    {
+                        opacity: 1,
+                        x: [100, 0]
+                    },
+
+                    {
+                        duration: 0.9,
+
+                        easing: [
+                            0.17,
+                            0.55,
+                            0.55,
+                            1
+                        ]
+                    }
+
+                );
+
+
+                return () => {
+
+                    animate(
+
+                        element,
+
+                        {
+                            opacity: 0,
+                            x: 100
+                        }
+
+                    );
+
+                };
+
+            }
+        );
+
+    </script>
+
+
+
+    <!-- ==========================================
+         PORTFOLIO FOLDER
+    =========================================== -->
+
+    <script
+        type="module"
+        src="js/folder.js"
+    ></script>
+
+
+
+    <!-- ==========================================
+         BARC HOUSE PROJECT
+    =========================================== -->
+
+    <script>
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const barcHousePaper =
+                    document.querySelector(".paper-3");
+
+                if (!barcHousePaper) {
+                    return;
+                }
+
+                const openBarcHouse = () => {
+                    window.location.href =
+                        "projects/BarcHouse/index.html";
+                };
+
+                barcHousePaper.addEventListener(
+                    "click",
+                    (event) => {
+                        event.stopPropagation();
+                        openBarcHouse();
+                    }
+                );
+
+                barcHousePaper.addEventListener(
+                    "keydown",
+                    (event) => {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            openBarcHouse();
+                        }
+
+                    }
+                );
+
+            }
+        );
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+/* ==========================================================
+   BARC HOUSE — LANDING PAGE
+   ========================================================== */
+
+:root {
+    --navy: #111827;
+    --navy-dark: #0b101a;
+    --navy-light: #1f2937;
+    --gold: #d8b84c;
+    --white: #ffffff;
+    --grey: #9ca3af;
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--navy-dark);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ==========================================================
+   LANDING PAGE
+   ========================================================== */
+
+.property-landing {
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 40px;
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(42, 54, 78, 0.45),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #0b101a 0%,
+            #111827 55%,
+            #151c2b 100%
+        );
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+   ========================================================== */
+
+.property-overlay {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   LANDING HEADER
+   ========================================================== */
+
+.property-header {
+    max-width: 850px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.property-header .section-label {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.property-header h1 {
+    color: var(--white);
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 0 0 25px;
+}
+
+.property-header > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   RESIDENCE SELECTION
+   ========================================================== */
+
+.property-selection {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* ==========================================================
+   RESIDENCE CARDS
+   ========================================================== */
+
+.property-card {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    overflow: hidden;
+
+    color: var(--white);
+    text-decoration: none;
+
+    background: var(--navy-light);
+
+    border: 1px solid rgba(212, 175, 55, 0.16);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ==========================================================
+   CARD IMAGES
+   ========================================================== */
+
+/*
+   The HTML already contains the Irene and Karoo <img> elements.
+   We use those images directly instead of adding background images.
+*/
+
+.property-card img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    z-index: 0;
+}
+
+
+/* ==========================================================
+   IMAGE OVERLAY
+   ========================================================== */
+
+.property-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5, 8, 14, 0.92) 0%,
+            rgba(5, 8, 14, 0.58) 38%,
+            rgba(5, 8, 14, 0.08) 78%,
+            rgba(5, 8, 14, 0.02) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* ==========================================================
+   CARD CONTENT
+   ========================================================== */
+
+.property-card-content {
+    position: relative;
+
+    width: 100%;
+
+    z-index: 2;
+}
+
+.property-card h2 {
+    color: var(--white);
+
+    font-size: 42px;
+    line-height: 1;
+
+    margin: 0 0 15px;
+}
+
+.property-card p {
+    max-width: 380px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.property-button {
+    display: inline-block;
+
+    margin-top: 22px;
+    padding-bottom: 6px;
+
+    color: var(--gold);
+
+    border-bottom: 1px solid var(--gold);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   CARD HOVER
+   ========================================================== */
+
+.property-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(212, 175, 55, 0.55);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ==========================================================
+   RESIDENCE MANAGEMENT SYSTEM
+   ========================================================== */
+
+.management-section {
+    width: 100%;
+    margin-top: 70px;
+    padding: 65px 70px;
+    background: var(--navy);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    text-align: center;
+}
+
+.management-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.management-label {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.management-content h2 {
+    color: var(--white);
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.management-content p:not(.management-label) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.7;
+}
+
+.management-button {
+    display: inline-block;
+    padding: 14px 24px;
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.management-button:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 800px) {
+
+    .property-landing {
+        padding: 60px 20px;
+    }
+
+    .property-header {
+        margin-bottom: 45px;
+    }
+
+    .property-header h1 {
+        font-size: 48px;
+    }
+
+    .property-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .property-card {
+        min-height: 420px;
+        padding: 30px;
+    }
+
+    .property-card h2 {
+        font-size: 36px;
+    }
+
+    .management-section {
+        margin-top: 45px;
+        padding: 45px 25px;
+    }
+
+    .management-content h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 500px) {
+
+    .property-landing {
+        padding: 45px 15px;
+    }
+
+    .property-header h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .property-header > p:last-child {
+        font-size: 15px;
+    }
+
+    .property-card {
+        min-height: 360px;
+        padding: 25px;
+    }
+
+    .property-card h2 {
+        font-size: 32px;
+    }
+
+    .property-card p {
+        font-size: 14px;
+    }
+}

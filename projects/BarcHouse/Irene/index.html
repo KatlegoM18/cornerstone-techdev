@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Barc House | Student Accommodation</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Irene Stylesheet -->
+<link rel="stylesheet" href="irene.css">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "DM Sans", sans-serif;
+
+            color: #f4f7f6;
+
+            background:
+                radial-gradient(
+                    circle at 18% 30%,
+                    rgba(0, 125, 117, 0.30),
+                    transparent 42%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(0, 80, 120, 0.28),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    115deg,
+                    #073f3e 0%,
+                    #064b50 42%,
+                    #052d47 100%
+                );
+
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           PAGE BACKGROUND TEXTURE
+        ========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(
+                    rgba(255, 255, 255, 0.055) 1px,
+                    transparent 1px
+                );
+
+            background-size: 5px 5px;
+
+            opacity: 0.35;
+
+            z-index: 0;
+        }
+
+
+        /* =========================================================
+           MAIN CONTAINER
+        ========================================================= */
+
+        .page {
+            position: relative;
+            min-height: 100vh;
+
+            padding: 45px 4.5% 0;
+
+            z-index: 1;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .header {
+            position: relative;
+
+            min-height: 145px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            z-index: 5;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            margin-bottom: 17px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 5px;
+            text-transform: uppercase;
+
+            color: #1fd3d0;
+        }
+
+        .header h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(38px, 4vw, 58px);
+            font-weight: 500;
+
+            line-height: 1.05;
+
+            color: #f7f4ed;
+
+            margin-bottom: 15px;
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+
+            color: rgba(244, 247, 246, 0.88);
+        }
+
+
+        /* =========================================================
+           MANAGEMENT / PROFILE BUTTON
+        ========================================================= */
+
+        .management-button {
+            width: 64px;
+            height: 64px;
+
+            border: 1px solid rgba(31, 211, 208, 0.75);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #f4f7f6;
+
+            font-size: 25px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+
+            flex-shrink: 0;
+        }
+
+        .management-button:hover {
+            transform: translateY(-3px);
+
+            background: rgba(31, 211, 208, 0.12);
+
+            border-color: #f5c542;
+
+            color: #f5c542;
+        }
+
+
+        /* =========================================================
+           RESIDENCE SECTION
+        ========================================================= */
+
+        .residences {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px, 0.75fr)
+                minmax(420px, 1fr)
+                minmax(420px, 1fr);
+
+            gap: 16px;
+
+            margin-top: 0;
+
+            min-height: 575px;
+
+            align-items: stretch;
+        }
+
+
+        /* =========================================================
+           FAINT BH LOGO
+           Occupies the entire left section
+        ========================================================= */
+
+        .logo-panel {
+            position: relative;
+
+            min-height: 575px;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            overflow: hidden;
+
+            z-index: 1;
+        }
+
+        .background-logo {
+            position: absolute;
+
+            left: -20px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 430px;
+            max-width: 100%;
+
+            opacity: 0.075;
+
+            filter:
+                saturate(0.7)
+                brightness(1.15);
+
+            pointer-events: none;
+
+            user-select: none;
+        }
+
+
+        /* =========================================================
+           RESIDENCE CARDS
+        ========================================================= */
+
+        .residence-card {
+            position: relative;
+
+            min-height: 575px;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(45, 212, 209, 0.65);
+
+            background: #06383d;
+
+            isolation: isolate;
+
+            transition:
+                transform 0.45s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.45s ease,
+                border-color 0.35s ease;
+        }
+
+        .residence-card:hover {
+            transform: translateY(-12px);
+
+            border-color: rgba(45, 212, 209, 0.95);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.35),
+                0 0 30px rgba(20, 200, 195, 0.08);
+        }
+
+
+        /* =========================================================
+           CARD IMAGE
+        ========================================================= */
+
+        .card-image {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            z-index: -3;
+
+            transition:
+                transform 0.7s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .residence-card:hover .card-image {
+            transform: scale(1.035);
+        }
+
+
+        /* =========================================================
+           CARD DARK OVERLAY
+        ========================================================= */
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(3, 27, 39, 0.12) 0%,
+                    rgba(3, 27, 39, 0.30) 38%,
+                    rgba(2, 30, 38, 0.88) 100%
+                );
+
+            z-index: -2;
+        }
+
+        .card-overlay::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 87, 83, 0.22),
+                    transparent 60%
+                );
+        }
+
+
+        /* =========================================================
+           CARD CONTENT
+        ========================================================= */
+
+        .card-content {
+            position: absolute;
+
+            left: 38px;
+            right: 38px;
+            bottom: 38px;
+
+            z-index: 2;
+        }
+
+        .card-label {
+            margin-bottom: 12px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            color: #1fd3d0;
+        }
+
+        .card-title {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(46px, 4vw, 64px);
+            font-weight: 500;
+
+            line-height: 1;
+
+            color: #f7f4ed;
+
+            margin-bottom: 18px;
+        }
+
+        .card-line {
+            width: 42px;
+            height: 3px;
+
+            background: #20d3d0;
+
+            margin-bottom: 20px;
+        }
+
+        .card-description {
+            max-width: 440px;
+
+            font-size: 17px;
+            line-height: 1.55;
+
+            color: rgba(247, 247, 244, 0.92);
+
+            margin-bottom: 32px;
+        }
+
+
+        /* =========================================================
+           EXPLORE LINK
+        ========================================================= */
+
+        .explore-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+
+            padding-bottom: 10px;
+
+            border-bottom: 2px solid #f5c542;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #f5c542;
+
+            transition:
+                gap 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .explore-link span {
+            font-size: 25px;
+            font-weight: 400;
+
+            line-height: 0;
+        }
+
+        .explore-link:hover {
+            gap: 25px;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .footer {
+            position: relative;
+
+            margin-top: 40px;
+
+            padding: 42px 0 28px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+
+            z-index: 2;
+        }
+
+        .footer-main {
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                0.8fr
+                0.8fr
+                0.9fr;
+
+            gap: 40px;
+
+            align-items: start;
+        }
+
+
+        /* =========================================================
+           FOOTER BRAND
+        ========================================================= */
+
+        .footer-brand h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 29px;
+            font-weight: 500;
+
+            letter-spacing: 6px;
+
+            margin-bottom: 15px;
+
+            color: #f7f4ed;
+        }
+
+        .footer-brand p {
+            max-width: 310px;
+
+            font-size: 15px;
+            line-height: 1.7;
+
+            color: rgba(244, 247, 246, 0.78);
+        }
+
+
+        /* =========================================================
+           FOOTER COLUMNS
+        ========================================================= */
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+
+            gap: 18px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 17px;
+        }
+
+        .footer-column a {
+            width: fit-content;
+
+            color: rgba(247, 244, 237, 0.92);
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .footer-column a:hover {
+            color: #1fd3d0;
+
+            transform: translateX(3px);
+        }
+
+
+        /* =========================================================
+           SOCIAL ICONS
+        ========================================================= */
+
+        .social-column {
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+            padding-left: 30px;
+
+            min-height: 70px;
+        }
+
+        .social-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid transparent;
+
+            color: #1fd3d0;
+
+            font-size: 21px;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #f5c542;
+
+            transform: translateY(-3px);
+        }
+
+        .social-icon.whatsapp {
+            font-size: 23px;
+        }
+
+        .social-icon.facebook {
+            font-size: 20px;
+        }
+
+
+        /* =========================================================
+           FOOTER BOTTOM
+        ========================================================= */
+
+        .footer-bottom {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 40px;
+            padding-top: 22px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+            font-size: 14px;
+
+            color: rgba(244, 247, 246, 0.72);
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .location-dot {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #f5c542;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .residences {
+                grid-template-columns:
+                    minmax(250px, 0.65fr)
+                    1fr
+                    1fr;
+            }
+
+            .card-content {
+                left: 28px;
+                right: 28px;
+                bottom: 30px;
+            }
+
+            .card-title {
+                font-size: 48px;
+            }
+
+            .card-description {
+                font-size: 15px;
+            }
+
+        }
+
+
+        @media (max-width: 850px) {
+
+            .page {
+                padding: 32px 25px 0;
+            }
+
+            .header {
+                min-height: 125px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+
+            .header-subtitle {
+                font-size: 16px;
+            }
+
+            .management-button {
+                width: 54px;
+                height: 54px;
+
+                font-size: 21px;
+            }
+
+            .residences {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 14px;
+            }
+
+            .logo-panel {
+                display: none;
+            }
+
+            .residence-card {
+                min-height: 540px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .social-column {
+                border-left: none;
+                padding-left: 0;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 28px 18px 0;
+            }
+
+            .header {
+                min-height: 135px;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .header-subtitle {
+                font-size: 15px;
+            }
+
+            .management-button {
+                width: 48px;
+                height: 48px;
+
+                font-size: 19px;
+            }
+
+            .residences {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .residence-card {
+                min-height: 500px;
+
+                width: 100%;
+            }
+
+            .card-title {
+                font-size: 45px;
+            }
+
+            .card-description {
+                font-size: 15px;
+
+                max-width: 360px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+
+                gap: 32px;
+            }
+
+            .social-column {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <div class="eyebrow">
+                Student Accommodation
+            </div>
+
+            <h1>
+                Welcome to BARC HOUSE
+            </h1>
+
+            <p class="header-subtitle">
+                Find a place to call home.
+            </p>
+
+        </div>
+
+
+        <!-- Residence Management -->
+
+        <a
+            href="management.html"
+            class="management-button"
+            aria-label="Residence Management"
+            title="Residence Management"
+        >
+            <i class="fa-regular fa-user"></i>
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         RESIDENCES
+    ========================================================== -->
+
+    <section class="residences">
+
+
+        <!-- =====================================================
+             BACKGROUND LOGO
+        ====================================================== -->
+
+        <div class="logo-panel">
+
+            <img
+                src="BH-logo.png"
+                alt=""
+                class="background-logo"
+            >
+
+        </div>
+
+
+
+        <!-- =====================================================
+             IRENE
+        ====================================================== -->
+
+        <article class="residence-card">
+
+            <img
+                src="irene/20260819_181657.jpg"
+                alt="Irene Student Accommodation"
+                class="card-image"
+            >
+
+            <div class="card-overlay"></div>
+
+
+            <div class="card-content">
+
+                <div class="card-label">
+                    Residence
+                </div>
+
+                <h2 class="card-title">
+                    Irene
+                </h2>
+
+                <div class="card-line"></div>
+
+                <p class="card-description">
+                    Comfortable, secure and fully furnished student
+                    accommodation in Kempenville.
+                </p>
+
+                <a
+                    href="irene.html"
+                    class="explore-link"
+                >
+                    EXPLORE IRENE
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================================
+             KAROO
+        ====================================================== -->
+
+        <article class="residence-card">
+
+            <img
+                src="karoo-exterior.jpg"
+                alt="Karoo Student Accommodation"
+                class="card-image"
+            >
+
+            <div class="card-overlay"></div>
+
+
+            <div class="card-content">
+
+                <div class="card-label">
+                    Residence
+                </div>
+
+                <h2 class="card-title">
+                    Karoo
+                </h2>
+
+                <div class="card-line"></div>
+
+                <p class="card-description">
+                    Comfortable, secure and fully furnished student
+                    accommodation in Kempenville.
+                </p>
+
+                <a
+                    href="pages/karoo.html"
+                    class="explore-link"
+                >
+                    EXPLORE KAROO
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-main">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <h2>
+                    BARC HOUSE
+                </h2>
+
+                <p>
+                    Comfortable, secure and fully furnished
+                    student accommodation.
+                </p>
+
+            </div>
+
+
+
+            <!-- CONTACT / IRENE -->
+
+            <div class="footer-column">
+
+                <!-- Goes directly to Contact section on Irene page -->
+
+                <a href="irene.html#contact">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+
+            <!-- KAROO / APPLICATION -->
+
+            <div class="footer-column">
+
+                <a href="application.html">
+                    Apply Now
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SOCIAL MEDIA -->
+
+            <div class="footer-column social-column">
+
+                <div class="social-links">
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                        title="WhatsApp"
+                        class="social-icon whatsapp"
+                    >
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+
+                    <!-- FACEBOOK -->
+
+                    <a
+                        href="https://www.facebook.com/p/Barc-House-Student-Accommodation-61561389650754/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                        title="Facebook"
+                        class="social-icon facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================================
+             FOOTER BOTTOM
+        ====================================================== -->
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 BARC HOUSE. All rights reserved.
+            </div>
+
+            <div class="location">
+
+                <span>
+                    Student Accommodation
+                </span>
+
+                <span class="location-dot"></span>
+
+                <span>
+                    Kempenville
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>

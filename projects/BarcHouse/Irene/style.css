@@ -1,0 +1,4408 @@
+:root {
+    --black: #222222;
+    --dark: #333333;
+    --cream: #f3f1ed;
+    --white: #ffffff;
+    --grey: #666666;
+    --light-grey: #eeeeee;
+}
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #fff;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #888;
+}
+
+.apply-button {
+    display: inline-block;
+    padding: 13px 22px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.3s ease;
+}
+
+.apply-button:hover {
+    background: #444;
+}
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page */
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background-color: white;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #777;
+}
+
+/* Apply button */
+.apply-button {
+    text-decoration: none;
+    background-color: #222;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    background: #f3f1ed;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    max-width: 520px;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background: #222;
+    color: #fff;
+}
+
+.primary-button:hover {
+    background: #444;
+}
+
+.secondary-button {
+    border: 1px solid #222;
+    color: #222;
+    background: transparent;
+}
+
+.secondary-button:hover {
+    background: #222;
+    color: #fff;
+}
+/* ========================================
+   FEATURES
+======================================== */
+
+.features {
+    padding: 120px 10%;
+    background: var(--white);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--light-grey);
+    border-left: 1px solid var(--light-grey);
+}
+
+.feature-card {
+    padding: 40px 30px;
+    min-height: 260px;
+    border-right: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: var(--cream);
+}
+
+.feature-icon {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--grey);
+}
+/* ========================================
+   ROOMS
+======================================== */
+
+.rooms {
+    padding: 120px 10%;
+    background: var(--cream);
+}
+
+.rooms-heading {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rooms-heading .section-label {
+    text-align: center;
+}
+
+.rooms-heading h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rooms-heading > p:last-child {
+    text-align: center;
+    width: 100%;
+}
+
+
+.room-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.room-card {
+    width: 780px;
+    background: #fff;
+}
+
+.room-image {
+    min-height: 420px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.room-info {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.room-type {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.room-info h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.room-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.room-details {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.room-details span {
+    font-size: 13px;
+    color: #555;
+}
+
+.room-button {
+    display: inline-block;
+    width: fit-content;
+    padding: 14px 24px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.room-button:hover {
+    background: #444;
+}
+
+.room-button:hover {
+    background: var(--dark);
+}
+/* Gallery section */
+.gallery {
+    padding: 100px 10%;
+    background: white;
+}
+
+.gallery-heading {
+    margin-bottom: 50px;
+}
+
+.gallery-heading > p:last-child {
+    margin-top: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    gap: 15px;
+}
+
+.gallery-item {
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+/* ==========================================
+   GALLERY BUTTON
+   ========================================== */
+
+.gallery-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.gallery-button a {
+    display: inline-block;
+    padding: 14px 22px;
+
+    background-color: #d8b84c;
+    color: #111827;
+
+    border: 1px solid #d8b84c;
+    border-radius: 0;
+
+    text-decoration: none;
+    text-align: center;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.gallery-button a:hover {
+    background-color: #c9a93f;
+    color: #111827;
+}
+/* Contact section */
+.contact {
+    padding: 100px 10%;
+    background: white;
+}
+
+.contact-heading {
+    max-width: 650px;
+    margin-bottom: 60px;
+}
+
+.contact-heading h2 {
+    font-size: 46px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.contact-heading > p:not(.section-label) {
+    color: #666;
+    line-height: 1.7;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 14px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #222;
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+/* Footer */
+.footer {
+    background: #222;
+    color: white;
+    padding: 70px 10% 25px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 60px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 100px;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+    color: #888;
+    font-size: 12px;
+}
+
+/* ========================================
+   LIFE AT BARC HOUSE
+======================================== */
+
+.about-preview {
+    padding: 120px 10%;
+    background: var(--cream);
+}
+
+.about-image {
+    display: none;
+}
+
+.about-content {
+    max-width: 750px;
+}
+
+.about-content h2 {
+    max-width: 550px;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
+}
+
+.about-content p:not(.section-label) {
+    max-width: 550px;
+    color: var(--grey);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.text-button {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 5px;
+    align-self: flex-start;
+    transition: opacity 0.3s ease;
+}
+
+.text-button:hover {
+    opacity: 0.6;
+}
+
+/* ========================================
+   LOCATION
+======================================== */
+
+.location {
+    padding: 120px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    background: var(--white);
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-content h2 {
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
+}
+
+.location-content > p:not(.section-label) {
+    max-width: 600px;
+    color: var(--grey);
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+.location-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 45px;
+}
+
+.location-details h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.location-details p {
+    color: var(--grey);
+    line-height: 1.8;
+}
+
+.map-placeholder {
+    min-height: 450px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+/* ========================================
+   CTA
+======================================== */
+
+.cta {
+    padding: 120px 10%;
+    background: var(--cream);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content .section-label {
+    margin-bottom: 20px;
+}
+
+.cta-content h2 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.cta-content p:not(.section-label) {
+    max-width: 550px;
+    margin: 0 auto 40px;
+    color: var(--grey);
+    line-height: 1.8;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: auto;
+        padding: 25px 6%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-card {
+        grid-template-columns: 1fr;
+    }
+
+    .room-image {
+        min-height: 400px;
+    }
+
+    .about-preview {
+    padding: 80px 7%;
+    }
+
+    .about-image {
+    display: none;
+    }
+
+    .location {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .map-placeholder {
+        min-height: 350px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .apply-button {
+        padding: 11px 16px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .features,
+    .rooms,
+    .location,
+    .cta {
+        padding: 80px 7%;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+     .feature-card {
+       min-height: auto;
+       padding: 30px;
+    }
+
+    .room-image {
+        min-height: 300px;
+    }
+
+    .room-info {
+        padding: 35px 25px;
+    }
+
+    .room-info h3 {
+        font-size: 32px;
+    }
+
+    .about-content {
+        padding: 70px 7%;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+    .location-details {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .map-placeholder {
+        min-height: 300px;
+    }
+
+    .cta-content h2 {
+        font-size: 46px;
+    }
+}
+
+/* ========================================
+   GALLERY
+======================================== */
+
+.gallery {
+    padding: 120px 10%;
+    background: var(--cream);
+}
+
+.gallery-heading {
+    max-width: 650px;
+}
+
+.gallery-heading > p:last-child {
+    max-width: 550px;
+    color: var(--grey);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 1fr;
+
+    grid-template-rows: 260px 260px;
+
+    gap: 12px;
+
+}
+
+.gallery-item {
+
+    background: #ddd;
+
+    overflow: hidden;
+
+}
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+   object-fit: contain;
+
+}
+
+.gallery-large {
+
+    grid-row: span 2;
+
+}
+
+.gallery-wide {
+
+    grid-column: span 2;
+
+}
+
+.gallery-button {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+}
+
+@media (max-width: 900px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 250px 250px;
+    }
+
+    .gallery-large {
+        grid-row: span 2;
+    }
+
+    .gallery-wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .gallery {
+        padding: 80px 7%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 250px);
+    }
+
+    .gallery-large,
+    .gallery-wide {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+/* ========================================
+   BACK TO TOP BUTTON
+======================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+    color: white;
+
+    text-decoration: none;
+    font-size: 22px;
+
+    border-radius: 50%;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top {
+    background: #222;
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top.in-footer {
+    background: white;
+    color: #222;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #444;
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   AMENITIES
+======================================== */
+
+.amenities {
+    padding: 120px 10%;
+    background: var(--white);
+}
+
+.amenities-heading {
+    max-width: 700px;
+}
+
+.amenities-heading > p:last-child {
+    max-width: 600px;
+    color: var(--grey);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--light-grey);
+    border-left: 1px solid var(--light-grey);
+}
+
+.amenity-card {
+    min-height: 250px;
+    padding: 35px;
+    border-right: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.amenity-card:hover {
+    background: var(--cream);
+    transform: translateY(-4px);
+}
+
+.amenity-icon {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.amenity-card h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.amenity-card p {
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.7;
+}
+@media (max-width: 900px) {
+
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .amenities {
+        padding: 80px 7%;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .amenity-card {
+        min-height: auto;
+        padding: 30px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .feature-card {
+        min-height: auto;
+        padding: 25px;
+    }
+}
+/* ========================================
+   FORM SUCCESS OVERLAY
+======================================== */
+
+.form-success {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+}
+
+.form-success.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-success-content {
+    width: min(90%, 450px);
+    padding: 50px 40px;
+
+    background: white;
+    text-align: center;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+
+    transform: translateY(15px);
+    transition: transform 0.3s ease;
+}
+
+.form-success.show .form-success-content {
+    transform: translateY(0);
+}
+
+.form-success-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #222;
+    color: white;
+
+    font-size: 28px;
+}
+
+.form-success h3 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.form-success p {
+    color: var(--grey);
+    line-height: 1.7;
+}
+/* ========================================
+   PROPERTY LANDING PAGE
+======================================== */
+
+.property-landing {
+    min-height: 100vh;
+    background: #f5f2ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 6%;
+}
+
+.property-overlay {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.property-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.property-header h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin: 15px 0 25px;
+}
+
+.property-header > p:last-child {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--grey);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.property-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.property-card {
+    position: relative;
+    min-height: 460px;
+
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 45px;
+
+    background: #222;
+    color: white;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.property-card:first-child {
+    background: linear-gradient(135deg, #303030, #505050);
+}
+
+.property-card:last-child {
+        background: linear-gradient(135deg, #454545, #686868);
+}
+
+.property-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.1)
+    );
+
+    z-index: 0;
+}
+
+.property-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.property-card .section-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.property-card h2 {
+    font-size: 42px;
+    margin: 10px 0 15px;
+}
+
+.property-card p:not(.section-label) {
+    max-width: 350px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+.property-button {
+    display: inline-block;
+    margin-top: 20px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.property-card:hover {
+    transform: translateY(-6px);
+    
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   PROPERTY LANDING — MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .property-landing {
+        padding: 60px 20px;
+    }
+
+    .property-header {
+        margin-bottom: 40px;
+    }
+
+    .property-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .property-card {
+        min-height: 300px;
+        padding: 30px;
+    }
+
+    .property-card h2 {
+        font-size: 34px;
+    }
+
+}
+
+/* ========================================
+   LANDING PAGE FOOTER
+======================================== */
+
+.landing-footer {
+    padding: 25px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background: #222;
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 13px;
+}
+
+.landing-footer p {
+    margin: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .landing-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+}
+
+/* ========================================
+   SHARED FACILITIES
+======================================== */
+
+
+.shared-facilities {
+    padding: 100px 6%;
+    background: #f5f2ed;
+}
+
+.shared-facilities .section-heading {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.shared-facilities-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.shared-facility {
+    padding: 35px;
+    background: white;
+    text-align: center;
+    border-radius: 4px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.shared-facility .feature-icon {
+    margin-bottom: 15px;
+}
+
+.shared-facility h3 {
+    margin-bottom: 12px;
+}
+
+.shared-facility p {
+    line-height: 1.7;
+    color: var(--grey);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .shared-facilities {
+        padding: 70px 20px;
+    }
+
+    .shared-facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+   /* ========================================
+   RESIDENCE MANAGEMENT SYSTEM
+======================================== */
+
+.management-section {
+
+    margin-top: 24px;
+
+    padding: 45px;
+
+    background: #222;
+
+    color: white;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+}
+
+
+.management-content {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+}
+
+
+.management-content .section-label {
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin-bottom: 15px;
+
+}
+
+
+.management-content h2 {
+
+    margin: 0 0 15px;
+
+    font-size: clamp(30px, 4vw, 42px);
+
+    line-height: 1.1;
+
+}
+
+
+.management-content p:not(.section-label) {
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.7;
+
+}
+
+
+.management-button {
+
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.management-button:hover {
+
+    background: white;
+
+    color: #222;
+
+}
+
+
+/* ========================================
+   RESIDENCE MANAGEMENT — MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .management-section {
+
+        margin-top: 20px;
+
+        padding: 35px 25px;
+
+    }
+
+
+    .management-content h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .management-button {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ========================================
+   RESIDENCE MANAGEMENT SYSTEM
+======================================== */
+
+.management-section {
+
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 50px 40px;
+
+    background: #222;
+
+    color: #fff;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.management-content {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+}
+
+
+.management-label {
+
+    margin-bottom: 15px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+}
+
+
+.management-content h2 {
+
+    margin: 0 0 20px;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    line-height: 1.1;
+
+}
+
+
+.management-description {
+
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+}
+
+
+.management-button {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.management-button:hover {
+
+    background: #fff;
+
+    color: #222;
+
+}
+
+
+/* ========================================
+   RESIDENCE MANAGEMENT — MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .management-section {
+
+        margin-top: 20px;
+
+        padding: 40px 25px;
+
+    }
+
+
+    .management-content h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .management-description {
+
+        font-size: 14px;
+
+    }
+
+
+    .management-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+/* ========================================
+   RESIDENCE MANAGEMENT SYSTEM
+======================================== */
+
+#residence-management {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 55px 40px;
+
+    background: #222222;
+
+    color: #ffffff;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+
+#residence-management .management-content {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+}
+
+
+#residence-management .management-label {
+
+    margin: 0 0 15px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+}
+
+
+#residence-management h2 {
+
+    margin: 0 0 20px;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    line-height: 1.1;
+
+    color: #ffffff;
+
+}
+
+
+#residence-management .management-description {
+
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+#residence-management .management-button {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+#residence-management .management-button:hover {
+
+    background: #ffffff;
+
+    color: #222222;
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    #residence-management {
+
+        margin-top: 20px;
+
+        padding: 40px 25px;
+
+    }
+
+
+    #residence-management h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    #residence-management .management-description {
+
+        font-size: 14px;
+
+    }
+
+
+    #residence-management .management-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+/* ========================================
+   RESIDENCE MANAGEMENT SYSTEM
+======================================== */
+
+#residence-management {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 50px 40px;
+
+    background: #222222;
+
+    color: #ffffff;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+
+#residence-management .management-content {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+}
+
+
+#residence-management .management-label {
+
+    margin: 0 0 15px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+}
+
+
+#residence-management h2 {
+
+    margin: 0 0 20px;
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    color: #ffffff;
+
+}
+
+
+#residence-management .management-description {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+#residence-management .management-button {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+#residence-management .management-button:hover {
+
+    background: #ffffff;
+
+    color: #222222;
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    #residence-management {
+
+        margin-top: 20px;
+
+        padding: 40px 25px;
+
+    }
+
+
+    #residence-management h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    #residence-management .management-description {
+
+        font-size: 14px;
+
+    }
+
+
+    #residence-management .management-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+}
+/* ========================================
+   BARC HOUSE RESIDENCE MANAGEMENT SYSTEM
+======================================== */
+
+#residence-management {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    margin-top: 30px !important;
+
+    padding: 55px 40px !important;
+
+    background: #222 !important;
+
+    color: #fff !important;
+
+    border-radius: 4px !important;
+
+    text-align: center !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08) !important;
+
+}
+
+
+#residence-management .management-content {
+
+    display: block !important;
+
+    max-width: 700px !important;
+
+    margin: 0 auto !important;
+
+}
+
+
+#residence-management .management-label {
+
+    display: block !important;
+
+    margin: 0 0 15px !important;
+
+    color: rgba(255, 255, 255, 0.65) !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 3px !important;
+
+}
+
+
+#residence-management h2 {
+
+    display: block !important;
+
+    margin: 0 0 20px !important;
+
+    color: #fff !important;
+
+    font-size: 42px !important;
+
+    line-height: 1.1 !important;
+
+}
+
+
+#residence-management .management-description {
+
+    display: block !important;
+
+    max-width: 600px !important;
+
+    margin: 0 auto !important;
+
+    color: rgba(255, 255, 255, 0.75) !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.8 !important;
+
+}
+
+
+#residence-management .management-button {
+
+    display: inline-block !important;
+
+    margin-top: 30px !important;
+
+    padding: 14px 24px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+
+    background: transparent !important;
+
+    color: #fff !important;
+
+    text-decoration: none !important;
+
+    font-size: 13px !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: 0.5px !important;
+
+}
+
+
+#residence-management .management-button:hover {
+
+    background: #fff !important;
+
+    color: #222 !important;
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    #residence-management {
+
+        margin-top: 20px !important;
+
+        padding: 40px 25px !important;
+
+    }
+
+
+    #residence-management h2 {
+
+        font-size: 32px !important;
+
+    }
+
+
+    #residence-management .management-button {
+
+        width: 100% !important;
+
+        text-align: center !important;
+
+    }
+
+    
+
+}
+/* ========================================
+   BARC HOUSE — NAVY & GOLD THEME
+======================================== */
+
+:root {
+
+    --black: #111827;
+
+    --dark: #1f2937;
+
+    --navy: #151c2b;
+
+    --navy-light: #1f2937;
+
+    --gold: #d4af37;
+
+    --gold-light: #e2c45a;
+
+    --cream: #f4f1e8;
+
+    --white: #ffffff;
+
+    --grey: #6b7280;
+
+    --light-grey: #e5e7eb;
+}
+
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+body {
+
+    background: var(--navy);
+
+    color: #1f2937;
+
+}
+
+
+/* ========================================
+   INDEX / LANDING PAGE
+======================================== */
+
+.property-landing {
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827 0%,
+            #151c2b 55%,
+            #1f2937 100%
+        );
+
+    color: white;
+
+}
+
+
+/* Landing heading */
+
+.property-header h1 {
+
+    color: white;
+
+}
+
+
+.property-header .section-label {
+
+    color: var(--gold);
+
+}
+
+
+.property-header > p:last-child {
+
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+
+/* ========================================
+   RESIDENCE CARDS
+======================================== */
+
+.property-card {
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.property-card:first-child {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1f2937,
+            #111827
+        );
+
+}
+
+
+.property-card:last-child {
+
+    background:
+        linear-gradient(
+            135deg,
+            #263244,
+            #151c2b
+        );
+
+}
+
+
+.property-card::before {
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.78),
+            rgba(17, 24, 39, 0.1)
+        );
+
+}
+
+
+.property-card h2 {
+
+    color: white;
+
+}
+
+
+.property-card p:not(.section-label) {
+
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+
+.property-button {
+
+    color: var(--gold);
+
+    border-bottom:
+        1px solid var(--gold);
+
+}
+
+
+.property-card:hover {
+
+    border-color:
+        rgba(212, 175, 55, 0.55);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* ========================================
+   RESIDENCE MANAGEMENT SECTION
+======================================== */
+
+.management-section {
+
+    background:
+        rgba(255, 255, 255, 0.97);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.35);
+
+}
+
+
+.management-content h2 {
+
+    color: var(--navy);
+
+}
+
+
+.management-content .section-label {
+
+    color: var(--gold);
+
+}
+
+
+.management-content p:not(.section-label) {
+
+    color: #6b7280;
+
+}
+
+
+.management-button {
+
+    background: var(--navy);
+
+    color: white;
+
+    border:
+        1px solid var(--gold);
+
+}
+
+
+.management-button:hover {
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.landing-footer {
+
+    background: #0d1420;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+}
+
+
+.landing-footer p {
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+}
+
+
+/* ========================================
+   GENERAL BUTTONS
+======================================== */
+
+.primary-button,
+.room-button,
+.apply-button {
+
+    background: var(--navy);
+
+    color: white;
+
+}
+
+
+.primary-button:hover,
+.room-button:hover,
+.apply-button:hover {
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+}
+
+
+/* ========================================
+   SECONDARY BUTTONS
+======================================== */
+
+.secondary-button {
+
+    border-color: var(--gold);
+
+    color: var(--navy);
+
+}
+
+
+.secondary-button:hover {
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+}
+
+
+/* ========================================
+   GOLD ACCENTS
+======================================== */
+
+.section-label,
+.hero-label,
+.room-type {
+
+    color: var(--gold);
+
+}
+
+
+/* ========================================
+   HERO / GENERAL SECTIONS
+======================================== */
+
+.hero {
+    background-image:
+        linear-gradient(rgba(104, 110, 53, 0.342), rgba(15, 23, 42, 0.82)),
+        url("../images/karoo/k-streetview2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* keep the rest of your existing hero properties */
+}
+
+
+.hero-text {
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+}
+
+
+.hero h1 {
+
+    color: white;
+
+}
+
+
+/* ========================================
+   CREAM SECTIONS
+======================================== */
+
+.features,
+.gallery,
+.contact {
+
+    background: #f8f7f3;
+
+}
+
+
+.rooms,
+.about-preview,
+.cta,
+.shared-facilities {
+
+    background: #f1eee6;
+
+}
+
+
+/* ========================================
+   GOLD HOVER EFFECT
+======================================== */
+
+.feature-card:hover,
+.amenity-card:hover,
+.shared-facility:hover {
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+
+    background: #0d1420;
+
+}
+
+
+.footer-links a:hover {
+
+    color: var(--gold);
+
+}
+
+
+/* ========================================
+   BACK TO TOP
+======================================== */
+
+.back-to-top {
+
+    background: var(--navy);
+
+}
+
+
+.back-to-top:hover {
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+}
+
+
+.back-to-top.in-footer {
+
+    background: white;
+
+    color: var(--navy);
+
+}
+
+
+/* ========================================
+   FORMS
+======================================== */
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color: var(--gold);
+
+}
+
+
+/* ========================================
+   ROOM CARDS
+======================================== */
+
+.room-card {
+
+    border-color:
+        rgba(212, 175, 55, 0.2);
+
+}
+
+
+.room-button {
+
+    border: 1px solid var(--gold);
+
+}
+
+
+.room-button:hover {
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+}
+/* ========================================
+   FIX HERO BUTTON VISIBILITY
+======================================== */
+
+.hero .secondary-button {
+    border: 1px solid var(--gold);
+    color: white;
+    background: transparent;
+}
+
+.hero .secondary-button:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+
+/* Keep hero primary button visible */
+.hero .primary-button {
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+}
+
+.hero .primary-button:hover {
+    background: transparent;
+    color: white;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    background: white;
+}
+
+.nav-links a {
+    color: var(--navy);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.logo {
+    color: var(--navy);
+}
+
+
+/* Apply Now */
+.apply-button {
+    background: var(--navy);
+    color: white;
+    border: 1px solid var(--navy);
+}
+
+.apply-button:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+}
+
+
+/* ========================================
+   HERO TEXT
+======================================== */
+
+.hero .hero-label,
+.hero .section-label {
+    color: var(--gold);
+}
+
+.hero h1 {
+    color: white;
+}
+
+.hero .hero-text {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================
+   RESIDENCE MANAGEMENT SYSTEM
+========================================== */
+
+.management-section {
+
+    margin-top: 70px;
+
+    padding: 70px 80px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    border-top: 1px solid #202938;
+}
+
+
+.management-content {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+
+.management-label {
+
+    margin: 0 0 14px;
+
+    color: #d4af37;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.management-content h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.management-content p:not(.management-label) {
+
+    max-width: 650px;
+
+    margin: 0 0 28px;
+
+    color: #d1d5db;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.management-button {
+
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border: 1px solid #d4af37;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.management-button:hover {
+
+    background: #d4af37;
+
+    color: #111827;
+}
+
+/* ==========================================
+   BARC HOUSE LOGO
+   ========================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #111827;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.bh-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: #1f2937;
+    color: #d4a72c;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* View Rooms */
+.primary-button {
+    background: #d8b84c;
+    color: #111827;
+    border: 1px solid #d8b84c;
+}
+
+.primary-button:hover {
+    background: #c5a63d;
+    border-color: #c5a63d;
+}
+
+/* Apply Now */
+.secondary-button {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #d8b84c;
+}
+
+.secondary-button:hover {
+    background: #d8b84c;
+    color: #111827;
+}
+
+/* ==========================================
+   APPLICATION PAGE
+   BARC HOUSE COLOUR GRADING
+========================================== */
+
+.application-page {
+    background: #f7f5ef;
+    color: #182235;
+    min-height: calc(100vh - 80px);
+    padding: 80px 20px;
+}
+
+.application-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   APPLICATION HEADING
+========================================== */
+
+.application-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.application-heading .section-label {
+    color: #d8b84c;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.application-heading h1 {
+    color: #182235;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.application-heading p {
+    color: #5f6878;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.application-form {
+    background: #ffffff;
+    padding: 50px;
+    border: 1px solid #e4e0d6;
+    box-shadow: 0 10px 35px rgba(24, 34, 53, 0.08);
+}
+
+
+/* ==========================================
+   FORM SECTIONS
+========================================== */
+
+.form-section {
+    margin-bottom: 45px;
+}
+
+.form-section:last-of-type {
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    color: #182235;
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e1d8;
+}
+
+
+/* ==========================================
+   FORM ROW
+========================================== */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* ==========================================
+   FORM GROUP
+========================================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #182235;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border: 1px solid #d6d9df;
+    background: #ffffff;
+    color: #182235;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #d8b84c;
+    box-shadow: 0 0 0 3px rgba(216, 184, 76, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================
+   PLACEHOLDERS
+========================================== */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9299a5;
+}
+
+
+/* ==========================================
+   SUBMIT SECTION
+========================================== */
+
+.application-submit {
+    padding-top: 10px;
+    border-top: 1px solid #e5e1d8;
+}
+
+.application-submit .primary-button {
+    display: inline-block;
+    background: #d8b84c;
+    color: #182235;
+    border: 1px solid #d8b84c;
+    padding: 15px 28px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.application-submit .primary-button:hover {
+    background: #c6a83f;
+    border-color: #c6a83f;
+}
+
+.application-submit p {
+    color: #737b88;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+/* ==========================================
+   SUCCESS MESSAGE
+========================================== */
+
+.form-success {
+    background: #ffffff;
+    border: 1px solid #e4e0d6;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(24, 34, 53, 0.08);
+}
+
+.form-success-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 20px;
+    background: #d8b84c;
+    color: #182235;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.form-success h3 {
+    color: #182235;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.form-success p {
+    color: #626b79;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   APPLICATION NAVBAR
+========================================== */
+
+.application-page + .footer {
+    background: #111827;
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .application-page {
+        padding: 50px 15px;
+    }
+
+    .application-heading h1 {
+        font-size: 36px;
+    }
+
+    .application-form {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
+
+/* ==========================================
+   BARC HOUSE BRAND / BH LOGO
+========================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #182235;
+}
+
+.brand-logo {
+    width: 34px;
+    height: 34px;
+    background: #182235;
+    color: #d8b84c;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.brand-name {
+    color: #182235;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+/* ==========================================
+   GET DIRECTIONS BUTTON
+   ========================================== */
+
+.location-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 22px;
+
+    background-color: #d8b84c;
+    color: #111827;
+
+    border: none;
+    border-radius: 0;
+
+    text-decoration: none;
+    text-align: left;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.location-button:hover {
+    background-color: #c9a93f;
+    color: #111827;
+}
+
+/* =========================
+   ROOM DETAIL PAGE
+   ========================= */
+
+.room-detail-hero {
+    background: #111827;
+    padding: 110px 10%;
+}
+
+.room-detail-heading {
+    max-width: 700px;
+}
+
+.room-detail-heading h1 {
+    color: white;
+    font-size: 64px;
+    margin: 15px 0 20px;
+}
+
+.room-detail-heading > p:last-child {
+    color: #d1d5db;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* Room Gallery */
+
+.room-detail-gallery {
+    padding: 100px 10%;
+    background: #f7f5ef;
+}
+
+.room-photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.room-photo {
+    overflow: hidden;
+    background: #eee;
+}
+
+.room-photo:first-child {
+    grid-column: span 2;
+}
+
+.room-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Room Information */
+
+.room-detail-info {
+    padding: 100px 10%;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.room-detail-info h2 {
+    color: #111827;
+    font-size: 42px;
+    margin: 15px 0 20px;
+}
+
+.room-detail-info p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.room-features {
+    display: grid;
+    gap: 20px;
+}
+
+.room-features div {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.room-features strong {
+    display: block;
+    color: #111827;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.room-features span {
+    color: #777;
+}
+
+
+/* Apply Section */
+
+.room-apply {
+    padding: 100px 10%;
+    text-align: center;
+    background: #111827;
+    color: white;
+}
+
+.room-apply h2 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.room-apply p:not(.section-label) {
+    color: #d1d5db;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.room-apply .room-button {
+    display: inline-block;
+    background: #d9b44a;
+    color: #111827;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #111827;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo-box {
+    width: 34px;
+    height: 34px;
+    background: #d9b44a;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 8px;
+    letter-spacing: 0;
+}
+/* ==========================================================
+   BARC HOUSE — LANDING PAGE / STICKY STREETVIEW EXPERIENCE
+   Added as a final landing-page layer so the Irene/Karoo
+   residence pages can continue using the shared stylesheet.
+   ========================================================== */
+
+/* ---------- Landing page shell ---------- */
+
+body:has(.property-landing) {
+    background: #111827;
+    overflow-x: hidden;
+}
+
+.property-landing {
+    position: relative;
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    background:
+        radial-gradient(circle at 50% 28%, rgba(40, 52, 76, 0.55), transparent 34%),
+        linear-gradient(135deg, #0b101a 0%, #111827 52%, #151c2b 100%);
+    color: #fff;
+}
+
+/* ---------- Intro ---------- */
+
+.landing-intro {
+    min-height: 100vh;
+    padding: 8rem 7vw 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.landing-intro-content {
+    width: min(900px, 100%);
+}
+
+.landing-intro .section-label {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.landing-intro h1 {
+    margin: 0;
+    max-width: 900px;
+    margin-inline: auto;
+    font-size: clamp(4rem, 9vw, 8.5rem);
+    line-height: 0.88;
+    letter-spacing: -0.07em;
+    font-weight: 700;
+}
+
+.landing-intro-text {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.landing-scroll-hint {
+    margin-top: 4rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.landing-scroll-line {
+    width: 1px;
+    height: 65px;
+    background: linear-gradient(
+        to bottom,
+        var(--gold),
+        transparent
+    );
+}
+
+/* ---------- Sticky street-view sequence ---------- */
+
+.streetview-sequence {
+    position: relative;
+    min-height: 300vh;
+}
+
+.streetview-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/*
+   The image itself does not move with the scrolling content.
+   Only the content around/over it changes.
+*/
+.streetview-frame {
+    position: relative;
+    width: min(72vw, 980px);
+    height: min(68vh, 700px);
+    min-height: 430px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.42);
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.025);
+    background: #111827;
+}
+
+.streetview-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8, 12, 20, 0.05),
+            rgba(8, 12, 20, 0.45)
+        );
+    z-index: 2;
+}
+
+.streetview-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.02);
+}
+
+/* Gold framing lines */
+
+.streetview-frame::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ---------- Scrolling content ---------- */
+
+.streetview-content {
+    position: relative;
+    z-index: 4;
+    margin-top: -100vh;
+    pointer-events: none;
+}
+
+.streetview-panel {
+    min-height: 100vh;
+    padding: 10vh 7vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.streetview-panel-inner {
+    width: min(420px, 100%);
+    padding: 2rem 0;
+    pointer-events: auto;
+}
+
+.streetview-panel:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+.streetview-panel:nth-child(even) {
+    justify-content: flex-end;
+}
+
+.streetview-panel-label {
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.streetview-panel h2 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+}
+
+.streetview-panel p {
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.8;
+    max-width: 390px;
+    margin-bottom: 1.75rem;
+}
+
+.streetview-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        gap 0.25s ease;
+}
+
+.streetview-link:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+    gap: 0.9rem;
+}
+
+/*
+   These "cuts" give the scrolling page a solid surface that
+   crosses the fixed visual, creating the same kind of reveal/
+   transition feeling rather than a normal image section.
+*/
+.streetview-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* ---------- Transition text ---------- */
+
+.landing-statement {
+    position: relative;
+    z-index: 6;
+    min-height: 100vh;
+    padding: 12rem 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #111827;
+}
+
+.landing-statement-inner {
+    width: min(1000px, 100%);
+}
+
+.landing-statement .section-label {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.landing-statement h2 {
+    margin: 0;
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+}
+
+.landing-statement p {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.8;
+}
+
+/* ---------- Management portal ---------- */
+
+.landing-management {
+    position: relative;
+    z-index: 6;
+    padding: 8rem 7vw;
+    background: #0d1420;
+}
+
+.landing-management-card {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+}
+
+.landing-management .management-label {
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+.landing-management h2 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.landing-management p {
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.landing-management .management-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 1.35rem;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.landing-management .management-button:hover {
+    background: var(--gold);
+    color: #111827;
+}
+
+/* ---------- Footer ---------- */
+
+.landing-footer {
+    position: relative;
+    z-index: 6;
+    padding: 2rem 7vw;
+    background: #080d15;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 0.75rem;
+}
+
+.landing-footer-inner {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.landing-footer p {
+    margin: 0;
+}
+
+/* ---------- Landing page responsive ---------- */
+
+@media (max-width: 900px) {
+
+    .landing-intro {
+        min-height: 85vh;
+        padding: 7rem 6vw 4rem;
+    }
+
+    .landing-intro h1 {
+        font-size: clamp(4rem, 15vw, 7rem);
+    }
+
+    .streetview-frame {
+        width: 82vw;
+        height: 62vh;
+    }
+
+    .streetview-panel {
+        padding-inline: 6vw;
+    }
+
+    .streetview-panel-inner {
+        max-width: 350px;
+    }
+
+    .streetview-panel h2 {
+        font-size: clamp(3rem, 9vw, 5rem);
+    }
+
+    .landing-statement {
+        padding-inline: 6vw;
+    }
+
+    .landing-management {
+        padding-inline: 6vw;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .landing-intro {
+        min-height: 80vh;
+        padding: 6rem 7vw 3rem;
+    }
+
+    .landing-intro h1 {
+        font-size: clamp(3.6rem, 17vw, 5.5rem);
+    }
+
+    .landing-intro-text {
+        font-size: 0.95rem;
+    }
+
+    .streetview-sticky {
+        min-height: 620px;
+    }
+
+    .streetview-frame {
+        width: 88vw;
+        height: 54vh;
+        min-height: 350px;
+    }
+
+    .streetview-frame::before {
+        inset: 10px;
+    }
+
+    .streetview-content {
+        margin-top: -100vh;
+    }
+
+    .streetview-panel {
+        min-height: 100vh;
+        padding: 7vh 7vw;
+        align-items: flex-end;
+        padding-bottom: 13vh;
+    }
+
+    .streetview-panel:nth-child(odd),
+    .streetview-panel:nth-child(even) {
+        justify-content: flex-start;
+    }
+
+    .streetview-panel-inner {
+        width: min(100%, 340px);
+        padding: 1.5rem;
+        background: rgba(8, 13, 21, 0.86);
+        border-left: 1px solid rgba(212, 175, 55, 0.45);
+        backdrop-filter: blur(10px);
+    }
+
+    .streetview-panel h2 {
+        font-size: 3.4rem;
+    }
+
+    .landing-statement {
+        min-height: 80vh;
+        padding: 7rem 7vw;
+    }
+
+    .landing-statement h2 {
+        font-size: clamp(3.2rem, 14vw, 5rem);
+    }
+
+    .landing-management {
+        padding: 5rem 7vw;
+    }
+
+    .landing-management-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .landing-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .streetview-link,
+    .landing-management .management-button {
+        transition: none;
+    }
+}
+
+
+/* ========================================
+   KAROO GALLERY PREVIEW
+   Uses the same overall proportions as the
+   original gallery area, but shows one image.
+======================================== */
+
+.gallery-preview {
+    width: 100%;
+    height: 532px;
+    background: #ddd;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* ========================================
+   KAROO FULL-SCREEN GALLERY
+======================================== */
+
+body.gallery-modal-open {
+    overflow: hidden;
+}
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.94);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+    padding: 40px 80px;
+}
+
+.gallery-modal.is-open {
+    display: flex;
+}
+
+.gallery-modal-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-image-wrap {
+    width: min(1100px, 82vw);
+    height: min(78vh, 700px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.gallery-modal-arrow,
+.gallery-modal-close {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+.gallery-modal-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 70px;
+    font-size: 42px;
+}
+
+.gallery-modal-prev {
+    left: 15px;
+}
+
+.gallery-modal-next {
+    right: 15px;
+}
+
+.gallery-modal-close {
+    top: 10px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 38px;
+}
+
+.gallery-modal-arrow:hover,
+.gallery-modal-close:hover {
+    opacity: 0.7;
+}
+
+.gallery-modal-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    color: #fff;
+    font-size: 13px;
+}
+
+#karooGalleryCounter {
+    opacity: 0.75;
+}
+
+/* ========================================
+   WHATSAPP — BOTTOM RIGHT
+   ======================================== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+}
+
+.whatsapp-float svg {
+    width: 27px;
+    height: 27px;
+    display: block;
+    fill: currentColor;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+}
+
+/* Keep the existing Back to Top button in the same
+   bottom-right position, directly below WhatsApp. */
+.back-to-top {
+    right: 30px;
+    bottom: 30px;
+    z-index: 1001;
+}
+
+@media (max-width: 900px) {
+    .gallery-preview {
+        height: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-preview {
+        height: 350px;
+    }
+
+    .gallery-modal {
+        padding: 20px;
+    }
+
+    .gallery-modal-image-wrap {
+        width: 92vw;
+        height: 75vh;
+    }
+
+    .gallery-modal-arrow {
+        width: 44px;
+        height: 54px;
+        font-size: 30px;
+    }
+
+    .gallery-modal-prev {
+        left: 0;
+    }
+
+    .gallery-modal-next {
+        right: 0;
+    }
+
+    .gallery-modal-close {
+        top: 0;
+        right: 0;
+        font-size: 30px;
+    }
+
+    .gallery-modal-caption {
+        bottom: 0;
+        font-size: 12px;
+    }
+
+    .whatsapp-float {
+        right: 16px;
+        bottom: 74px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+    }
+}
+/* ========================================
+   KAROO ROOMS - CENTERED CARD
+======================================== */
+
+.rooms .room-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.rooms .room-card {
+    width: 780px;
+    background: #fff;
+}
+
+.rooms .room-info {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.rooms .room-description {
+    max-width: 650px;
+}
+
+.rooms .room-details {
+    justify-content: center;
+}
+
+.rooms .room-button {
+    align-self: center;
+}
+
+/* ============================================================
+   KAROO ROOMS — FINAL PAGE-SPECIFIC FIX
+   Add this block at the VERY END of the existing style.css.
+   It only targets KarooRooms-specific classes.
+   ============================================================ */
+
+/* Two centred room cards */
+.karoo-rooms .karoo-room-grid,
+.rooms.karoo-rooms .karoo-room-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 32px !important;
+    width: min(1100px, 100%) !important;
+    margin: 0 auto !important;
+    align-items: stretch !important;
+}
+
+/* No room-photo area: centre all room content */
+.karoo-rooms .room-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+.karoo-rooms .room-card .room-info {
+    width: 100% !important;
+    min-height: 420px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 55px 45px !important;
+}
+
+.karoo-rooms .room-card .room-description {
+    max-width: 520px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.karoo-rooms .room-card .room-details {
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.karoo-rooms .room-card .room-button {
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ============================================================
+   ROOM GALLERY MODAL
+   Hidden until JavaScript adds .active.
+   ============================================================ */
+
+.room-gallery-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 50px 90px !important;
+
+    background: rgba(0, 0, 0, 0.94) !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    z-index: 99999 !important;
+
+    transition: opacity 0.2s ease, visibility 0.2s ease !important;
+}
+
+.room-gallery-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.room-gallery-modal .gallery-modal-content {
+    position: relative !important;
+    width: min(1000px, 90vw) !important;
+    height: min(780px, 88vh) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.room-gallery-modal .gallery-modal-content img {
+    display: block !important;
+    max-width: 100% !important;
+    max-height: 78vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+.room-gallery-modal .gallery-modal-label {
+    margin: 0 0 18px !important;
+    color: #fff !important;
+}
+
+.room-gallery-modal .gallery-counter {
+    margin-top: 16px !important;
+    color: #fff !important;
+}
+
+.room-gallery-modal .gallery-close,
+.room-gallery-modal .gallery-arrow {
+    position: absolute !important;
+    z-index: 100000 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+    cursor: pointer !important;
+}
+
+.room-gallery-modal .gallery-close {
+    top: 22px !important;
+    right: 28px !important;
+    font-size: 42px !important;
+    line-height: 1 !important;
+}
+
+.room-gallery-modal .gallery-prev {
+    left: 28px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 52px !important;
+}
+
+.room-gallery-modal .gallery-next {
+    right: 28px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 52px !important;
+}
+
+.room-gallery-modal .gallery-close:hover,
+.room-gallery-modal .gallery-arrow:hover {
+    opacity: 0.7 !important;
+}
+
+@media (max-width: 800px) {
+    .karoo-rooms .karoo-room-grid,
+    .rooms.karoo-rooms .karoo-room-grid {
+        grid-template-columns: 1fr !important;
+        width: min(560px, 100%) !important;
+    }
+
+    .karoo-rooms .room-card .room-info {
+        min-height: 380px !important;
+        padding: 45px 28px !important;
+    }
+
+    .room-gallery-modal {
+        padding: 45px 45px !important;
+    }
+
+    .room-gallery-modal .gallery-prev {
+        left: 10px !important;
+        font-size: 40px !important;
+    }
+
+    .room-gallery-modal .gallery-next {
+        right: 10px !important;
+        font-size: 40px !important;
+    }
+}
+/* ==========================================
+   KAROO ROOMS - TEXT PROPORTIONS FIX
+   ========================================== */
+
+.karoo-room-grid {
+    max-width: 1100px !important;
+    gap: 40px !important;
+}
+
+.karoo-room-grid .room-card {
+    width: 100% !important;
+}
+
+.karoo-room-grid .room-info {
+    padding: 60px 35px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.karoo-room-grid .room-description {
+    width: 100% !important;
+    max-width: 460px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    line-height: 1.7 !important;
+}
+
+.karoo-room-grid .room-price {
+    margin-bottom: 18px !important;
+}
+
+.karoo-room-grid .room-details {
+    margin-bottom: 30px !important;
+}

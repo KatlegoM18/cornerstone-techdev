@@ -1,0 +1,2841 @@
+/* =========================================================
+   CORNERSTONE TECHDEV
+   HOMEPAGE STYLES
+   Warm / Dark / Premium Responsive Design
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   COLOUR PALETTE
+========================================================= */
+
+:root {
+
+    /* Deep warm neutrals */
+    --black: #1d1915;
+    --black-deep: #15120f;
+    --dark: #29231d;
+    --dark-soft: #332b23;
+
+    /* Light tones */
+    --white: #fffdf7;
+    --text-light: #eee5d8;
+    --text-muted: #d2c6b7;
+
+    /* Warm gold / beige palette */
+    --beige: #c58a3d;
+    --beige-light: #e4b96f;
+    --gold-soft: #d7a45a;
+
+    /* Borders */
+    --border: rgba(228, 185, 111, 0.28);
+    --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   MOLTEN METAL BACKGROUND
+========================================================= */
+
+.molten-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    /*
+       Increased visibility so the molten
+       texture can actually be seen.
+    */
+    opacity: 0.48;
+}
+
+#molten-canvas {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+/* =========================================================
+   WEBSITE CONTENT
+   Keep everything above the canvas.
+========================================================= */
+
+.navbar,
+main,
+footer {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+
+    /*
+       Keeps the navigation visible
+       while scrolling.
+    */
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 7%;
+    min-height: 92px;
+
+    /*
+       Slightly warm transparent background.
+    */
+    background-color: rgba(29, 25, 20, 0.88);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo a {
+
+    display: flex;
+
+    align-items: center;
+
+    /*
+       Reduced from 14px so the CT
+       sits closer to the name.
+    */
+    gap: 8px;
+
+    color: var(--white);
+
+    text-decoration: none;
+}
+
+.logo img {
+
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+.logo span {
+
+    color: var(--white);
+
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.logo span strong {
+
+    color: var(--beige);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-links a {
+
+    color: var(--text-light);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.nav-links a:hover {
+
+    color: var(--beige-light);
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.nav-links .nav-contact {
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--beige);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.nav-links .nav-contact:hover {
+
+    background-color: var(--beige);
+
+    color: var(--black);
+
+    border-color: var(--beige);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   Hidden on desktop.
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 18px;
+    height: 2px;
+
+    background-color: var(--white);
+
+    transition: 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 60vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 75px 7%;
+
+    /*
+       Much lighter than the previous overlay.
+
+       This allows the molten background
+       to remain visible.
+    */
+    background:
+        linear-gradient(
+            rgba(29, 25, 20, 0.20),
+            rgba(29, 25, 20, 0.42)
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    width: 55%;
+
+    max-width: 850px;
+
+    opacity: 0;
+
+    transform: translateX(-100px);
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.hero-subtitle {
+
+    color: var(--beige-light);
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+
+    font-size:
+        clamp(3.2rem, 6vw, 6rem);
+
+    line-height: 0.95;
+
+    text-transform: uppercase;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+
+    max-width: 78%;
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: var(--beige);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description {
+
+    max-width: 600px;
+
+    color: var(--text-light);
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-top: 80px;
+}
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.btn:hover {
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.btn-primary {
+
+    background-color: var(--beige);
+
+    color: var(--black);
+}
+
+.btn-primary:hover {
+
+    background-color: var(--beige-light);
+
+    color: var(--black);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.btn-secondary {
+
+    border: 1px solid rgba(228, 185, 111, 0.45);
+
+    color: var(--white);
+
+    background: rgba(29, 25, 20, 0.25);
+}
+
+.btn-secondary:hover {
+
+    border-color: var(--beige);
+
+    color: var(--beige-light);
+
+    background: rgba(197, 138, 61, 0.08);
+}
+
+
+/* =========================================================
+   PERSON / DESIGN INTRO
+========================================================= */
+
+.hero-intro {
+
+    position: absolute;
+
+    right: 3%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30%;
+
+    max-width: 520px;
+
+    z-index: 3;
+}
+
+.intro-label {
+
+    color: var(--beige-light);
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hero-intro h2 {
+
+    font-size:
+        clamp(2rem, 3.5vw, 3.5rem);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    margin-bottom: 30px;
+
+    letter-spacing: -1px;
+}
+
+.hero-intro h2 span {
+
+    display: block;
+
+    color: var(--beige);
+}
+
+.hero-intro p:not(.intro-label) {
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.hero-intro strong {
+
+    color: var(--white);
+}
+
+.hero-intro em {
+
+    color: var(--beige-light);
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   SERVICES PREVIEW
+========================================================= */
+
+.services-preview {
+
+    position: relative;
+
+    min-height: 420px;
+
+    padding: 120px 7%;
+
+    background:
+        rgba(41, 35, 29, 0.86);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+.services-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.section-label {
+
+    color: var(--beige-light);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.services-preview h2 {
+
+    max-width: 800px;
+
+    font-size:
+        clamp(2.5rem, 5vw, 4.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.services-preview h2 span {
+
+    color: var(--beige);
+}
+
+
+/* =========================================================
+   SERVICES ACTION BUTTONS
+   Desktop placement.
+========================================================= */
+
+.services-buttons {
+
+    position: absolute;
+
+    left: 62%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    z-index: 5;
+}
+
+.services-buttons .btn {
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 30px 7%;
+
+    background-color: var(--black-deep);
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 0.85rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LARGE TABLETS / SMALL LAPTOPS
+   1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .navbar {
+
+        padding: 18px 5%;
+    }
+
+    .logo img {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-links {
+
+        gap: 22px;
+    }
+
+    .hero {
+
+        padding: 90px 5%;
+    }
+
+    .hero-content {
+
+        width: 54%;
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(3rem, 7vw, 5.5rem);
+    }
+
+    .hero-intro {
+
+        right: 5%;
+
+        width: 36%;
+
+        max-width: 450px;
+    }
+
+    .hero-intro h2 {
+
+        font-size:
+            clamp(1.8rem, 3.5vw, 3rem);
+    }
+
+    .hero-intro p:not(.intro-label) {
+
+        font-size: 0.95rem;
+    }
+
+    .services-buttons {
+
+        left: 58%;
+
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+   768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -------------------------
+       NAVIGATION
+    ------------------------- */
+
+    .navbar {
+
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+
+        width: 100%;
+    }
+
+    .logo a {
+
+        justify-content: flex-start;
+    }
+
+    .logo img {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo span {
+
+        font-size: 1rem;
+    }
+
+    .nav-links {
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        gap: 18px;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+
+        display: none;
+    }
+
+    .nav-links a {
+
+        font-size: 0.82rem;
+
+        white-space: nowrap;
+    }
+
+    .nav-links .nav-contact {
+
+        padding: 8px 15px;
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 80px 6% 90px;
+    }
+
+    .hero-content {
+
+        width: 100%;
+
+        max-width: 700px;
+
+        transform: none;
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(3.2rem, 10vw, 5.5rem);
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+
+        max-width: 650px;
+
+        font-size: 1.05rem;
+    }
+
+
+    /* -------------------------
+       INTRO
+    ------------------------- */
+
+    .hero-intro {
+
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        max-width: 650px;
+
+        margin-top: 100px;
+    }
+
+    .hero-intro h2 {
+
+        font-size:
+            clamp(2.2rem, 7vw, 3.5rem);
+    }
+
+    .hero-intro p:not(.intro-label) {
+
+        font-size: 0.98rem;
+    }
+
+
+    /* -------------------------
+       SERVICES
+    ------------------------- */
+
+    .services-preview {
+
+        padding: 90px 6%;
+    }
+
+    .services-buttons {
+
+        left: 54%;
+
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   PHONES
+   600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -------------------------
+       NAVIGATION
+    ------------------------- */
+
+    .navbar {
+
+        padding: 14px 5%;
+
+        gap: 12px;
+    }
+
+    .logo {
+
+        width: auto;
+    }
+
+    .logo img {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo span {
+
+        font-size: 0.95rem;
+    }
+
+    .nav-links {
+
+        width: 100%;
+
+        gap: 14px;
+
+        padding-top: 3px;
+    }
+
+    .nav-links a {
+
+        font-size: 0.76rem;
+
+        white-space: nowrap;
+    }
+
+    .nav-links .nav-contact {
+
+        padding: 7px 12px;
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+
+        padding: 65px 6% 75px;
+    }
+
+    .hero-subtitle {
+
+        font-size: 0.68rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(2.45rem, 12.5vw, 3.7rem);
+
+        line-height: 0.94;
+
+        letter-spacing: -1.5px;
+
+        margin-bottom: 25px;
+
+        word-break: normal;
+
+        overflow-wrap: normal;
+
+        white-space: normal;
+    }
+
+    .hero h1 span {
+
+        display: block;
+
+        white-space: nowrap;
+    }
+
+    .hero-description {
+
+        font-size: 0.98rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 0;
+    }
+
+
+    /* -------------------------
+       HERO BUTTONS
+    ------------------------- */
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 12px;
+
+        margin-top: 35px;
+    }
+
+    .btn {
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 14px 20px;
+    }
+
+
+    /* -------------------------
+       PERSON / DESIGN INTRO
+    ------------------------- */
+
+    .hero-intro {
+
+        width: auto;
+
+        margin-left: 3%;
+        margin-right: 3%;
+
+        max-width: none;
+
+        margin-top: 75px;
+    }
+
+    .intro-label {
+
+        font-size: 0.63rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 15px;
+    }
+
+    .hero-intro h2 {
+
+        font-size:
+            clamp(2rem, 9vw, 3rem);
+
+        line-height: 1;
+
+        margin-bottom: 25px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-intro p:not(.intro-label) {
+
+        font-size: 0.92rem;
+
+        line-height: 1.75;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* -------------------------
+       SERVICES
+    ------------------------- */
+
+    .services-preview {
+
+        padding: 75px 6%;
+    }
+
+    .services-buttons {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        margin-top: 35px;
+
+        gap: 12px;
+    }
+
+    .services-buttons .btn {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .section-label {
+
+        font-size: 0.68rem;
+
+        letter-spacing: 2px;
+    }
+
+    .services-preview h2 {
+
+        font-size:
+            clamp(2.2rem, 10vw, 3.5rem);
+
+        letter-spacing: -1.5px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    footer {
+
+        padding: 25px 6%;
+
+        font-size: 0.78rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        padding: 12px 5%;
+    }
+
+    .logo img {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo span {
+
+        font-size: 0.82rem;
+
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+
+        font-size: 0.7rem;
+    }
+
+    .nav-links .nav-contact {
+
+        padding: 7px 10px;
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+
+        padding: 55px 6% 65px;
+    }
+
+    .hero h1 {
+
+        font-size: 2.7rem;
+
+        letter-spacing: -1.5px;
+
+        line-height: 0.94;
+    }
+
+    .hero h1 span {
+
+        white-space: nowrap;
+    }
+
+    .hero-description {
+
+        font-size: 0.9rem;
+    }
+
+
+    /* -------------------------
+       INTRO
+    ------------------------- */
+
+    .hero-intro {
+
+        margin-left: 4%;
+        margin-right: 4%;
+
+        margin-top: 65px;
+    }
+
+    .hero-intro h2 {
+
+        font-size: 2.15rem;
+    }
+
+    .hero-intro p:not(.intro-label) {
+
+        font-size: 0.88rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* -------------------------
+       SERVICES
+    ------------------------- */
+
+    .services-preview {
+
+        padding: 65px 6%;
+    }
+
+    .services-preview h2 {
+
+        font-size: 2.3rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo span {
+
+        font-size: 0.75rem;
+    }
+
+    .nav-links {
+
+        gap: 9px;
+    }
+
+    .nav-links a {
+
+        font-size: 0.65rem;
+    }
+
+    .nav-links .nav-contact {
+
+        padding: 6px 8px;
+    }
+
+    .hero {
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero h1 {
+
+        font-size: 2.25rem;
+    }
+
+    .hero-intro {
+
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .hero-intro h2 {
+
+        font-size: 1.95rem;
+    }
+}
+/* ==========================================
+   THREE.JS CT LOGO
+========================================== */
+
+.logo #ct-logo-canvas {
+    width: 60px !important;
+    height: 60px !important;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   One consistent responsive menu for tablets and phones.
+========================================================= */
+
+/* -----------------------------------------
+   HAMBURGER BUTTON
+   Hidden on desktop.
+----------------------------------------- */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    margin: 0;
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    background:
+        rgba(29, 25, 20, 0.45);
+
+    border:
+        1px solid
+        rgba(228, 185, 111, 0.38);
+
+    border-radius: 0;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.menu-toggle:hover {
+
+    background:
+        rgba(197, 138, 61, 0.10);
+
+    border-color:
+        rgba(228, 185, 111, 0.65);
+
+}
+
+
+.menu-toggle:focus-visible {
+
+    outline:
+        2px solid
+        var(--beige-light);
+
+    outline-offset:
+        4px;
+
+}
+
+
+/* -----------------------------------------
+   HAMBURGER LINES
+----------------------------------------- */
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 20px;
+    height: 2px;
+
+    background:
+        var(--white);
+
+    transform-origin:
+        center;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.2s ease;
+}
+
+
+/* -----------------------------------------
+   TABLETS + PHONES
+----------------------------------------- */
+
+@media (max-width: 768px) {
+
+
+    /* -------------------------------------
+       NAVBAR
+    ------------------------------------- */
+
+    .navbar {
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+        min-height: 78px;
+
+        padding:
+            12px 5%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        flex-wrap: nowrap;
+
+        gap: 16px;
+
+    }
+
+
+    /* -------------------------------------
+       LOGO
+    ------------------------------------- */
+
+    .logo {
+
+        width:
+            auto;
+
+        min-width:
+            0;
+
+        flex:
+            1 1 auto;
+
+    }
+
+
+    .logo a {
+
+        gap:
+            6px;
+
+        min-width:
+            0;
+
+    }
+
+
+    /*
+     * The canvas itself is rendered at this
+     * mobile size so the CT stays compact.
+     */
+
+    .ct-3d-logo {
+
+        width:
+            56px;
+
+        height:
+            56px;
+
+        flex:
+            0 0 56px;
+
+    }
+
+
+    .logo #ct-logo-canvas {
+
+        width:
+            56px !important;
+
+        height:
+            56px !important;
+
+    }
+
+
+    .logo span {
+
+        min-width:
+            0;
+
+        overflow:
+            hidden;
+
+        text-overflow:
+            ellipsis;
+
+        white-space:
+            nowrap;
+
+        font-size:
+            0.9rem;
+
+        letter-spacing:
+            0.5px;
+
+    }
+
+
+    /* -------------------------------------
+       HAMBURGER
+    ------------------------------------- */
+
+    .menu-toggle {
+
+        display:
+            flex;
+
+        position:
+            relative;
+
+        z-index:
+            1002;
+
+    }
+
+
+    /* -------------------------------------
+       MOBILE NAV DROPDOWN
+    ------------------------------------- */
+
+    .nav-links {
+
+        position:
+            absolute;
+
+        top:
+            calc(100% + 10px);
+
+        right:
+            5%;
+
+        width:
+            min(
+                250px,
+                calc(100vw - 30px)
+            );
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            8px;
+
+        margin:
+            0;
+
+        overflow:
+            hidden;
+
+        background:
+            rgba(
+                29,
+                25,
+                20,
+                0.62
+            );
+
+        border:
+            1px solid
+            rgba(
+                228,
+                185,
+                111,
+                0.28
+            );
+
+        box-shadow:
+            0 18px 45px
+            rgba(
+                0,
+                0,
+                0,
+                0.34
+            );
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        pointer-events:
+            none;
+
+        transform:
+            translateY(-12px)
+            scale(0.98);
+
+        transform-origin:
+            top right;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+
+    }
+
+
+    /* -------------------------------------
+       OPEN MENU
+    ------------------------------------- */
+
+    .nav-links.active {
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+        pointer-events:
+            auto;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+
+    /* -------------------------------------
+       MOBILE LINKS
+    ------------------------------------- */
+
+    .nav-links a {
+
+        display:
+            block;
+
+        width:
+            100%;
+
+        padding:
+            13px 15px;
+
+        color:
+            var(--text-light);
+
+        text-decoration:
+            none;
+
+        font-size:
+            0.88rem;
+
+        font-weight:
+            500;
+
+        line-height:
+            1.2;
+
+        border-bottom:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.08
+            );
+
+        white-space:
+            nowrap;
+
+        transition:
+            color 0.2s ease,
+            background-color 0.2s ease;
+
+    }
+
+
+    .nav-links a:last-child {
+
+        border-bottom:
+            none;
+
+    }
+
+
+    .nav-links a:hover {
+
+        color:
+            var(--white);
+
+        background:
+            rgba(
+                228,
+                185,
+                111,
+                0.08
+            );
+
+    }
+
+
+    /* -------------------------------------
+       CONTACT
+       Same visual treatment as the rest.
+    ------------------------------------- */
+
+    .nav-links .nav-contact {
+
+        margin-top:
+            4px;
+
+        padding:
+            13px 15px;
+
+        border:
+            none !important;
+
+        background:
+            transparent;
+
+        color:
+            var(--text-light);
+
+        text-align:
+            left;
+
+    }
+
+
+    .nav-links .nav-contact:hover {
+
+        border:
+            none !important;
+
+        background:
+            rgba(
+                228,
+                185,
+                111,
+                0.08
+            );
+
+        color:
+            var(--white);
+
+    }
+
+
+    /* -------------------------------------
+       HAMBURGER -> X
+    ------------------------------------- */
+
+    .menu-toggle.active span:nth-child(1) {
+
+        transform:
+            translateY(7px)
+            rotate(45deg);
+
+    }
+
+
+    .menu-toggle.active span:nth-child(2) {
+
+        opacity:
+            0;
+
+    }
+
+
+    .menu-toggle.active span:nth-child(3) {
+
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+
+    }
+
+
+    /* -------------------------------------
+       HERO
+    ------------------------------------- */
+
+    .hero {
+
+        padding:
+            70px 6% 80px;
+
+    }
+
+
+    .hero-content {
+
+        width:
+            100%;
+
+        max-width:
+            700px;
+
+    }
+
+
+    .hero-intro {
+
+        position:
+            relative;
+
+        top:
+            auto;
+
+        right:
+            auto;
+
+        width:
+            100%;
+
+        max-width:
+            650px;
+
+        margin-top:
+            85px;
+
+        transform:
+            none;
+
+    }
+
+
+    .services-preview {
+
+        padding:
+            90px 6%;
+
+    }
+
+
+    .services-buttons {
+
+        position:
+            relative;
+
+        left:
+            auto;
+
+        top:
+            auto;
+
+        width:
+            100%;
+
+        margin-top:
+            35px;
+
+        transform:
+            none;
+
+        flex-direction:
+            row;
+
+        gap:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PHONES
+   600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    .navbar {
+
+        min-height:
+            72px;
+
+        padding:
+            10px 5%;
+
+    }
+
+
+    .ct-3d-logo,
+    .logo #ct-logo-canvas {
+
+        width:
+            50px !important;
+
+        height:
+            50px !important;
+
+    }
+
+
+    .ct-3d-logo {
+
+        flex-basis:
+            50px;
+
+    }
+
+
+    .logo span {
+
+        font-size:
+            0.86rem;
+
+    }
+
+
+    .menu-toggle {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+
+    .nav-links {
+
+        right:
+            5%;
+
+        width:
+            min(
+                240px,
+                calc(100vw - 30px)
+            );
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        padding:
+            58px 6% 70px;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size:
+            0.68rem;
+
+        letter-spacing:
+            2px;
+
+        margin-bottom:
+            20px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                2.45rem,
+                12.5vw,
+                3.7rem
+            );
+
+        line-height:
+            0.94;
+
+        letter-spacing:
+            -1.5px;
+
+        margin-bottom:
+            24px;
+
+    }
+
+
+    .hero h1 span {
+
+        white-space:
+            nowrap;
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            0.96rem;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction:
+            column;
+
+        width:
+            100%;
+
+        gap:
+            12px;
+
+        margin-top:
+            35px;
+
+    }
+
+
+    .btn {
+
+        width:
+            100%;
+
+        text-align:
+            center;
+
+        padding:
+            14px 20px;
+
+    }
+
+
+    /* INTRO */
+
+    .hero-intro {
+
+        margin-top:
+            70px;
+
+        margin-left:
+            2%;
+
+        margin-right:
+            2%;
+
+    }
+
+
+    .intro-label {
+
+        font-size:
+            0.62rem;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .hero-intro h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                9vw,
+                3rem
+            );
+
+        margin-bottom:
+            24px;
+
+    }
+
+
+    .hero-intro p:not(.intro-label) {
+
+        font-size:
+            0.92rem;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    /* SERVICES */
+
+    .services-preview {
+
+        padding:
+            72px 6%;
+
+    }
+
+
+    .services-preview h2 {
+
+        font-size:
+            clamp(
+                2.1rem,
+                10vw,
+                3.5rem
+            );
+
+    }
+
+
+    .services-buttons {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            12px;
+
+    }
+
+
+    .services-buttons .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        padding:
+            25px 6%;
+
+        font-size:
+            0.78rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        padding:
+            9px 4%;
+
+    }
+
+
+    .logo span {
+
+        font-size:
+            0.8rem;
+
+        letter-spacing:
+            0.25px;
+
+    }
+
+
+    .nav-links {
+
+        right:
+            4%;
+
+        width:
+            calc(100vw - 28px);
+
+    }
+
+
+    .nav-links a {
+
+        padding:
+            12px 14px;
+
+        font-size:
+            0.84rem;
+
+    }
+
+
+    .hero {
+
+        padding:
+            52px 6% 62px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            2.65rem;
+
+    }
+
+
+    .hero-intro {
+
+        margin-top:
+            62px;
+
+    }
+
+
+    .hero-intro h2 {
+
+        font-size:
+            2.08rem;
+
+    }
+
+
+    .services-preview {
+
+        padding:
+            62px 6%;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo span {
+
+        font-size:
+            0.72rem;
+
+    }
+
+
+    .menu-toggle {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .nav-links {
+
+        width:
+            calc(100vw - 24px);
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            2.25rem;
+
+    }
+
+
+    .hero-intro h2 {
+
+        font-size:
+            1.9rem;
+
+    }
+
+}
+
+/* =========================================================
+   MOBILE MENU CT LOGO
+   The large rotating CT appears underneath the open menu.
+========================================================= */
+
+.mobile-menu-logo {
+
+    position: fixed;
+
+    top: 58vh;
+
+    left: 50%;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.82);
+
+    z-index: 1002;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.45s cubic-bezier(
+            0.16, 1, 0.3, 1
+        );
+
+}
+
+
+/* Keep the Three.js canvas contained */
+
+.mobile-menu-logo canvas {
+
+    display: block;
+
+    width: 150px !important;
+    height: 150px !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   Show the mobile logo only while the menu is open
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    body:has(.nav-links.active)
+    .mobile-menu-logo {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+
+    /*
+     * The normal navbar logo should fade into
+     * the blurred page when the menu is open.
+     */
+
+    body:has(.nav-links.active)
+    .logo {
+
+        opacity: 0.15;
+
+        filter:
+            blur(12px);
+
+        transition:
+            opacity 0.25s ease,
+            filter 0.25s ease;
+
+    }
+
+
+    /*
+     * Keep the hamburger crisp.
+     */
+
+    body:has(.nav-links.active)
+    .menu-toggle {
+
+        position: relative;
+
+        z-index: 1005;
+
+        opacity: 1;
+
+        filter: none;
+
+    }
+
+
+    /*
+     * Keep the dropdown crisp and above the
+     * rotating logo.
+     */
+
+    body:has(.nav-links.active)
+    .nav-links {
+
+        z-index: 1004;
+
+        filter: none;
+
+    }
+
+
+    /*
+     * Blur the actual site content behind the
+     * mobile navigation.
+     */
+
+    body:has(.nav-links.active) main,
+    body:has(.nav-links.active) footer,
+    body:has(.nav-links.active) .molten-background {
+
+        filter:
+            blur(16px);
+
+        opacity:
+            0.62;
+
+        transition:
+            filter 0.25s ease,
+            opacity 0.25s ease;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Small phones
+--------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .mobile-menu-logo {
+
+        top: 59vh;
+
+        width: 125px;
+        height: 125px;
+
+    }
+
+
+    .mobile-menu-logo canvas {
+
+        width: 125px !important;
+        height: 125px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET FIX — iPad / 769px–1100px
+   Keeps desktop styling above 1100px, but gives tablets
+   a proper single-column layout and mobile navigation.
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    /* -------------------------
+       NAVIGATION
+    ------------------------- */
+
+    .navbar {
+        min-height: 78px;
+        padding: 12px 5%;
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+
+    .logo {
+        width: auto;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .logo a {
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .logo #ct-logo-canvas,
+    .ct-3d-logo {
+        width: 56px !important;
+        height: 56px !important;
+        flex: 0 0 56px;
+    }
+
+    .logo span {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1002;
+        flex-shrink: 0;
+    }
+
+    /* Tablet dropdown */
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 5%;
+        width: min(280px, calc(100vw - 40px));
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 8px;
+        margin: 0;
+        overflow: hidden;
+
+        background: rgba(29, 25, 20, 0.72);
+        border: 1px solid rgba(228, 185, 111, 0.28);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-12px) scale(0.98);
+        transform-origin: top right;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+
+        z-index: 1004;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1.2;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        white-space: nowrap;
+
+        transition:
+            color 0.2s ease,
+            background-color 0.2s ease;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a:hover {
+        color: var(--white);
+        background: rgba(228, 185, 111, 0.08);
+    }
+
+    .nav-links .nav-contact {
+        margin-top: 4px;
+        padding: 14px 16px;
+        border: none !important;
+        background: transparent;
+        color: var(--text-light);
+        text-align: left;
+    }
+
+    .nav-links .nav-contact:hover {
+        border: none !important;
+        background: rgba(228, 185, 111, 0.08);
+        color: var(--white);
+    }
+
+    /* -------------------------
+       HERO
+       Tablet = stacked layout.
+       This prevents the 1024px view
+       from squeezing both columns.
+    ------------------------- */
+
+    .hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        padding: 90px 7% 100px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 850px;
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2.5px;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        margin-bottom: 28px;
+
+        font-size: clamp(3.8rem, 7vw, 5.5rem);
+        line-height: 0.95;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-description {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.08rem;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        margin-top: 45px;
+    }
+
+    /* -------------------------
+       DESIGN INTRO
+    ------------------------- */
+
+    .hero-intro {
+        position: relative;
+
+        top: auto;
+        right: auto;
+        transform: none;
+
+        width: 100%;
+        max-width: 850px;
+
+        margin: 85px auto 0;
+        text-align: left;
+    }
+
+    .intro-label {
+        font-size: 0.75rem;
+        letter-spacing: 2.5px;
+        margin-bottom: 18px;
+    }
+
+    .hero-intro h2 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1;
+        margin-bottom: 28px;
+    }
+
+    .hero-intro p:not(.intro-label) {
+        max-width: 760px;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    /* -------------------------
+       SERVICES
+    ------------------------- */
+
+    .services-preview {
+        min-height: auto;
+        padding: 100px 7%;
+    }
+
+    .services-content {
+        max-width: 850px;
+    }
+
+    .services-preview h2 {
+        max-width: 850px;
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .services-buttons {
+        position: relative;
+
+        left: auto;
+        top: auto;
+        transform: none;
+
+        width: 100%;
+        margin-top: 40px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+    }
+
+    /* -------------------------
+       OPEN MENU STATES
+    ------------------------- */
+
+    body:has(.nav-links.active) .logo {
+        opacity: 0.15;
+        filter: blur(12px);
+        transition:
+            opacity 0.25s ease,
+            filter 0.25s ease;
+    }
+
+    body:has(.nav-links.active) .menu-toggle {
+        position: relative;
+        z-index: 1005;
+        opacity: 1;
+        filter: none;
+    }
+
+    body:has(.nav-links.active) .nav-links {
+        z-index: 1004;
+        filter: none;
+    }
+}

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>About | CornerStone TechDev</title>
+
+    <meta
+        name="description"
+        content="Learn more about CornerStone TechDev, our approach to web development, and the digital experiences we create."
+    >
+
+    <!-- MAIN SITE STYLES -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <!-- ABOUT PAGE STYLES -->
+    <link rel="stylesheet" href="../css/about.css">
+
+    <!-- MOLTEN METAL BACKGROUND -->
+    <script
+        type="module"
+        src="../js/molten-metal.js"
+    ></script>
+
+    <!-- 3D CT LOGO -->
+    <script
+        type="module"
+        src="../js/ct-logo-3d.js"
+    ></script>
+<style>
+/* Uppercase heading treatment */
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+    text-transform: uppercase;
+}
+</style>
+</head>
+
+
+<body class="about-page">
+
+
+    <!-- ==========================================
+         MOLTEN METAL BACKGROUND
+    =========================================== -->
+
+    <div class="molten-background">
+        <canvas id="molten-canvas"></canvas>
+    </div>
+
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <header class="navbar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <a href="../index.html">
+
+                <div class="ct-3d-logo">
+                    <canvas
+                        id="ct-logo-canvas"
+                    ></canvas>
+                </div>
+
+                <span>
+                    CornerStone
+                    <strong>TechDev</strong>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- NAVIGATION LINKS -->
+        <nav
+            class="nav-links"
+            id="nav-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="../index.html#portfolio">
+                Portfolio
+            </a>
+
+            <a
+                href="about.html"
+                class="nav-about active"
+                aria-current="page"
+            >
+                About
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-contact"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main>
+
+
+        <!-- ======================================
+             ABOUT HERO
+        ======================================= -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-content">
+
+                <p class="section-label">
+                    ABOUT CORNERSTONE
+                </p>
+
+                <h1>
+                    Built with
+                    <span>
+                        purpose.
+                    </span>
+                </h1>
+
+                <p class="about-hero-description">
+                    We create modern websites and digital
+                    solutions for businesses that want to
+                    build a stronger presence online.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             OUR STORY
+        ======================================= -->
+
+        <section class="about-story">
+
+            <div class="story-label">
+
+                <p class="section-label">
+                    THE TEAM BEHIND THE BUILD
+                </p>
+
+            </div>
+
+
+            <div class="story-content">
+
+                <h2>
+                    More than a website.
+                    <span>
+                        A digital foundation.
+                    </span>
+                </h2>
+
+                <p>
+                    CornerStone TechDev was created from a
+                    simple idea: a business website should be
+                    more than something that simply exists
+                    online. It should represent the business
+                    behind it.
+                </p>
+
+                <p>
+                    We work closely with our clients to
+                    understand what they do, what they need,
+                    and how they want their business to be
+                    experienced online.
+                </p>
+
+                <p>
+                    From the first idea to the final build,
+                    we focus on creating digital experiences
+                    that are purposeful, modern and built
+                    around the people they're meant to serve.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             OUR APPROACH
+        ======================================= -->
+
+        <section class="about-approach">
+
+            <div class="approach-heading">
+
+                <p class="section-label">
+                    OUR APPROACH
+                </p>
+
+                <h2>
+                    Understand.
+                    Design.
+                    <span>
+                        Build.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="approach-grid">
+
+                <article class="approach-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Understand
+                    </h3>
+
+                    <p>
+                        We take the time to understand your
+                        business, your goals and the people
+                        you're trying to reach.
+                    </p>
+
+                </article>
+
+
+                <article class="approach-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <p>
+                        We create experiences that communicate
+                        your brand while keeping usability at
+                        the centre.
+                    </p>
+
+                </article>
+
+
+                <article class="approach-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Build
+                    </h3>
+
+                    <p>
+                        We turn the concept into a responsive,
+                        functional website designed to work
+                        across devices.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             WHY CORNERSTONE
+        ======================================= -->
+
+        <section class="why-cornerstone">
+
+            <div class="why-heading">
+
+                <p class="section-label">
+                    WHY CORNERSTONE?
+                </p>
+
+                <h2>
+                    Digital solutions
+                    <span>
+                        with intention.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <article class="why-item">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Direct Communication
+                        </h3>
+
+                        <p>
+                            We keep communication clear,
+                            straightforward and collaborative
+                            from start to finish.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="why-item">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Built Around You
+                        </h3>
+
+                        <p>
+                            Every project is shaped around
+                            your business rather than forcing
+                            your business into a template.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="why-item">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Design + Development
+                        </h3>
+
+                        <p>
+                            We bring design and technology
+                            together to create websites that
+                            look good and work properly.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="why-item">
+
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Built To Grow
+                        </h3>
+
+                        <p>
+                            We create digital foundations that
+                            can evolve as your business grows.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             WORK
+        ======================================= -->
+
+        <section class="about-work">
+
+            <div class="work-content">
+
+                <p class="section-label">
+                    THE WORK SPEAKS
+                </p>
+
+                <h2>
+                    Every project is
+                    <span>
+                        different.
+                    </span>
+                </h2>
+
+                <p>
+                    From student accommodation platforms to
+                    business websites, every project presents
+                    a different challenge and an opportunity
+                    to create something meaningful.
+                </p>
+
+            </div>
+
+
+            <a
+                href="../index.html#portfolio"
+                class="work-link"
+            >
+
+                <span>
+                    Explore Our Work
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </section>
+
+
+        <!-- ======================================
+             FINAL CTA
+        ======================================= -->
+
+        <section class="about-cta">
+
+            <p class="section-label">
+                HAVE SOMETHING IN MIND?
+            </p>
+
+            <h2>
+                Let's build
+                <span>
+                    it.
+                </span>
+            </h2>
+
+            <a
+                href="contact.html"
+                class="cta-button"
+            >
+
+                <span>
+                    Start A Project
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CornerStone TechDev.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ==========================================
+         MOBILE MENU
+    =========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const menuToggle =
+                    document.getElementById("menu-toggle");
+
+                const navLinks =
+                    document.getElementById("nav-links");
+
+
+                if (!menuToggle || !navLinks) {
+                    return;
+                }
+
+
+                menuToggle.addEventListener(
+                    "click",
+                    () => {
+
+                        const isOpen =
+                            navLinks.classList.toggle(
+                                "active"
+                            );
+
+
+                        menuToggle.classList.toggle(
+                            "active",
+                            isOpen
+                        );
+
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            String(isOpen)
+                        );
+
+
+                        menuToggle.setAttribute(
+                            "aria-label",
+                            isOpen
+                                ? "Close navigation menu"
+                                : "Open navigation menu"
+                        );
+
+                    }
+                );
+
+
+                navLinks
+                    .querySelectorAll("a")
+                    .forEach(
+                        (link) => {
+
+                            link.addEventListener(
+                                "click",
+                                () => {
+
+                                    navLinks.classList.remove(
+                                        "active"
+                                    );
+
+                                    menuToggle.classList.remove(
+                                        "active"
+                                    );
+
+                                    menuToggle.setAttribute(
+                                        "aria-expanded",
+                                        "false"
+                                    );
+
+                                    menuToggle.setAttribute(
+                                        "aria-label",
+                                        "Open navigation menu"
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

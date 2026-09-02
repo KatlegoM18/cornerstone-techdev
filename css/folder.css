@@ -1,0 +1,1218 @@
+/* ==================================================
+   CORNERSTONE TECHDEV
+   PORTFOLIO FOLDER
+================================================== */
+
+:root {
+
+    --folder-color: #c88a3d;
+    --folder-back-color: #a96f2d;
+
+    --paper-1: #e6e0d7;
+    --paper-2: #f1ece4;
+    --paper-3: #ffffff;
+
+    --gold: #c88a3d;
+    --gold-light: #e0ad68;
+
+    --cream: #f5f0e8;
+    --muted: rgba(245, 240, 232, 0.62);
+
+}
+
+
+/* ==================================================
+   PORTFOLIO OVERLAY
+
+   The page remains visible underneath.
+   The background is lightly darkened and blurred.
+================================================== */
+
+.portfolio-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background:
+        rgba(
+            20,
+            16,
+            12,
+            0.45
+        );
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+}
+
+
+.portfolio-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* ==================================================
+   TRANSPARENT POPUP CONTAINER
+================================================== */
+
+.portfolio-popup {
+
+    position: relative;
+
+    width: auto;
+
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    transform:
+        translateY(30px)
+        scale(0.9);
+
+    transition:
+        transform 0.5s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+}
+
+
+.portfolio-overlay.active
+.portfolio-popup {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* No decorative panel */
+
+.portfolio-popup::before {
+
+    display: none;
+
+}
+
+
+/* ==================================================
+   CLOSE BUTTON
+================================================== */
+
+.portfolio-close {
+
+    position: absolute;
+
+    top: -72px;
+
+    right: -92px;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    background:
+        rgba(
+            25,
+            20,
+            16,
+            0.78
+        );
+
+    border:
+        1px solid
+        rgba(
+            200,
+            138,
+            61,
+            0.5
+        );
+
+    color:
+        var(--cream);
+
+    font-family:
+        inherit;
+
+    font-size:
+        26px;
+
+    font-weight:
+        300;
+
+    line-height:
+        1;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.portfolio-close:hover {
+
+    background:
+        var(--gold);
+
+    color:
+        #1d1813;
+
+    border-color:
+        var(--gold);
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* ==================================================
+   FOLDER CONTAINER
+================================================== */
+
+.folder-container {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 245px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0;
+
+}
+
+
+/* ==================================================
+   FOLDER
+================================================== */
+
+.folder {
+
+    position: relative;
+
+    width: 100px;
+
+    height: 80px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transform:
+        scale(2.2);
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.folder:not(.folder--click):hover {
+
+    transform:
+        translateY(-8px)
+        scale(2.2);
+
+}
+
+
+.folder.open {
+
+    transform:
+        translateY(-8px)
+        scale(2.2);
+
+}
+
+
+/* ==================================================
+   FOLDER BACK
+================================================== */
+
+.folder__back {
+
+    position: relative;
+
+    width: 100px;
+
+    height: 80px;
+
+    background:
+        var(--folder-back-color);
+
+    border-radius:
+        0 10px 10px 10px;
+
+    box-shadow:
+        0 15px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+}
+
+
+.folder__back::after {
+
+    position: absolute;
+
+    z-index: 0;
+
+    bottom: 98%;
+
+    left: 0;
+
+    content: "";
+
+    width: 30px;
+
+    height: 10px;
+
+    background:
+        var(--folder-back-color);
+
+    border-radius:
+        5px 5px 0 0;
+
+}
+
+
+/* ==================================================
+   PAPERS
+================================================== */
+
+.paper {
+
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 10%;
+
+    left: 50%;
+
+    width: 70%;
+
+    height: 80%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    background:
+        var(--paper-1);
+
+    border-radius:
+        10px;
+
+    transform:
+        translate(
+            -50%,
+            10%
+        );
+
+    transition:
+        transform 0.35s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+    box-shadow:
+        0 5px 12px
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+}
+
+
+.paper:nth-child(2) {
+
+    width:
+        80%;
+
+    height:
+        70%;
+
+    background:
+        var(--paper-2);
+
+}
+
+
+.paper:nth-child(3) {
+
+    width:
+        90%;
+
+    height:
+        60%;
+
+    background:
+        var(--paper-3);
+
+}
+
+
+/* ==================================================
+   CLOSED HOVER
+================================================== */
+
+.folder:not(.folder--click):hover
+.paper {
+
+    transform:
+        translate(
+            -50%,
+            0%
+        );
+
+}
+
+
+/* ==================================================
+   OPEN — PAPER 1
+================================================== */
+
+.folder.open
+.paper:nth-child(1) {
+
+    transform:
+        translate(
+            -120%,
+            -70%
+        )
+        rotateZ(-15deg);
+
+}
+
+
+.folder.open
+.paper:nth-child(1):hover {
+
+    transform:
+        translate(
+            -120%,
+            -70%
+        )
+        rotateZ(-15deg)
+        scale(1.1);
+
+}
+
+
+/* ==================================================
+   OPEN — PAPER 2
+================================================== */
+
+.folder.open
+.paper:nth-child(2) {
+
+    transform:
+        translate(
+            10%,
+            -70%
+        )
+        rotateZ(15deg);
+
+    height:
+        80%;
+
+}
+
+
+.folder.open
+.paper:nth-child(2):hover {
+
+    transform:
+        translate(
+            10%,
+            -70%
+        )
+        rotateZ(15deg)
+        scale(1.1);
+
+}
+
+
+/* ==================================================
+   OPEN — PAPER 3
+================================================== */
+
+.folder.open
+.paper:nth-child(3) {
+
+    transform:
+        translate(
+            -50%,
+            -100%
+        )
+        rotateZ(5deg);
+
+    height:
+        80%;
+
+}
+
+
+.folder.open
+.paper:nth-child(3):hover {
+
+    transform:
+        translate(
+            -50%,
+            -100%
+        )
+        rotateZ(5deg)
+        scale(1.1);
+
+}
+
+
+/* ==================================================
+   FOLDER FRONT
+================================================== */
+
+.folder__front {
+
+    position: absolute;
+
+    z-index: 3;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        var(--folder-color);
+
+    border-radius:
+        5px 10px 10px 10px;
+
+    transform-origin:
+        bottom;
+
+    transition:
+        transform 0.3s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+}
+
+
+/* ==================================================
+   FRONT HOVER
+================================================== */
+
+.folder:not(.folder--click):hover
+.folder__front {
+
+    transform:
+        skew(15deg)
+        scaleY(0.6);
+
+}
+
+
+.folder:not(.folder--click):hover
+.right {
+
+    transform:
+        skew(-15deg)
+        scaleY(0.6);
+
+}
+
+
+/* ==================================================
+   OPEN — FRONT
+================================================== */
+
+.folder.open
+.folder__front {
+
+    transform:
+        skew(15deg)
+        scaleY(0.6);
+
+}
+
+
+.folder.open
+.right {
+
+    transform:
+        skew(-15deg)
+        scaleY(0.6);
+
+}
+
+
+/* ==================================================
+   PROJECT CONTENT
+================================================== */
+
+.paper-content {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        center;
+
+    gap:
+        4px;
+
+    padding:
+        7px;
+
+    box-sizing:
+        border-box;
+
+    color:
+        #30261c;
+
+    font-family:
+        inherit;
+
+}
+
+
+.paper-content span {
+
+    color:
+        #a66f2b;
+
+    font-size:
+        0.55rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.1em;
+
+}
+
+
+.paper-content strong {
+
+    font-size:
+        0.65rem;
+
+    line-height:
+        1.1;
+
+}
+
+
+.paper-content small {
+
+    color:
+        #74685c;
+
+    font-size:
+        0.5rem;
+
+}
+
+
+/* ==================================================
+   CLICK ME
+================================================== */
+
+.folder-hint {
+
+    display:
+        block;
+
+    margin:
+        58px 0 0;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.25em;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0.82;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.folder-container:hover
+.folder-hint {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+.folder:focus-visible {
+
+    outline:
+        2px solid
+        var(--gold-light);
+
+    outline-offset:
+        6px;
+
+    border-radius:
+        10px;
+
+}
+
+
+/* ==================================================
+   STOP PAGE SCROLL WHILE OPEN
+================================================== */
+
+body.portfolio-open {
+
+    overflow:
+        hidden;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .portfolio-overlay {
+
+        padding:
+            15px;
+
+    }
+
+
+    .portfolio-popup {
+
+        width:
+            auto;
+
+        min-height:
+            auto;
+
+        padding:
+            0;
+
+    }
+
+
+    .folder-container {
+
+        width:
+            260px;
+
+        height:
+            230px;
+
+    }
+
+
+    .folder {
+
+        transform:
+            scale(1.8);
+
+    }
+
+
+    .folder:not(.folder--click):hover {
+
+        transform:
+            translateY(-8px)
+            scale(1.8);
+
+    }
+
+
+    .folder.open {
+
+        transform:
+            translateY(-8px)
+            scale(1.8);
+
+    }
+
+
+    .folder-hint {
+
+        margin-top:
+            48px;
+
+        font-size:
+            0.65rem;
+
+        letter-spacing:
+            0.2em;
+
+    }
+
+
+    .portfolio-close {
+
+        top:
+            -60px;
+
+        right:
+            -45px;
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            23px;
+
+    }
+
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    .portfolio-overlay,
+    .portfolio-popup,
+    .folder,
+    .paper,
+    .folder__front,
+    .portfolio-close,
+    .folder-hint {
+
+        transition:
+            none !important;
+
+    }
+
+}
+/* =========================================================
+   MOBILE MENU CT LOGO
+   Hidden normally — appears underneath the menu.
+========================================================= */
+
+.mobile-menu-logo {
+
+    position: fixed;
+
+    top: 52vh;
+
+    left: 50%;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.85);
+
+    z-index: 1002;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    filter: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.45s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+}
+
+
+/* Keep the Three.js canvas contained */
+
+.mobile-menu-logo canvas {
+
+    display: block;
+
+    width: 150px !important;
+    height: 150px !important;
+
+}
+
+
+/* =========================================================
+   SHOW ONLY WHEN HAMBURGER MENU IS OPEN
+========================================================= */
+
+@media (max-width: 768px) {
+
+    body:has(.nav-links.active)
+    .mobile-menu-logo {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+
+    /* Keep the mobile logo sharp */
+
+    body:has(.nav-links.active)
+    .mobile-menu-logo,
+    body:has(.nav-links.active)
+    .mobile-menu-logo canvas {
+
+        filter: none;
+
+    }
+
+
+    /* Dropdown stays above the logo */
+
+    body:has(.nav-links.active)
+    .nav-links {
+
+        z-index: 1004;
+
+    }
+
+
+    /* Hamburger stays above everything */
+
+    body:has(.nav-links.active)
+    .menu-toggle {
+
+        z-index: 1005;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .mobile-menu-logo {
+
+        width: 125px;
+        height: 125px;
+
+        top: 53vh;
+
+    }
+
+
+    .mobile-menu-logo canvas {
+
+        width: 125px !important;
+        height: 125px !important;
+
+    }
+
+}
+
+/* ==================================================
+   PROJECT 03 — BARC HOUSE
+   Website preview card
+================================================== */
+
+.paper-3 {
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    background: #17130f;
+}
+
+.paper-3:hover {
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.22);
+}
+
+.paper-3:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+.paper-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #17130f;
+    color: #f7f1e7;
+    overflow: hidden;
+}
+
+.preview-window {
+    position: relative;
+    width: 100%;
+    height: 56%;
+    flex: 0 0 56%;
+    overflow: hidden;
+    background: #0d1718;
+}
+
+.preview-bar {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-left: 6px;
+    box-sizing: border-box;
+    background: rgba(10, 10, 10, 0.72);
+}
+
+.preview-bar span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.preview-window img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.preview-info {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 8px 7px;
+    box-sizing: border-box;
+    background: #17130f;
+}
+
+.preview-info span {
+    color: #d39a4c;
+    font-size: 0.45rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.preview-info strong {
+    color: #fffaf2;
+    font-size: 0.72rem;
+    line-height: 1.05;
+}
+
+.preview-info small {
+    color: #c9bcae;
+    font-size: 0.43rem;
+    line-height: 1.1;
+}
+
+.preview-info b {
+    margin-top: 3px;
+    color: #d39a4c;
+    font-size: 0.38rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+/* Keep the preview readable on the small mobile folder. */
+@media (max-width: 700px) {
+
+    .preview-info {
+        padding: 5px 7px 6px;
+    }
+
+    .preview-info strong {
+        font-size: 0.66rem;
+    }
+
+    .preview-info small {
+        font-size: 0.4rem;
+    }
+
+    .preview-info b {
+        font-size: 0.34rem;
+    }
+}
