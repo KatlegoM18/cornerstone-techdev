@@ -58,6 +58,12 @@
         src="../js/ct-logo-3d.js"
     ></script>
 
+    <style>
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+
 </head>
 
 
@@ -239,7 +245,7 @@
                     <!-- WHATSAPP -->
 
                     <a
-                        href="https://wa.me/27846600618"
+                        href="https://wa.me/27813694172"
                         class="contact-detail"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -483,7 +489,7 @@
 
 
             <a
-                href="https://wa.me/27846600618"
+                href="https://wa.me/27813694172"
                 class="whatsapp-button"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -619,6 +625,79 @@
         const contactForm =
             document.getElementById("contact-form");
 
+        const enquiryModal =
+            document.getElementById("enquiry-modal");
+
+        const enquiryModalClose =
+            document.getElementById("enquiry-modal-close");
+
+        const enquiryModalBackdrop =
+            document.getElementById("enquiry-modal-backdrop");
+
+
+        /* ==========================================
+           CLOSE SUCCESS POPUP
+        =========================================== */
+
+        function closeEnquiryModal() {
+
+            if (!enquiryModal) {
+                return;
+            }
+
+            enquiryModal.classList.remove("active");
+
+            enquiryModal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove("modal-open");
+
+        }
+
+
+        if (enquiryModalClose) {
+
+            enquiryModalClose.addEventListener(
+                "click",
+                closeEnquiryModal
+            );
+
+        }
+
+
+        if (enquiryModalBackdrop) {
+
+            enquiryModalBackdrop.addEventListener(
+                "click",
+                closeEnquiryModal
+            );
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key === "Escape" &&
+                    enquiryModal &&
+                    enquiryModal.classList.contains("active")
+                ) {
+
+                    closeEnquiryModal();
+
+                }
+
+            }
+        );
+
+
+        /* ==========================================
+           CONTACT FORM SUBMISSION
+        =========================================== */
 
         if (contactForm) {
 
@@ -720,8 +799,10 @@
                             await response.json();
 
 
-                        if (!response.ok ||
-                            !result.success) {
+                        if (
+                            !response.ok ||
+                            !result.success
+                        ) {
 
                             throw new Error(
                                 result.message ||
@@ -731,22 +812,35 @@
                         }
 
 
-                        submitText.textContent =
-                            "ENQUIRY SENT";
-
+                        /* ==================================
+                           SUCCESS
+                        ================================== */
 
                         contactForm.reset();
 
+                        submitText.textContent =
+                            "SEND ENQUIRY";
 
-                        setTimeout(() => {
+                        submitButton.disabled =
+                            false;
 
-                            submitText.textContent =
-                                "SEND ENQUIRY";
 
-                            submitButton.disabled =
-                                false;
+                        if (enquiryModal) {
 
-                        }, 3000);
+                            enquiryModal.classList.add(
+                                "active"
+                            );
+
+                            enquiryModal.setAttribute(
+                                "aria-hidden",
+                                "false"
+                            );
+
+                            document.body.classList.add(
+                                "modal-open"
+                            );
+
+                        }
 
 
                     } catch (error) {
@@ -761,15 +855,19 @@
                             "TRY AGAIN";
 
 
-                        setTimeout(() => {
+                        submitButton.disabled =
+                            false;
 
-                            submitText.textContent =
-                                "SEND ENQUIRY";
 
-                            submitButton.disabled =
-                                false;
+                        setTimeout(
+                            () => {
 
-                        }, 3000);
+                                submitText.textContent =
+                                    "SEND ENQUIRY";
+
+                            },
+                            3000
+                        );
 
                     }
 
