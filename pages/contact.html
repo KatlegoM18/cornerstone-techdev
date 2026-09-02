@@ -188,6 +188,7 @@
                 <h1>
 
                     LET'S BUILD
+
                     <span>
                         SOMETHING GREAT
                     </span>
@@ -207,6 +208,9 @@
                 <!-- CONTACT DETAILS -->
 
                 <div class="contact-details">
+
+
+                    <!-- EMAIL -->
 
                     <a
                         href="mailto:kmokgofa333@gmail.com"
@@ -231,6 +235,8 @@
 
                     </a>
 
+
+                    <!-- WHATSAPP -->
 
                     <a
                         href="https://wa.me/27846600618"
@@ -267,6 +273,7 @@
             =================================== -->
 
             <div class="contact-form-wrapper">
+
 
                 <div class="form-heading">
 
@@ -434,7 +441,9 @@
                         class="form-submit"
                     >
 
-                        Send Enquiry
+                        <span class="submit-text">
+                            Send Enquiry
+                        </span>
 
                         <span>
                             →
@@ -472,8 +481,9 @@
 
             </div>
 
+
             <a
-                href="https://wa.me/0846600618"
+                href="https://wa.me/27846600618"
                 class="whatsapp-button"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -496,6 +506,7 @@
 
         <section class="contact-process">
 
+
             <div class="process-heading">
 
                 <p class="section-label">
@@ -503,10 +514,13 @@
                 </p>
 
                 <h2>
+
                     From idea to
+
                     <span>
                         reality.
                     </span>
+
                 </h2>
 
             </div>
@@ -514,6 +528,8 @@
 
             <div class="process-grid">
 
+
+                <!-- STEP 01 -->
 
                 <article class="process-item">
 
@@ -533,6 +549,8 @@
                 </article>
 
 
+                <!-- STEP 02 -->
+
                 <article class="process-item">
 
                     <span class="process-number">
@@ -551,6 +569,8 @@
                 </article>
 
 
+                <!-- STEP 03 -->
+
                 <article class="process-item">
 
                     <span class="process-number">
@@ -558,15 +578,16 @@
                     </span>
 
                     <h3>
-                        I Build
+                        We Build
                     </h3>
 
                     <p>
-                        Once everything is agreed, I'll turn
-                        your idea into the finished website.
+                        Once everything is agreed, we'll
+                        turn your idea into the finished website.
                     </p>
 
                 </article>
+
 
             </div>
 
@@ -590,7 +611,7 @@
 
 
     <!-- ==========================================
-         WHATSAPP ENQUIRY FORM
+         CONTACT FORM BACKEND
     =========================================== -->
 
     <script>
@@ -598,28 +619,52 @@
         const contactForm =
             document.getElementById("contact-form");
 
+
         if (contactForm) {
 
             contactForm.addEventListener(
                 "submit",
-                (event) => {
+                async (event) => {
 
                     event.preventDefault();
 
+
+                    const submitButton =
+                        contactForm.querySelector(
+                            ".form-submit"
+                        );
+
+                    const submitText =
+                        submitButton.querySelector(
+                            ".submit-text"
+                        );
+
+
                     const name =
-                        document.getElementById("name").value.trim();
+                        document.getElementById("name")
+                            .value
+                            .trim();
 
                     const email =
-                        document.getElementById("email").value.trim();
+                        document.getElementById("email")
+                            .value
+                            .trim();
 
                     const phone =
-                        document.getElementById("phone").value.trim();
+                        document.getElementById("phone")
+                            .value
+                            .trim();
 
                     const business =
-                        document.getElementById("business").value.trim();
+                        document.getElementById("business")
+                            .value
+                            .trim();
 
                     const projectSelect =
                         document.getElementById("project");
+
+                    const project =
+                        projectSelect.value;
 
                     const projectType =
                         projectSelect.options[
@@ -627,30 +672,106 @@
                         ].text;
 
                     const message =
-                        document.getElementById("message").value.trim();
+                        document.getElementById("message")
+                            .value
+                            .trim();
 
-                    const whatsappMessage =
-`*NEW CORNERSTONE ENQUIRY*
 
-*Name:* ${name}
-*Email:* ${email}
-*Phone / WhatsApp:* ${phone || "Not provided"}
-*Business:* ${business || "Not provided"}
-*Project:* ${projectType}
+                    const enquiryData = {
 
-*Project Details:*
-${message}`;
+                        name,
+                        email,
+                        phone,
+                        business,
+                        project: projectType,
+                        message
 
-                    const whatsappURL =
-                        "https://wa.me/27846600618?text=" +
-                        encodeURIComponent(
-                            whatsappMessage
+                    };
+
+
+                    try {
+
+                        submitButton.disabled = true;
+
+                        submitText.textContent =
+                            "SENDING...";
+
+
+                        const response =
+                            await fetch(
+                                "/.netlify/functions/send-enquiry",
+                                {
+                                    method: "POST",
+
+                                    headers: {
+                                        "Content-Type":
+                                            "application/json"
+                                    },
+
+                                    body:
+                                        JSON.stringify(
+                                            enquiryData
+                                        )
+                                }
+                            );
+
+
+                        const result =
+                            await response.json();
+
+
+                        if (!response.ok ||
+                            !result.success) {
+
+                            throw new Error(
+                                result.message ||
+                                "Something went wrong."
+                            );
+
+                        }
+
+
+                        submitText.textContent =
+                            "ENQUIRY SENT";
+
+
+                        contactForm.reset();
+
+
+                        setTimeout(() => {
+
+                            submitText.textContent =
+                                "SEND ENQUIRY";
+
+                            submitButton.disabled =
+                                false;
+
+                        }, 3000);
+
+
+                    } catch (error) {
+
+                        console.error(
+                            "Enquiry error:",
+                            error
                         );
 
-                    window.open(
-                        whatsappURL,
-                        "_blank"
-                    );
+
+                        submitText.textContent =
+                            "TRY AGAIN";
+
+
+                        setTimeout(() => {
+
+                            submitText.textContent =
+                                "SEND ENQUIRY";
+
+                            submitButton.disabled =
+                                false;
+
+                        }, 3000);
+
+                    }
 
                 }
             );
@@ -684,15 +805,18 @@ ${message}`;
                             "active"
                         );
 
+
                     menuToggle.classList.toggle(
                         "active",
                         isOpen
                     );
 
+
                     menuToggle.setAttribute(
                         "aria-expanded",
                         String(isOpen)
                     );
+
 
                     menuToggle.setAttribute(
                         "aria-label",
