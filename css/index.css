@@ -27,6 +27,11 @@ body {
     line-height: 1.6;
 
     overflow-x: hidden;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -332,8 +337,8 @@ footer {
 ========================================================= */
 
 main {
-
     width: 100%;
+    flex: 1 0 auto;
 }
 
 
@@ -698,6 +703,7 @@ main {
 ========================================================= */
 
 footer {
+    flex-shrink: 0;
 
     padding: 30px 7%;
 
@@ -782,578 +788,6 @@ footer {
 }
 
 
-/* =========================================================
-   TABLETS
-   768px
-========================================================= */
-
-@media (max-width: 768px) {
-
-    /* -------------------------
-       NAVIGATION
-    ------------------------- */
-
-    .navbar {
-
-        padding: 15px 5%;
-
-        flex-wrap: wrap;
-
-        gap: 15px;
-    }
-
-    .logo {
-
-        width: 100%;
-    }
-
-    .logo a {
-
-        justify-content: flex-start;
-    }
-
-    .logo img {
-
-        width: 45px;
-        height: 45px;
-    }
-
-    .logo span {
-
-        font-size: 1rem;
-    }
-
-    .nav-links {
-
-        width: 100%;
-
-        justify-content: flex-start;
-
-        gap: 18px;
-
-        overflow-x: auto;
-
-        padding-bottom: 4px;
-
-        scrollbar-width: none;
-    }
-
-    .nav-links::-webkit-scrollbar {
-
-        display: none;
-    }
-
-    .nav-links a {
-
-        font-size: 0.82rem;
-
-        white-space: nowrap;
-    }
-
-    .nav-links .nav-contact {
-
-        padding: 8px 15px;
-    }
-
-
-    /* -------------------------
-       HERO
-    ------------------------- */
-
-    .hero {
-
-        min-height: auto;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        padding: 80px 6% 90px;
-    }
-
-    .hero-content {
-
-        width: 100%;
-
-        max-width: 700px;
-
-        transform: none;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(3.2rem, 10vw, 5.5rem);
-
-        letter-spacing: -2px;
-    }
-
-    .hero-description {
-
-        max-width: 650px;
-
-        font-size: 1.05rem;
-    }
-
-
-    /* -------------------------
-       INTRO
-    ------------------------- */
-
-    .hero-intro {
-
-        position: relative;
-
-        top: auto;
-        right: auto;
-
-        transform: none;
-
-        width: 100%;
-
-        max-width: 650px;
-
-        margin-top: 100px;
-    }
-
-    .hero-intro h2 {
-
-        font-size:
-            clamp(2.2rem, 7vw, 3.5rem);
-    }
-
-    .hero-intro p:not(.intro-label) {
-
-        font-size: 0.98rem;
-    }
-
-
-    /* -------------------------
-       SERVICES
-    ------------------------- */
-
-    .services-preview {
-
-        padding: 90px 6%;
-    }
-
-    .services-buttons {
-
-        left: 54%;
-
-        gap: 15px;
-    }
-}
-
-
-/* =========================================================
-   PHONES
-   600px
-========================================================= */
-
-@media (max-width: 600px) {
-
-    /* -------------------------
-       NAVIGATION
-    ------------------------- */
-
-    .navbar {
-
-        padding: 14px 5%;
-
-        gap: 12px;
-    }
-
-    .logo {
-
-        width: auto;
-    }
-
-    .logo img {
-
-        width: 45px;
-        height: 45px;
-    }
-
-    .logo span {
-
-        font-size: 0.95rem;
-    }
-
-    .nav-links {
-
-        width: 100%;
-
-        gap: 14px;
-
-        padding-top: 3px;
-    }
-
-    .nav-links a {
-
-        font-size: 0.76rem;
-
-        white-space: nowrap;
-    }
-
-    .nav-links .nav-contact {
-
-        padding: 7px 12px;
-    }
-
-
-    /* -------------------------
-       HERO
-    ------------------------- */
-
-    .hero {
-
-        padding: 65px 6% 75px;
-    }
-
-    .hero-subtitle {
-
-        font-size: 0.68rem;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 20px;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(2.45rem, 12.5vw, 3.7rem);
-
-        line-height: 0.94;
-
-        letter-spacing: -1.5px;
-
-        margin-bottom: 25px;
-
-        word-break: normal;
-
-        overflow-wrap: normal;
-
-        white-space: normal;
-    }
-
-    .hero h1 span {
-
-        display: block;
-
-        white-space: nowrap;
-    }
-
-    .hero-description {
-
-        font-size: 0.98rem;
-
-        line-height: 1.7;
-
-        margin-bottom: 0;
-    }
-
-
-    /* -------------------------
-       HERO BUTTONS
-    ------------------------- */
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-        width: 100%;
-
-        gap: 12px;
-
-        margin-top: 35px;
-    }
-
-    .btn {
-
-        width: 100%;
-
-        text-align: center;
-
-        padding: 14px 20px;
-    }
-
-
-    /* -------------------------
-       PERSON / DESIGN INTRO
-    ------------------------- */
-
-    .hero-intro {
-
-        width: auto;
-
-        margin-left: 3%;
-        margin-right: 3%;
-
-        max-width: none;
-
-        margin-top: 75px;
-    }
-
-    .intro-label {
-
-        font-size: 0.63rem;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 15px;
-    }
-
-    .hero-intro h2 {
-
-        font-size:
-            clamp(2rem, 9vw, 3rem);
-
-        line-height: 1;
-
-        margin-bottom: 25px;
-
-        letter-spacing: -1px;
-    }
-
-    .hero-intro p:not(.intro-label) {
-
-        font-size: 0.92rem;
-
-        line-height: 1.75;
-
-        margin-bottom: 18px;
-    }
-
-
-    /* -------------------------
-       SERVICES
-    ------------------------- */
-
-    .services-preview {
-
-        padding: 75px 6%;
-    }
-
-    .services-buttons {
-
-        position: relative;
-
-        left: auto;
-        top: auto;
-
-        transform: none;
-
-        width: 100%;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        margin-top: 35px;
-
-        gap: 12px;
-    }
-
-    .services-buttons .btn {
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .section-label {
-
-        font-size: 0.68rem;
-
-        letter-spacing: 2px;
-    }
-
-    .services-preview h2 {
-
-        font-size:
-            clamp(2.2rem, 10vw, 3.5rem);
-
-        letter-spacing: -1.5px;
-    }
-
-
-    /* -------------------------
-       FOOTER
-    ------------------------- */
-
-    footer {
-
-        padding: 25px 6%;
-
-        font-size: 0.78rem;
-    }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-   480px
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .navbar {
-
-        padding: 12px 5%;
-    }
-
-    .logo img {
-
-        width: 45px;
-        height: 45px;
-    }
-
-    .logo span {
-
-        font-size: 0.82rem;
-
-        letter-spacing: 0.5px;
-    }
-
-    .nav-links {
-
-        gap: 12px;
-    }
-
-    .nav-links a {
-
-        font-size: 0.7rem;
-    }
-
-    .nav-links .nav-contact {
-
-        padding: 7px 10px;
-    }
-
-
-    /* -------------------------
-       HERO
-    ------------------------- */
-
-    .hero {
-
-        padding: 55px 6% 65px;
-    }
-
-    .hero h1 {
-
-        font-size: 2.7rem;
-
-        letter-spacing: -1.5px;
-
-        line-height: 0.94;
-    }
-
-    .hero h1 span {
-
-        white-space: nowrap;
-    }
-
-    .hero-description {
-
-        font-size: 0.9rem;
-    }
-
-
-    /* -------------------------
-       INTRO
-    ------------------------- */
-
-    .hero-intro {
-
-        margin-left: 4%;
-        margin-right: 4%;
-
-        margin-top: 65px;
-    }
-
-    .hero-intro h2 {
-
-        font-size: 2.15rem;
-    }
-
-    .hero-intro p:not(.intro-label) {
-
-        font-size: 0.88rem;
-
-        line-height: 1.7;
-    }
-
-
-    /* -------------------------
-       SERVICES
-    ------------------------- */
-
-    .services-preview {
-
-        padding: 65px 6%;
-    }
-
-    .services-preview h2 {
-
-        font-size: 2.3rem;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   380px
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .logo span {
-
-        font-size: 0.75rem;
-    }
-
-    .nav-links {
-
-        gap: 9px;
-    }
-
-    .nav-links a {
-
-        font-size: 0.65rem;
-    }
-
-    .nav-links .nav-contact {
-
-        padding: 6px 8px;
-    }
-
-    .hero {
-
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .hero h1 {
-
-        font-size: 2.25rem;
-    }
-
-    .hero-intro {
-
-        margin-left: 3%;
-        margin-right: 3%;
-    }
-
-    .hero-intro h2 {
-
-        font-size: 1.95rem;
-    }
-}
 /* ==========================================
    THREE.JS CT LOGO
 ========================================== */
@@ -2503,26 +1937,6 @@ footer {
     }
 
 
-    /*
-     * Blur the actual site content behind the
-     * mobile navigation.
-     */
-
-    body:has(.nav-links.active) main,
-    body:has(.nav-links.active) footer,
-    body:has(.nav-links.active) .molten-background {
-
-        filter:
-            blur(16px);
-
-        opacity:
-            0.62;
-
-        transition:
-            filter 0.25s ease,
-            opacity 0.25s ease;
-
-    }
 
 }
 
@@ -2836,6 +2250,252 @@ footer {
 
     body:has(.nav-links.active) .nav-links {
         z-index: 1004;
+        filter: none;
+    }
+}
+
+
+/* =========================================================
+   OPEN MENU — FULL PAGE BACKDROP BLUR
+   ---------------------------------------------------------
+   The old approach blurred individual elements such as
+   main/footer/canvas. That is unreliable with the fixed
+   molten background.
+
+   This creates one fixed backdrop between the navbar and
+   the page content. backdrop-filter blurs everything behind
+   it, including the molten canvas.
+
+   Layer order:
+   0     = molten background
+   2     = page content
+   999   = blur backdrop
+   1000+ = navbar / menu controls
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    body:has(.nav-links.active)::after {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 999;
+
+        background:
+            rgba(
+                10,
+                8,
+                6,
+                0.16
+            );
+
+        backdrop-filter:
+            blur(16px);
+
+        -webkit-backdrop-filter:
+            blur(16px);
+
+        pointer-events: none;
+
+        opacity: 1;
+
+        transition:
+            opacity 0.25s ease;
+
+    }
+
+
+    /*
+       Keep the navigation controls above
+       the blur layer.
+    */
+
+    body:has(.nav-links.active) .navbar {
+        position: sticky;
+        z-index: 1000;
+    }
+
+
+    body:has(.nav-links.active) .menu-toggle {
+
+        position: relative;
+
+        z-index: 1005;
+
+        opacity: 1;
+
+        filter: none;
+
+    }
+
+
+    body:has(.nav-links.active) .nav-links {
+
+        z-index: 1004;
+
+        filter: none;
+
+    }
+
+
+    body:has(.nav-links.active) .mobile-menu-logo {
+
+        z-index: 1002;
+
+        filter: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SAFARI / IOS FALLBACK
+   ---------------------------------------------------------
+   If backdrop-filter is unavailable, lightly soften the
+   page itself. Modern Chrome/Safari will use the real
+   backdrop blur above.
+========================================================= */
+
+@supports not (
+    (backdrop-filter: blur(16px))
+) {
+
+    @media (max-width: 1100px) {
+
+        body:has(.nav-links.active) main,
+        body:has(.nav-links.active) footer,
+        body:has(.nav-links.active) .molten-background {
+
+            filter:
+                blur(10px);
+
+            opacity:
+                0.68;
+
+            transition:
+                filter 0.25s ease,
+                opacity 0.25s ease;
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   FINAL MOBILE SAFETY OVERRIDES
+   ---------------------------------------------------------
+   These rules intentionally sit at the end of the stylesheet
+   so the mobile layout cannot fall back to the desktop
+   two-column hero positioning.
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: left !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .hero-content {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        order: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-intro {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        order: 2 !important;
+        margin: 70px 0 0 !important;
+        transform: none !important;
+        text-align: left !important;
+    }
+
+    .hero h1 {
+        max-width: 100% !important;
+        width: 100% !important;
+        overflow-wrap: normal !important;
+    }
+
+    .hero h1 span {
+        display: block !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+    }
+
+    .hero-description {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .hero-intro h2,
+    .hero-intro p {
+        max-width: 100% !important;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL MOBILE MENU BLUR
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    body:has(.nav-links.active)::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+
+        background: rgba(10, 8, 6, 0.16);
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        pointer-events: none;
+    }
+
+    body:has(.nav-links.active) .navbar {
+        position: sticky;
+        z-index: 1000;
+    }
+
+    body:has(.nav-links.active) .menu-toggle {
+        position: relative;
+        z-index: 1005;
+        opacity: 1;
+        filter: none;
+    }
+
+    body:has(.nav-links.active) .nav-links {
+        z-index: 1004;
+        filter: none;
+    }
+
+    body:has(.nav-links.active) .mobile-menu-logo {
+        z-index: 1002;
         filter: none;
     }
 }
