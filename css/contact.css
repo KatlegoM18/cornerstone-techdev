@@ -82,8 +82,8 @@ main {
     padding: 125px 0 115px;
 
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(430px, 1.1fr);
-    gap: 90px;
+    grid-template-columns: minmax(0, 0.95fr) minmax(430px, 1.05fr);
+    gap: 120px;
     align-items: start;
 }
 
