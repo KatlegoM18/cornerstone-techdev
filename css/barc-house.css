@@ -1,0 +1,1319 @@
+/* =========================================================
+   CORNERSTONE TECHDEV
+   BARC HOUSE CASE STUDY
+   ========================================================= */
+
+.case-hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 155px 7% 105px;
+    overflow: hidden;
+}
+
+.case-hero-content {
+    width: min(1250px, 100%);
+    margin: 0 auto;
+}
+
+.case-eyebrow,
+.case-category,
+.case-story-label,
+.case-outcome-label,
+.case-cta p {
+    color: #D9943F;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.case-eyebrow {
+    margin: 0 0 18px;
+}
+
+.case-category {
+    margin: 0 0 25px;
+    color: #AAA29A;
+}
+
+.case-hero h1 {
+    margin: 0;
+    color: #FAF7F1;
+    font-size: clamp(4.5rem, 11vw, 10.5rem);
+    line-height: 0.82;
+    font-weight: 800;
+    letter-spacing: -0.065em;
+    text-transform: uppercase;
+}
+
+.case-hero h1 span,
+.case-story-content h2 span,
+.case-outcome h2 span {
+    color: #D9943F;
+}
+
+.case-intro {
+    max-width: 650px;
+    margin: 38px 0 0;
+    color: #D8D0C6;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.case-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(217,148,63,0.2);
+}
+
+.case-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.case-details span {
+    color: #77716A;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.case-details strong {
+    color: #E5DED4;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROJECT PREVIEW
+   ========================================================= */
+
+.case-visual {
+    width: min(1450px, 94%);
+    margin: 0 auto;
+    padding: 10px 0 145px;
+}
+
+
+/* =========================================================
+   PRESENTATION BOX
+   ========================================================= */
+
+.device-composition {
+    position: relative;
+    width: min(1280px, 100%);
+    min-height: 650px;
+    margin: 0 auto 115px;
+    padding: 70px 7% 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(217,148,63,0.13);
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.018),
+            rgba(255,255,255,0.006)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.025),
+        0 30px 90px rgba(0,0,0,0.16);
+
+    overflow: visible;
+}
+
+
+/* Soft glow contained around each project presentation */
+
+.device-composition::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    width: 78%;
+    height: 72%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(217,148,63,0.09) 0%,
+        rgba(217,148,63,0.025) 42%,
+        transparent 72%
+    );
+
+    filter: blur(25px);
+}
+
+
+/* Subtle bottom shadow */
+
+.device-composition::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: 35px;
+    width: 58%;
+    height: 35px;
+    transform: translateX(-50%);
+
+    background: rgba(0,0,0,0.32);
+    filter: blur(25px);
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.composition-label {
+    position: absolute;
+    z-index: 30;
+
+    color: #D9943F;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LAPTOP SCREEN
+   No physical laptop border — just the actual screenshot.
+   ========================================================= */
+
+.composition-laptop {
+    position: relative;
+    z-index: 5;
+    width: min(900px, 76vw);
+}
+
+.composition-laptop .composition-label {
+    left: 0;
+    top: -30px;
+}
+
+.desktop-preview {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 35px 75px rgba(0,0,0,0.42),
+        0 8px 20px rgba(0,0,0,0.2);
+}
+
+.desktop-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* Very subtle screen reflection */
+
+.desktop-preview::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(255,255,255,0.045),
+            transparent 25%,
+            transparent 78%,
+            rgba(255,255,255,0.018)
+        );
+}
+
+
+/* =========================================================
+   IPHONE
+   ========================================================= */
+
+.composition-phone {
+    position: absolute;
+    z-index: 15;
+    width: min(235px, 18vw);
+}
+
+.composition-phone .composition-label {
+    right: 0;
+    top: -29px;
+}
+
+
+/* Smooth iPhone-style body */
+
+.iphone {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 0.49 / 1;
+
+    padding: 3.3%;
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #77736D 0%,
+            #35322F 18%,
+            #151413 55%,
+            #070706 100%
+        );
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 35px 70px rgba(0,0,0,0.6),
+        0 10px 22px rgba(0,0,0,0.35),
+        inset 0 1px 1px rgba(255,255,255,0.2);
+
+    transform: translateZ(0);
+}
+
+
+/* Thin inner edge */
+
+.iphone::before {
+    content: "";
+    position: absolute;
+    inset: 1.2%;
+
+    border-radius: 31px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    pointer-events: none;
+}
+
+
+/* Screen */
+
+.iphone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 27px;
+
+    background: #050505;
+}
+
+.iphone-screen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* Dynamic Island */
+
+.iphone-dynamic-island {
+    position: absolute;
+    z-index: 20;
+
+    top: 2.2%;
+    left: 50%;
+
+    width: 38%;
+    height: 3.4%;
+
+    transform: translateX(-50%);
+
+    border-radius: 999px;
+
+    background: #020202;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,0.04),
+        0 1px 1px rgba(255,255,255,0.05);
+}
+
+
+/* Glass reflection */
+
+.iphone-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(255,255,255,0.08),
+            transparent 25%,
+            transparent 80%
+        );
+}
+
+
+/* iPhone home indicator */
+
+.iphone-home-indicator {
+    position: absolute;
+    z-index: 20;
+
+    left: 50%;
+    bottom: 1.65%;
+
+    width: 31%;
+    height: 0.7%;
+
+    transform: translateX(-50%);
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.65);
+}
+
+
+/* =========================================================
+   FIRST COMPOSITION
+   ========================================================= */
+
+.composition-primary .composition-laptop {
+    transform: translateX(-4%);
+}
+
+.composition-primary .composition-phone {
+    right: 8%;
+    top: 105px;
+
+    transform: rotate(2deg);
+}
+
+
+/* =========================================================
+   SECOND COMPOSITION
+   ========================================================= */
+
+.composition-secondary .composition-laptop {
+    transform: translateX(-4%);
+}
+
+.composition-secondary .composition-phone {
+    right: 8%;
+    top: 100px;
+
+    transform: rotate(2deg);
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.composition-laptop,
+.composition-phone {
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.composition-laptop:hover {
+    filter: brightness(1.035);
+    transform: translateX(-4%) translateY(-5px);
+}
+
+.composition-phone:hover {
+    filter: brightness(1.045);
+    transform: rotate(2deg) translateY(-5px);
+}
+
+
+/* =========================================================
+   CHALLENGE + SOLUTION
+   ========================================================= */
+
+.case-story {
+    width: min(1250px, 90%);
+    margin: 0 auto;
+
+    border-top: 1px solid rgba(217,148,63,0.16);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.case-story-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    padding: 100px 55px;
+
+    border-bottom: 1px solid rgba(217,148,63,0.16);
+}
+
+.case-story-block:first-child {
+    border-right: 1px solid rgba(217,148,63,0.16);
+}
+
+.case-story-label {
+    padding-top: 8px;
+}
+
+.case-story-content h2 {
+    margin: 0 0 38px;
+
+    color: #FAF7F1;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 0.88;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+
+    text-transform: uppercase;
+}
+
+.case-story-content p {
+    max-width: 720px;
+
+    margin: 0 0 25px;
+
+    color: #D8D0C6;
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.case-story-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   OUTCOME
+   ========================================================= */
+
+.case-outcome {
+    width: min(900px, 90%);
+    margin: 0 auto;
+
+    padding: 145px 0;
+
+    text-align: center;
+}
+
+.case-outcome-label {
+    margin: 0 0 22px;
+}
+
+.case-outcome h2 {
+    margin: 0;
+
+    color: #FAF7F1;
+
+    font-size: clamp(3.3rem, 7vw, 7rem);
+    line-height: 0.86;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+
+    text-transform: uppercase;
+}
+
+.case-outcome > p:last-child {
+    max-width: 620px;
+    margin: 35px auto 0;
+
+    color: #AFA79D;
+
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.case-cta {
+    padding: 75px 7% 120px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(217,148,63,0.16);
+}
+
+.case-cta p {
+    margin: 0 0 20px;
+}
+
+.case-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 17px;
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid #D9943F;
+
+    color: #D9943F;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+
+    text-decoration: none;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.case-cta a span {
+    font-size: 1rem;
+}
+
+.case-cta a:hover {
+    gap: 25px;
+    color: #FAF7F1;
+    border-color: #FAF7F1;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .device-composition {
+        min-height: 570px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .composition-laptop {
+        width: 74vw;
+    }
+
+    .composition-phone {
+        width: min(205px, 19vw);
+    }
+
+    .composition-primary .composition-phone,
+    .composition-secondary .composition-phone {
+        right: 6%;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .case-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    /* Challenge + Solution stack */
+
+    .case-story {
+        grid-template-columns: 1fr;
+    }
+
+    .case-story-block {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 90px 0;
+    }
+
+    .case-story-block:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(217,148,63,0.16);
+    }
+
+
+    /* Device compositions */
+
+    .device-composition {
+        width: 94%;
+        min-height: 510px;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .composition-laptop {
+        width: 74vw;
+    }
+
+    .composition-phone {
+        width: 19vw;
+    }
+
+    .composition-primary .composition-phone,
+    .composition-secondary .composition-phone {
+        right: 4%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .case-hero {
+        min-height: 68vh;
+        padding: 125px 7% 75px;
+    }
+
+    .case-hero h1 {
+        font-size: clamp(3.7rem, 15vw, 6rem);
+    }
+
+    .case-intro {
+        font-size: 0.88rem;
+        margin-top: 28px;
+    }
+
+
+    .case-visual {
+        width: 92%;
+        padding-bottom: 90px;
+    }
+
+
+    /* Each pair becomes one contained presentation */
+
+    .device-composition {
+        width: 100%;
+        min-height: 0;
+
+        display: block;
+
+        margin-bottom: 85px;
+
+        padding:
+            55px 5% 75px;
+
+        border-radius: 22px;
+    }
+
+    .device-composition::before {
+        width: 100%;
+        height: 65%;
+    }
+
+
+    .composition-laptop {
+        width: 100%;
+        transform: none !important;
+    }
+
+    .composition-laptop .composition-label {
+        left: 0;
+        top: -25px;
+        font-size: 0.45rem;
+    }
+
+
+    .composition-phone {
+        position: absolute;
+
+        width: 27%;
+
+        right: 3.5%;
+        top: auto !important;
+        bottom: -5%;
+
+        transform: rotate(2deg) !important;
+    }
+
+    .composition-phone .composition-label {
+        right: 0;
+        top: -24px;
+        font-size: 0.41rem;
+    }
+
+
+    .composition-primary .composition-laptop,
+    .composition-secondary .composition-laptop {
+        transform: none !important;
+    }
+
+    .composition-primary .composition-phone,
+    .composition-secondary .composition-phone {
+        right: 3.5%;
+    }
+
+
+    .iphone {
+        border-radius: 25px;
+    }
+
+    .iphone::before {
+        border-radius: 23px;
+    }
+
+    .iphone-screen {
+        border-radius: 20px;
+    }
+
+
+    .case-story {
+        width: 86%;
+    }
+
+    .case-story-content h2 {
+        font-size: 3.4rem;
+    }
+
+    .case-story-content p {
+        font-size: 0.86rem;
+        line-height: 1.8;
+    }
+
+    .case-outcome {
+        padding: 100px 0;
+    }
+
+    .case-cta {
+        padding: 60px 7% 90px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .case-eyebrow,
+    .case-category,
+    .case-story-label,
+    .case-outcome-label,
+    .case-cta p {
+        font-size: 0.56rem;
+        letter-spacing: 0.17em;
+    }
+
+    .case-hero {
+        padding-top: 110px;
+    }
+
+    .case-hero h1 {
+        font-size: 3.6rem;
+    }
+
+    .case-details {
+        margin-top: 45px;
+    }
+
+
+    .device-composition {
+        padding:
+            45px 4% 65px;
+
+        margin-bottom: 70px;
+        border-radius: 18px;
+    }
+
+    .composition-phone {
+        width: 29%;
+        right: 3%;
+        bottom: -4%;
+    }
+
+    .composition-laptop .composition-label,
+    .composition-phone .composition-label {
+        font-size: 0.37rem;
+        letter-spacing: 0.12em;
+    }
+
+    .iphone {
+        border-radius: 21px;
+    }
+
+    .iphone::before {
+        border-radius: 19px;
+    }
+
+    .iphone-screen {
+        border-radius: 17px;
+    }
+
+
+    .case-story-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .case-outcome h2 {
+        font-size: 3.3rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .composition-laptop,
+    .composition-phone,
+    .case-cta a {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   BARC HOUSE — WARMER / BRIGHTER CASE STUDY ATMOSPHERE
+   Keeps the CornerStone palette, but gives the project imagery
+   a lighter environment so the teal Barc House screens sit
+   naturally inside the page.
+   ========================================================= */
+
+/* Warm veil over the molten background */
+body:has(.case-hero)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(243,238,230,0.075),
+            transparent 48%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(243,238,230,0.035),
+            rgba(217,148,63,0.018)
+        );
+}
+
+/* Give the main case-study area a very subtle warm lift */
+body:has(.case-hero) main {
+    position: relative;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(243,238,230,0.035) 0%,
+            rgba(243,238,230,0.055) 34%,
+            rgba(243,238,230,0.04) 68%,
+            rgba(243,238,230,0.025) 100%
+        );
+}
+
+/* Hero gets a touch more warmth without becoming beige */
+body:has(.case-hero) .case-hero {
+    background:
+        radial-gradient(
+            ellipse at 55% 65%,
+            rgba(217,148,63,0.09),
+            transparent 58%
+        );
+}
+
+/* The preview boxes become warm glass instead of almost-black cards */
+body:has(.case-hero) .device-composition {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(243,238,230,0.055),
+            rgba(243,238,230,0.022)
+        );
+
+    border-color: rgba(217,148,63,0.22);
+
+    box-shadow:
+        inset 0 1px 0 rgba(250,247,241,0.055),
+        0 28px 80px rgba(0,0,0,0.13);
+}
+
+/* Slightly brighter warm glow behind the screenshots */
+body:has(.case-hero) .device-composition::before {
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(217,148,63,0.13) 0%,
+            rgba(243,238,230,0.035) 43%,
+            transparent 72%
+        );
+}
+
+/* Let the screenshots breathe instead of looking pasted onto black */
+body:has(.case-hero) .desktop-preview,
+body:has(.case-hero) .iphone {
+    box-shadow:
+        0 28px 60px rgba(0,0,0,0.32),
+        0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Challenge / Solution get the same warm lift */
+body:has(.case-hero) .case-story {
+    border-top-color: rgba(217,148,63,0.22);
+}
+
+body:has(.case-hero) .case-story-block {
+    border-bottom-color: rgba(217,148,63,0.20);
+}
+
+body:has(.case-hero) .case-story-block:first-child {
+    border-right-color: rgba(217,148,63,0.20);
+}
+
+/* Slightly soften the muted copy so it reads better on the lighter page */
+body:has(.case-hero) .case-story-content p {
+    color: #DDD5CB;
+}
+
+body:has(.case-hero) .case-details {
+    border-top-color: rgba(217,148,63,0.25);
+}
+
+/* Outcome and CTA remain dark/warm, but are no longer visually disconnected */
+body:has(.case-hero) .case-outcome {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(243,238,230,0.025),
+            transparent 68%
+        );
+}
+
+body:has(.case-hero) .case-cta {
+    border-top-color: rgba(217,148,63,0.22);
+}
+
+
+/* =========================================================
+   BRIGHTER DESKTOP PREVIEW TREATMENT
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    body:has(.case-hero) .device-composition {
+        backdrop-filter: blur(2px);
+    }
+
+    body:has(.case-hero) .desktop-preview {
+        box-shadow:
+            0 32px 65px rgba(0,0,0,0.30),
+            0 4px 16px rgba(0,0,0,0.12);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body:has(.case-hero) .device-composition {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(243,238,230,0.06),
+                rgba(243,238,230,0.025)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   BARC HOUSE — WARM CREAM CASE STUDY PALETTE
+   ========================================================= */
+
+body:has(.case-hero) {
+    --barc-cream: #F3EEE6;
+    --barc-cream-soft: #FAF7F1;
+    --barc-brown: #2A211A;
+    --barc-brown-soft: #4A392B;
+    --barc-gold: #B77A2A;
+    --barc-gold-bright: #D9943F;
+    --barc-border: rgba(42,33,26,0.16);
+    --barc-border-gold: rgba(183,122,42,0.28);
+
+    background: var(--barc-cream);
+    color: var(--barc-brown);
+}
+
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+body:has(.case-hero)::before {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(217,148,63,0.10),
+            transparent 48%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(250,247,241,0.55),
+            rgba(243,238,230,0.88)
+        );
+}
+
+body:has(.case-hero) main {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(250,247,241,0.58) 0%,
+            rgba(243,238,230,0.90) 38%,
+            rgba(243,238,230,0.98) 100%
+        );
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body:has(.case-hero) .case-hero {
+    background:
+        radial-gradient(
+            ellipse at 58% 70%,
+            rgba(217,148,63,0.13),
+            transparent 58%
+        );
+}
+
+body:has(.case-hero) .case-eyebrow,
+body:has(.case-hero) .case-category {
+    color: var(--barc-gold);
+}
+
+body:has(.case-hero) .case-hero h1 {
+    color: var(--barc-brown);
+}
+
+body:has(.case-hero) .case-hero h1 span {
+    color: var(--barc-gold-bright);
+}
+
+body:has(.case-hero) .case-intro {
+    color: var(--barc-brown-soft);
+}
+
+body:has(.case-hero) .case-details {
+    border-top-color: var(--barc-border-gold);
+}
+
+body:has(.case-hero) .case-details span {
+    color: rgba(42,33,26,0.58);
+}
+
+body:has(.case-hero) .case-details strong {
+    color: var(--barc-brown);
+}
+
+
+/* =========================================================
+   PROJECT PREVIEW BOXES
+   ========================================================= */
+
+body:has(.case-hero) .device-composition {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(250,247,241,0.76),
+            rgba(243,238,230,0.52)
+        );
+
+    border-color: var(--barc-border-gold);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.65),
+        0 28px 80px rgba(42,33,26,0.10);
+}
+
+body:has(.case-hero) .device-composition::before {
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(217,148,63,0.16) 0%,
+            rgba(183,122,42,0.055) 42%,
+            transparent 72%
+        );
+}
+
+body:has(.case-hero) .composition-label {
+    color: var(--barc-gold);
+}
+
+
+/* =========================================================
+   SCREENSHOTS
+   ========================================================= */
+
+body:has(.case-hero) .desktop-preview {
+    box-shadow:
+        0 30px 65px rgba(42,33,26,0.22),
+        0 5px 16px rgba(42,33,26,0.10);
+}
+
+
+/* =========================================================
+   IPHONE
+   ========================================================= */
+
+body:has(.case-hero) .iphone {
+    background:
+        linear-gradient(
+            145deg,
+            #4A4037 0%,
+            #29221D 28%,
+            #120F0C 70%,
+            #080706 100%
+        );
+
+    border-color: rgba(42,33,26,0.32);
+
+    box-shadow:
+        0 35px 70px rgba(42,33,26,0.30),
+        0 10px 22px rgba(42,33,26,0.18),
+        inset 0 1px 1px rgba(255,255,255,0.22);
+}
+
+
+/* =========================================================
+   CHALLENGE + SOLUTION
+   ========================================================= */
+
+body:has(.case-hero) .case-story {
+    border-top-color: var(--barc-border);
+}
+
+body:has(.case-hero) .case-story-block {
+    border-bottom-color: var(--barc-border);
+}
+
+body:has(.case-hero) .case-story-block:first-child {
+    border-right-color: var(--barc-border);
+}
+
+body:has(.case-hero) .case-story-label {
+    color: var(--barc-gold);
+}
+
+body:has(.case-hero) .case-story-content h2 {
+    color: var(--barc-brown);
+}
+
+body:has(.case-hero) .case-story-content h2 span {
+    color: var(--barc-gold-bright);
+}
+
+body:has(.case-hero) .case-story-content p {
+    color: var(--barc-brown-soft);
+}
+
+
+/* =========================================================
+   OUTCOME
+   ========================================================= */
+
+body:has(.case-hero) .case-outcome {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(217,148,63,0.075),
+            transparent 68%
+        );
+}
+
+body:has(.case-hero) .case-outcome-label {
+    color: var(--barc-gold);
+}
+
+body:has(.case-hero) .case-outcome h2 {
+    color: var(--barc-brown);
+}
+
+body:has(.case-hero) .case-outcome h2 span {
+    color: var(--barc-gold-bright);
+}
+
+body:has(.case-hero) .case-outcome > p:last-child {
+    color: var(--barc-brown-soft);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+body:has(.case-hero) .case-cta {
+    border-top-color: var(--barc-border);
+}
+
+body:has(.case-hero) .case-cta p {
+    color: var(--barc-gold);
+}
+
+body:has(.case-hero) .case-cta a {
+    color: var(--barc-gold);
+    border-bottom-color: var(--barc-gold);
+}
+
+body:has(.case-hero) .case-cta a:hover {
+    color: var(--barc-brown);
+    border-color: var(--barc-brown);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body:has(.case-hero) .device-composition {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(250,247,241,0.82),
+                rgba(243,238,230,0.62)
+            );
+    }
+
+}
+

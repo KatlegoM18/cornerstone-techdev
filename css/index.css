@@ -116,8 +116,6 @@ footer {
 
     z-index: 2;
 }
-
-
 /* =========================================================
    NAVIGATION
 ========================================================= */
@@ -350,13 +348,14 @@ main {
 
     position: relative;
 
-    min-height: 60vh;
+    /* Fill the viewport beneath the sticky navbar */
+    min-height: calc(100vh - 92px);
 
     display: flex;
 
     align-items: center;
 
-    padding: 75px 7%;
+    padding: 90px 7%;
 
     /*
        Much lighter than the previous overlay.
@@ -621,7 +620,22 @@ main {
 
     position: relative;
 
-    min-height: 420px;
+    /* Give the services section the same visual weight as the opening */
+    min-height: calc(100vh - 92px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(360px, 0.85fr);
+
+    grid-template-rows:
+        auto
+        auto;
+
+    column-gap: 8vw;
+
+    align-content: center;
 
     padding: 120px 7%;
 
@@ -637,6 +651,12 @@ main {
     position: relative;
 
     z-index: 2;
+
+    width: 100%;
+
+    grid-column: 1;
+
+    grid-row: 1;
 }
 
 .section-label {
@@ -667,27 +687,141 @@ main {
     color: var(--beige);
 }
 
+.services-intro {
+
+    max-width: 620px;
+
+    margin-top: 28px;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   SERVICES LIST
+========================================================= */
+
+.services-list {
+
+    grid-column: 2;
+
+    grid-row: 1 / span 2;
+
+    width: 100%;
+
+    align-self: center;
+
+    z-index: 2;
+}
+
+.service-item {
+
+    display: grid;
+
+    grid-template-columns:
+        42px
+        minmax(0, 1fr)
+        30px;
+
+    gap: 20px;
+
+    align-items: start;
+
+    padding:
+        24px 0;
+
+    border-top:
+        1px solid
+        rgba(228, 185, 111, 0.22);
+}
+
+.service-item:last-child {
+
+    border-bottom:
+        1px solid
+        rgba(228, 185, 111, 0.22);
+}
+
+.service-number {
+
+    color: var(--beige-light);
+
+    font-size: 0.78rem;
+
+    letter-spacing: 1px;
+
+    padding-top: 3px;
+}
+
+.service-copy h3 {
+
+    color: var(--white);
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 7px;
+}
+
+.service-copy p {
+
+    max-width: 520px;
+
+    color: var(--text-muted);
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+}
+
+.service-arrow {
+
+    color: var(--beige-light);
+
+    font-size: 1rem;
+
+    padding-top: 1px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.service-item:hover .service-arrow {
+
+    color: var(--white);
+
+    transform:
+        translate(3px, -3px);
+}
+
 
 /* =========================================================
    SERVICES ACTION BUTTONS
-   Desktop placement.
+   Keep them below the main content instead of floating
+   over the service list.
 ========================================================= */
 
 .services-buttons {
 
-    position: absolute;
+    grid-column: 1;
 
-    left: 62%;
-
-    top: 50%;
-
-    transform: translateY(-50%);
+    grid-row: 2;
 
     display: flex;
 
     align-items: center;
 
-    gap: 25px;
+    gap: 18px;
+
+    margin-top: 42px;
 
     z-index: 5;
 }
@@ -1307,8 +1441,10 @@ footer {
 
     .hero {
 
+        min-height: auto;
+
         padding:
-            70px 6% 80px;
+            90px 6% 100px;
 
     }
 
@@ -1352,8 +1488,10 @@ footer {
 
     .services-preview {
 
+        min-height: auto;
+
         padding:
-            90px 6%;
+            100px 6% 110px;
 
     }
 
@@ -1466,7 +1604,7 @@ footer {
     .hero {
 
         padding:
-            58px 6% 70px;
+            72px 6% 85px;
 
     }
 
@@ -1613,8 +1751,16 @@ footer {
 
     .services-preview {
 
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
         padding:
-            72px 6%;
+            82px 6% 90px;
 
     }
 
@@ -1631,6 +1777,62 @@ footer {
     }
 
 
+    .services-intro {
+
+        margin-top:
+            22px;
+
+        font-size:
+            0.92rem;
+
+    }
+
+
+    .services-list {
+
+        width: 100%;
+
+        margin-top:
+            55px;
+
+    }
+
+
+    .service-item {
+
+        grid-template-columns:
+            34px
+            minmax(0, 1fr)
+            24px;
+
+        gap:
+            12px;
+
+        padding:
+            20px 0;
+
+    }
+
+
+    .service-copy h3 {
+
+        font-size:
+            0.92rem;
+
+    }
+
+
+    .service-copy p {
+
+        font-size:
+            0.84rem;
+
+        line-height:
+            1.6;
+
+    }
+
+
     .services-buttons {
 
         flex-direction:
@@ -1638,6 +1840,11 @@ footer {
 
         align-items:
             stretch;
+
+        width: 100%;
+
+        margin-top:
+            35px;
 
         gap:
             12px;
@@ -1719,7 +1926,7 @@ footer {
     .hero {
 
         padding:
-            52px 6% 62px;
+            64px 6% 75px;
 
     }
 
@@ -1751,7 +1958,7 @@ footer {
     .services-preview {
 
         padding:
-            62px 6%;
+            72px 6% 78px;
 
     }
 
@@ -2116,7 +2323,7 @@ footer {
     ------------------------- */
 
     .hero {
-        min-height: auto;
+        min-height: calc(100vh - 78px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2200,7 +2407,14 @@ footer {
     ------------------------- */
 
     .services-preview {
-        min-height: auto;
+        min-height: calc(100vh - 78px);
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        column-gap: 6vw;
+
         padding: 100px 7%;
     }
 
@@ -2213,6 +2427,11 @@ footer {
         font-size: clamp(3rem, 6vw, 4.5rem);
     }
 
+    .services-list {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
     .services-buttons {
         position: relative;
 
@@ -2221,6 +2440,7 @@ footer {
         transform: none;
 
         width: 100%;
+
         margin-top: 40px;
 
         display: flex;

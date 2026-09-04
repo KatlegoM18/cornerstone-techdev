@@ -124,6 +124,10 @@ main {
 
 .services-intro {
 
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
     display: grid;
 
     grid-template-columns:

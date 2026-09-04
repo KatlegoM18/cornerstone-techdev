@@ -1,6 +1,6 @@
 /* =========================================================
    CORNERSTONE TECHDEV
-   PORTFOLIO CAROUSEL
+   PROJECTS CAROUSEL
    ========================================================= */
 
 document.addEventListener(
@@ -59,9 +59,6 @@ document.addEventListener(
 
         /* =================================================
            PROJECTS
-
-           Add real completed projects here as the
-           CornerStone portfolio grows.
         ================================================= */
 
         const projects = [
@@ -79,10 +76,10 @@ document.addEventListener(
                     "A digital platform created for student accommodation, combining a public-facing website with custom functionality behind the experience.",
 
                 image:
-                    "../images/barc-house-preview.jpg",
+                    "../images/barchouse landing page .png",
 
                 imageAlt:
-                    "Barc House website preview",
+                    "Barc House landing page",
 
                 tags: [
                     "WEB DESIGN",
@@ -92,7 +89,10 @@ document.addEventListener(
                 ],
 
                 link:
-                    "../projects/BarcHouse/index.html"
+                    "../projects/BarcHouse/index.html",
+
+                caseStudy:
+                    "barc-house.html"
             },
 
 
@@ -120,6 +120,9 @@ document.addEventListener(
                 ],
 
                 link:
+                    null,
+
+                caseStudy:
                     null
             }
 
@@ -341,35 +344,145 @@ document.addEventListener(
 
 
             /* ---------------------------------------------
-               LINK
+               PROJECT ACTIONS
             --------------------------------------------- */
 
-            if (project.link) {
+            if (
+                project.link ||
+                project.caseStudy
+            ) {
 
-                const link =
+                const actions =
                     document.createElement(
-                        "a"
+                        "div"
                     );
 
-                link.className =
-                    "portfolio-carousel-link";
+                actions.className =
+                    "portfolio-carousel-actions";
 
-                link.href =
-                    project.link;
 
-                link.innerHTML =
-                    `
-                        VIEW PROJECT
-                        <span>→</span>
-                    `;
+                /* -----------------------------------------
+                   VIEW PROJECT
+                ----------------------------------------- */
+
+                if (project.link) {
+
+                    const link =
+                        document.createElement(
+                            "a"
+                        );
+
+                    link.className =
+                        "portfolio-carousel-link";
+
+                    link.href =
+                        project.link;
+
+                    link.innerHTML =
+                        `
+                            VIEW PROJECT
+                            <span>→</span>
+                        `;
+
+
+                    /*
+                     * Prevent the carousel from treating
+                     * the button click as a drag.
+                     */
+
+                    link.addEventListener(
+                        "pointerdown",
+                        (event) => {
+
+                            event.stopPropagation();
+
+                        }
+                    );
+
+
+                    link.addEventListener(
+                        "click",
+                        (event) => {
+
+                            event.stopPropagation();
+
+                        }
+                    );
+
+
+                    actions.appendChild(
+                        link
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   CASE STUDY
+                ----------------------------------------- */
+
+                if (project.caseStudy) {
+
+                    const caseStudy =
+                        document.createElement(
+                            "a"
+                        );
+
+                    caseStudy.className =
+                        "portfolio-carousel-case-study";
+
+                    caseStudy.href =
+                        project.caseStudy;
+
+                    caseStudy.innerHTML =
+                        `
+                            CASE STUDY
+                            <span>→</span>
+                        `;
+
+
+                    /*
+                     * Prevent the carousel from treating
+                     * the button click as a drag.
+                     */
+
+                    caseStudy.addEventListener(
+                        "pointerdown",
+                        (event) => {
+
+                            event.stopPropagation();
+
+                        }
+                    );
+
+
+                    caseStudy.addEventListener(
+                        "click",
+                        (event) => {
+
+                            event.stopPropagation();
+
+                        }
+                    );
+
+
+                    actions.appendChild(
+                        caseStudy
+                    );
+
+                }
 
 
                 content.appendChild(
-                    link
+                    actions
                 );
 
             }
 
+
+            /* ---------------------------------------------
+               CONTENT ORDER
+            --------------------------------------------- */
 
             content.prepend(
                 tags
@@ -387,6 +500,10 @@ document.addEventListener(
                 category
             );
 
+
+            /* ---------------------------------------------
+               CARD
+            --------------------------------------------- */
 
             card.appendChild(
                 imageContainer
@@ -448,7 +565,9 @@ document.addEventListener(
                         "click",
                         () => {
 
-                            goToSlide(index);
+                            goToSlide(
+                                index
+                            );
 
                         }
                     );
@@ -477,7 +596,9 @@ document.addEventListener(
 
 
             if (!card) {
+
                 return 0;
+
             }
 
 
@@ -512,7 +633,9 @@ document.addEventListener(
 
 
             if (!width) {
+
                 return;
+
             }
 
 
@@ -703,11 +826,30 @@ document.addEventListener(
             "pointerdown",
             (event) => {
 
+                /*
+                 * IMPORTANT:
+                 * Never start a carousel drag when the user
+                 * clicks an actual link or button.
+                 */
+
+                if (
+                    event.target.closest(
+                        "a, button"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
                 if (
                     event.pointerType === "mouse" &&
                     event.button !== 0
                 ) {
+
                     return;
+
                 }
 
 
@@ -749,7 +891,9 @@ document.addEventListener(
             (event) => {
 
                 if (!isDragging) {
+
                     return;
+
                 }
 
 
@@ -776,7 +920,9 @@ document.addEventListener(
 
 
                 if (!width) {
+
                     return;
+
                 }
 
 
@@ -788,9 +934,9 @@ document.addEventListener(
                     distance;
 
 
-                /*
-                 * Resistance at the ends.
-                 */
+                /* -----------------------------------------
+                   RESISTANCE AT ENDS
+                ----------------------------------------- */
 
                 if (
                     currentIndex === 0 &&
@@ -833,7 +979,9 @@ document.addEventListener(
         function finishDrag(event) {
 
             if (!isDragging) {
+
                 return;
+
             }
 
 
@@ -874,7 +1022,9 @@ document.addEventListener(
 
             } catch (error) {
 
-                /* Pointer may already be released. */
+                /*
+                 * Pointer may already be released.
+                 */
 
             }
 
@@ -910,11 +1060,14 @@ document.addEventListener(
                 nextSlide();
 
             } else if (
+
                 distance > threshold ||
+
                 (
                     distance > 50 &&
                     fastSwipe
                 )
+
             ) {
 
                 previousSlide();
@@ -981,8 +1134,10 @@ document.addEventListener(
                     (
                         active.tagName ===
                             "INPUT" ||
+
                         active.tagName ===
                             "TEXTAREA" ||
+
                         active.tagName ===
                             "SELECT"
                     )

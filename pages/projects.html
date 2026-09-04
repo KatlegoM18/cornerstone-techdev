@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Projects | CornerStone TechDev</title>
+
+    <link rel="icon" type="image/png" href="../images/CT favicon.png">
+
+    <meta
+        name="description"
+        content="Explore selected web design and full-stack development work by CornerStone TechDev."
+    >
+
+    <!-- MAIN SITE CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/index.css"
+    >
+
+    <!-- PORTFOLIO CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/projects.css"
+    >
+
+    <!-- MOLTEN METAL BACKGROUND -->
+    <script
+        type="module"
+        src="../js/molten-metal.js"
+    ></script>
+
+    <!-- 3D CT LOGO -->
+    <script
+        type="module"
+        src="../js/ct-logo-3d.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+    <!-- ==========================================
+         MOLTEN METAL BACKGROUND
+    =========================================== -->
+
+    <div class="molten-background">
+        <canvas id="molten-canvas"></canvas>
+    </div>
+
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <a href="../index.html">
+
+                <div class="ct-3d-logo">
+                    <canvas id="ct-logo-canvas"></canvas>
+                </div>
+
+                <span>
+                    CornerStone
+                    <strong>TechDev</strong>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <nav
+            class="nav-links"
+            id="nav-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="../index.html#portfolio">
+                Portfolio
+            </a>
+
+            <a
+                href="projects.html"
+                class="active"
+                aria-current="page"
+            >
+                Projects
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-contact"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN
+    =========================================== -->
+
+    <main>
+
+
+        <!-- ======================================
+             HERO
+        ======================================= -->
+
+        <section class="portfolio-hero">
+
+            <div class="portfolio-hero-content">
+
+                <p class="portfolio-eyebrow">
+                    CLIENT PROJECTS
+                </p>
+
+                <h1>
+                    BUILT FOR
+                    <span>
+                        REAL PEOPLE.
+                    </span>
+                </h1>
+
+                <p class="portfolio-hero-description">
+                    Real websites and digital solutions built for
+                    real clients. Each project starts with a problem,
+                    a purpose, and an understanding of the people
+                    it needs to serve.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             PROJECT CAROUSEL
+        ======================================= -->
+
+        <section class="portfolio-projects">
+
+            <div class="portfolio-heading">
+
+                <div>
+
+                    <p class="portfolio-section-label">
+                        SELECTED CLIENT WORK
+                    </p>
+
+                    <h2>
+                        BUILT WITH
+                        <span>
+                            PURPOSE.
+                        </span>
+                    </h2>
+
+                </div>
+
+                <p class="portfolio-heading-description">
+                    A look at the client work behind CornerStone —
+                    from the problem that needed solving to the
+                    experience we built around it.
+                </p>
+
+            </div>
+
+
+            <div
+                class="portfolio-carousel"
+                id="portfolio-carousel"
+            >
+
+                <div
+                    class="portfolio-carousel-viewport"
+                    aria-label="CornerStone TechDev project portfolio"
+                >
+
+                    <div
+                        class="portfolio-carousel-track"
+                        id="portfolio-carousel-track"
+                    ></div>
+
+                </div>
+
+
+                <!-- CONTROLS -->
+
+                <div class="portfolio-carousel-controls">
+
+                    <button
+                        type="button"
+                        class="portfolio-carousel-prev"
+                        id="portfolio-carousel-prev"
+                        aria-label="Previous project"
+                    >
+                        ←
+                    </button>
+
+
+                    <div class="portfolio-carousel-status">
+
+                        <span
+                            class="portfolio-carousel-current"
+                            id="portfolio-carousel-current"
+                        >
+                            01
+                        </span>
+
+                        <span>/</span>
+
+                        <span
+                            class="portfolio-carousel-total"
+                            id="portfolio-carousel-total"
+                        >
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="portfolio-carousel-next"
+                        id="portfolio-carousel-next"
+                        aria-label="Next project"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <!-- INDICATORS -->
+
+                <div
+                    class="portfolio-carousel-indicators"
+                    id="portfolio-carousel-indicators"
+                    aria-label="Project slides"
+                ></div>
+
+
+                <p class="portfolio-carousel-hint">
+                    SWIPE OR DRAG TO EXPLORE
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             FULL-STACK CAPABILITY
+        ======================================= -->
+
+        <section class="portfolio-capability">
+
+            <div class="portfolio-capability-inner">
+
+                <div>
+
+                    <p class="portfolio-capability-label">
+                        EVERY PROJECT HAS A STORY
+                    </p>
+
+                    <h2>
+                        BEHIND THE
+                        <span>
+                            BUILD.
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div class="portfolio-capability-copy">
+
+                    <p>
+                        A finished website is only the surface.
+                        Every client project starts with a problem,
+                        a direction, and decisions about how the
+                        experience should work.
+                    </p>
+
+                    <p>
+                        Explore the case study to see the thinking
+                        behind the build — from the challenge to
+                        the solution.
+                    </p>
+
+                    <a
+                        href="barc-house.html"
+                        class="portfolio-services-link"
+                    >
+                        EXPLORE THE CASE STUDY
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             CTA
+        ======================================= -->
+
+        <section class="portfolio-cta">
+
+            <div class="portfolio-cta-inner">
+
+                <p class="portfolio-cta-label">
+                    HAVE A PROJECT IN MIND?
+                </p>
+
+                <h2>
+                    LET'S BUILD
+                    <span>
+                        IT.
+                    </span>
+                </h2>
+
+                <p>
+                    Have an idea, a business, or a digital
+                    problem that needs solving? Let's turn
+                    it into something real.
+                </p>
+
+
+                <div class="portfolio-cta-buttons">
+
+                    <a
+                        href="contact.html"
+                        class="portfolio-cta-button primary"
+                    >
+                        START A PROJECT
+                    </a>
+
+                    <a
+                        href="services.html"
+                        class="portfolio-cta-button"
+                    >
+                        VIEW SERVICES
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CornerStone TechDev.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ==========================================
+         PORTFOLIO CAROUSEL
+    =========================================== -->
+
+    <script
+        src="../js/projects-carousel.js"
+    ></script>
+
+
+    <!-- ==========================================
+         MOBILE NAVIGATION
+    =========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const menuToggle =
+                    document.getElementById(
+                        "menu-toggle"
+                    );
+
+                const navLinks =
+                    document.getElementById(
+                        "nav-links"
+                    );
+
+
+                if (
+                    !menuToggle ||
+                    !navLinks
+                ) {
+                    return;
+                }
+
+
+                function closeMenu() {
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
+
+                }
+
+
+                menuToggle.addEventListener(
+                    "click",
+                    () => {
+
+                        const isOpen =
+                            navLinks.classList.toggle(
+                                "active"
+                            );
+
+
+                        menuToggle.classList.toggle(
+                            "active",
+                            isOpen
+                        );
+
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            String(isOpen)
+                        );
+
+
+                        menuToggle.setAttribute(
+                            "aria-label",
+                            isOpen
+                                ? "Close navigation menu"
+                                : "Open navigation menu"
+                        );
+
+
+                        document.body.classList.toggle(
+                            "menu-open",
+                            isOpen
+                        );
+
+                    }
+                );
+
+
+                navLinks
+                    .querySelectorAll("a")
+                    .forEach(
+                        (link) => {
+
+                            link.addEventListener(
+                                "click",
+                                closeMenu
+                            );
+
+                        }
+                    );
+
+
+                document.addEventListener(
+                    "keydown",
+                    (event) => {
+
+                        if (
+                            event.key === "Escape"
+                        ) {
+
+                            closeMenu();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

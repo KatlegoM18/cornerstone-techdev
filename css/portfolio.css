@@ -1,1006 +1,354 @@
 /* =========================================================
    CORNERSTONE TECHDEV
    PORTFOLIO PAGE
-   ========================================================= */
+========================================================= */
 
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
 .portfolio-hero {
-    position: relative;
-    min-height: 72vh;
+
+    min-height: 62vh;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    padding: 150px 6% 100px;
+    padding:
+        120px 7%
+        110px;
 
-    text-align: center;
+    background:
+        linear-gradient(
+            rgba(29, 25, 20, 0.18),
+            rgba(29, 25, 20, 0.55)
+        );
 
-    overflow: hidden;
+    border-bottom:
+        1px solid
+        rgba(228, 185, 111, 0.10);
 }
 
 
 .portfolio-hero-content {
-    position: relative;
-    z-index: 2;
 
     width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-}
-
-
-.portfolio-eyebrow {
-    margin: 0 0 25px;
-
-    color: #D9943F;
-
-    font-size: 0.72rem;
-    font-weight: 700;
-
-    letter-spacing: 0.28em;
-
-    text-transform: uppercase;
+    max-width: 1050px;
 }
 
 
 .portfolio-hero h1 {
-    margin: 0;
 
-    color: #FAF7F1;
+    margin:
+        0 0 32px;
 
-    font-size: clamp(
-        3.5rem,
-        8vw,
-        8rem
-    );
+    color:
+        var(--white);
 
-    line-height: 0.88;
+    font-size:
+        clamp(
+            3.2rem,
+            7vw,
+            6.5rem
+        );
 
-    font-weight: 800;
+    line-height: 0.92;
 
-    letter-spacing: -0.055em;
+    letter-spacing: -3px;
 
     text-transform: uppercase;
 }
 
 
 .portfolio-hero h1 span {
+
     display: block;
 
-    color: #D9943F;
+    color:
+        var(--beige);
 }
 
 
-.portfolio-hero-description {
-    max-width: 760px;
+.portfolio-hero-content > p:last-child {
 
-    margin: 38px auto 0;
+    max-width: 720px;
 
-    color: #E5DED4;
+    color:
+        var(--text-light);
 
-    font-size: 1rem;
+    font-size: 1.05rem;
 
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   PROJECT SECTION
-   ========================================================= */
+   PROJECTS
+========================================================= */
 
 .portfolio-projects {
-    position: relative;
 
-    padding: 110px 5% 130px;
+    padding:
+        110px 7%
+        120px;
 
-    overflow: hidden;
+    background:
+        rgba(29, 25, 20, 0.74);
 }
 
 
 .portfolio-heading {
-    width: min(1250px, 100%);
 
-    margin: 0 auto 55px;
+    max-width: 850px;
 
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 50px;
-}
-
-
-.portfolio-section-label {
-    margin: 0 0 16px;
-
-    color: #D9943F;
-
-    font-size: 0.7rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.25em;
-
-    text-transform: uppercase;
+    margin-bottom: 75px;
 }
 
 
 .portfolio-heading h2 {
+
     margin: 0;
 
-    color: #FAF7F1;
+    color:
+        var(--white);
 
-    font-size: clamp(
-        2.8rem,
-        5vw,
-        5.2rem
-    );
+    font-size:
+        clamp(
+            2.8rem,
+            5.5vw,
+            5.2rem
+        );
 
-    line-height: 0.92;
+    line-height: 0.94;
 
-    font-weight: 800;
-
-    letter-spacing: -0.055em;
+    letter-spacing: -2.5px;
 
     text-transform: uppercase;
 }
 
 
 .portfolio-heading h2 span {
-    color: #D9943F;
-}
 
+    display: block;
 
-.portfolio-heading-description {
-    max-width: 400px;
-
-    margin: 0;
-
-    color: #AAA29A;
-
-    font-size: 0.9rem;
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
-   CAROUSEL
-   ========================================================= */
-
-.portfolio-carousel {
-    width: min(1250px, 100%);
-
-    margin: 0 auto;
-
-    position: relative;
-}
-
-
-.portfolio-carousel-viewport {
-    width: 100%;
-
-    overflow: hidden;
-
-    cursor: grab;
-
-    touch-action: pan-y;
-
-    border-radius: 3px;
-}
-
-
-.portfolio-carousel-viewport:active {
-    cursor: grabbing;
-}
-
-
-/* =========================================================
-   TRACK
-   ========================================================= */
-
-.portfolio-carousel-track {
-    display: flex;
-
-    gap: 30px;
-
-    width: max-content;
-
-    transition:
-        transform 0.65s
-        cubic-bezier(
-            0.22,
-            1,
-            0.36,
-            1
-        );
-
-    will-change: transform;
-}
-
-
-.portfolio-carousel-track.is-dragging {
-    transition: none;
+    color:
+        var(--beige);
 }
 
 
 /* =========================================================
    PROJECT CARD
-   ========================================================= */
+========================================================= */
 
-.portfolio-carousel-card {
-    position: relative;
-
-    flex: 0 0
-        calc(
-            min(1250px, 90vw)
-        );
-
-    min-height: 600px;
+.portfolio-project {
 
     display: grid;
 
     grid-template-columns:
-        1.25fr
-        0.75fr;
+        minmax(0, 1.35fr)
+        minmax(340px, 0.65fr);
+
+    gap: 65px;
+
+    align-items: center;
+
+    padding:
+        0 0 100px;
+
+    border-bottom:
+        1px solid
+        var(--border-soft);
+}
+
+
+.portfolio-project-image {
+
+    position: relative;
 
     overflow: hidden;
+
+    aspect-ratio: 16 / 10;
+
+    background:
+        rgba(15, 12, 10, 0.75);
 
     border:
         1px solid
-        rgba(
-            217,
-            148,
-            63,
-            0.30
-        );
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(
-                255,
-                255,
-                255,
-                0.055
-            ),
-            rgba(
-                255,
-                255,
-                255,
-                0.015
-            )
-        );
-
-    box-shadow:
-        0 30px 80px
-        rgba(
-            0,
-            0,
-            0,
-            0.35
-        );
+        var(--border);
 }
 
 
-/* =========================================================
-   PROJECT IMAGE
-   ========================================================= */
-
-.portfolio-carousel-image {
-    position: relative;
-
-    min-height: 600px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #211A14,
-            #0D0B09
-        );
-}
-
-
-.portfolio-carousel-image img {
-    width: 100%;
-    height: 100%;
+.portfolio-project-image img {
 
     display: block;
 
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
 
-    object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
-
     transition:
-        transform 0.8s
-        cubic-bezier(
-            0.2,
-            0.8,
-            0.2,
-            1
-        );
+        transform 0.6s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 
-.portfolio-carousel-card:hover
-.portfolio-carousel-image img {
-    transform: scale(1.035);
+.portfolio-project:hover
+.portfolio-project-image img {
+
+    transform:
+        scale(1.035);
 }
 
 
-.portfolio-carousel-image::after {
-    content: "";
+.portfolio-project-number {
 
     position: absolute;
 
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 55%,
-            rgba(
-                13,
-                11,
-                9,
-                0.65
-            )
-        );
-}
-
-
-/* =========================================================
-   PROJECT NUMBER
-   ========================================================= */
-
-.portfolio-carousel-number {
-    position: absolute;
-
-    top: 25px;
-    left: 25px;
-
-    z-index: 3;
-
-    width: 52px;
-    height: 52px;
+    top: 22px;
+    left: 22px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    color: #D9943F;
+    width: 48px;
+    height: 48px;
 
     background:
-        rgba(
-            13,
-            11,
-            9,
-            0.72
-        );
+        rgba(20, 16, 13, 0.84);
 
     border:
         1px solid
-        rgba(
-            243,
-            238,
-            230,
-            0.35
-        );
+        var(--beige);
 
-    backdrop-filter: blur(10px);
+    color:
+        var(--beige);
 
-    -webkit-backdrop-filter: blur(10px);
-
-    font-size: 0.7rem;
+    font-size: 0.72rem;
 
     font-weight: 700;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 1px;
 }
 
 
-/* =========================================================
-   EMPTY PROJECT
-   ========================================================= */
+.portfolio-project-info {
 
-.portfolio-carousel-image-empty {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                217,
-                148,
-                63,
-                0.13
-            ),
-            transparent 60%
-        ),
-        #0E0B09;
+    max-width: 560px;
 }
 
 
-.portfolio-carousel-image-empty::before {
-    content: "";
+.project-label {
 
-    position: absolute;
+    margin-bottom: 18px;
 
-    inset: 35px;
+    color:
+        var(--beige-light);
 
-    border:
-        1px solid
-        rgba(
-            217,
-            148,
-            63,
-            0.20
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+}
+
+
+.portfolio-project-info h3 {
+
+    margin:
+        0 0 25px;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(
+            2.8rem,
+            5vw,
+            5rem
         );
-}
 
+    line-height: 0.92;
 
-.portfolio-carousel-empty-content {
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 18px;
-
-    text-align: center;
-}
-
-
-.portfolio-carousel-empty-content span {
-    color: #D9943F;
-
-    font-size: 0.75rem;
-
-    letter-spacing: 0.2em;
-}
-
-
-.portfolio-carousel-empty-content strong {
-    color: #FAF7F1;
-
-    font-size: clamp(
-        2rem,
-        4vw,
-        3.8rem
-    );
-
-    font-weight: 800;
-
-    letter-spacing: -0.05em;
-}
-
-
-/* =========================================================
-   PROJECT CONTENT
-   ========================================================= */
-
-.portfolio-carousel-content {
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding: 65px;
-}
-
-
-.portfolio-carousel-category {
-    margin: 0 0 18px;
-
-    color: #D9943F;
-
-    font-size: 0.65rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.2em;
-
-    line-height: 1.5;
+    letter-spacing: -2px;
 
     text-transform: uppercase;
 }
 
 
-.portfolio-carousel-content h3 {
-    margin: 0;
+.portfolio-project-info > p {
 
-    color: #FAF7F1;
+    margin-bottom: 28px;
 
-    font-size: clamp(
-        2.5rem,
-        4vw,
-        5rem
-    );
+    color:
+        var(--text-light);
 
-    line-height: 0.9;
-
-    font-weight: 800;
-
-    letter-spacing: -0.055em;
-
-    text-transform: uppercase;
-}
-
-
-.portfolio-carousel-description {
-    max-width: 460px;
-
-    margin: 30px 0 0;
-
-    color: #D8D0C6;
-
-    font-size: 0.92rem;
+    font-size: 0.98rem;
 
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   TAGS
-   ========================================================= */
+   PROJECT TAGS
+========================================================= */
 
-.portfolio-carousel-tags {
+.project-tags {
+
     display: flex;
 
     flex-wrap: wrap;
 
-    gap: 8px;
+    gap: 9px;
 
-    margin-top: 28px;
+    margin-bottom: 32px;
 }
 
 
-.portfolio-carousel-tags span {
-    padding: 7px 10px;
+.project-tags span {
+
+    padding:
+        8px 11px;
 
     border:
         1px solid
-        rgba(
-            217,
-            148,
-            63,
-            0.25
-        );
+        var(--border-soft);
 
-    color: #AFA79D;
+    color:
+        var(--text-muted);
 
-    background:
-        rgba(
-            217,
-            148,
-            63,
-            0.04
-        );
+    font-size: 0.62rem;
 
-    font-size: 0.56rem;
+    font-weight: 600;
 
-    font-weight: 700;
-
-    letter-spacing: 0.1em;
+    letter-spacing: 1.4px;
 }
 
 
 /* =========================================================
    PROJECT LINK
-   ========================================================= */
+========================================================= */
 
-.portfolio-carousel-link {
-    width: fit-content;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 17px;
-
-    margin-top: 38px;
-
-    padding-bottom: 9px;
-
-    border-bottom:
-        1px solid
-        #D9943F;
-
-    color: #D9943F;
-
-    font-size: 0.68rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.17em;
-
-    text-decoration: none;
-
-    transition:
-        gap 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-.portfolio-carousel-link span {
-    font-size: 1rem;
-}
-
-
-.portfolio-carousel-link:hover {
-    gap: 25px;
-
-    color: #FAF7F1;
-
-    border-color: #FAF7F1;
-}
-
-
-/* =========================================================
-   CONTROLS
-   ========================================================= */
-
-.portfolio-carousel-controls {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-top: 28px;
-}
-
-
-.portfolio-carousel-prev,
-.portfolio-carousel-next {
-    width: 52px;
-    height: 52px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-
-    border:
-        1px solid
-        rgba(
-            217,
-            148,
-            63,
-            0.35
-        );
-
-    background:
-        rgba(
-            217,
-            148,
-            63,
-            0.035
-        );
-
-    color: #D9943F;
-
-    font-family: inherit;
-
-    font-size: 1.1rem;
-
-    cursor: pointer;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-.portfolio-carousel-prev:hover:not(:disabled),
-.portfolio-carousel-next:hover:not(:disabled) {
-    background:
-        rgba(
-            217,
-            148,
-            63,
-            0.12
-        );
-
-    border-color: #D9943F;
-
-    color: #FAF7F1;
-
-    transform: translateY(-2px);
-}
-
-
-.portfolio-carousel-prev:disabled,
-.portfolio-carousel-next:disabled {
-    opacity: 0.25;
-
-    cursor: not-allowed;
-}
-
-
-/* =========================================================
-   STATUS
-   ========================================================= */
-
-.portfolio-carousel-status {
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    color: #77716A;
-
-    font-size: 0.65rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.16em;
-}
-
-
-.portfolio-carousel-current {
-    color: #D9943F;
-}
-
-
-/* =========================================================
-   INDICATORS
-   ========================================================= */
-
-.portfolio-carousel-indicators {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 25px;
-}
-
-
-.portfolio-carousel-indicator {
-    width: 30px;
-    height: 3px;
-
-    padding: 0;
-
-    border: 0;
-
-    background:
-        rgba(
-            243,
-            238,
-            230,
-            0.18
-        );
-
-    cursor: pointer;
-
-    transition:
-        width 0.3s ease,
-        background 0.3s ease;
-}
-
-
-.portfolio-carousel-indicator.active {
-    width: 55px;
-
-    background: #D9943F;
-}
-
-
-.portfolio-carousel-indicator:hover {
-    background: #B9B2A8;
-}
-
-
-/* =========================================================
-   HINT
-   ========================================================= */
-
-.portfolio-carousel-hint {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin: 20px 0 0;
-
-    color: #77716A;
-
-    font-size: 0.58rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-}
-
-
-.portfolio-carousel-hint::before,
-.portfolio-carousel-hint::after {
-    content: "";
-
-    width: 30px;
-    height: 1px;
-
-    background:
-        rgba(
-            217,
-            148,
-            63,
-            0.25
-        );
-}
-
-
-/* =========================================================
-   FULL-STACK SECTION
-   ========================================================= */
-
-.portfolio-capability {
-    position: relative;
-
-    padding: 130px 5%;
-
-    border-top:
-        1px solid
-        rgba(
-            217,
-            148,
-            63,
-            0.15
-        );
-
-    border-bottom:
-        1px solid
-        rgba(
-            217,
-            148,
-            63,
-            0.15
-        );
-}
-
-
-.portfolio-capability-inner {
-    width: min(1250px, 100%);
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        0.85fr
-        1.15fr;
-
-    align-items: center;
-
-    gap: 90px;
-}
-
-
-.portfolio-capability-label {
-    margin: 0 0 20px;
-
-    color: #D9943F;
-
-    font-size: 0.68rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.22em;
-
-    text-transform: uppercase;
-}
-
-
-.portfolio-capability h2 {
-    margin: 0;
-
-    color: #FAF7F1;
-
-    font-size: clamp(
-        2.7rem,
-        5vw,
-        5.2rem
-    );
-
-    line-height: 0.92;
-
-    font-weight: 800;
-
-    letter-spacing: -0.055em;
-
-    text-transform: uppercase;
-}
-
-
-.portfolio-capability h2 span {
-    color: #D9943F;
-}
-
-
-.portfolio-capability-copy {
-    color: #D8D0C6;
-
-    font-size: 0.95rem;
-
-    line-height: 1.85;
-}
-
-
-.portfolio-capability-copy p {
-    margin: 0 0 22px;
-}
-
-
-/* =========================================================
-   SERVICES LINK
-   ========================================================= */
-
+.project-link,
 .portfolio-services-link {
-    width: fit-content;
 
     display: inline-flex;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 35px;
 
-    margin-top: 12px;
+    color:
+        var(--beige);
 
-    padding-bottom: 8px;
-
-    border-bottom:
-        1px solid
-        #D9943F;
-
-    color: #D9943F;
-
-    font-size: 0.68rem;
+    font-size: 0.72rem;
 
     font-weight: 700;
 
-    letter-spacing: 0.16em;
+    letter-spacing: 1.8px;
 
     text-decoration: none;
 
@@ -1010,495 +358,565 @@
 }
 
 
-.portfolio-services-link:hover {
-    gap: 23px;
+.project-link span,
+.portfolio-services-link span {
 
-    color: #FAF7F1;
+    font-size: 1.15rem;
+
+    line-height: 1;
+}
+
+
+.project-link:hover,
+.portfolio-services-link:hover {
+
+    gap: 45px;
+
+    color:
+        var(--beige-light);
 }
 
 
 /* =========================================================
-   CTA
-   ========================================================= */
+   MORE WORK
+========================================================= */
 
-.portfolio-cta {
-    padding: 135px 5%;
+.portfolio-coming {
 
-    text-align: center;
+    max-width: 700px;
+
+    padding:
+        95px 0 20px;
 }
 
 
-.portfolio-cta-inner {
-    width: min(850px, 100%);
+.portfolio-coming h3 {
 
-    margin: 0 auto;
-}
+    margin:
+        0 0 22px;
 
+    color:
+        var(--white);
 
-.portfolio-cta-label {
-    margin: 0 0 20px;
+    font-size:
+        clamp(
+            2.4rem,
+            5vw,
+            4.5rem
+        );
 
-    color: #D9943F;
+    line-height: 0.95;
 
-    font-size: 0.68rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.23em;
+    letter-spacing: -2px;
 
     text-transform: uppercase;
 }
 
 
-.portfolio-cta h2 {
-    margin: 0;
+.portfolio-coming h3 span {
 
-    color: #FAF7F1;
+    display: block;
 
-    font-size: clamp(
-        3rem,
-        7vw,
-        6.5rem
-    );
-
-    line-height: 0.9;
-
-    font-weight: 800;
-
-    letter-spacing: -0.055em;
-
-    text-transform: uppercase;
+    color:
+        var(--beige);
 }
 
 
-.portfolio-cta h2 span {
-    color: #D9943F;
-}
+.portfolio-coming > p:last-child {
 
+    max-width: 600px;
 
-.portfolio-cta-inner > p:not(.portfolio-cta-label) {
-    max-width: 570px;
+    color:
+        var(--text-muted);
 
-    margin: 30px auto 0;
-
-    color: #AFA79D;
-
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   CTA BUTTONS
-   ========================================================= */
+   FULL-STACK CAPABILITY
+========================================================= */
 
-.portfolio-cta-buttons {
-    display: flex;
+.portfolio-capability {
 
-    justify-content: center;
+    padding:
+        120px 7%;
 
-    align-items: center;
+    background:
+        rgba(41, 35, 29, 0.88);
 
-    flex-wrap: wrap;
-
-    gap: 14px;
-
-    margin-top: 38px;
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.05);
 }
 
 
-.portfolio-cta-button {
-    min-width: 175px;
+.portfolio-capability h2 {
 
-    min-height: 52px;
+    max-width: 1000px;
 
-    display: inline-flex;
+    margin:
+        0 0 30px;
 
-    align-items: center;
+    color:
+        var(--white);
 
-    justify-content: center;
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5.8rem
+        );
 
-    padding: 14px 25px;
+    line-height: 0.92;
 
-    border:
-        1px solid
-        #D9943F;
-
-    color: #D9943F;
-
-    background: transparent;
-
-    font-size: 0.65rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.15em;
-
-    text-decoration: none;
+    letter-spacing: -3px;
 
     text-transform: uppercase;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
 }
 
 
-.portfolio-cta-button:hover {
-    background: #D9943F;
+.portfolio-capability h2 span {
 
-    color: #15110D;
+    display: block;
 
-    transform: translateY(-2px);
+    color:
+        var(--beige);
 }
 
 
-.portfolio-cta-button.primary {
-    background: #D9943F;
+.portfolio-capability > p:not(.section-label) {
 
-    color: #15110D;
-}
+    max-width: 760px;
 
+    margin-bottom: 35px;
 
-.portfolio-cta-button.primary:hover {
-    background: #FAF7F1;
+    color:
+        var(--text-light);
 
-    border-color: #FAF7F1;
+    font-size: 1rem;
+
+    line-height: 1.85;
 }
 
 
 /* =========================================================
-   TABLET
-   ========================================================= */
+   CTA
+========================================================= */
 
-@media (max-width: 1000px) {
+.portfolio-cta {
+
+    padding:
+        130px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(29, 25, 20, 0.62),
+            rgba(21, 18, 15, 0.92)
+        );
+
+    border-top:
+        1px solid
+        rgba(228, 185, 111, 0.12);
+}
+
+
+.portfolio-cta h2 {
+
+    max-width: 950px;
+
+    margin:
+        0 auto 42px;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            6rem
+        );
+
+    line-height: 0.92;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+}
+
+
+.portfolio-cta h2 span {
+
+    display: block;
+
+    color:
+        var(--beige);
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
 
     .portfolio-hero {
-        min-height: 65vh;
-
-        padding-top: 130px;
-    }
-
-
-    .portfolio-heading {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-
-    .portfolio-heading-description {
-        max-width: 600px;
-    }
-
-
-    .portfolio-carousel-card {
-        grid-template-columns: 1fr;
 
         min-height: auto;
+
+        padding:
+            100px 7%
+            100px;
     }
 
 
-    .portfolio-carousel-image {
-        min-height: 460px;
-    }
+    .portfolio-project {
 
-
-    .portfolio-carousel-content {
-        padding: 55px;
-    }
-
-
-    .portfolio-capability-inner {
         grid-template-columns: 1fr;
 
-        gap: 55px;
+        gap: 45px;
+
+        padding-bottom: 80px;
+    }
+
+
+    .portfolio-project-info {
+
+        max-width: 760px;
+    }
+
+
+    .portfolio-capability,
+    .portfolio-cta {
+
+        padding:
+            100px 7%;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE / TABLET
-   ========================================================= */
+   PHONES
+========================================================= */
 
 @media (max-width: 768px) {
 
     .portfolio-hero {
-        min-height: 60vh;
+
+        min-height: auto;
 
         padding:
-            120px
-            7%
-            80px;
+            75px 6%
+            90px;
     }
 
 
     .portfolio-hero h1 {
+
         font-size:
             clamp(
-                3rem,
-                13vw,
-                5.5rem
+                2.7rem,
+                11vw,
+                4.5rem
             );
-    }
 
-
-    .portfolio-hero-description {
-        margin-top: 28px;
-
-        font-size: 0.88rem;
+        letter-spacing: -2px;
     }
 
 
     .portfolio-projects {
+
         padding:
-            80px
-            5%
-            95px;
+            80px 6%
+            90px;
     }
 
 
     .portfolio-heading {
-        margin-bottom: 40px;
+
+        margin-bottom: 55px;
     }
 
 
-    .portfolio-carousel-card {
-        flex-basis:
-            calc(
-                100vw - 10vw
-            );
-    }
+    .portfolio-heading h2 {
 
-
-    .portfolio-carousel-image {
-        min-height: 370px;
-    }
-
-
-    .portfolio-carousel-content {
-        padding: 45px 35px;
-    }
-
-
-    .portfolio-carousel-content h3 {
         font-size:
             clamp(
-                2.4rem,
+                2.5rem,
                 10vw,
                 4rem
             );
     }
 
 
-    .portfolio-capability {
-        padding: 90px 7%;
+    .portfolio-project {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-bottom: 65px;
     }
 
 
-    .portfolio-cta {
-        padding: 100px 7%;
-    }
+    .portfolio-project-image {
 
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-    .portfolio-hero {
-        min-height: 58vh;
-
-        padding:
-            110px
-            7%
-            70px;
+        aspect-ratio: 4 / 3;
     }
 
 
-    .portfolio-eyebrow {
-        font-size: 0.58rem;
+    .portfolio-project-number {
 
-        letter-spacing: 0.18em;
+        top: 15px;
+        left: 15px;
+
+        width: 42px;
+        height: 42px;
     }
 
 
-    .portfolio-hero h1 {
-        font-size: 3.15rem;
-    }
+    .portfolio-project-info h3 {
 
-
-    .portfolio-hero-description {
-        font-size: 0.82rem;
-
-        line-height: 1.7;
-    }
-
-
-    .portfolio-projects {
-        padding:
-            70px
-            5%
-            80px;
-    }
-
-
-    .portfolio-heading h2 {
-        font-size: 2.5rem;
-    }
-
-
-    .portfolio-carousel-image {
-        min-height: 280px;
-    }
-
-
-    .portfolio-carousel-number {
-        top: 18px;
-        left: 18px;
-
-        width: 43px;
-        height: 43px;
-
-        font-size: 0.6rem;
-    }
-
-
-    .portfolio-carousel-content {
-        padding:
-            35px
-            25px
-            40px;
-    }
-
-
-    .portfolio-carousel-category {
-        font-size: 0.56rem;
-    }
-
-
-    .portfolio-carousel-content h3 {
-        font-size: 2.65rem;
-    }
-
-
-    .portfolio-carousel-description {
-        font-size: 0.82rem;
-
-        line-height: 1.7;
-    }
-
-
-    .portfolio-carousel-tags span {
-        font-size: 0.48rem;
-
-        padding:
-            6px
-            8px;
-    }
-
-
-    .portfolio-carousel-prev,
-    .portfolio-carousel-next {
-        width: 45px;
-        height: 45px;
-    }
-
-
-    .portfolio-carousel-status {
-        font-size: 0.56rem;
-    }
-
-
-    .portfolio-carousel-hint {
-        font-size: 0.5rem;
-
-        letter-spacing: 0.11em;
-    }
-
-
-    .portfolio-carousel-hint::before,
-    .portfolio-carousel-hint::after {
-        width: 17px;
+        font-size:
+            clamp(
+                2.6rem,
+                11vw,
+                4rem
+            );
     }
 
 
     .portfolio-capability {
-        padding: 75px 7%;
+
+        padding:
+            85px 6%;
     }
 
 
     .portfolio-capability h2 {
-        font-size: 2.7rem;
-    }
 
+        font-size:
+            clamp(
+                2.7rem,
+                10vw,
+                4.5rem
+            );
 
-    .portfolio-capability-copy {
-        font-size: 0.84rem;
+        letter-spacing: -2px;
     }
 
 
     .portfolio-cta {
-        padding: 85px 7%;
+
+        padding:
+            90px 6%;
     }
 
 
     .portfolio-cta h2 {
-        font-size: 3.2rem;
-    }
 
+        font-size:
+            clamp(
+                2.8rem,
+                11vw,
+                4.6rem
+            );
 
-    .portfolio-cta-buttons {
-        flex-direction: column;
-    }
-
-
-    .portfolio-cta-button {
-        width: 100%;
+        letter-spacing: -2px;
     }
 
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
+   SMALL PHONES
+========================================================= */
 
-.portfolio-carousel-prev:focus-visible,
-.portfolio-carousel-next:focus-visible,
-.portfolio-carousel-indicator:focus-visible,
-.portfolio-carousel-link:focus-visible,
-.portfolio-services-link:focus-visible,
-.portfolio-cta-button:focus-visible {
-    outline:
-        2px solid
-        #D9943F;
+@media (max-width: 480px) {
 
-    outline-offset: 4px;
+    .portfolio-hero {
+
+        padding:
+            60px 6%
+            75px;
+    }
+
+
+    .portfolio-projects {
+
+        padding:
+            65px 6%
+            75px;
+    }
+
+
+    .portfolio-project-info h3 {
+
+        font-size: 2.6rem;
+    }
+
+
+    .portfolio-capability {
+
+        padding:
+            70px 6%;
+    }
+
+
+    .portfolio-cta {
+
+        padding:
+            75px 6%;
+    }
+
 }
 
 
 /* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+   PORTFOLIO COMING SOON
+========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+.portfolio-coming-soon {
 
-    .portfolio-carousel-track,
-    .portfolio-carousel-image img,
-    .portfolio-carousel-link,
-    .portfolio-carousel-prev,
-    .portfolio-carousel-next,
-    .portfolio-carousel-indicator,
-    .portfolio-services-link,
-    .portfolio-cta-button {
-        transition: none !important;
+    min-height: calc(100vh - 92px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        100px
+        7%;
+
+    text-align: center;
+}
+
+.portfolio-coming-soon-content {
+
+    width: 100%;
+    max-width: 900px;
+}
+
+.portfolio-coming-soon .portfolio-eyebrow {
+
+    margin-bottom: 25px;
+
+    color: var(--beige);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.portfolio-coming-soon h1 {
+
+    margin-bottom: 30px;
+
+    color: var(--white);
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            8rem
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+}
+
+.portfolio-coming-soon h1 span {
+
+    display: block;
+
+    color: var(--beige);
+}
+
+.portfolio-coming-soon-content > p {
+
+    max-width: 620px;
+
+    margin:
+        0
+        auto
+        45px;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+.portfolio-coming-soon-banner {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        16px
+        34px;
+
+    border:
+        1px solid
+        var(--beige);
+
+    background:
+        rgba(29, 25, 20, 0.55);
+
+    box-shadow:
+        0 0 35px
+        rgba(228, 185, 111, 0.08);
+}
+
+.portfolio-coming-soon-banner span {
+
+    color: var(--beige);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+@media (max-width: 768px) {
+
+    .portfolio-coming-soon {
+
+        min-height: calc(100vh - 70px);
+
+        padding:
+            80px
+            6%;
+    }
+
+    .portfolio-coming-soon h1 {
+
+        font-size:
+            clamp(
+                3.3rem,
+                13vw,
+                5rem
+            );
+
+        letter-spacing: -2px;
+    }
+
+    .portfolio-coming-soon-content > p {
+
+        font-size: 0.92rem;
     }
 
 }
