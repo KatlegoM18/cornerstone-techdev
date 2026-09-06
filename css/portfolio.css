@@ -35,6 +35,7 @@
 
     width: 100%;
     max-width: 1050px;
+
 }
 
 
@@ -58,6 +59,7 @@
     letter-spacing: -3px;
 
     text-transform: uppercase;
+
 }
 
 
@@ -67,6 +69,7 @@
 
     color:
         var(--beige);
+
 }
 
 
@@ -80,6 +83,7 @@
     font-size: 1.05rem;
 
     line-height: 1.8;
+
 }
 
 
@@ -95,6 +99,7 @@
 
     background:
         rgba(29, 25, 20, 0.74);
+
 }
 
 
@@ -103,6 +108,7 @@
     max-width: 850px;
 
     margin-bottom: 75px;
+
 }
 
 
@@ -125,6 +131,7 @@
     letter-spacing: -2.5px;
 
     text-transform: uppercase;
+
 }
 
 
@@ -134,6 +141,7 @@
 
     color:
         var(--beige);
+
 }
 
 
@@ -159,8 +167,13 @@
     border-bottom:
         1px solid
         var(--border-soft);
+
 }
 
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
 
 .portfolio-project-image {
 
@@ -176,6 +189,7 @@
     border:
         1px solid
         var(--border);
+
 }
 
 
@@ -191,6 +205,7 @@
     transition:
         transform 0.6s
         cubic-bezier(.2,.8,.2,1);
+
 }
 
 
@@ -199,8 +214,13 @@
 
     transform:
         scale(1.035);
+
 }
 
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
 
 .portfolio-project-number {
 
@@ -232,12 +252,18 @@
     font-weight: 700;
 
     letter-spacing: 1px;
+
 }
 
+
+/* =========================================================
+   PROJECT INFORMATION
+========================================================= */
 
 .portfolio-project-info {
 
     max-width: 560px;
+
 }
 
 
@@ -253,6 +279,7 @@
     font-weight: 600;
 
     letter-spacing: 2.5px;
+
 }
 
 
@@ -276,6 +303,7 @@
     letter-spacing: -2px;
 
     text-transform: uppercase;
+
 }
 
 
@@ -289,6 +317,7 @@
     font-size: 0.98rem;
 
     line-height: 1.8;
+
 }
 
 
@@ -305,6 +334,7 @@
     gap: 9px;
 
     margin-bottom: 32px;
+
 }
 
 
@@ -325,6 +355,7 @@
     font-weight: 600;
 
     letter-spacing: 1.4px;
+
 }
 
 
@@ -355,6 +386,7 @@
     transition:
         gap 0.25s ease,
         color 0.25s ease;
+
 }
 
 
@@ -364,6 +396,7 @@
     font-size: 1.15rem;
 
     line-height: 1;
+
 }
 
 
@@ -374,6 +407,7 @@
 
     color:
         var(--beige-light);
+
 }
 
 
@@ -387,6 +421,7 @@
 
     padding:
         95px 0 20px;
+
 }
 
 
@@ -410,6 +445,7 @@
     letter-spacing: -2px;
 
     text-transform: uppercase;
+
 }
 
 
@@ -419,6 +455,7 @@
 
     color:
         var(--beige);
+
 }
 
 
@@ -432,11 +469,12 @@
     font-size: 0.95rem;
 
     line-height: 1.8;
+
 }
 
 
 /* =========================================================
-   FULL-STACK CAPABILITY
+   CAPABILITY SECTION
 ========================================================= */
 
 .portfolio-capability {
@@ -445,92 +483,25 @@
         120px 7%;
 
     background:
-        rgba(41, 35, 29, 0.88);
+        rgba(21, 18, 15, 0.82);
 
     border-top:
         1px solid
-        rgba(255, 255, 255, 0.05);
+        var(--border-soft);
+
+    border-bottom:
+        1px solid
+        var(--border-soft);
+
 }
 
 
 .portfolio-capability h2 {
 
-    max-width: 1000px;
+    max-width: 900px;
 
     margin:
-        0 0 30px;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            3rem,
-            6vw,
-            5.8rem
-        );
-
-    line-height: 0.92;
-
-    letter-spacing: -3px;
-
-    text-transform: uppercase;
-}
-
-
-.portfolio-capability h2 span {
-
-    display: block;
-
-    color:
-        var(--beige);
-}
-
-
-.portfolio-capability > p:not(.section-label) {
-
-    max-width: 760px;
-
-    margin-bottom: 35px;
-
-    color:
-        var(--text-light);
-
-    font-size: 1rem;
-
-    line-height: 1.85;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.portfolio-cta {
-
-    padding:
-        130px 7%;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(29, 25, 20, 0.62),
-            rgba(21, 18, 15, 0.92)
-        );
-
-    border-top:
-        1px solid
-        rgba(228, 185, 111, 0.12);
-}
-
-
-.portfolio-cta h2 {
-
-    max-width: 950px;
-
-    margin:
-        0 auto 42px;
+        0 0 28px;
 
     color:
         var(--white);
@@ -547,6 +518,77 @@
     letter-spacing: -3px;
 
     text-transform: uppercase;
+
+}
+
+
+.portfolio-capability h2 span {
+
+    display: block;
+
+    color:
+        var(--beige);
+
+}
+
+
+.portfolio-capability > p:last-child {
+
+    max-width: 650px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CALL TO ACTION
+========================================================= */
+
+.portfolio-cta {
+
+    padding:
+        130px 7%;
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            rgba(29, 25, 20, 0.70),
+            rgba(21, 18, 15, 0.88)
+        );
+
+}
+
+
+.portfolio-cta h2 {
+
+    max-width: 900px;
+
+    margin:
+        0 0 35px;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(
+            3.2rem,
+            7vw,
+            6rem
+        );
+
+    line-height: 0.92;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
 }
 
 
@@ -556,6 +598,7 @@
 
     color:
         var(--beige);
+
 }
 
 
@@ -572,6 +615,7 @@
         padding:
             100px 7%
             100px;
+
     }
 
 
@@ -582,12 +626,14 @@
         gap: 45px;
 
         padding-bottom: 80px;
+
     }
 
 
     .portfolio-project-info {
 
         max-width: 760px;
+
     }
 
 
@@ -596,6 +642,7 @@
 
         padding:
             100px 7%;
+
     }
 
 }
@@ -614,6 +661,7 @@
         padding:
             75px 6%
             90px;
+
     }
 
 
@@ -627,6 +675,7 @@
             );
 
         letter-spacing: -2px;
+
     }
 
 
@@ -635,12 +684,14 @@
         padding:
             80px 6%
             90px;
+
     }
 
 
     .portfolio-heading {
 
         margin-bottom: 55px;
+
     }
 
 
@@ -652,6 +703,7 @@
                 10vw,
                 4rem
             );
+
     }
 
 
@@ -662,12 +714,14 @@
         gap: 35px;
 
         padding-bottom: 65px;
+
     }
 
 
     .portfolio-project-image {
 
         aspect-ratio: 4 / 3;
+
     }
 
 
@@ -678,6 +732,7 @@
 
         width: 42px;
         height: 42px;
+
     }
 
 
@@ -689,6 +744,7 @@
                 11vw,
                 4rem
             );
+
     }
 
 
@@ -696,6 +752,7 @@
 
         padding:
             85px 6%;
+
     }
 
 
@@ -709,6 +766,7 @@
             );
 
         letter-spacing: -2px;
+
     }
 
 
@@ -716,6 +774,7 @@
 
         padding:
             90px 6%;
+
     }
 
 
@@ -729,6 +788,7 @@
             );
 
         letter-spacing: -2px;
+
     }
 
 }
@@ -745,6 +805,7 @@
         padding:
             60px 6%
             75px;
+
     }
 
 
@@ -753,12 +814,14 @@
         padding:
             65px 6%
             75px;
+
     }
 
 
     .portfolio-project-info h3 {
 
         font-size: 2.6rem;
+
     }
 
 
@@ -766,6 +829,7 @@
 
         padding:
             70px 6%;
+
     }
 
 
@@ -773,150 +837,7 @@
 
         padding:
             75px 6%;
-    }
 
-}
-
-
-/* =========================================================
-   PORTFOLIO COMING SOON
-========================================================= */
-
-.portfolio-coming-soon {
-
-    min-height: calc(100vh - 92px);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding:
-        100px
-        7%;
-
-    text-align: center;
-}
-
-.portfolio-coming-soon-content {
-
-    width: 100%;
-    max-width: 900px;
-}
-
-.portfolio-coming-soon .portfolio-eyebrow {
-
-    margin-bottom: 25px;
-
-    color: var(--beige);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-}
-
-.portfolio-coming-soon h1 {
-
-    margin-bottom: 30px;
-
-    color: var(--white);
-
-    font-size:
-        clamp(
-            4rem,
-            9vw,
-            8rem
-        );
-
-    line-height: 0.9;
-
-    letter-spacing: -4px;
-
-    text-transform: uppercase;
-}
-
-.portfolio-coming-soon h1 span {
-
-    display: block;
-
-    color: var(--beige);
-}
-
-.portfolio-coming-soon-content > p {
-
-    max-width: 620px;
-
-    margin:
-        0
-        auto
-        45px;
-
-    color: var(--text-muted);
-
-    font-size: 1rem;
-
-    line-height: 1.8;
-}
-
-.portfolio-coming-soon-banner {
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding:
-        16px
-        34px;
-
-    border:
-        1px solid
-        var(--beige);
-
-    background:
-        rgba(29, 25, 20, 0.55);
-
-    box-shadow:
-        0 0 35px
-        rgba(228, 185, 111, 0.08);
-}
-
-.portfolio-coming-soon-banner span {
-
-    color: var(--beige);
-
-    font-size: 0.8rem;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-}
-
-
-@media (max-width: 768px) {
-
-    .portfolio-coming-soon {
-
-        min-height: calc(100vh - 70px);
-
-        padding:
-            80px
-            6%;
-    }
-
-    .portfolio-coming-soon h1 {
-
-        font-size:
-            clamp(
-                3.3rem,
-                13vw,
-                5rem
-            );
-
-        letter-spacing: -2px;
-    }
-
-    .portfolio-coming-soon-content > p {
-
-        font-size: 0.92rem;
     }
 
 }
