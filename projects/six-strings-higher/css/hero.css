@@ -413,12 +413,16 @@
 
         padding-top: 120px;
 
-        padding-bottom: 100px;
+        padding-bottom: 80px;
 
         display: block;
 
     }
 
+
+    /* =====================================
+       HERO CONTENT
+    ===================================== */
 
     .hero-content {
 
@@ -457,34 +461,48 @@
     }
 
 
+    /* =====================================
+       GUITAR STAGE
+    ===================================== */
+
     .guitar-stage {
 
         position: relative;
 
-        height: 55vh;
+        height: 48vh;
 
-        margin-top: 20px;
+        margin-top: 10px;
 
     }
 
+
+    /* =====================================
+       GUITAR
+    ===================================== */
 
     .guitar-assembly {
 
         position: absolute;
 
         left: 50%;
-        top: 50%;
+        top: 38%;
 
-        width: 75vw;
+        width: 68vw;
 
         aspect-ratio: 1024 / 1536;
 
         transform:
             translate(-50%, -50%)
-            scale(1);
+            scale(0.9);
+
+        z-index: 10;
 
     }
 
+
+    /* =====================================
+       TECHNICAL NOTES
+    ===================================== */
 
     .technical-notes {
 
@@ -493,20 +511,57 @@
     }
 
 
-    .scroll-prompt {
+    /* =====================================
+       HERO CTA
+    ===================================== */
 
-        left: 12vw;
+    .hero-cta {
 
-        bottom: 4vh;
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        margin-left: 12vw;
+
+        margin-top: -35px;
+
+        width: 76%;
+
+        z-index: 30;
+
+        opacity: 1;
+
+        pointer-events: auto;
 
     }
 
 
-    .hero-cta {
+    .hero-cta p {
 
-        left: 12vw;
+        margin-bottom: 13px;
 
-        bottom: 4vh;
+        font-size: 9px;
+
+        letter-spacing: 0.2em;
+
+    }
+
+
+    /* =====================================
+       SCROLL PROMPT
+    ===================================== */
+
+    .scroll-prompt {
+
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        margin-left: 12vw;
+
+        margin-top: 45px;
 
     }
 
