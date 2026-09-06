@@ -1,0 +1,374 @@
+/* =========================================
+   SIX STRINGS HIGHER
+   GLOBAL STYLES
+========================================= */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: #0b0908;
+
+    color: #eee7dc;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* ---------- COLOUR SYSTEM ---------- */
+
+:root {
+
+    --background: #0b0908;
+
+    --background-soft: #15110e;
+
+    --cream: #eee7dc;
+
+    --cream-muted: #b9afa2;
+
+    --wood-light: #d9c9b1;
+
+    --wood-dark: #6f4b2d;
+
+    --line: rgba(238, 231, 220, 0.16);
+
+    --line-strong: rgba(238, 231, 220, 0.32);
+
+    --serif: Georgia, "Times New Roman", serif;
+
+    --sans: Arial, Helvetica, sans-serif;
+}
+
+
+/* ---------- PAGE ---------- */
+
+main {
+    position: relative;
+
+    width: 100%;
+}
+
+
+section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   SITE HEADER
+========================================= */
+
+.site-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 78px;
+
+    padding: 0 5vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background: rgba(11, 9, 8, 0.94);
+
+    border-bottom: 1px solid rgba(238, 231, 220, 0.16);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+.logo {
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-family: var(--sans);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    white-space: nowrap;
+}
+
+
+.header-label {
+
+    margin: 0;
+
+    color: var(--cream-muted);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   SHARED TEXT
+========================================= */
+
+.eyebrow {
+
+    margin-bottom: 24px;
+
+    color: var(--cream-muted);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+
+    letter-spacing: 0.28em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   SCENE INDICATOR
+========================================= */
+
+.scene-indicator {
+
+    position: absolute;
+
+    left: 5vw;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--cream-muted);
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+
+    z-index: 50;
+}
+
+
+.indicator-line {
+
+    width: 1px;
+
+    height: 55px;
+
+    background: var(--line-strong);
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 16px 20px;
+
+    border: 1px solid var(--wood-light);
+
+    background: var(--wood-light);
+
+    color: #17120e;
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.primary-button span {
+
+    font-size: 17px;
+}
+
+
+.primary-button:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--cream);
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================
+   TEXT SELECTION
+========================================= */
+
+::selection {
+
+    background: var(--wood-light);
+
+    color: #17120e;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: var(--background);
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #3c3027;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #6f5844;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .site-header {
+
+        height: 68px;
+
+        padding: 0 6vw;
+    }
+
+
+    .logo {
+
+        font-size: 9px;
+
+        letter-spacing: 0.18em;
+    }
+
+
+    .header-label {
+
+        display: none;
+    }
+
+
+    .scene-indicator {
+
+        left: 20px;
+
+        font-size: 8px;
+    }
+
+
+    section {
+
+        min-height: 100svh;
+    }
+
+}
