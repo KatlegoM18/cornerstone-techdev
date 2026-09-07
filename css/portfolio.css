@@ -1,843 +1,353 @@
 /* =========================================================
-   CORNERSTONE TECHDEV
-   PORTFOLIO PAGE
+CORNERSTONE TECHDEV
+PORTFOLIO PAGE
 ========================================================= */
 
-
 /* =========================================================
-   HERO
+PORTFOLIO COMING SOON
 ========================================================= */
 
-.portfolio-hero {
-
-    min-height: 62vh;
-
-    display: flex;
-    align-items: center;
-
-    padding:
-        120px 7%
-        110px;
-
-    background:
-        linear-gradient(
-            rgba(29, 25, 20, 0.18),
-            rgba(29, 25, 20, 0.55)
-        );
-
-    border-bottom:
-        1px solid
-        rgba(228, 185, 111, 0.10);
+.portfolio-page .portfolio-coming-soon {
+position: relative;
+min-height: calc(100vh - 92px);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 120px 8%;
+overflow: hidden;
+border-top: 1px solid rgba(228, 185, 111, 0.08);
+border-bottom: 1px solid rgba(228, 185, 111, 0.12);
 }
 
-
-.portfolio-hero-content {
-
-    width: 100%;
-    max-width: 1050px;
-
+.portfolio-page .portfolio-coming-soon::before {
+content: "";
+position: absolute;
+top: 8%;
+bottom: 8%;
+left: 7%;
+right: 7%;
+border: 1px solid rgba(228, 185, 111, 0.10);
+pointer-events: none;
 }
 
-
-.portfolio-hero h1 {
-
-    margin:
-        0 0 32px;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            3.2rem,
-            7vw,
-            6.5rem
-        );
-
-    line-height: 0.92;
-
-    letter-spacing: -3px;
-
-    text-transform: uppercase;
-
+.portfolio-page .portfolio-coming-soon::after {
+content: "";
+position: absolute;
+width: 520px;
+height: 520px;
+right: -180px;
+bottom: -220px;
+border: 1px solid rgba(228, 185, 111, 0.10);
+border-radius: 50%;
+pointer-events: none;
 }
-
-
-.portfolio-hero h1 span {
-
-    display: block;
-
-    color:
-        var(--beige);
-
-}
-
-
-.portfolio-hero-content > p:last-child {
-
-    max-width: 720px;
-
-    color:
-        var(--text-light);
-
-    font-size: 1.05rem;
-
-    line-height: 1.8;
-
-}
-
 
 /* =========================================================
-   PROJECTS
+INDEX MARKER
 ========================================================= */
 
-.portfolio-projects {
-
-    padding:
-        110px 7%
-        120px;
-
-    background:
-        rgba(29, 25, 20, 0.74);
-
+.portfolio-page .portfolio-index {
+position: absolute;
+top: 13%;
+left: 8%;
+display: flex;
+align-items: center;
+gap: 14px;
+color: #e4b96f;
+font-size: 0.65rem;
+font-weight: 600;
+letter-spacing: 3px;
+text-transform: uppercase;
 }
 
-
-.portfolio-heading {
-
-    max-width: 850px;
-
-    margin-bottom: 75px;
-
+.portfolio-page .portfolio-index-line {
+display: block;
+width: 42px;
+height: 1px;
+background: rgba(228, 185, 111, 0.55);
 }
-
-
-.portfolio-heading h2 {
-
-    margin: 0;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            2.8rem,
-            5.5vw,
-            5.2rem
-        );
-
-    line-height: 0.94;
-
-    letter-spacing: -2.5px;
-
-    text-transform: uppercase;
-
-}
-
-
-.portfolio-heading h2 span {
-
-    display: block;
-
-    color:
-        var(--beige);
-
-}
-
 
 /* =========================================================
-   PROJECT CARD
+MAIN CONTENT
 ========================================================= */
 
-.portfolio-project {
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.35fr)
-        minmax(340px, 0.65fr);
-
-    gap: 65px;
-
-    align-items: center;
-
-    padding:
-        0 0 100px;
-
-    border-bottom:
-        1px solid
-        var(--border-soft);
-
+.portfolio-page .portfolio-coming-soon-content {
+position: relative;
+width: 100%;
+max-width: 1050px;
+z-index: 2;
 }
 
-
 /* =========================================================
-   PROJECT IMAGE
+EYEBROW
 ========================================================= */
 
-.portfolio-project-image {
-
-    position: relative;
-
-    overflow: hidden;
-
-    aspect-ratio: 16 / 10;
-
-    background:
-        rgba(15, 12, 10, 0.75);
-
-    border:
-        1px solid
-        var(--border);
-
+.portfolio-page .portfolio-eyebrow {
+display: flex;
+align-items: center;
+gap: 13px;
+margin: 0 0 28px;
+color: #e4b96f;
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 4px;
+text-transform: uppercase;
 }
 
-
-.portfolio-project-image img {
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.6s
-        cubic-bezier(.2,.8,.2,1);
-
+.portfolio-page .eyebrow-line {
+display: block;
+width: 34px;
+height: 1px;
+background: #e4b96f;
 }
-
-
-.portfolio-project:hover
-.portfolio-project-image img {
-
-    transform:
-        scale(1.035);
-
-}
-
 
 /* =========================================================
-   PROJECT NUMBER
+HEADING
 ========================================================= */
 
-.portfolio-project-number {
-
-    position: absolute;
-
-    top: 22px;
-    left: 22px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 48px;
-    height: 48px;
-
-    background:
-        rgba(20, 16, 13, 0.84);
-
-    border:
-        1px solid
-        var(--beige);
-
-    color:
-        var(--beige);
-
-    font-size: 0.72rem;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
+.portfolio-page .portfolio-coming-soon-content h1 {
+max-width: 1050px;
+margin: 0 0 36px;
+color: #f5efe5;
+font-size: clamp(4.8rem, 10vw, 9.5rem);
+font-weight: 700;
+line-height: 0.82;
+letter-spacing: -0.065em;
+text-transform: uppercase;
 }
 
+.portfolio-page .portfolio-coming-soon-content h1 span {
+display: block;
+margin-left: 10vw;
+color: #e4b96f;
+}
 
 /* =========================================================
-   PROJECT INFORMATION
+DESCRIPTION
 ========================================================= */
 
-.portfolio-project-info {
-
-    max-width: 560px;
-
+.portfolio-page .portfolio-description {
+max-width: 580px;
+margin: 0 0 45px 10vw;
+color: rgba(245, 239, 229, 0.78);
+font-size: 1rem;
+line-height: 1.9;
 }
-
-
-.project-label {
-
-    margin-bottom: 18px;
-
-    color:
-        var(--beige-light);
-
-    font-size: 0.72rem;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-
-}
-
-
-.portfolio-project-info h3 {
-
-    margin:
-        0 0 25px;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            2.8rem,
-            5vw,
-            5rem
-        );
-
-    line-height: 0.92;
-
-    letter-spacing: -2px;
-
-    text-transform: uppercase;
-
-}
-
-
-.portfolio-project-info > p {
-
-    margin-bottom: 28px;
-
-    color:
-        var(--text-light);
-
-    font-size: 0.98rem;
-
-    line-height: 1.8;
-
-}
-
 
 /* =========================================================
-   PROJECT TAGS
+COMING SOON BANNER
 ========================================================= */
 
-.project-tags {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-
-    margin-bottom: 32px;
-
+.portfolio-page .portfolio-coming-soon-banner {
+display: flex;
+align-items: center;
+width: fit-content;
+min-width: 310px;
+margin-left: 10vw;
+padding: 17px 22px;
+border: 1px solid rgba(228, 185, 111, 0.65);
+background: rgba(18, 15, 13, 0.55);
+box-shadow: 0 0 45px rgba(228, 185, 111, 0.07);
 }
 
-
-.project-tags span {
-
-    padding:
-        8px 11px;
-
-    border:
-        1px solid
-        var(--border-soft);
-
-    color:
-        var(--text-muted);
-
-    font-size: 0.62rem;
-
-    font-weight: 600;
-
-    letter-spacing: 1.4px;
-
+.portfolio-page .portfolio-coming-soon-banner > span:not(.banner-dot):not(.banner-line) {
+color: #e4b96f;
+font-size: 0.68rem;
+font-weight: 700;
+letter-spacing: 3px;
 }
 
+.portfolio-page .banner-dot {
+width: 6px;
+height: 6px;
+margin-right: 13px;
+border-radius: 50%;
+background: #e4b96f;
+box-shadow: 0 0 12px rgba(228, 185, 111, 0.55);
+}
+
+.portfolio-page .banner-line {
+display: block;
+width: 75px;
+height: 1px;
+margin-left: 20px;
+background: rgba(228, 185, 111, 0.35);
+}
 
 /* =========================================================
-   PROJECT LINK
+SIDE NOTE
 ========================================================= */
 
-.project-link,
-.portfolio-services-link {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 35px;
-
-    color:
-        var(--beige);
-
-    font-size: 0.72rem;
-
-    font-weight: 700;
-
-    letter-spacing: 1.8px;
-
-    text-decoration: none;
-
-    transition:
-        gap 0.25s ease,
-        color 0.25s ease;
-
+.portfolio-page .portfolio-side-note {
+position: absolute;
+right: 8%;
+top: 50%;
+display: flex;
+flex-direction: column;
+gap: 9px;
+transform: translateY(-50%);
+z-index: 2;
 }
 
-
-.project-link span,
-.portfolio-services-link span {
-
-    font-size: 1.15rem;
-
-    line-height: 1;
-
+.portfolio-page .portfolio-side-note span {
+color: rgba(245, 239, 229, 0.32);
+font-size: 0.55rem;
+font-weight: 600;
+letter-spacing: 2px;
+text-align: right;
 }
-
-
-.project-link:hover,
-.portfolio-services-link:hover {
-
-    gap: 45px;
-
-    color:
-        var(--beige-light);
-
-}
-
 
 /* =========================================================
-   MORE WORK
+BOTTOM MARKER
 ========================================================= */
 
-.portfolio-coming {
-
-    max-width: 700px;
-
-    padding:
-        95px 0 20px;
-
+.portfolio-page .portfolio-bottom-marker {
+position: absolute;
+left: 8%;
+right: 8%;
+bottom: 8%;
+display: flex;
+justify-content: space-between;
+color: rgba(245, 239, 229, 0.30);
+font-size: 0.55rem;
+font-weight: 600;
+letter-spacing: 2px;
 }
-
-
-.portfolio-coming h3 {
-
-    margin:
-        0 0 22px;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            2.4rem,
-            5vw,
-            4.5rem
-        );
-
-    line-height: 0.95;
-
-    letter-spacing: -2px;
-
-    text-transform: uppercase;
-
-}
-
-
-.portfolio-coming h3 span {
-
-    display: block;
-
-    color:
-        var(--beige);
-
-}
-
-
-.portfolio-coming > p:last-child {
-
-    max-width: 600px;
-
-    color:
-        var(--text-muted);
-
-    font-size: 0.95rem;
-
-    line-height: 1.8;
-
-}
-
 
 /* =========================================================
-   CAPABILITY SECTION
+FOOTER
 ========================================================= */
 
-.portfolio-capability {
-
-    padding:
-        120px 7%;
-
-    background:
-        rgba(21, 18, 15, 0.82);
-
-    border-top:
-        1px solid
-        var(--border-soft);
-
-    border-bottom:
-        1px solid
-        var(--border-soft);
-
+.portfolio-page footer {
+position: relative;
+border-top: 1px solid rgba(228, 185, 111, 0.08);
 }
-
-
-.portfolio-capability h2 {
-
-    max-width: 900px;
-
-    margin:
-        0 0 28px;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            3rem,
-            7vw,
-            6rem
-        );
-
-    line-height: 0.92;
-
-    letter-spacing: -3px;
-
-    text-transform: uppercase;
-
-}
-
-
-.portfolio-capability h2 span {
-
-    display: block;
-
-    color:
-        var(--beige);
-
-}
-
-
-.portfolio-capability > p:last-child {
-
-    max-width: 650px;
-
-    color:
-        var(--text-muted);
-
-    font-size: 1rem;
-
-    line-height: 1.8;
-
-}
-
 
 /* =========================================================
-   CALL TO ACTION
+TABLETS
 ========================================================= */
 
-.portfolio-cta {
+@media (max-width: 1000px) {
 
-    padding:
-        130px 7%;
-
-    text-align: left;
-
-    background:
-        linear-gradient(
-            rgba(29, 25, 20, 0.70),
-            rgba(21, 18, 15, 0.88)
-        );
-
+.portfolio-page .portfolio-coming-soon {
+    padding: 110px 8%;
 }
 
-
-.portfolio-cta h2 {
-
-    max-width: 900px;
-
-    margin:
-        0 0 35px;
-
-    color:
-        var(--white);
-
-    font-size:
-        clamp(
-            3.2rem,
-            7vw,
-            6rem
-        );
-
-    line-height: 0.92;
-
-    letter-spacing: -3px;
-
-    text-transform: uppercase;
-
+.portfolio-page .portfolio-side-note {
+    display: none;
 }
 
-
-.portfolio-cta h2 span {
-
-    display: block;
-
-    color:
-        var(--beige);
-
+.portfolio-page .portfolio-coming-soon-content h1 {
+    font-size: clamp(4rem, 10vw, 7rem);
 }
 
+.portfolio-page .portfolio-description,
+.portfolio-page .portfolio-coming-soon-banner {
+    margin-left: 6vw;
+}
+
+}
 
 /* =========================================================
-   TABLETS
-========================================================= */
-
-@media (min-width: 769px) and (max-width: 1100px) {
-
-    .portfolio-hero {
-
-        min-height: auto;
-
-        padding:
-            100px 7%
-            100px;
-
-    }
-
-
-    .portfolio-project {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-        padding-bottom: 80px;
-
-    }
-
-
-    .portfolio-project-info {
-
-        max-width: 760px;
-
-    }
-
-
-    .portfolio-capability,
-    .portfolio-cta {
-
-        padding:
-            100px 7%;
-
-    }
-
-}
-
-
-/* =========================================================
-   PHONES
+MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
 
-    .portfolio-hero {
+.portfolio-page .portfolio-coming-soon {
+    min-height: calc(100svh - 70px);
+    padding: 110px 8% 100px;
+    align-items: center;
+}
 
-        min-height: auto;
+.portfolio-page .portfolio-coming-soon::before {
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+}
 
-        padding:
-            75px 6%
-            90px;
+.portfolio-page .portfolio-index {
+    top: 8%;
+    left: 8%;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+}
 
-    }
+.portfolio-page .portfolio-index-line {
+    width: 25px;
+}
 
+.portfolio-page .portfolio-eyebrow {
+    margin-bottom: 22px;
+    font-size: 0.58rem;
+    letter-spacing: 3px;
+}
 
-    .portfolio-hero h1 {
+.portfolio-page .portfolio-coming-soon-content h1 {
+    font-size: clamp(3rem, 14vw, 5.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.055em;
+}
 
-        font-size:
-            clamp(
-                2.7rem,
-                11vw,
-                4.5rem
-            );
+.portfolio-page .portfolio-coming-soon-content h1 span {
+    margin-left: 7vw;
+}
 
-        letter-spacing: -2px;
+.portfolio-page .portfolio-description {
+    max-width: 90%;
+    margin: 0 0 35px 7vw;
+    font-size: 0.88rem;
+    line-height: 1.75;
+}
 
-    }
+.portfolio-page .portfolio-coming-soon-banner {
+    min-width: 0;
+    width: auto;
+    margin-left: 7vw;
+    padding: 15px 17px;
+}
 
+.portfolio-page .portfolio-coming-soon-banner > span:not(.banner-dot):not(.banner-line) {
+    font-size: 0.57rem;
+    letter-spacing: 2.5px;
+}
 
-    .portfolio-projects {
+.portfolio-page .banner-line {
+    width: 35px;
+    margin-left: 13px;
+}
 
-        padding:
-            80px 6%
-            90px;
-
-    }
-
-
-    .portfolio-heading {
-
-        margin-bottom: 55px;
-
-    }
-
-
-    .portfolio-heading h2 {
-
-        font-size:
-            clamp(
-                2.5rem,
-                10vw,
-                4rem
-            );
-
-    }
-
-
-    .portfolio-project {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        padding-bottom: 65px;
-
-    }
-
-
-    .portfolio-project-image {
-
-        aspect-ratio: 4 / 3;
-
-    }
-
-
-    .portfolio-project-number {
-
-        top: 15px;
-        left: 15px;
-
-        width: 42px;
-        height: 42px;
-
-    }
-
-
-    .portfolio-project-info h3 {
-
-        font-size:
-            clamp(
-                2.6rem,
-                11vw,
-                4rem
-            );
-
-    }
-
-
-    .portfolio-capability {
-
-        padding:
-            85px 6%;
-
-    }
-
-
-    .portfolio-capability h2 {
-
-        font-size:
-            clamp(
-                2.7rem,
-                10vw,
-                4.5rem
-            );
-
-        letter-spacing: -2px;
-
-    }
-
-
-    .portfolio-cta {
-
-        padding:
-            90px 6%;
-
-    }
-
-
-    .portfolio-cta h2 {
-
-        font-size:
-            clamp(
-                2.8rem,
-                11vw,
-                4.6rem
-            );
-
-        letter-spacing: -2px;
-
-    }
+.portfolio-page .portfolio-bottom-marker {
+    left: 8%;
+    right: 8%;
+    bottom: 5%;
+    font-size: 0.45rem;
+    letter-spacing: 1.5px;
+}
 
 }
 
-
 /* =========================================================
-   SMALL PHONES
+SMALL PHONES
 ========================================================= */
 
 @media (max-width: 480px) {
 
-    .portfolio-hero {
+.portfolio-page .portfolio-coming-soon {
+    padding: 100px 8% 90px;
+}
 
-        padding:
-            60px 6%
-            75px;
+.portfolio-page .portfolio-coming-soon-content h1 {
+    font-size: 3rem;
+}
 
-    }
+.portfolio-page .portfolio-description {
+    font-size: 0.82rem;
+}
 
-
-    .portfolio-projects {
-
-        padding:
-            65px 6%
-            75px;
-
-    }
-
-
-    .portfolio-project-info h3 {
-
-        font-size: 2.6rem;
-
-    }
-
-
-    .portfolio-capability {
-
-        padding:
-            70px 6%;
-
-    }
-
-
-    .portfolio-cta {
-
-        padding:
-            75px 6%;
-
-    }
+.portfolio-page .portfolio-bottom-marker span:first-child {
+    max-width: 120px;
+}
 
 }
