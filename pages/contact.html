@@ -390,6 +390,28 @@
                 >
 
 
+                    <!-- BOT TRAP -->
+
+                    <div
+                        class="form-honeypot"
+                        aria-hidden="true"
+                    >
+
+                        <label for="website">
+                            Website
+                        </label>
+
+                        <input
+                            type="text"
+                            id="website"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
                     <!-- NAME -->
 
                     <div class="form-group">
@@ -835,13 +857,13 @@
                     const project =
                         projectSelect.value;
 
-                    const projectType =
-                        projectSelect.options[
-                            projectSelect.selectedIndex
-                        ].text;
-
                     const message =
                         document.getElementById("message")
+                            .value
+                            .trim();
+
+                    const website =
+                        document.getElementById("website")
                             .value
                             .trim();
 
@@ -852,8 +874,9 @@
                         email,
                         phone,
                         business,
-                        project: projectType,
-                        message
+                        project,
+                        message,
+                        website
 
                     };
 

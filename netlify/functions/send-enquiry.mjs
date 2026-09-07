@@ -1,65 +1,172 @@
+const MAX_REQUEST_BODY_BYTES = 8 * 1024;
+
+const SERVICE_LABELS = {
+  "new-website": "New Website",
+  "website-redesign": "Website Redesign",
+  ecommerce: "E-Commerce Website",
+  "web-application": "Web Application",
+  other: "Something Else"
+};
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function jsonResponse(status, payload) {
+  return new Response(JSON.stringify(payload), {
+    status,
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+}
+
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[character]);
+}
+
+function readString(data, field, maximumLength, required = false) {
+  const value = data[field];
+
+  if (value === undefined || value === null) {
+    return required ? null : "";
+  }
+
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const normalizedValue = value.trim();
+
+  if (
+    normalizedValue.length > maximumLength ||
+    (required && !normalizedValue)
+  ) {
+    return null;
+  }
+
+  return normalizedValue;
+}
+
+export const config = {
+  path: "/.netlify/functions/send-enquiry",
+  rateLimit: {
+    windowLimit: 5,
+    windowSize: 180,
+    aggregateBy: ["ip", "domain"]
+  }
+};
+
 export default async (req) => {
 
   // Only allow POST requests
   if (req.method !== "POST") {
-    return new Response(
-      JSON.stringify({
-        success: false,
-        message: "Method not allowed."
-      }),
-      {
-        status: 405,
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-    );
+    return jsonResponse(405, {
+      success: false,
+      message: "Method not allowed."
+    });
+  }
+
+  const contentType = req.headers.get("content-type") || "";
+
+  if (!contentType.toLowerCase().startsWith("application/json")) {
+    return jsonResponse(415, {
+      success: false,
+      message: "Please complete all required fields."
+    });
+  }
+
+  const contentLength = Number(req.headers.get("content-length"));
+
+  if (Number.isFinite(contentLength) && contentLength > MAX_REQUEST_BODY_BYTES) {
+    return jsonResponse(413, {
+      success: false,
+      message: "Please complete all required fields."
+    });
   }
 
   try {
-    const data = await req.json();
+    const rawBody = await req.text();
 
-    const {
-      name,
-      email,
-      phone,
-      business,
-      project,
-      message
-    } = data;
+    if (new TextEncoder().encode(rawBody).byteLength > MAX_REQUEST_BODY_BYTES) {
+      return jsonResponse(413, {
+        success: false,
+        message: "Please complete all required fields."
+      });
+    }
 
-    // Required fields
-    if (!name || !email || !project || !message) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Please complete all required fields."
-        }),
-        {
-          status: 400,
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
+    let data;
+
+    try {
+      data = JSON.parse(rawBody);
+    } catch {
+      return jsonResponse(400, {
+        success: false,
+        message: "Please complete all required fields."
+      });
+    }
+
+    if (!data || typeof data !== "object" || Array.isArray(data)) {
+      return jsonResponse(400, {
+        success: false,
+        message: "Please complete all required fields."
+      });
+    }
+
+    const honeypot = data.website;
+
+    // Respond as though successful so bots cannot use this check to tune submissions.
+    if (
+      (typeof honeypot === "string" && honeypot.trim()) ||
+      (honeypot !== undefined && honeypot !== null && typeof honeypot !== "string")
+    ) {
+      return jsonResponse(200, {
+        success: true,
+        message: "Enquiry sent successfully."
+      });
+    }
+
+    const name = readString(data, "name", 120, true);
+    const email = readString(data, "email", 254, true);
+    const phone = readString(data, "phone", 40);
+    const business = readString(data, "business", 120);
+    const project = readString(data, "project", 40, true);
+    const message = readString(data, "message", 4000, true);
+
+    // Required fields and expected string types
+    if (
+      !name ||
+      !email ||
+      !project ||
+      !message ||
+      phone === null ||
+      business === null
+    ) {
+      return jsonResponse(400, {
+        success: false,
+        message: "Please complete all required fields."
+      });
     }
 
     // Basic email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!emailPattern.test(email)) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Please enter a valid email address."
-        }),
-        {
-          status: 400,
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
+      return jsonResponse(400, {
+        success: false,
+        message: "Please enter a valid email address."
+      });
+    }
+
+    const projectLabel = SERVICE_LABELS[project];
+
+    if (!projectLabel) {
+      return jsonResponse(400, {
+        success: false,
+        message: "Please complete all required fields."
+      });
     }
 
     // Get Resend API key from Netlify environment variables
@@ -68,18 +175,10 @@ export default async (req) => {
     if (!resendApiKey) {
       console.error("RESEND_API_KEY is not configured.");
 
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Email service is not configured."
-        }),
-        {
-          status: 500,
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
+      return jsonResponse(500, {
+        success: false,
+        message: "Email service is not configured."
+      });
     }
 
     // Build the email
@@ -87,21 +186,21 @@ export default async (req) => {
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #1c1814;">
         <h2 style="margin-bottom: 20px;">New CornerStone TechDev Enquiry</h2>
 
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
 
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
 
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
 
-        <p><strong>Business:</strong> ${business || "Not provided"}</p>
+        <p><strong>Business:</strong> ${escapeHtml(business || "Not provided")}</p>
 
-        <p><strong>Project Type:</strong> ${project}</p>
+        <p><strong>Project Type:</strong> ${escapeHtml(projectLabel)}</p>
 
         <hr style="border: none; border-top: 1px solid #ddd; margin: 25px 0;">
 
         <p><strong>Message:</strong></p>
 
-        <p style="white-space: pre-wrap;">${message}</p>
+        <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
 
         <hr style="border: none; border-top: 1px solid #ddd; margin: 25px 0;">
 
@@ -122,7 +221,7 @@ export default async (req) => {
         from: "CornerStone TechDev <onboarding@resend.dev>",
         to: ["cornerstonetechdevsa@gmail.com"],
         reply_to: email,
-        subject: `New Website Enquiry — ${project}`,
+        subject: `New Website Enquiry — ${projectLabel}`,
         html: emailHtml
       })
     });
@@ -133,18 +232,10 @@ export default async (req) => {
     if (!resendResponse.ok) {
       console.error("Resend error:", resendResult);
 
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Unable to send enquiry email."
-        }),
-        {
-          status: 500,
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
+      return jsonResponse(500, {
+        success: false,
+        message: "Unable to send enquiry email."
+      });
     }
 
     console.log("CORNERSTONE ENQUIRY EMAIL SENT");
@@ -155,34 +246,18 @@ export default async (req) => {
       resendId: resendResult.id
     });
 
-    return new Response(
-      JSON.stringify({
-        success: true,
-        message: "Enquiry sent successfully."
-      }),
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-    );
+    return jsonResponse(200, {
+      success: true,
+      message: "Enquiry sent successfully."
+    });
 
   } catch (error) {
 
     console.error("Enquiry function error:", error);
 
-    return new Response(
-      JSON.stringify({
-        success: false,
-        message: "Something went wrong. Please try again."
-      }),
-      {
-        status: 500,
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-    );
+    return jsonResponse(500, {
+      success: false,
+      message: "Something went wrong. Please try again."
+    });
   }
 };
