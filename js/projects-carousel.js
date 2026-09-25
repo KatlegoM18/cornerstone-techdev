@@ -76,7 +76,7 @@ document.addEventListener(
                     "A digital platform created for student accommodation, combining a public-facing website with custom functionality behind the experience.",
 
                 image:
-                    "../images/barchouse landing page .png",
+                    "../images/barchouse-landing.webp",
 
                 imageAlt:
                     "Barc House landing page",

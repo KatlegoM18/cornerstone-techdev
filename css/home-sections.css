@@ -1,0 +1,308 @@
+/* =========================================================
+   HOMEPAGE SECTIONS
+   Featured project, Why CornerStone, FAQ, closing CTA.
+   Uses the colour tokens from index.css.
+========================================================= */
+
+
+/* Service cards are now links */
+
+a.service-item {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.service-item:focus-visible {
+    outline: 1px solid var(--beige-light);
+    outline-offset: 6px;
+}
+
+
+/* Shared section shell */
+
+.home-section {
+    position: relative;
+    z-index: 2;
+    padding: 120px 7%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.home-section h2 {
+    font-size: clamp(2.3rem, 4.6vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.home-section h2 span {
+    display: block;
+    color: var(--beige);
+}
+
+.home-section .section-intro {
+    max-width: 620px;
+    margin-top: 26px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 42px;
+}
+
+
+/* =========================================================
+   FEATURED PROJECT
+========================================================= */
+
+.featured-work {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 7vw;
+    align-items: center;
+    background: rgba(21, 18, 15, 0.9);
+}
+
+.featured-media {
+    display: block;
+    border: 1px solid var(--border);
+    background: var(--black);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.featured-media:hover {
+    transform: translateY(-6px);
+    border-color: var(--beige);
+}
+
+.featured-bar {
+    display: flex;
+    gap: 7px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.featured-bar span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(228, 185, 111, 0.35);
+}
+
+.featured-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.featured-meta {
+    color: var(--beige-light);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin: 18px 0 0;
+}
+
+.featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 0;
+    list-style: none;
+}
+
+.featured-tags li {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   WHY CORNERSTONE
+========================================================= */
+
+.why-cornerstone {
+    background: rgba(41, 35, 29, 0.86);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-top: 64px;
+    border-top: 1px solid rgba(228, 185, 111, 0.22);
+}
+
+.why-item {
+    padding: 34px 28px 10px 0;
+}
+
+.why-item + .why-item {
+    padding-left: 28px;
+    border-left: 1px solid rgba(228, 185, 111, 0.22);
+}
+
+.why-item .service-number {
+    display: block;
+    margin-bottom: 22px;
+}
+
+.why-item h3 {
+    color: var(--white);
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.why-item p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.home-faq {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 7vw;
+    background: rgba(21, 18, 15, 0.9);
+}
+
+.faq-list {
+    border-top: 1px solid rgba(228, 185, 111, 0.22);
+}
+
+.faq-list details {
+    border-bottom: 1px solid rgba(228, 185, 111, 0.22);
+}
+
+.faq-list summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: "+";
+    flex-shrink: 0;
+    color: var(--beige-light);
+    font-size: 1.4rem;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+.faq-list details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-list summary:hover,
+.faq-list summary:focus-visible {
+    color: var(--beige-light);
+}
+
+.faq-list details p {
+    max-width: 620px;
+    padding-bottom: 24px;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   CLOSING CTA
+========================================================= */
+
+.home-cta {
+    text-align: center;
+    padding: 140px 7%;
+    background:
+        radial-gradient(ellipse at center, rgba(197, 138, 61, 0.14), transparent 65%),
+        rgba(29, 25, 21, 0.88);
+}
+
+.home-cta .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-cta .home-buttons {
+    justify-content: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .featured-work,
+    .home-faq {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-item,
+    .why-item + .why-item {
+        padding: 28px 0 22px;
+        border-left: none;
+        border-bottom: 1px solid rgba(228, 185, 111, 0.22);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .home-section {
+        padding: 84px 6%;
+    }
+
+    .home-cta {
+        padding: 100px 6%;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-item,
+    .why-item + .why-item,
+    .why-item:nth-child(even) {
+        padding: 28px 0 22px;
+        border-left: none;
+    }
+
+    .home-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

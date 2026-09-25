@@ -14,12 +14,50 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        CornerStone TechDev | Digital Solutions
-    </title>
+    <title>CornerStone TechDev | Web Design &amp; Development, Cape Town</title>
+    <meta name="description" content="CornerStone TechDev builds modern websites, custom web applications and digital experiences for businesses in Cape Town and across South Africa.">
+    <link rel="canonical" href="https://cornerstonetechdev.co.za/">
+    <meta name="theme-color" content="#15120f">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=2">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="site.webmanifest">
 
+    <!-- Link previews (WhatsApp, Facebook, LinkedIn, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CornerStone TechDev">
+    <meta property="og:title" content="CornerStone TechDev | Web Design &amp; Development, Cape Town">
+    <meta property="og:description" content="CornerStone TechDev builds modern websites, custom web applications and digital experiences for businesses in Cape Town and across South Africa.">
+    <meta property="og:url" content="https://cornerstonetechdev.co.za/">
+    <meta property="og:image" content="https://cornerstonetechdev.co.za/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" type="image/png" href="images/CT favicon.png">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CornerStone TechDev",
+    "url": "https://cornerstonetechdev.co.za/",
+    "logo": "https://cornerstonetechdev.co.za/images/icon-512.png",
+    "image": "https://cornerstonetechdev.co.za/images/og-image.jpg",
+    "description": "Web design, full-stack web development and custom web applications.",
+    "email": "cornerstonetechdevsa@gmail.com",
+    "telephone": "+27813694172",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cape Town",
+        "addressRegion": "Western Cape",
+        "addressCountry": "ZA"
+    },
+    "areaServed": "ZA",
+    "sameAs": [
+        "https://www.instagram.com/cornerstone_techdev"
+    ]
+}
+    </script>
+
 
     <!-- ==========================================
          STYLESHEETS
@@ -33,6 +71,11 @@
     <link
         rel="stylesheet"
         href="css/folder.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/home-sections.css"
     >
 
 
@@ -54,6 +97,55 @@
         type="module"
         src="js/ct-logo-3d.js"
     ></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How long does a website take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most websites take 2–4 weeks from the moment we agree on the plan and your content is ready. Larger builds with custom features, like portals or dashboards, take longer — you'll get a clear timeline before we start."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does a website cost?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every project is different, so every quote is tailored to what you actually need. After a quick chat about your goals, we'll send you a clear quote with no hidden costs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do I need to have my content ready?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not at all. It helps to have your logo, photos and a rough idea of what you want to say, but we'll help you shape the structure and wording as we go."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you update my website after launch?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our website support covers content and image updates, small changes and improvements as your business grows, so your site never goes stale."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you only build websites?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Beyond the public-facing website, we build the systems behind it — secure login areas, admin and maintenance portals, dashboards and custom forms."
+            }
+        }
+    ]
+}
+    </script>
 
 </head>
 
@@ -165,9 +257,6 @@
             </a>
 
         </nav>
-
-
-</div>
 
     </header>
 
@@ -329,7 +418,7 @@
 
                 <!-- WEB DESIGN -->
 
-                <article class="service-item">
+                <a class="service-item" href="pages/services.html#website-design">
 
                     <span class="service-number">
                         01
@@ -357,12 +446,12 @@
                         ↗
                     </span>
 
-                </article>
+                </a>
 
 
                 <!-- WEB DEVELOPMENT -->
 
-                <article class="service-item">
+                <a class="service-item" href="pages/services.html#web-applications">
 
                     <span class="service-number">
                         02
@@ -390,12 +479,12 @@
                         ↗
                     </span>
 
-                </article>
+                </a>
 
 
                 <!-- DIGITAL EXPERIENCES -->
 
-                <article class="service-item">
+                <a class="service-item" href="pages/services.html">
 
                     <span class="service-number">
                         03
@@ -423,7 +512,7 @@
                         ↗
                     </span>
 
-                </article>
+                </a>
 
             </div>
 
@@ -455,6 +544,229 @@
                 >
                     View Our Work
                 </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             FEATURED PROJECT
+        ======================================= -->
+
+        <section class="home-section featured-work reveal" aria-labelledby="featured-title">
+
+            <a
+                href="pages/barc-house.html"
+                class="featured-media"
+                aria-label="Read the Barc House case study"
+            >
+                <div class="featured-bar" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <img
+                    src="images/barchouse-landing-800.webp"
+                    srcset="images/barchouse-landing-800.webp 800w, images/barchouse-landing.webp 1600w"
+                    sizes="(max-width: 1024px) 90vw, 55vw"
+                    alt="Barc House student accommodation website homepage"
+                    width="800"
+                    height="383"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </a>
+
+            <div class="featured-copy">
+
+                <p class="section-label">
+                    FEATURED PROJECT
+                </p>
+
+                <h2 id="featured-title">
+                    Barc
+                    <span>House.</span>
+                </h2>
+
+                <p class="featured-meta">
+                    STUDENT ACCOMMODATION • CAPE TOWN
+                </p>
+
+                <p class="section-intro">
+                    Students needed a way to explore the residence before travelling
+                    to a viewing, and management needed a better way to track
+                    maintenance than WhatsApp threads. We built an interactive website
+                    with online applications, backed by a secure management portal.
+                </p>
+
+                <ul class="featured-tags">
+                    <li>Website</li>
+                    <li>Online applications</li>
+                    <li>Management portal</li>
+                    <li>Maintenance tracking</li>
+                </ul>
+
+                <div class="home-buttons">
+
+                    <a href="pages/barc-house.html" class="btn btn-primary">
+                        Read The Case Study
+                    </a>
+
+                    <a href="pages/projects.html" class="btn btn-secondary">
+                        All Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             WHY CORNERSTONE
+        ======================================= -->
+
+        <section class="home-section why-cornerstone reveal" aria-labelledby="why-title">
+
+            <p class="section-label">
+                WHY CORNERSTONE
+            </p>
+
+            <h2 id="why-title">
+                Built with you,
+                <span>not just for you.</span>
+            </h2>
+
+            <div class="why-grid">
+
+                <article class="why-item">
+                    <span class="service-number">01</span>
+                    <h3>Direct line to your developer</h3>
+                    <p>
+                        No account managers or middlemen. You speak to the person
+                        designing and building your website, from the first idea to launch.
+                    </p>
+                </article>
+
+                <article class="why-item">
+                    <span class="service-number">02</span>
+                    <h3>Beyond the website</h3>
+                    <p>
+                        When your business needs more than a brochure, we build the
+                        systems behind it — portals, dashboards and custom tools.
+                    </p>
+                </article>
+
+                <article class="why-item">
+                    <span class="service-number">03</span>
+                    <h3>Local and reachable</h3>
+                    <p>
+                        Based in Cape Town and a WhatsApp message away. Same time zone,
+                        quick replies and support after launch.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             FAQ
+        ======================================= -->
+
+        <section class="home-section home-faq reveal" aria-labelledby="faq-title">
+
+            <div>
+
+                <p class="section-label">
+                    GOOD TO KNOW
+                </p>
+
+                <h2 id="faq-title">
+                    Questions,
+                    <span>answered.</span>
+                </h2>
+
+                <p class="section-intro">
+                    Something else on your mind?
+                    <a href="pages/contact.html" style="color: var(--beige-light);">Ask us directly</a>.
+                </p>
+
+            </div>
+
+            <div class="faq-list">
+
+                <details>
+                    <summary>How long does a website take?</summary>
+                    <p>Most websites take 2–4 weeks from the moment we agree on the plan and your content is ready. Larger builds with custom features, like portals or dashboards, take longer — you'll get a clear timeline before we start.</p>
+                </details>
+
+                <details>
+                    <summary>How much does a website cost?</summary>
+                    <p>Every project is different, so every quote is tailored to what you actually need. After a quick chat about your goals, we'll send you a clear quote with no hidden costs.</p>
+                </details>
+
+                <details>
+                    <summary>Do I need to have my content ready?</summary>
+                    <p>Not at all. It helps to have your logo, photos and a rough idea of what you want to say, but we'll help you shape the structure and wording as we go.</p>
+                </details>
+
+                <details>
+                    <summary>Can you update my website after launch?</summary>
+                    <p>Yes. Our website support covers content and image updates, small changes and improvements as your business grows, so your site never goes stale.</p>
+                </details>
+
+                <details>
+                    <summary>Do you only build websites?</summary>
+                    <p>No. Beyond the public-facing website, we build the systems behind it — secure login areas, admin and maintenance portals, dashboards and custom forms.</p>
+                </details>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             CLOSING CTA
+        ======================================= -->
+
+        <section class="home-section home-cta reveal" aria-labelledby="cta-title">
+
+            <p class="section-label">
+                READY WHEN YOU ARE
+            </p>
+
+            <h2 id="cta-title">
+                Have a project in mind?
+                <span>Let's build it.</span>
+            </h2>
+
+            <p class="section-intro">
+                Tell us what you're looking to create, and we'll help turn the idea
+                into something real.
+            </p>
+
+            <div class="home-buttons">
+
+                <a href="pages/contact.html" class="btn btn-primary">
+                    Start A Project
+                </a>
+
+                <a
+                    href="https://wa.me/27813694172"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Chat On WhatsApp
+                </a>
 
             </div>
 
@@ -573,8 +885,14 @@
                                     </div>
 
                                     <img
-                                        src="images/barchouse landing page .png"
+                                        src="images/barchouse-landing-800.webp"
+                                        srcset="images/barchouse-landing-800.webp 800w, images/barchouse-landing.webp 1600w"
+                                        sizes="(max-width: 768px) 90vw, 600px"
                                         alt="Barc House student accommodation website preview"
+                                        width="800"
+                                        height="383"
+                                        loading="lazy"
+                                        decoding="async"
                                     >
 
                                 </div>
@@ -632,12 +950,35 @@
          FOOTER
     =========================================== -->
 
-    <footer>
+    <footer class="site-footer">
 
-        <p>
-            © 2026 CornerStone TechDev.
-            All rights reserved.
-        </p>
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <p class="footer-name">CornerStone <strong>TechDev</strong></p>
+                <p>Websites and digital solutions, built in Cape Town, South Africa.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="pages/services.html">Services</a>
+                <a href="pages/projects.html">Projects</a>
+                <a href="pages/about.html">About</a>
+                <a href="pages/contact.html">Contact</a>
+            </nav>
+
+            <div class="footer-contact">
+                <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>
+                <a href="https://wa.me/27813694172" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://www.instagram.com/cornerstone_techdev" target="_blank" rel="noopener">Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span class="footer-year">2026</span> CornerStone TechDev. All rights reserved.</p>
+            <a href="pages/privacy.html">Privacy Policy</a>
+        </div>
 
     </footer>
 
@@ -753,7 +1094,31 @@
            HERO ANIMATION
         =========================================== */
 
-        inView(
+        const reduceMotion =
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduceMotion) {
+            document
+                .querySelectorAll(".hero-content")
+                .forEach((el) => { el.style.opacity = 1; });
+        }
+
+        if (!reduceMotion) {
+            document
+                .querySelectorAll(".reveal")
+                .forEach((section) => {
+                    section.style.opacity = 0;
+                    inView(section, () => {
+                        animate(
+                            section,
+                            { opacity: 1, y: [40, 0] },
+                            { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
+                        );
+                    }, { amount: 0.15 });
+                });
+        }
+
+        if (!reduceMotion) inView(
             ".hero-content",
             (element) => {
 

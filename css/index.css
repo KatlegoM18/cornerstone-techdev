@@ -2719,3 +2719,171 @@ footer {
         filter: none;
     }
 }
+
+
+/* =========================================================
+   SITE FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 56px 7% 28px;
+    text-align: left;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.footer-name {
+    color: var(--white);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.footer-name strong {
+    color: var(--beige-light);
+}
+
+.footer-brand p:not(.footer-name) {
+    max-width: 320px;
+    line-height: 1.6;
+}
+
+.footer-nav,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.site-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    overflow-wrap: anywhere;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--beige-light);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 24px auto 0;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        padding: 44px 6% 24px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   LEGAL PAGES (PRIVACY POLICY)
+========================================================= */
+
+.legal-content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 150px 7% 90px;
+    color: var(--text-light);
+    line-height: 1.75;
+}
+
+.legal-content h1 {
+    color: var(--white);
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.legal-content h1 span {
+    color: var(--beige-light);
+}
+
+.legal-content h2 {
+    color: var(--beige-light);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 36px 0 10px;
+}
+
+.legal-content p,
+.legal-content li {
+    margin-bottom: 12px;
+}
+
+.legal-content ul {
+    padding-left: 22px;
+}
+
+.legal-content a {
+    color: var(--beige-light);
+}
+
+.legal-updated {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   Respects the visitor's device setting.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero-content {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+
+/* Keep anchored sections clear of the fixed navbar */
+
+.service-card[id] {
+    scroll-margin-top: 120px;
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cornerstonetechdev.co.za/sitemap.xml

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Page Not Found | CornerStone TechDev</title>
+    <meta name="theme-color" content="#15120f">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=2">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="robots" content="noindex">
+
+    <!-- MAIN SITE STYLES -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!-- ABOUT PAGE STYLES -->
+    
+
+    <!-- MOLTEN METAL BACKGROUND -->
+    <script
+        type="module"
+        src="/js/molten-metal.js"
+    ></script>
+
+    <!-- 3D CT LOGO -->
+    
+
+</head>
+
+
+<body class="legal-page">
+
+
+    <!-- ==========================================
+         MOLTEN METAL BACKGROUND
+    =========================================== -->
+
+    <div class="molten-background">
+        <canvas id="molten-canvas"></canvas>
+    </div>
+
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <header class="navbar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <a href="/">
+
+                <img src="/images/favicon-32.png?v=2" alt="" width="32" height="32">
+
+                <span>
+                    CornerStone
+                    <strong>TechDev</strong>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- NAVIGATION LINKS -->
+        <nav
+            class="nav-links"
+            id="nav-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/pages/services.html">
+                Services
+            </a>
+
+            <a href="/pages/projects.html">
+                Projects
+            </a>
+
+            <a href="/pages/portfolio.html">
+                Portfolio
+            </a>
+
+            <a
+                href="/pages/about.html"
+                class="nav-about"
+            >
+                About
+            </a>
+
+            <a
+                href="/pages/contact.html"
+                class="nav-contact"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="legal-content">
+
+            <p class="section-label">ERROR 404</p>
+
+            <h1>Page not <span>found.</span></h1>
+
+            <p>
+                The page you're looking for has moved or doesn't exist.
+                Let's get you back on solid ground.
+            </p>
+
+            <p>
+                <a href="/">Go to the homepage</a> ·
+                <a href="/pages/services.html">View services</a> ·
+                <a href="/pages/contact.html">Contact us</a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <p class="footer-name">CornerStone <strong>TechDev</strong></p>
+                <p>Websites and digital solutions, built in Cape Town, South Africa.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="/">Home</a>
+                <a href="/pages/services.html">Services</a>
+                <a href="/pages/projects.html">Projects</a>
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/contact.html">Contact</a>
+            </nav>
+
+            <div class="footer-contact">
+                <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>
+                <a href="https://wa.me/27813694172" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://www.instagram.com/cornerstone_techdev" target="_blank" rel="noopener">Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span class="footer-year">2026</span> CornerStone TechDev. All rights reserved.</p>
+            <a href="/pages/privacy.html">Privacy Policy</a>
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================
+         MOBILE MENU
+    =========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const menuToggle =
+                    document.getElementById("menu-toggle");
+
+                const navLinks =
+                    document.getElementById("nav-links");
+
+
+                if (!menuToggle || !navLinks) {
+                    return;
+                }
+
+
+                menuToggle.addEventListener(
+                    "click",
+                    () => {
+
+                        const isOpen =
+                            navLinks.classList.toggle(
+                                "active"
+                            );
+
+
+                        menuToggle.classList.toggle(
+                            "active",
+                            isOpen
+                        );
+
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            String(isOpen)
+                        );
+
+
+                        menuToggle.setAttribute(
+                            "aria-label",
+                            isOpen
+                                ? "Close navigation menu"
+                                : "Open navigation menu"
+                        );
+
+                    }
+                );
+
+
+                navLinks
+                    .querySelectorAll("a")
+                    .forEach(
+                        (link) => {
+
+                            link.addEventListener(
+                                "click",
+                                () => {
+
+                                    navLinks.classList.remove(
+                                        "active"
+                                    );
+
+                                    menuToggle.classList.remove(
+                                        "active"
+                                    );
+
+                                    menuToggle.setAttribute(
+                                        "aria-expanded",
+                                        "false"
+                                    );
+
+                                    menuToggle.setAttribute(
+                                        "aria-label",
+                                        "Open navigation menu"
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

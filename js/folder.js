@@ -560,6 +560,12 @@ function initialisePortfolioPopup(
 
 
     /* ==========================================
+       OPEN FROM LINK (index.html#portfolio)
+    ========================================== */
+    if (window.location.hash === "#portfolio") {
+        openPortfolio();
+    }
+    /* ==========================================
        ESCAPE KEY
     ========================================== */
 

@@ -17,6 +17,12 @@ const LOGO_IMAGE =
     "../images/CT logo.png";
 
 
+const REDUCED_MOTION =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
 const ROTATION_SPEED =
     0.02;
 
@@ -718,8 +724,10 @@ function initialiseLogo() {
          * Continuous 3D revolution.
          */
 
-        logoGroup.rotation.y +=
-            ROTATION_SPEED;
+        if (!REDUCED_MOTION) {
+            logoGroup.rotation.y +=
+                ROTATION_SPEED;
+        }
 
 
         renderer.render(
