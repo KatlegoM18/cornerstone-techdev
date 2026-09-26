@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesedi Wine Estate | Stellenbosch</title>
+    <meta name="description" content="Lesedi: wine made in the last light of the Helderberg. Turn the bottle to read the label. A concept site by CornerStone TechDev.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lesedi Wine Estate">
+    <meta property="og:title" content="Lesedi Wine Estate | Stellenbosch">
+    <meta property="og:description" content="Wine made in the last light of the Helderberg. Turn the bottle to read the label.">
+    <meta property="og:url" content="https://cornerstonetechdev.co.za/projects/lesedi/">
+    <meta property="og:image" content="https://cornerstonetechdev.co.za/images/portfolio/lesedi-card.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#1a0f12">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a0f12'/%3E%3Ccircle cx='16' cy='19' r='7' fill='%23e6b36a'/%3E%3Cpath d='M3 22c5-4 9-5 13-3s8 1 13-3v13H3z' fill='%231a0f12'/%3E%3C/svg%3E">
+
+    <link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body data-wine="0" data-face="0">
+
+    <div class="sky" aria-hidden="true">
+        <div class="sky-sun"></div>
+        <svg class="sky-ridge" viewBox="0 0 1600 260" preserveAspectRatio="none">
+            <path class="ridge-far" d="M0 170 C120 150 190 110 300 118 C390 124 440 70 540 64 C640 58 700 120 800 126 C900 132 980 96 1080 100 C1190 104 1250 150 1360 146 C1460 142 1530 120 1600 124 V260 H0Z"/>
+            <path class="ridge-near" d="M0 214 C140 196 260 204 380 186 C500 168 580 190 700 196 C840 203 940 176 1060 178 C1180 180 1300 206 1440 200 C1510 197 1560 190 1600 188 V260 H0Z"/>
+        </svg>
+    </div>
+
+    <header class="site-header">
+        <a href="#top" class="brand" aria-label="Lesedi, back to top">
+            <svg viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M1 18c6-4 11-5 19-3s13 1 19-3"/></svg>
+            <span>Lesedi</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="#wines">The wines</a>
+            <a href="#estate">The estate</a>
+            <a href="#visit">Visit</a>
+        </nav>
+        <a href="#visit" class="header-cta">Book <span class="hide-sm">a sunset </span>tasting</a>
+    </header>
+
+    <main id="top">
+
+        <!-- ======================================
+             THE STAGE: 3D BOTTLE + LABEL READER
+        ======================================= -->
+
+        <section class="stage" id="wines" aria-label="The wines">
+
+            <div class="stage-intro">
+                <p class="eyebrow">Stellenbosch · Helderberg · Est. 1968</p>
+                <h1>Wine made<br> in the <em>last light.</em></h1>
+                <p class="stage-lede">
+                    Lesedi means "light" in Setswana. Our slopes catch the sun long
+                    after the valley has gone dark, and every bottle carries that last hour of it.
+                </p>
+
+                <div class="wine-picker" role="radiogroup" aria-label="Choose a wine">
+                    <button type="button" role="radio" aria-checked="true" data-wine="0">
+                        <span class="swatch" style="--c:#e3c16f"></span>
+                        <span class="wine-picker-name">Chenin Blanc</span>
+                        <span class="wine-picker-year">2024</span>
+                    </button>
+                    <button type="button" role="radio" aria-checked="false" data-wine="1">
+                        <span class="swatch" style="--c:#7a1a2c"></span>
+                        <span class="wine-picker-name">Pinotage</span>
+                        <span class="wine-picker-year">2021</span>
+                    </button>
+                    <button type="button" role="radio" aria-checked="false" data-wine="2">
+                        <span class="swatch" style="--c:#f0dca0"></span>
+                        <span class="wine-picker-name">Cap Classique</span>
+                        <span class="wine-picker-year">NV</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bottle-stage" id="bottle-stage" aria-hidden="true">
+                <canvas id="bottle-canvas"></canvas>
+                <div class="bottle-fallback">
+                    <svg viewBox="0 0 120 360"><path d="M48 10h24v70c0 20 38 40 38 80v180c0 8-6 12-12 12H22c-6 0-12-4-12-12V160c0-40 38-60 38-80z"/></svg>
+                </div>
+                <p class="drag-hint"><span class="drag-hint-icon">⟷</span> Drag the bottle to read the label</p>
+            </div>
+
+            <div class="label-reader">
+                <div class="face-tabs" role="tablist" aria-label="Read the label">
+                    <button type="button" role="tab" id="tab-0" aria-controls="face-panel" aria-selected="true" data-face="0">Label</button>
+                    <button type="button" role="tab" id="tab-1" aria-controls="face-panel" aria-selected="false" data-face="1" tabindex="-1">Glass</button>
+                    <button type="button" role="tab" id="tab-2" aria-controls="face-panel" aria-selected="false" data-face="2" tabindex="-1">Block</button>
+                    <button type="button" role="tab" id="tab-3" aria-controls="face-panel" aria-selected="false" data-face="3" tabindex="-1">Table</button>
+                </div>
+
+                <div class="face-dial" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                    <i class="face-dial-needle"></i>
+                </div>
+
+                <div class="face-panel" id="face-panel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
+                    <!-- filled by main.js -->
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             THE ESTATE
+        ======================================= -->
+
+        <section class="estate" id="estate">
+            <div class="estate-copy">
+                <p class="eyebrow">The estate</p>
+                <h2>Three generations, <em>one late hour.</em></h2>
+                <p>
+                    The farm sits high on the western face of the Helderberg, where
+                    the False Bay breeze arrives every afternoon and the sun sets
+                    over the water instead of behind the mountain. That extra hour of
+                    light ripens the grapes slowly. The breeze keeps them fresh.
+                </p>
+                <p>
+                    We pick by hand and ferment each block on its own, so each bottle tastes of
+                    one slope, one soil and one season.
+                </p>
+            </div>
+
+            <dl class="estate-stats">
+                <div><dt>Under vine</dt><dd>42<small>ha</small></dd></div>
+                <div><dt>Elevation</dt><dd>280–420<small>m</small></dd></div>
+                <div><dt>Oldest block</dt><dd>1974</dd></div>
+                <div><dt>To the ocean</dt><dd>9<small>km</small></dd></div>
+            </dl>
+        </section>
+
+
+        <!-- ======================================
+             VISIT
+        ======================================= -->
+
+        <section class="visit" id="visit">
+            <div class="visit-card">
+                <div class="visit-info">
+                    <p class="eyebrow">Visit</p>
+                    <h2>Sunset <em>tastings.</em></h2>
+                    <p>
+                        Five wines on the stoep as the light goes. Friday to Sunday,
+                        seated at 17:00 in summer and 16:00 in winter.
+                    </p>
+                    <ul class="visit-meta">
+                        <li><span>Where</span>Helderberg slopes, Stellenbosch</li>
+                        <li><span>When</span>Fri–Sun · Tastings 10:00–18:00</li>
+                        <li><span>Sunset flight</span>R180 per person</li>
+                    </ul>
+                </div>
+
+                <form class="visit-form" id="visit-form" novalidate>
+                    <label>
+                        <span>Date</span>
+                        <input type="date" name="date" required>
+                    </label>
+                    <label>
+                        <span>Guests</span>
+                        <select name="guests">
+                            <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                        </select>
+                    </label>
+                    <label class="visit-form-wide">
+                        <span>Name</span>
+                        <input type="text" name="name" autocomplete="name" required>
+                    </label>
+                    <button type="submit">Reserve a table</button>
+                    <p class="visit-form-note" id="visit-form-note" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Lesedi is a fictional estate: a concept site designed and built by
+            <a href="https://cornerstonetechdev.co.za/pages/portfolio">CornerStone TechDev</a>.
+        </p>
+        <p>Please enjoy responsibly. Not for sale to persons under the age of 18.</p>
+    </footer>
+
+</body>
+</html>

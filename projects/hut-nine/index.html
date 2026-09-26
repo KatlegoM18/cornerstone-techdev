@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hut Nine Surf Co. | Muizenberg</title>
+    <meta name="description" content="Surf lessons at Surfer's Corner, Muizenberg. The whole site changes with the live surf: glassy, pumping, blown out or flat. A concept by CornerStone TechDev.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hut Nine Surf Co.">
+    <meta property="og:title" content="Hut Nine Surf Co. | Muizenberg">
+    <meta property="og:description" content="Surf lessons at Surfer's Corner. The whole site changes with the live surf.">
+    <meta property="og:url" content="https://cornerstonetechdev.co.za/projects/hut-nine/">
+    <meta property="og:image" content="https://cornerstonetechdev.co.za/images/portfolio/hut-nine-card.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f5c8c">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffd23f'/%3E%3Cpath d='M6 26V13l10-7 10 7v13z' fill='%23ff5d8f'/%3E%3Ctext x='16' y='24' font-family='Arial' font-weight='700' font-size='11' text-anchor='middle' fill='%23fff'%3E9%3C/text%3E%3C/svg%3E">
+
+    <link rel="preload" href="fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body data-mood="glassy">
+
+    <header class="site-header">
+        <a href="#top" class="brand" aria-label="Hut Nine Surf Co., back to top">
+            <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M3 28V12L15 3l12 9v16z"/><text x="15" y="24">9</text></svg>
+            <span>Hut Nine <small>Surf Co.</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="#conditions">Conditions</a>
+            <a href="#forecast">Forecast</a>
+            <a href="#lessons">Lessons</a>
+        </nav>
+        <a href="#lessons" class="header-cta">Book a lesson</a>
+    </header>
+
+    <main id="top">
+
+        <!-- ======================================
+             HERO: THE LIVE SEA
+        ======================================= -->
+
+        <section class="hero" id="conditions" aria-labelledby="verdict">
+
+            <canvas class="ocean" id="ocean" aria-hidden="true"></canvas>
+
+            <svg class="huts" viewBox="0 0 1600 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                <rect class="sand" x="0" y="118" width="1600" height="40"/>
+                <g class="hut-row"></g>
+            </svg>
+
+            <div class="hero-inner">
+
+                <div class="hero-copy">
+                    <p class="live-pill" id="live-pill">
+                        <span class="live-dot"></span>
+                        <span id="live-label">Surfer's Corner · Muizenberg</span>
+                    </p>
+                    <h1 class="verdict" id="verdict">Checking<br>the surf…</h1>
+                    <p class="verdict-sub" id="verdict-sub">Reading the buoys, the wind and the tide.</p>
+
+                    <details class="preview" id="preview">
+                        <summary>
+                            <span class="preview-dot" aria-hidden="true"></span>
+                            Try other conditions
+                        </summary>
+                        <div class="preview-panel">
+                            <div class="preview-row">
+                                <p class="preview-label" id="pl-surf">Surf</p>
+                                <div class="preview-chips" role="radiogroup" aria-labelledby="pl-surf" data-group="surf">
+                                    <button type="button" role="radio" aria-checked="true" data-value="live">Live</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="glassy">Glassy</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="fun">Fun</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="pumping">Pumping</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="blown">Blown out</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="flat">Flat</button>
+                                </div>
+                            </div>
+                            <div class="preview-row">
+                                <p class="preview-label" id="pl-time">Time</p>
+                                <div class="preview-chips" role="radiogroup" aria-labelledby="pl-time" data-group="time">
+                                    <button type="button" role="radio" aria-checked="true" data-value="live">Now</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="dawn">Dawn</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="morning">Morning</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="midday">Midday</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="sunset">Sunset</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="night">Night</button>
+                                </div>
+                            </div>
+                            <div class="preview-row">
+                                <p class="preview-label" id="pl-sky">Sky</p>
+                                <div class="preview-chips" role="radiogroup" aria-labelledby="pl-sky" data-group="sky">
+                                    <button type="button" role="radio" aria-checked="true" data-value="live">Live</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="clear">Clear</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="cloudy">Cloudy</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="rain">Rain</button>
+                                </div>
+                            </div>
+                            <button type="button" class="preview-reset" id="preview-reset">Back to live</button>
+                        </div>
+                    </details>
+                </div>
+
+                <aside class="readout" aria-label="Current conditions">
+                    <div class="readout-main">
+                        <p class="readout-label">Waves</p>
+                        <p class="readout-big"><span id="r-wave">–</span><small>m</small></p>
+                        <p class="readout-note" id="r-swell">–</p>
+                    </div>
+                    <dl class="readout-grid">
+                        <div>
+                            <dt>Wind</dt>
+                            <dd>
+                                <svg class="wind-arrow" id="r-wind-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v16M6 13l6 6 6-6"/></svg>
+                                <span id="r-wind">–</span>
+                            </dd>
+                            <dd class="readout-tag" id="r-wind-tag">–</dd>
+                        </div>
+                        <div>
+                            <dt>Water</dt>
+                            <dd><span id="r-water">–</span></dd>
+                            <dd class="readout-tag" id="r-suit">–</dd>
+                        </div>
+                        <div>
+                            <dt>Tide</dt>
+                            <dd><span id="r-tide">–</span></dd>
+                            <dd class="readout-tag" id="r-tide-next">–</dd>
+                        </div>
+                        <div>
+                            <dt>Score</dt>
+                            <dd><span id="r-score">–</span><small>/10</small></dd>
+                            <dd class="readout-tag" id="r-updated">–</dd>
+                        </div>
+                    </dl>
+                </aside>
+
+            </div>
+        </section>
+
+
+        <!-- ======================================
+             FORECAST
+        ======================================= -->
+
+        <section class="forecast" id="forecast" aria-labelledby="forecast-title">
+            <div class="section-head">
+                <p class="kicker">Next three days</p>
+                <h2 id="forecast-title">When to <span>paddle out</span></h2>
+                <p class="section-lede" id="best-window">Finding the best window…</p>
+            </div>
+
+            <div class="chart-wrap" tabindex="0" aria-label="Hourly wave, wind and tide forecast (scrolls sideways)">
+                <svg class="chart" id="chart" role="img" aria-labelledby="chart-desc">
+                    <desc id="chart-desc">Hourly wave height, wind and tide for the next three days.</desc>
+                </svg>
+            </div>
+
+            <ul class="chart-key" aria-hidden="true">
+                <li><i class="k-good"></i>Good</li>
+                <li><i class="k-ok"></i>Fair</li>
+                <li><i class="k-poor"></i>Poor</li>
+                <li><i class="k-tide"></i>Tide</li>
+                <li><i class="k-arrow">↓</i>Wind (points where it blows)</li>
+            </ul>
+        </section>
+
+
+        <!-- ======================================
+             LESSONS
+        ======================================= -->
+
+        <section class="lessons" id="lessons" aria-labelledby="lessons-title">
+            <div class="section-head">
+                <p class="kicker">Lessons &amp; hire</p>
+                <h2 id="lessons-title">From the <span>hut to the line-up</span></h2>
+                <p class="today-call" id="today-call">…</p>
+            </div>
+
+            <div class="lesson-cards">
+                <article class="lesson-card">
+                    <p class="lesson-tag">Beginners</p>
+                    <h3>First Wave</h3>
+                    <p>Two hours, a soft-top board, a wetsuit and a coach for every four people. Most people stand up on day one.</p>
+                    <p class="lesson-price">R450 <small>per person</small></p>
+                    <a href="#lessons" class="lesson-cta" data-lesson="First Wave">Book First Wave</a>
+                </article>
+                <article class="lesson-card is-featured">
+                    <p class="lesson-tag">One on one</p>
+                    <h3>Private Session</h3>
+                    <p>Ninety minutes with one coach, filmed from the beach, then we go through the footage over coffee.</p>
+                    <p class="lesson-price">R850 <small>per session</small></p>
+                    <a href="#lessons" class="lesson-cta" data-lesson="Private Session">Book a private</a>
+                </article>
+                <article class="lesson-card">
+                    <p class="lesson-tag">Already surf?</p>
+                    <h3>Board &amp; Suit Hire</h3>
+                    <p>Longboards, mid-lengths and 4/3 wetsuits, rinsed and waiting at hut nine from 07:00.</p>
+                    <p class="lesson-price">R250 <small>for two hours</small></p>
+                    <a href="#lessons" class="lesson-cta" data-lesson="Board & Suit Hire">Reserve a board</a>
+                </article>
+            </div>
+            <p class="lesson-note" id="lesson-note" role="status"></p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Hut Nine Surf Co. is fictional: a concept site designed and built by
+            <a href="https://cornerstonetechdev.co.za/pages/portfolio">CornerStone TechDev</a>.
+        </p>
+        <p>
+            Live marine and weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>
+            (CC BY 4.0). Always check conditions yourself before you paddle out.
+        </p>
+    </footer>
+
+</body>
+</html>

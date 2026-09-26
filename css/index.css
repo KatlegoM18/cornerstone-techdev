@@ -2774,6 +2774,10 @@ footer {
     color: var(--beige-light);
 }
 
+.footer-nav a[aria-current="page"] {
+    color: var(--beige-light);
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;

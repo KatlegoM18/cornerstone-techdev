@@ -41,6 +41,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://cornerstonetechdev.co.za/pages/lesedi</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cornerstonetechdev.co.za/pages/hut-nine</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cornerstonetechdev.co.za/projects/lesedi/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cornerstonetechdev.co.za/projects/hut-nine/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://cornerstonetechdev.co.za/pages/privacy</loc>
     <lastmod>2026-09-25</lastmod>
     <priority>0.2</priority>

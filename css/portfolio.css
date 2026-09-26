@@ -384,6 +384,19 @@ gap: clamp(40px, 5vw, 80px);
 align-items: center;
 }
 
+.portfolio-page .portfolio-piece + .portfolio-piece {
+margin-top: clamp(110px, 12vw, 170px);
+}
+
+/* alternate sides so a longer list doesn't feel like a column of cards */
+.portfolio-page .portfolio-piece:nth-of-type(even) {
+grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+}
+
+.portfolio-page .portfolio-piece:nth-of-type(even) .portfolio-piece-image {
+order: 2;
+}
+
 .portfolio-page .portfolio-piece-image {
 position: relative;
 display: block;
@@ -502,8 +515,13 @@ text-align: center;
 
 @media (max-width: 900px) {
 
-.portfolio-page .portfolio-piece {
+.portfolio-page .portfolio-piece,
+.portfolio-page .portfolio-piece:nth-of-type(even) {
     grid-template-columns: 1fr;
+}
+
+.portfolio-page .portfolio-piece:nth-of-type(even) .portfolio-piece-image {
+    order: 0;
 }
 
 .portfolio-page .portfolio-work {
