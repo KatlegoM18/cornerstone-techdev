@@ -67,46 +67,13 @@ document.addEventListener(
                 number: "01",
 
                 category:
-                    "STUDENT ACCOMMODATION",
-
-                title:
-                    "BARC HOUSE",
-
-                description:
-                    "A digital platform created for student accommodation, combining a public-facing website with custom functionality behind the experience.",
-
-                image:
-                    "../images/barchouse-landing.webp",
-
-                imageAlt:
-                    "Barc House landing page",
-
-                tags: [
-                    "WEB DESIGN",
-                    "FRONT-END",
-                    "FULL-STACK",
-                    "CUSTOM FUNCTIONALITY"
-                ],
-
-                link:
-                    "../projects/BarcHouse/index.html",
-
-                caseStudy:
-                    "barc-house.html"
-            },
-
-
-            {
-                number: "02",
-
-                category:
                     "PORTFOLIO GROWING",
 
                 title:
                     "MORE WORK",
 
                 description:
-                    "New websites and digital solutions will be added here as CornerStone projects are completed.",
+                    "Client projects will be added here as they are completed. In the meantime, explore the concept work in the Portfolio.",
 
                 image:
                     null,
