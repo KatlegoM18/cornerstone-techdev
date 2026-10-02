@@ -41,6 +41,19 @@
     <!-- ABOUT PAGE STYLES -->
     <link rel="stylesheet" href="../css/about.css">
 
+    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/typography.css"
+    >
+
     <!-- MOLTEN METAL BACKGROUND -->
     <script
         type="module"
@@ -470,14 +483,37 @@
                     development from the ground up.
                 </p>
 
-                <div class="build-stack">
+                <div class="terminal-window whoami" role="group" aria-label="About the developer">
 
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JAVASCRIPT</span>
-                    <span>SQL</span>
-                    <span>JAVA</span>
-                    <span>SPRING BOOT</span>
+                    <div class="terminal-bar" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <b>~/cornerstone</b>
+                    </div>
+
+                    <div class="terminal-body">
+                        <p><span class="prompt">$</span> whoami</p>
+                        <p class="hint">founder + developer, cornerstone techdev</p>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span> cat stack.txt</p>
+                        <ul class="whoami-stack">
+                            <li>html</li>
+                            <li>css</li>
+                            <li>javascript</li>
+                            <li>sql</li>
+                            <li>java</li>
+                            <li>spring boot</li>
+                        </ul>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span> cat learning.txt</p>
+                        <p class="hint">python · data analysis</p>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span> echo $LOCATION</p>
+                        <p class="hint">cape town, south africa</p>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span> <span class="terminal-caret" aria-hidden="true"></span></p>
+                    </div>
 
                 </div>
 
@@ -603,12 +639,14 @@
                 <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>
                 <a href="https://wa.me/27813694172" target="_blank" rel="noopener">WhatsApp</a>
                 <a href="https://www.instagram.com/cornerstone_techdev" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://github.com/KatlegoM18" target="_blank" rel="noopener">GitHub</a>
             </div>
 
         </div>
 
         <div class="footer-bottom">
             <p>© <span class="footer-year">2026</span> CornerStone TechDev. All rights reserved.</p>
+            <p class="footer-built">built by hand · deployed on Netlify</p>
             <a href="privacy.html">Privacy Policy</a>
         </div>
 

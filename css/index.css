@@ -2891,3 +2891,428 @@ footer {
 .service-card[id] {
     scroll-margin-top: 120px;
 }
+
+
+
+/* =========================================================
+   TECH LOOK — SHARED ADDITIONS
+   Rounded buttons, footer "built with" line and the
+   terminal-style 404 page.
+========================================================= */
+
+
+/* Rounded buttons (matches the homepage) */
+
+.btn,
+.nav-links .nav-contact,
+.cta-button,
+.portfolio-cta-button,
+.whatsapp-button,
+.form-submit {
+    border-radius: 10px;
+}
+
+
+/* Footer: GitHub + built-with line */
+
+.footer-built {
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.75;
+}
+
+
+/* Terminal-style 404 */
+
+.terminal-404 {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 110px 7% 120px;
+}
+
+.terminal-window {
+    border: 1px solid rgba(228, 185, 111, 0.16);
+    border-radius: 14px;
+    background: rgba(28, 24, 20, 0.94);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: #171310;
+}
+
+.terminal-bar span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #3d332b;
+}
+
+.terminal-bar b {
+    margin-left: 12px;
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #b8a898;
+}
+
+.terminal-body {
+    padding: 24px 24px 28px;
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+    line-height: 1.9;
+    color: var(--text-light);
+}
+
+.terminal-body p {
+    overflow-wrap: anywhere;
+}
+
+.terminal-body .prompt {
+    color: var(--beige-light);
+}
+
+.terminal-body .error {
+    color: #e07a5f;
+}
+
+.terminal-body .hint {
+    color: #a39282;
+}
+
+.terminal-body .gap {
+    height: 0.9em;
+}
+
+.terminal-body a {
+    color: var(--beige-light);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(228, 185, 111, 0.45);
+}
+
+.terminal-body a:hover,
+.terminal-body a:focus-visible {
+    color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+.terminal-caret {
+    display: inline-block;
+    width: 9px;
+    height: 1.1em;
+    vertical-align: -0.2em;
+    background: var(--beige-light);
+    animation: terminal-blink 1s steps(1) infinite;
+}
+
+@keyframes terminal-blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .terminal-caret { animation: none; }
+}
+
+.terminal-404 h1 {
+    margin-bottom: 28px;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--white);
+}
+
+.terminal-404 h1 span {
+    color: var(--beige-light);
+}
+
+
+
+/* =========================================================
+   TECH LOOK — PAGE UPGRADES
+   Stack pills, browser frames, services pipeline,
+   about "whoami" card, contact deploy log + field focus.
+========================================================= */
+
+
+/* Shared: stack / tool pills */
+
+html .portfolio-page .portfolio-piece-stack,
+html .service-card ul.service-tools,
+html .about-page .whoami-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+}
+
+html .portfolio-page .portfolio-piece-stack li,
+html .service-card ul.service-tools li,
+html .about-page .whoami-stack li {
+    padding: 5px 11px;
+    border: 1px solid rgba(228, 185, 111, 0.35);
+    border-radius: 999px;
+    background: rgba(228, 185, 111, 0.08);
+    color: var(--beige-light);
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+
+
+/* Portfolio: browser-window frames + pills */
+
+html .portfolio-page .portfolio-piece-image {
+    padding-top: 34px;
+    border-radius: 14px;
+    background: #171310;
+}
+
+html .portfolio-page .portfolio-piece-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 34px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: #171310;
+}
+
+html .portfolio-page .portfolio-piece-image::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    z-index: 3;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3d332b;
+    box-shadow: 16px 0 0 #3d332b, 32px 0 0 #3d332b;
+}
+
+html .portfolio-page .portfolio-piece-tags li {
+    border-radius: 999px;
+}
+
+html .portfolio-page .portfolio-piece-stack {
+    margin: -22px 0 34px;
+}
+
+html .portfolio-page .portfolio-piece-link {
+    border-radius: 10px;
+}
+
+html .portfolio-page .portfolio-piece-link.is-code span {
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.8rem;
+}
+
+html .portfolio-carousel-tags span {
+    border-radius: 999px;
+}
+
+
+/* Case studies: stack line + view-code link */
+
+html .case-stack {
+    margin-top: 24px;
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+}
+
+html .case-stack span {
+    margin-right: 10px;
+    color: var(--beige-light);
+}
+
+html .case-stack span::before {
+    content: "// ";
+}
+
+html .case-cta .case-code-link {
+    margin-left: 36px;
+}
+
+@media (max-width: 560px) {
+    html .case-cta .case-code-link {
+        margin: 26px 0 0;
+    }
+}
+
+
+/* Services: tool pills */
+
+html .service-card ul.service-tools {
+    max-width: none;
+    margin-top: 26px;
+}
+
+html .service-card ul.service-tools li::before {
+    content: none;
+}
+
+
+/* Services: pipeline */
+
+html .services-process .process-cmd {
+    margin-top: 22px;
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.85rem;
+    color: #a39282;
+}
+
+html .services-process .process-cmd span {
+    color: var(--beige-light);
+}
+
+html .services-process .process-step {
+    border: 1px solid rgba(228, 185, 111, 0.16);
+    border-radius: 14px;
+    background: rgba(29, 25, 21, 0.6);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+html .services-process .process-step:hover {
+    border-color: rgba(228, 185, 111, 0.42);
+    transform: translateY(-3px);
+}
+
+html .services-process .process-step > span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+html .services-process .process-step > span::before {
+    content: "✓";
+    flex: 0 0 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(228, 185, 111, 0.35);
+    border-radius: 50%;
+    background: rgba(228, 185, 111, 0.08);
+    color: var(--beige-light);
+    font-size: 0.8rem;
+}
+
+html .services-process .process-step > span::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #3d332b;
+}
+
+html .services-process .process-step:last-child {
+    border-color: rgba(228, 185, 111, 0.42);
+}
+
+html .services-process .process-step:last-child > span::before {
+    content: "↑";
+    border: 0;
+    background: var(--beige-light);
+    color: var(--black-deep);
+    font-weight: 700;
+}
+
+
+/* About: whoami terminal card */
+
+html .about-page .whoami {
+    max-width: 640px;
+    margin-top: 42px;
+}
+
+html .about-page .build-content .whoami .terminal-body p {
+    max-width: none;
+    margin: 0;
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: inherit;
+    line-height: 1.9;
+    color: var(--text-light);
+}
+
+html .about-page .build-content .whoami .terminal-body p.hint {
+    color: #a39282;
+}
+
+html .about-page .whoami-stack {
+    margin: 8px 0 0;
+}
+
+
+/* Contact: deploy-log success message */
+
+html .enquiry-modal-content {
+    border-radius: 16px;
+}
+
+html .enquiry-modal-close {
+    border-radius: 10px;
+}
+
+html .enquiry-log {
+    max-width: 320px;
+    margin: 0 auto 24px;
+    padding: 14px 18px;
+    border: 1px solid rgba(228, 185, 111, 0.16);
+    border-radius: 10px;
+    background: #110e0b;
+    text-align: left;
+}
+
+html .enquiry-modal-content .enquiry-log p {
+    margin: 0;
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #ddd2c5;
+}
+
+html .enquiry-log .prompt {
+    color: var(--beige-light);
+}
+
+html .enquiry-modal-content .enquiry-log .ok {
+    color: #9dbf7a;
+}
+
+html .enquiry-modal-content .enquiry-log .live {
+    color: var(--beige-light);
+}
+
+
+/* Contact: rounded fields + gold focus glow */
+
+html form .form-group input,
+html form .form-group select,
+html form .form-group textarea {
+    border-radius: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+html form .form-group input:focus,
+html form .form-group select:focus,
+html form .form-group textarea:focus {
+    border-color: var(--beige-light);
+    box-shadow: 0 0 0 3px rgba(228, 185, 111, 0.18);
+}

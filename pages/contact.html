@@ -56,6 +56,19 @@
         href="../css/contact.css"
     >
 
+    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/typography.css"
+    >
+
 
     <!-- ==========================================
          BACKGROUND
@@ -121,6 +134,13 @@
         <h2 id="enquiry-modal-title">
             ENQUIRY SENT
         </h2>
+
+        <div class="enquiry-log" aria-hidden="true">
+            <p><span class="prompt">$</span> send-enquiry</p>
+            <p class="ok">✓ details received</p>
+            <p class="ok">✓ enquiry delivered</p>
+            <p class="live">✓ reply on its way</p>
+        </div>
 
         <p>
             Thank you for reaching out.
@@ -762,12 +782,14 @@
                 <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>
                 <a href="https://wa.me/27813694172" target="_blank" rel="noopener">WhatsApp</a>
                 <a href="https://www.instagram.com/cornerstone_techdev" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://github.com/KatlegoM18" target="_blank" rel="noopener">GitHub</a>
             </div>
 
         </div>
 
         <div class="footer-bottom">
             <p>© <span class="footer-year">2026</span> CornerStone TechDev. All rights reserved.</p>
+            <p class="footer-built">built by hand · deployed on Netlify</p>
             <a href="privacy.html">Privacy Policy</a>
         </div>
 

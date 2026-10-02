@@ -1,0 +1,99 @@
+/* =========================================================
+   CORNERSTONE TECHDEV
+   SHARED TYPOGRAPHY
+   Matches the homepage: Space Grotesk for headings,
+   JetBrains Mono for the small labels / subheadings.
+   Linked last on every page so it wins over page styles.
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   HEADINGS
+--------------------------------------------------------- */
+
+main h1,
+main h2,
+main h3,
+main h4 {
+    font-family: "Space Grotesk", Arial, Helvetica, sans-serif !important;
+}
+
+
+/* ---------------------------------------------------------
+   LABELS / SUBHEADINGS (monospace)
+--------------------------------------------------------- */
+
+.section-label,
+.hero-subtitle,
+.intro-label,
+.featured-meta,
+.legal-updated,
+
+/* Services */
+.service-label,
+.service-number,
+.process-step > span,
+
+/* About */
+.approach-card > span,
+.why-item > span,
+.build-stack span,
+
+/* Contact */
+.process-number,
+.contact-detail small,
+.form-group label,
+
+/* Projects + Portfolio */
+.portfolio-eyebrow,
+.portfolio-section-label,
+.portfolio-capability-label,
+.portfolio-cta-label,
+.portfolio-carousel-category,
+.portfolio-index,
+.portfolio-piece-index,
+.portfolio-piece-tags li,
+
+/* Case studies */
+.case-eyebrow,
+.case-category,
+.case-story-label,
+.case-outcome-label {
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace !important;
+    letter-spacing: 0.06em !important;
+}
+
+
+/* ---------------------------------------------------------
+   LABEL STYLE — lowercase, like the homepage
+   e.g. "// what we do", "01 / the idea"
+--------------------------------------------------------- */
+
+.section-label,
+.hero-subtitle,
+.intro-label,
+.service-label,
+.portfolio-eyebrow,
+.portfolio-section-label,
+.portfolio-capability-label,
+.portfolio-cta-label,
+.case-eyebrow,
+.case-category,
+.case-story-label,
+.case-outcome-label {
+    text-transform: lowercase !important;
+    letter-spacing: 0.03em !important;
+}
+
+/* Un-numbered labels get the code-comment prefix */
+
+.section-label::before,
+.hero-subtitle::before,
+.intro-label::before,
+.portfolio-eyebrow::before,
+.portfolio-section-label::before,
+.portfolio-capability-label::before,
+.portfolio-cta-label::before,
+.case-outcome-label::before {
+    content: "// ";
+}
