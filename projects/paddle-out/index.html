@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paddle Out | Live surf conditions for South African beaches</title>
+    <meta name="description" content="Live waves, wind, tide and a three-day forecast for 34 surf beaches in Cape Town, Durban and the Eastern Cape, with the best times to surf. A concept by CornerStone TechDev.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0f5c8c">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c2a3a'/%3E%3Cpath d='M4 19c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3' stroke='%233ec1d3' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M4 25c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3' stroke='%23ffd23f' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link rel="preload" href="fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body data-mood="glassy">
+
+    <p class="concept-bar">
+        <span>Concept by <a href="https://cornerstonetechdev.co.za">CornerStone TechDev</a></span>
+        <span id="data-note">Loading live data…</span>
+    </p>
+
+    <div class="page">
+    <header class="site-header">
+        <a href="#top" class="brand" aria-label="Paddle Out, back to top">
+            <svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7"/><path class="w1" d="M4 15c2.8 0 2.8-3 5.5-3s2.8 3 5.5 3 2.8-3 5.5-3 2.8 3 5.5 3"/><path class="w2" d="M4 22c2.8 0 2.8-3 5.5-3s2.8 3 5.5 3 2.8-3 5.5-3 2.8 3 5.5 3"/></svg>
+            <span>Paddle Out <small>Surf South Africa</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="#conditions">Conditions</a>
+            <a href="#beaches">All beaches</a>
+            <a href="#forecast">Forecast</a>
+            <a href="#lessons">When to surf</a>
+        </nav>
+        <a href="#beaches" class="header-cta" id="header-cta">All 34 beaches</a>
+    </header>
+
+    <main id="top">
+
+        <!-- ======================================
+             HERO: THE LIVE SEA AT THE CHOSEN BEACH
+        ======================================= -->
+
+        <section class="hero" id="conditions" aria-labelledby="verdict">
+
+            <canvas class="ocean" id="ocean" aria-hidden="true"></canvas>
+
+            <svg class="huts" viewBox="0 0 1600 190" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                <g class="scene">
+                    <rect class="sand" x="0" y="158" width="1600" height="40"/>
+                    <path class="shore" d="M0 158 C40 155 80 160 120 157 S200 155 240 158 S320 160 360 157 S440 155 480 158 S560 160 600 157 S680 155 720 158 S800 160 840 157 S920 155 960 158 S1040 160 1080 157 S1160 155 1200 158 S1280 160 1320 157 S1400 155 1440 158 S1520 160 1560 157 S1600 158 1640 158"/>
+                    <g class="life-water"></g>
+                    <g class="landmark"></g>
+                    <g class="life-sand"></g>
+                </g>
+            </svg>
+
+            <div class="hero-inner">
+
+                <div class="hero-copy">
+                    <label class="beach-pick">
+                        <span class="sr-only">Choose a beach</span>
+                        <select id="beach-select"></select>
+                    </label>
+                    <p class="live-pill" id="live-pill">
+                        <span class="live-dot"></span>
+                        <span id="live-label">Loading…</span>
+                    </p>
+                    <h1 class="verdict" id="verdict">Checking<br>the surf…</h1>
+                    <p class="verdict-sub" id="verdict-sub">Reading the buoys, the wind and the tide.</p>
+
+                    <details class="preview" id="preview">
+                        <summary>
+                            <span class="preview-dot" aria-hidden="true"></span>
+                            Try other conditions
+                        </summary>
+                        <div class="preview-panel">
+                            <div class="preview-row">
+                                <p class="preview-label" id="pl-surf">Surf</p>
+                                <div class="preview-chips" role="radiogroup" aria-labelledby="pl-surf" data-group="surf">
+                                    <button type="button" role="radio" aria-checked="true" data-value="live">Live</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="glassy">Glassy</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="fun">Fun</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="pumping">Pumping</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="blown">Blown out</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="flat">Flat</button>
+                                </div>
+                            </div>
+                            <div class="preview-row">
+                                <p class="preview-label" id="pl-time">Time</p>
+                                <div class="preview-chips" role="radiogroup" aria-labelledby="pl-time" data-group="time">
+                                    <button type="button" role="radio" aria-checked="true" data-value="live">Now</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="dawn">Dawn</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="morning">Morning</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="midday">Midday</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="sunset">Sunset</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="night">Night</button>
+                                </div>
+                            </div>
+                            <div class="preview-row">
+                                <p class="preview-label" id="pl-sky">Sky</p>
+                                <div class="preview-chips" role="radiogroup" aria-labelledby="pl-sky" data-group="sky">
+                                    <button type="button" role="radio" aria-checked="true" data-value="live">Live</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="clear">Clear</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="cloudy">Cloudy</button>
+                                    <button type="button" role="radio" aria-checked="false" data-value="rain">Rain</button>
+                                </div>
+                            </div>
+                            <button type="button" class="preview-reset" id="preview-reset">Back to live</button>
+                        </div>
+                    </details>
+                </div>
+
+                <aside class="readout" aria-label="Current conditions">
+                    <div class="readout-main">
+                        <p class="readout-label">Waves</p>
+                        <p class="readout-big"><span id="r-wave">–</span><small>m</small></p>
+                        <p class="readout-note" id="r-swell">–</p>
+                    </div>
+                    <dl class="readout-grid">
+                        <div>
+                            <dt>Wind</dt>
+                            <dd>
+                                <svg class="wind-arrow" id="r-wind-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v16M6 13l6 6 6-6"/></svg>
+                                <span id="r-wind">–</span>
+                            </dd>
+                            <dd class="readout-tag" id="r-wind-tag">–</dd>
+                        </div>
+                        <div>
+                            <dt>Water</dt>
+                            <dd><span id="r-water">–</span></dd>
+                            <dd class="readout-tag" id="r-suit">–</dd>
+                        </div>
+                        <div>
+                            <dt>Tide</dt>
+                            <dd><span id="r-tide">–</span></dd>
+                            <dd class="readout-tag" id="r-tide-next">–</dd>
+                        </div>
+                        <div>
+                            <dt>Score</dt>
+                            <dd><span id="r-score">–</span><small>/10</small></dd>
+                            <dd class="readout-tag" id="r-updated">–</dd>
+                        </div>
+                    </dl>
+                </aside>
+
+            </div>
+        </section>
+
+
+        <!-- ======================================
+             ALL BEACHES
+        ======================================= -->
+
+        <section class="beaches" id="beaches" aria-labelledby="beaches-title">
+            <div class="section-head">
+                <p class="kicker">Three provinces, one view</p>
+                <h2 id="beaches-title">Every beach, <span>right now</span></h2>
+                <p class="section-lede" id="beaches-lede">Live conditions at 34 surf beaches. Tap a beach to see its full forecast.</p>
+            </div>
+            <div class="province-filter" id="province-filter" role="group" aria-label="Filter by province">
+                <button type="button" data-province="all" aria-pressed="true">All <small>34</small></button>
+                <button type="button" data-province="Western Cape" aria-pressed="false">Western Cape <small>12</small></button>
+                <button type="button" data-province="KwaZulu-Natal" aria-pressed="false">KwaZulu-Natal <small>8</small></button>
+                <button type="button" data-province="Eastern Cape" aria-pressed="false">Eastern Cape <small>14</small></button>
+            </div>
+            <div id="beach-grid"></div>
+        </section>
+
+
+        <!-- ======================================
+             FORECAST
+        ======================================= -->
+
+        <section class="forecast" id="forecast" aria-labelledby="forecast-title">
+            <div class="section-head">
+                <p class="kicker" id="forecast-kicker">Next three days</p>
+                <h2 id="forecast-title">When to <span>paddle out</span></h2>
+                <p class="section-lede" id="best-window">Finding the best window…</p>
+            </div>
+
+            <div class="chart-wrap" tabindex="0" aria-label="Hourly wave, wind and tide forecast (scrolls sideways)">
+                <svg class="chart" id="chart" role="img" aria-labelledby="chart-desc">
+                    <desc id="chart-desc">Hourly wave height, wind and tide for the next three days.</desc>
+                </svg>
+            </div>
+
+            <ul class="chart-key" aria-hidden="true">
+                <li><i class="k-good"></i>Good</li>
+                <li><i class="k-ok"></i>Fair</li>
+                <li><i class="k-poor"></i>Poor</li>
+                <li><i class="k-tide"></i>Tide</li>
+                <li><i class="k-arrow">↓</i>Wind (points where it blows)</li>
+            </ul>
+        </section>
+
+
+        <!-- ======================================
+             LESSON TIMES
+        ======================================= -->
+
+        <section class="lessons" id="lessons" aria-labelledby="lessons-title">
+            <div class="section-head">
+                <p class="kicker">Today and tomorrow</p>
+                <h2 id="lessons-title">When to <span>surf</span></h2>
+                <p class="today-call" id="today-call">…</p>
+            </div>
+            <div class="slot-days" id="slot-days"></div>
+            <p class="lesson-note">Two-hour windows rated on wave size, swell period and how the wind sits for this beach.</p>
+        </section>
+
+    </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>
+            <strong>Paddle Out</strong> is a live surf-conditions concept designed and built by
+            <a href="https://cornerstonetechdev.co.za/pages/portfolio">CornerStone TechDev</a>.
+            Want it for your surf school? <a href="https://cornerstonetechdev.co.za/pages/contact">Get in touch</a>.
+        </p>
+        <p>
+            Marine and weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>.
+            Forecasts are a guide: always check conditions yourself and follow lifeguards' advice before you paddle out.
+        </p>
+    </footer>
+
+</body>
+</html>

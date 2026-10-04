@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paddle Out | CornerStone TechDev</title>
+    <link rel="canonical" href="https://cornerstonetechdev.co.za/pages/paddle-out">
+    <meta name="theme-color" content="#15120f">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png?v=2">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Link previews (WhatsApp, Facebook, LinkedIn, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CornerStone TechDev">
+    <meta property="og:title" content="Paddle Out | CornerStone TechDev">
+    <meta property="og:description" content="Paddle Out: a creative concept by CornerStone TechDev. Live surf conditions for 34 South African beaches, where each beach has its own landmark and the whole page follows the real sea and sky.">
+    <meta property="og:url" content="https://cornerstonetechdev.co.za/pages/paddle-out">
+    <meta property="og:image" content="https://cornerstonetechdev.co.za/images/portfolio/paddle-out-card.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="750">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="description" content="Paddle Out: a creative concept by CornerStone TechDev. Live surf conditions for 34 South African beaches, where each beach has its own landmark and the whole page follows the real sea and sky.">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/barc-house.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+
+    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/typography.css"
+    >
+
+    <script type="module" src="../js/barc-molten-metal.js"></script>
+    <script type="module" src="../js/ct-logo-3d.js"></script>
+</head>
+
+<body>
+
+    <div class="molten-background">
+        <canvas id="molten-canvas"></canvas>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <div class="ct-3d-logo">
+                    <canvas id="ct-logo-canvas"></canvas>
+                </div>
+                <span>
+                    CornerStone
+                    <strong>TechDev</strong>
+                </span>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="portfolio.html" class="active" aria-current="page">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="six-strings-case paddle-out-case">
+
+        <section class="case-hero">
+            <div class="case-hero-content">
+                <p class="case-eyebrow">03 / PORTFOLIO PIECE</p>
+                <p class="case-category">CREATIVE CONCEPT · SURF CONDITIONS</p>
+                <h1>PADDLE <span>OUT.</span></h1>
+                <p class="case-intro">
+                    A self-initiated concept that shows live surf conditions for 34 beaches across the Western Cape, KwaZulu-Natal and the Eastern Cape. Each beach has its own landmark, the sea and sky follow the real swell, wind, tide and sunset, and the people on the sand come and go with the weather.
+                </p>
+
+                <div class="case-details">
+                    <div>
+                        <span>TYPE</span>
+                        <strong>SELF-INITIATED CONCEPT</strong>
+                    </div>
+                    <div>
+                        <span>FOCUS</span>
+                        <strong>LIVE DATA + GENERATIVE VISUALS</strong>
+                    </div>
+                    <div>
+                        <span>SCOPE</span>
+                        <strong>CONCEPT + DESIGN + DEVELOPMENT</strong>
+                    </div>
+                </div>
+
+                <p class="case-stack"><span>built with</span> html · css · javascript · open-meteo api · netlify functions</p>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             PROJECT PREVIEW
+             ===================================================== -->
+
+        <section class="case-visual">
+
+            <div class="device-composition composition-primary">
+                <div class="composition-laptop">
+                    <span class="composition-label">LIVE CONDITIONS / DESKTOP</span>
+                    <div class="desktop-preview">
+                        <img
+                            src="../images/portfolio/paddle-out-desktop-live.webp"
+                            alt="Paddle Out showing live conditions at Umhlanga at dusk: an overcast sky, the striped lighthouse on the beach and the headline Fun little peelers."
+                            draggable="false"
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+                <div class="composition-phone">
+                    <span class="composition-label">LIVE CONDITIONS / MOBILE</span>
+                    <div class="iphone">
+                        <div class="iphone-dynamic-island"></div>
+                        <div class="iphone-screen">
+                            <img
+                                src="../images/portfolio/paddle-out-mobile-hero.webp"
+                                alt="Coffee Bay on the Wild Coast on mobile at midday, with the headline Fun little peelers"
+                                draggable="false"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="iphone-home-indicator"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="device-composition composition-secondary">
+                <div class="composition-laptop">
+                    <span class="composition-label">PUMPING / NIGHT / DESKTOP</span>
+                    <div class="desktop-preview">
+                        <img
+                            src="../images/portfolio/paddle-out-desktop-pumping.webp"
+                            alt="Supertubes in Jeffreys Bay on a big day at midday: tall lines, surfers in the water and the headline It's pumping."
+                            draggable="false"
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+                <div class="composition-phone">
+                    <span class="composition-label">PUMPING / NIGHT / MOBILE</span>
+                    <div class="iphone">
+                        <div class="iphone-dynamic-island"></div>
+                        <div class="iphone-screen">
+                            <img
+                                src="../images/portfolio/paddle-out-mobile-night.webp"
+                                alt="Muizenberg at night on mobile: stars, the moon and the headline See you at first light"
+                                draggable="false"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="iphone-home-indicator"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="device-composition composition-primary">
+                <div class="composition-laptop">
+                    <span class="composition-label">ALL 34 BEACHES / DESKTOP</span>
+                    <div class="desktop-preview">
+                        <img
+                            src="../images/portfolio/paddle-out-desktop-beaches.webp"
+                            alt="Every beach at a glance: live wave height, wind and a surf score for each one, filterable by province"
+                            draggable="false"
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+                <div class="composition-phone">
+                    <span class="composition-label">ALL 34 BEACHES / MOBILE</span>
+                    <div class="iphone">
+                        <div class="iphone-dynamic-island"></div>
+                        <div class="iphone-screen">
+                            <img
+                                src="../images/portfolio/paddle-out-mobile-beaches.webp"
+                                alt="The beach list on mobile, grouped by province"
+                                draggable="false"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="iphone-home-indicator"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             IDEA + BUILD
+             ===================================================== -->
+
+        <section class="case-story">
+
+            <article class="case-story-block challenge">
+                <div class="case-story-label">
+                    01 / THE IDEA
+                </div>
+                <div class="case-story-content">
+                    <h2>
+                        THE <span>IDEA.</span>
+                    </h2>
+                    <p>
+                        Most surf reports are tables. This one tries to look like the beach. Pick a spot and the page becomes it: the headline, the sea, the sky and the colours all change to match what the water is doing right now.
+                    </p>
+                    <p>
+                        Every beach is drawn with something a local would recognise. Table Mountain behind Big Bay, the striped lighthouse at Umhlanga, the Hole in the Wall at Coffee Bay, the huts at Muizenberg. Stick figures fill the sand on a sunny day, thin out when the wind picks up and go home when it rains or gets dark.
+                    </p>
+                    <p>
+                        The beaches are grouped by province, so a surfer in Durban can see the whole coast from Ballito to Scottburgh in one tap and compare it with the Cape or the Eastern Cape.
+                    </p>
+                </div>
+            </article>
+
+            <article class="case-story-block solution">
+                <div class="case-story-label">
+                    02 / THE BUILD
+                </div>
+                <div class="case-story-content">
+                    <h2>
+                        THE <span>BUILD.</span>
+                    </h2>
+                    <p>
+                        A single server function fetches wave height, swell period, wind, water temperature and tide for all 34 beaches in one request, then caches the result for twenty minutes. Visitors never call the data provider directly, so the site stays fast and the API key stays private.
+                    </p>
+                    <p>
+                        Each beach knows which way it faces, so the scoring treats an offshore wind as clean and an onshore wind as messy. The forecast grid is about 8 km wide, so a sheltered bay and an exposed point can share a forecast point. An exposure factor for each beach keeps sheltered spots smaller than the open coast next door.
+                    </p>
+                    <p>
+                        The sea is drawn in code on every frame, the sky follows the real sunrise and sunset, and on phones the scene shifts so each landmark stays in view. A three-day chart finds the best window to paddle out, and if the live feed is down the site says so and shows sample data.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- =====================================================
+             OUTCOME
+             ===================================================== -->
+
+        <section class="case-outcome">
+            <p class="case-outcome-label">
+                WHY IT'S HERE
+            </p>
+            <h2>
+                34 BEACHES.<br>
+                <span>THREE PROVINCES.</span>
+            </h2>
+            <p>
+                Paddle Out is not a client project. It grew out of an earlier single-beach concept and shows how one live data feed can power a full product, ready to be branded for a surf school, a lifesaving club or a coastal tourism site.
+            </p>
+        </section>
+
+        <!-- =====================================================
+             CTA
+             ===================================================== -->
+
+        <section class="case-cta">
+            <p>
+                WANT TO SEE TODAY'S SEA?
+            </p>
+            <a href="../projects/paddle-out/index.html" target="_blank" rel="noopener" class="six-strings-live-link">
+                VISIT PADDLE OUT
+                <span>→</span>
+            </a>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <p class="footer-name">CornerStone <strong>TechDev</strong></p>
+                <p>Websites and digital solutions, built in Cape Town, South Africa.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="portfolio.html" aria-current="page">Portfolio</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="footer-contact">
+                <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>
+                <a href="https://wa.me/27813694172" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://www.instagram.com/cornerstone_techdev" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://github.com/KatlegoM18" target="_blank" rel="noopener">GitHub</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span class="footer-year">2026</span> CornerStone TechDev. All rights reserved.</p>
+            <p class="footer-built">built by hand · deployed on Netlify</p>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const menuToggle = document.getElementById("menu-toggle");
+            const navLinks = document.getElementById("nav-links");
+
+            if (!menuToggle || !navLinks) return;
+
+
+            function closeMenu() {
+                navLinks.classList.remove("active");
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                document.body.classList.remove("menu-open");
+            }
+
+
+            menuToggle.addEventListener("click", () => {
+
+                const isOpen =
+                    navLinks.classList.toggle("active");
+
+                menuToggle.classList.toggle(
+                    "active",
+                    isOpen
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
+
+                document.body.classList.toggle(
+                    "menu-open",
+                    isOpen
+                );
+
+            });
+
+
+            navLinks
+                .querySelectorAll("a")
+                .forEach(link => {
+                    link.addEventListener(
+                        "click",
+                        closeMenu
+                    );
+                });
+
+
+            document.addEventListener(
+                "keydown",
+                event => {
+                    if (event.key === "Escape") {
+                        closeMenu();
+                    }
+                }
+            );
+
+        });
+    </script>
+
+</body>
+</html>
