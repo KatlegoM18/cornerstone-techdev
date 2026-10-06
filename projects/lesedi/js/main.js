@@ -12,6 +12,7 @@ import { drawLabel } from "./label.js";
 
 
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const COARSE = window.matchMedia("(pointer: coarse)").matches;
 const QUARTER = Math.PI / 2;
 const PROFILE_POINTS = 120;
 const LABEL_Y = 1.3;           // centre of the label on the bottle
@@ -170,6 +171,8 @@ function selectWine(index) {
 
     if (renderer && !REDUCED_MOTION) {
         state.transition = { from, to: index, start: performance.now(), swapped: false };
+    } else if (fallbackOn) {
+        drawFallback(index);
     } else if (bottle) {
         bottle.applyWine(WINES[index], 1, WINES[index]);
         bottle.setLabel(index);
@@ -312,7 +315,8 @@ let bottle = null;
 function createRenderer() {
     try {
         const r = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
-        r.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        // phones: a lighter pixel ratio keeps the GPU comfortable
+        r.setPixelRatio(Math.min(window.devicePixelRatio, COARSE ? 1.5 : 2));
         r.outputColorSpace = THREE.SRGBColorSpace;
         r.toneMapping = THREE.ACESFilmicToneMapping;
         r.toneMappingExposure = 1.05;
@@ -486,19 +490,93 @@ async function fontsReady() {
     await Promise.race([Promise.all(loads), new Promise((r) => setTimeout(r, 2500))]);
 }
 
+/* =========================================================
+   FLAT BOTTLE
+   Shown when WebGL is unavailable, or when a GPU can't draw
+   the 3D bottle properly. Uses the same label artwork.
+========================================================= */
+
+const fallbackEl = document.querySelector(".bottle-fallback");
+const BOTTLE_PATH = "M47 6h26v104c0 24 35 42 35 82v192c0 8-6 12-12 12H24c-6 0-12-4-12-12V192c0-40 35-58 35-82z";
+let fallbackOn = false;
+
+function drawFallback(index) {
+    if (!fallbackEl) return;
+    const wine = WINES[index];
+    const src = drawLabel(wine);                        // four panels side by side
+    const panelW = src.width / 4;
+    const crop = document.createElement("canvas");
+    crop.width = Math.round(panelW / 2);
+    crop.height = Math.round(src.height / 2);
+    crop.getContext("2d").drawImage(src, 0, 0, panelW, src.height, 0, 0, crop.width, crop.height);
+    const glass = wine.glassOpacity > 0.4 ? wine.glass : wine.liquid;
+    const foil = wine.capsuleStart ? 100 : 58;
+    fallbackEl.innerHTML = `
+        <svg viewBox="0 0 120 400" role="img" aria-label="${wine.name} ${wine.vintage}">
+            <defs>
+                <linearGradient id="fb-shine" x1="0" x2="1">
+                    <stop offset="0" stop-color="#000" stop-opacity="0.35"/>
+                    <stop offset="0.2" stop-color="#fff" stop-opacity="0.05"/>
+                    <stop offset="0.27" stop-color="#fff" stop-opacity="0.35"/>
+                    <stop offset="0.34" stop-color="#fff" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+                </linearGradient>
+            </defs>
+            <path d="${BOTTLE_PATH}" fill="${glass}"/>
+            <image href="${crop.toDataURL("image/png")}" x="12" y="214" width="96" height="123" preserveAspectRatio="none"/>
+            <rect x="46" y="4" width="28" height="${foil}" rx="2" fill="${wine.capsule}"/>
+            <path d="${BOTTLE_PATH}" fill="url(#fb-shine)"/>
+        </svg>`;
+}
+
+function showFallback(reason) {
+    if (fallbackOn) return;
+    fallbackOn = true;
+    if (reason) console.warn(`Showing the flat bottle: ${reason}.`);
+    const r = renderer;
+    renderer = null;                                    // stops the frame loop
+    try { r?.dispose(); } catch { /* already gone */ }
+    body.classList.remove("is-ready");
+    body.classList.add("no-webgl");
+    drawFallback(state.wine);
+    fontsReady().then(() => drawFallback(state.wine));
+}
+
 async function init() {
     renderPanel();
 
     renderer = createRenderer();
     if (!renderer) {
-        body.classList.add("no-webgl");
+        showFallback("WebGL unavailable");
         return;
     }
 
+    canvas.addEventListener("webglcontextlost", (e) => {
+        e.preventDefault();
+        showFallback("WebGL context lost");
+    });
+
     const scene = new THREE.Scene();
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-    scene.environmentIntensity = 0.7;
+
+    // The glass reflections come from a pre-filtered studio environment, which
+    // needs float render targets. Many phone GPUs (Mali, Xclipse) lack them and
+    // would draw a white or black box, so they get plain lights instead.
+    const floatTargets = renderer.extensions.has("EXT_color_buffer_float") ||
+        renderer.extensions.has("EXT_color_buffer_half_float");
+    let lightBoost = 1;
+    if (floatTargets) {
+        try {
+            const pmrem = new THREE.PMREMGenerator(renderer);
+            scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+            scene.environmentIntensity = 0.7;
+            pmrem.dispose();
+        } catch (err) {
+            console.warn("Studio environment unavailable, using plain lights.", err);
+            lightBoost = 1.6;
+        }
+    } else {
+        lightBoost = 1.6;
+    }
 
     const camera = new THREE.PerspectiveCamera(24, 1, 0.1, 100);
 
@@ -506,7 +584,8 @@ async function init() {
     key.position.set(-4, 6, 6);
     const warm = new THREE.DirectionalLight("#ffae70", 1.4);   // low sun from behind-right
     warm.position.set(5, 2, -3);
-    scene.add(key, warm, new THREE.HemisphereLight("#ffe7c9", "#2a1216", 0.6));
+    scene.add(key, warm, new THREE.HemisphereLight("#ffe7c9", "#2a1216", 0.6 * lightBoost));
+    key.intensity *= lightBoost;
 
     await fontsReady();
 
@@ -524,6 +603,7 @@ async function init() {
 
     const lookY = 2.2;
     function resize() {
+        if (!renderer) return;
         const w = canvas.clientWidth;
         const h = canvas.clientHeight;
         if (!w || !h) return;
@@ -551,7 +631,15 @@ async function init() {
     const clock = new THREE.Clock();
     const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
+    // Safety net: the canvas corner never has the bottle in it, so it must stay
+    // see-through. If it comes out opaque, this GPU is drawing garbage (a solid
+    // white or black box): switch to the flat bottle instead.
+    const gl = renderer.getContext();
+    const probe = new Uint8Array(4);
+    let checks = 0;
+
     function frame() {
+        if (!renderer) return;
         requestAnimationFrame(frame);
         if (!visible) return;
         const t = performance.now() / 1000;
@@ -584,6 +672,14 @@ async function init() {
         dialNeedle?.style.setProperty("--dial", `${(-state.rotation * 180) / Math.PI}deg`);
 
         renderer.render(scene, camera);
+
+        if (checks < 6) {
+            checks++;
+            gl.readPixels(2, 2, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, probe);
+            if (checks > 2 && probe[3] > 8) {
+                showFallback(`canvas not transparent (rgba ${probe.join(",")})`);
+            }
+        }
     }
     frame();
 

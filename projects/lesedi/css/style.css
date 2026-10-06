@@ -680,8 +680,9 @@ main, .site-footer { position: relative; z-index: 1; }
     align-items: center;
     justify-content: center;
 }
-.bottle-fallback svg { height: 80%; fill: rgba(10, 6, 8, 0.6); stroke: var(--accent); stroke-width: 1; }
+.bottle-fallback svg { height: 82%; width: auto; overflow: visible; filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.55)); }
 .no-webgl .bottle-fallback { display: flex; }
+.no-webgl #bottle-canvas { display: none; }
 .no-webgl .drag-hint { display: none; }
 
 .drag-hint {
