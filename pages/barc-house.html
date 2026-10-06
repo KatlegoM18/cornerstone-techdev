@@ -26,9 +26,7 @@
     <meta name="description" content="Barc House: a concept site by CornerStone TechDev. A student accommodation website with online applications, backed by a secure management portal.">
 
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/barc-house.css">
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -36,10 +34,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
     <script type="module" src="../js/barc-molten-metal.js"></script>
     <script type="module" src="../js/ct-logo-3d.js"></script>
@@ -78,240 +76,139 @@
         </nav>
     </header>
 
-    <main>
-
-        <section class="case-hero">
-            <div class="case-hero-content">
-                <p class="case-eyebrow">04 / PORTFOLIO PIECE</p>
-                <p class="case-category">CONCEPT · STUDENT ACCOMMODATION</p>
-
-                <h1>BARC <span>HOUSE.</span></h1>
-
-                <p class="case-intro">
-                    A digital experience designed to make Barc House easier to explore,
-                    easier to apply to, and easier to manage behind the scenes.
-                </p>
-
-                <div class="case-details">
-                    <div>
-                        <span>TYPE</span>
-                        <strong>CONCEPT</strong>
-                    </div>
-
-                    <div>
-                        <span>INDUSTRY</span>
-                        <strong>STUDENT ACCOMMODATION</strong>
-                    </div>
-
-                    <div>
-                        <span>SCOPE</span>
-                        <strong>CONCEPT + DESIGN + DEVELOPMENT</strong>
-                    </div>
-                </div>
-
-                <p class="case-stack"><span>built with</span> html · css · javascript</p>
-            </div>
-        </section>
+    <main class="cs" id="main">
 
 
-        <!-- =====================================================
-             PROJECT PREVIEW
-             ===================================================== -->
+        <!-- ======================================
+             HERO
+        ======================================= -->
 
-        <section class="case-visual">
+        <section class="pg-hero" aria-labelledby="page-title">
 
-            <!-- HOMEPAGE: DESKTOP + MOBILE -->
-            <div class="device-composition composition-primary">
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
 
-                <div class="composition-laptop">
-                    <span class="composition-label">HOMEPAGE / DESKTOP</span>
+            <div class="cs-wrap pg-hero-layout">
 
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/barchouse-landing.webp"
-                            alt="Barc House desktop homepage"
-                            draggable="false"
-                        >
+                <div>
+                    <a href="portfolio.html" class="case-back">← portfolio</a>
+
+                    <p class="cs-eyebrow">// 04 / concept · student accommodation</p>
+
+                    <h1 id="page-title">
+                        Barc
+                        <span>House.</span>
+                    </h1>
+
+                    <p class="pg-lede">
+                        A digital experience designed to make Barc House easier to explore, easier to
+                        apply to, and easier to manage behind the scenes.
+                    </p>
+
+                    <div class="cs-actions">
+                        <a href="../projects/BarcHouse/index.html" class="cs-btn cs-btn-primary">Visit Barc House <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
 
-                <div class="composition-phone">
-                    <span class="composition-label">HOMEPAGE / MOBILE</span>
-
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/barchouse phone site.jpeg"
-                                alt="Barc House mobile homepage"
-                                draggable="false"
-                            >
-                        </div>
-
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- ROOM ENQUIRY: DESKTOP + AMENITIES MOBILE -->
-            <div class="device-composition composition-secondary">
-
-                <div class="composition-laptop">
-                    <span class="composition-label">ROOM ENQUIRY / DESKTOP</span>
-
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/barchouse2.png"
-                            alt="Barc House room enquiry page"
-                            draggable="false"
-                        >
-                    </div>
-                </div>
-
-                <div class="composition-phone">
-                    <span class="composition-label">AMENITIES / MOBILE</span>
-
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/barchouse amenities.jpeg"
-                                alt="Barc House amenities page on mobile"
-                                draggable="false"
-                            >
-                        </div>
-
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
+                <dl class="case-meta reveal">
+                    <div><dt>type</dt><dd>Concept</dd></div>
+                    <div><dt>industry</dt><dd>Student accommodation</dd></div>
+                    <div><dt>scope</dt><dd>Concept, design, development</dd></div>
+                    <div><dt>built with</dt><dd>html · css · javascript</dd></div>
+                </dl>
 
             </div>
 
         </section>
 
 
-        <!-- =====================================================
+
+        <!-- ======================================
+             GALLERY
+        ======================================= -->
+
+        <section class="cs-section" aria-label="Screens">
+            <div class="cs-wrap case-gallery">
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>homepage · desktop</span></span>
+                            <img src="../images/barchouse-landing.webp" alt="Barc House desktop homepage" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/barchouse%20phone%20site.jpeg" alt="Barc House mobile homepage" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">homepage · mobile</figcaption></figure>
+                </div>
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>room enquiry · desktop</span></span>
+                            <img src="../images/barchouse2.png" alt="Barc House room enquiry page" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/barchouse%20amenities.jpeg" alt="Barc House amenities page on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">amenities · mobile</figcaption></figure>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ======================================
              CHALLENGE + SOLUTION
-             ===================================================== -->
+        ======================================= -->
 
-        <section class="case-story">
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-label="The challenge and the solution">
+            <div class="cs-wrap case-story">
 
-            <article class="case-story-block challenge">
+                <article class="case-block reveal">
+                    <p class="case-block-label">01 / challenge</p>
+                    <h2>The challenge.</h2>
+                    <p>Barc House needed more of an online presence — one that could give potential residents a visual presentation of what the residence offers before they ever arrived for a viewing.</p>
+                    <p>Instead of students having to travel from wherever they were staying simply to get a feel for the residence, its spaces, amenities and available accommodation, the experience needed to come to them through their screens.</p>
+                    <p>Management also needed a better way to handle maintenance queries. Relying on simple WhatsApp messages made it easy for requests to become buried among other conversations or difficult to keep track of over time.</p>
+                </article>
 
-                <div class="case-story-label">
-                    01 / CHALLENGE
-                </div>
+                <article class="case-block reveal">
+                    <p class="case-block-label">02 / solution</p>
+                    <h2>The solution.</h2>
+                    <p>We built an interactive website that gives students a clearer view of Barc House from their screens — including the residence, its amenities, available rooms and an applications section.</p>
+                    <p>Behind the public-facing website, management has a secure portal where applications can be received, existing residents can be kept track of, and maintenance sheets can be stored and managed in one place.</p>
+                    <p>Students can also be notified when their maintenance requests have been attended to and resolved, creating a clearer connection between residents and management.</p>
+                </article>
 
-                <div class="case-story-content">
-
-                    <h2>
-                        THE <span>CHALLENGE.</span>
-                    </h2>
-
-                    <p>
-                        Barc House needed more of an online presence — one that could give
-                        potential residents a visual presentation of what the residence offers
-                        before they ever arrived for a viewing.
-                    </p>
-
-                    <p>
-                        Instead of students having to travel from wherever they were staying
-                        simply to get a feel for the residence, its spaces, amenities and
-                        available accommodation, the experience needed to come to them through
-                        their screens.
-                    </p>
-
-                    <p>
-                        Management also needed a better way to handle maintenance queries.
-                        Relying on simple WhatsApp messages made it easy for requests to become
-                        buried among other conversations or difficult to keep track of over time.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="case-story-block solution">
-
-                <div class="case-story-label">
-                    02 / SOLUTION
-                </div>
-
-                <div class="case-story-content">
-
-                    <h2>
-                        THE <span>SOLUTION.</span>
-                    </h2>
-
-                    <p>
-                        We built an interactive website that gives students a clearer view of
-                        Barc House from their screens — including the residence, its amenities,
-                        available rooms and an applications section.
-                    </p>
-
-                    <p>
-                        Behind the public-facing website, management has a secure portal where
-                        applications can be received, existing residents can be kept track of,
-                        and maintenance sheets can be stored and managed in one place.
-                    </p>
-
-                    <p>
-                        Students can also be notified when their maintenance requests have been
-                        attended to and resolved, creating a clearer connection between residents
-                        and management.
-                    </p>
-
-                </div>
-
-            </article>
-
+            </div>
         </section>
 
 
-        <!-- =====================================================
+
+        <!-- ======================================
              OUTCOME
-             ===================================================== -->
+        ======================================= -->
 
-        <section class="case-outcome">
-
-            <p class="case-outcome-label">
-                THE BUILD
-            </p>
-
-            <h2>
-                ONE EXPERIENCE.<br>
-                <span>TWO SIDES.</span>
-            </h2>
-
-            <p>
-                A public-facing experience for prospective and existing residents,
-                supported by a secure management portal built around the practical needs
-                of running the residence.
-            </p>
-
+        <section class="cs-section case-outcome" aria-labelledby="outcome-title">
+            <div class="cs-wrap">
+                <p class="cs-eyebrow">// the build</p>
+                <h2 id="outcome-title" class="reveal">One experience. <span>Two sides.</span></h2>
+                <p>A public-facing experience for prospective and existing residents, supported by a secure management portal built around the practical needs of running the residence.</p>
+                <div class="cs-actions">
+                    <a href="../projects/BarcHouse/index.html" class="cs-btn cs-btn-primary">See it live <span aria-hidden="true">→</span></a>
+                    <a href="contact.html?project=web-application" class="cs-btn cs-btn-ghost">Need a portal like this?</a>
+                </div>
+            </div>
         </section>
 
 
-        <!-- =====================================================
-             CTA
-             ===================================================== -->
 
-        <section class="case-cta">
+        <!-- ======================================
+             NEXT
+        ======================================= -->
 
-            <p>
-                WANT TO SEE IT LIVE?
-            </p>
-
-            <a href="../projects/BarcHouse/index.html">
-                VISIT BARC HOUSE
-                <span>→</span>
-            </a>
-
+        <section class="cs-section" style="padding-top: 0; border-top: 0" aria-label="Next case study">
+            <div class="cs-wrap">
+                <a href="six-strings-higher.html" class="case-next">
+                    <div><small>next case study · 01</small><strong>Six Strings Higher</strong></div>
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
         </section>
 
     </main>
@@ -353,84 +250,11 @@
     </footer>
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+    <!-- ==========================================
+         SHARED: MOBILE MENU + SCROLL REVEALS
+    =========================================== -->
 
-            const menuToggle = document.getElementById("menu-toggle");
-            const navLinks = document.getElementById("nav-links");
-
-            if (!menuToggle || !navLinks) return;
-
-
-            function closeMenu() {
-                navLinks.classList.remove("active");
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                document.body.classList.remove("menu-open");
-            }
-
-
-            menuToggle.addEventListener("click", () => {
-
-                const isOpen =
-                    navLinks.classList.toggle("active");
-
-                menuToggle.classList.toggle(
-                    "active",
-                    isOpen
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close navigation menu"
-                        : "Open navigation menu"
-                );
-
-                document.body.classList.toggle(
-                    "menu-open",
-                    isOpen
-                );
-
-            });
-
-
-            navLinks
-                .querySelectorAll("a")
-                .forEach(link => {
-                    link.addEventListener(
-                        "click",
-                        closeMenu
-                    );
-                });
-
-
-            document.addEventListener(
-                "keydown",
-                event => {
-                    if (event.key === "Escape") {
-                        closeMenu();
-                    }
-                }
-            );
-
-        });
-    </script>
+    <script src="../js/site.js" defer></script>
 
 </body>
 </html>

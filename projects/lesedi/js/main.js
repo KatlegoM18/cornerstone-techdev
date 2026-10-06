@@ -25,6 +25,9 @@ const panelEl = document.getElementById("face-panel");
 const dialNeedle = document.querySelector(".face-dial-needle");
 const faceTabs = [...document.querySelectorAll(".face-tabs [role=tab]")];
 const wineButtons = [...document.querySelectorAll(".wine-picker [role=radio]")];
+const buyPrice = document.querySelector("[data-buy-price]");
+const buyMeta = document.querySelector("[data-buy-meta]");
+const buyButton = document.querySelector(".reader-buy [data-add]");
 
 
 /* =========================================================
@@ -82,7 +85,10 @@ function renderPanel() {
             <p class="panel-kicker">${wine.block} · ${wine.vintage}</p>
             <h2 class="panel-title">${wine.name}</h2>
             <p class="panel-text">${wine.intro}</p>
-            <div class="panel-price"><strong>${wine.price}</strong><span>Cellar door · ${wine.abv}</span></div>`;
+            <dl class="panel-stats">
+                <div><dt>Drink</dt><dd>${wine.cellar}</dd></div>
+                <div><dt>Alcohol</dt><dd>${wine.abv}</dd></div>
+            </dl>`;
     } else if (f === 1) {
         html = `
             <p class="panel-kicker">Tasting note</p>
@@ -105,6 +111,10 @@ function renderPanel() {
     }
 
     panelEl.innerHTML = html;
+    buyPrice.textContent = wine.price;
+    buyMeta.textContent = `750 ml · ${wine.abv}`;
+    buyButton.dataset.add = state.wine;
+    buyButton.setAttribute("aria-label", `Add ${wine.name} ${wine.vintage} to cart`);
     panelEl.setAttribute("aria-labelledby", `tab-${f}`);
 
     faceTabs.forEach((tab, i) => {
@@ -582,41 +592,3 @@ async function init() {
 
 init();
 
-
-/* ---------- header gets a backdrop once you scroll ---------- */
-
-const onScroll = () => body.classList.toggle("is-scrolled", window.scrollY > 40);
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
-
-
-/* =========================================================
-   TASTING FORM (concept: nothing is sent)
-========================================================= */
-
-const form = document.getElementById("visit-form");
-const note = document.getElementById("visit-form-note");
-const dateInput = form.elements.date;
-dateInput.min = new Date().toISOString().slice(0, 10);
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let ok = true;
-    for (const field of [form.elements.date, form.elements.name]) {
-        const bad = !field.value.trim();
-        field.setAttribute("aria-invalid", String(bad));
-        if (bad) ok = false;
-    }
-    if (!ok) {
-        note.textContent = "Add a date and a name and we'll hold a table.";
-        return;
-    }
-    const when = new Date(form.elements.date.value + "T12:00").toLocaleDateString("en-ZA", {
-        weekday: "long", day: "numeric", month: "long"
-    });
-    const first = form.elements.name.value.trim().split(" ")[0];
-    note.textContent =
-        `Thanks ${first}, a table for ${form.elements.guests.value} on ${when} would be yours. ` +
-        `(This is a concept site, so nothing was booked.)`;
-    form.reset();
-});

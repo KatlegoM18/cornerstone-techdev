@@ -51,12 +51,7 @@
         href="../css/index.css"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/services.css"
-    >
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -64,10 +59,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
 
     <!-- ==========================================
@@ -197,410 +192,266 @@
          MAIN CONTENT
     =========================================== -->
 
-    <main>
+    <main class="cs" id="main">
 
 
         <!-- ======================================
-             SERVICES HERO
+             HERO
         ======================================= -->
 
-        <section class="services-hero">
+        <section class="pg-hero" aria-labelledby="page-title">
 
-            <div class="services-hero-content">
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
 
-                <p class="section-label">
-                    WHAT WE DO
-                </p>
+            <div class="cs-wrap pg-hero-layout">
 
-                <h1>
-                    FULL-STACK DEVELOPMENT
-                    <span>
-                        BUILT TO WORK.
-                    </span>
-                </h1>
+                <div>
+                    <p class="pg-path">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.2"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>
+                        <span>cornerstonetechdev.co.za/<b>services</b></span>
+                    </p>
 
-                <p class="services-hero-description">
-                    We design and develop modern digital experiences
-                    and full-stack web solutions that help businesses
-                    present themselves professionally, connect with their
-                    customers, and grow online.
-                </p>
+                    <p class="cs-eyebrow">// what we do</p>
+
+                    <h1 id="page-title">
+                        Full-stack development,
+                        <span>built to work.</span>
+                    </h1>
+
+                    <p class="pg-lede">
+                        We design and develop modern digital experiences and full-stack web solutions
+                        that help businesses present themselves professionally, connect with their
+                        customers, and grow online.
+                    </p>
+                </div>
+
+                <nav class="svc-tree reveal" aria-label="Services on this page">
+                    <div class="svc-tree-bar" aria-hidden="true"><i></i><i></i><i></i><span>~/cornerstone/services</span></div>
+                    <ul>
+                        <li class="is-dir" aria-hidden="true">services/</li>
+                        <li><a href="#website-design">website-design <span>01 →</span></a></li>
+                        <li><a href="#website-redesign">website-redesign <span>02 →</span></a></li>
+                        <li><a href="#web-applications">web-applications <span>03 →</span></a></li>
+                        <li><a href="#website-support">website-support <span>04 →</span></a></li>
+                    </ul>
+                </nav>
 
             </div>
 
         </section>
 
 
+
         <!-- ======================================
-             SERVICES INTRO
+             INTRO
         ======================================= -->
 
-        <section class="services-intro">
+        <section class="cs-section" aria-labelledby="intro-title">
 
-            <div class="services-intro-label">
+            <div class="cs-wrap pg-split">
 
-                <p class="section-label">
-                    OUR SERVICES
-                </p>
+                <div>
+                    <p class="cs-eyebrow">// our services</p>
+                    <h2 class="cs-h2" id="intro-title">
+                        From front end
+                        <span>to back end.</span>
+                    </h2>
+                </div>
 
-            </div>
-
-            <div class="services-intro-copy">
-
-                <h2>
-                    FROM FRONT END
-                    <span>
-                        TO BACK END.
-                    </span>
-                </h2>
-
-                <p>
-                    Every project starts with understanding what
-                    your business needs. We combine design,
-                    development, functionality, and responsive
-                    thinking to create digital products that look right,
-                    work properly, and support the way your business
-                    operates.
-                </p>
-
-                <p>
-                    Our work spans the full stack — from the interface
-                    your customers see to the systems and functionality
-                    working behind it.
-                </p>
+                <div class="pg-copy reveal">
+                    <p>
+                        Every project starts with understanding what your business needs. We combine
+                        design, development, functionality and responsive thinking to create digital
+                        products that look right, work properly, and support the way your business operates.
+                    </p>
+                    <p>
+                        Our work spans the full stack: from the interface your customers see to the
+                        systems and functionality working behind it.
+                    </p>
+                </div>
 
             </div>
 
         </section>
 
 
+
         <!-- ======================================
-             SERVICE CARDS
+             SERVICES
         ======================================= -->
 
-        <section class="service-list">
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-label="Services">
 
-            <!-- SERVICE 01 -->
+            <div class="cs-wrap svc-list">
 
-            <article class="service-card" id="website-design">
+                <article class="svc reveal" id="website-design">
+                    <div class="svc-body">
+                        <div class="svc-top"><span class="svc-num">01</span><span class="svc-label">design + development</span></div>
+                        <h2>Website <span>design &amp; development</span></h2>
+                        <p>Custom websites designed around your business, your audience, and the way you want your brand to be experienced online.</p>
+                    </div>
+                    <div class="svc-spec">
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// includes</p>
+                            <ul>
+                                <li>Custom visual design</li>
+                                <li>Responsive development</li>
+                                <li>Clear calls-to-action</li>
+                                <li>Mobile, tablet and desktop layouts</li>
+                            </ul>
+                        </div>
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// built with</p>
+                            <ul class="cs-tags"><li>html</li><li>css</li><li>javascript</li><li>gsap</li><li>three.js</li></ul>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="service-number">
-                    01
-                </div>
+                <article class="svc reveal" id="website-redesign">
+                    <div class="svc-body">
+                        <div class="svc-top"><span class="svc-num">02</span><span class="svc-label">refresh + improvement</span></div>
+                        <h2>Website <span>redesign</span></h2>
+                        <p>We can improve an existing website's presentation, structure, usability and responsiveness without losing what already works.</p>
+                    </div>
+                    <div class="svc-spec">
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// includes</p>
+                            <ul>
+                                <li>Visual redesigns</li>
+                                <li>Navigation improvements</li>
+                                <li>Content and layout updates</li>
+                                <li>Responsive optimisation</li>
+                            </ul>
+                        </div>
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// built with</p>
+                            <ul class="cs-tags"><li>html</li><li>css</li><li>javascript</li><li>netlify</li></ul>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="service-content">
+                <article class="svc reveal" id="web-applications">
+                    <div class="svc-body">
+                        <div class="svc-top"><span class="svc-num">03</span><span class="svc-label">full-stack development</span></div>
+                        <h2>Custom web <span>applications &amp; portals</span></h2>
+                        <p>Beyond the public-facing website, we build the functionality behind it: from secure login areas and maintenance portals to dashboards, data-driven features and custom business systems.</p>
+                    </div>
+                    <div class="svc-spec">
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// includes</p>
+                            <ul>
+                                <li>Login &amp; authentication systems</li>
+                                <li>Admin &amp; maintenance portals</li>
+                                <li>Interactive dashboards</li>
+                                <li>Custom forms &amp; data handling</li>
+                                <li>API &amp; third-party integrations</li>
+                            </ul>
+                        </div>
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// built with</p>
+                            <ul class="cs-tags"><li>java</li><li>spring boot</li><li>mysql</li><li>rest apis</li></ul>
+                        </div>
+                    </div>
+                </article>
 
-                    <p class="service-label">
-                        DESIGN + DEVELOPMENT
-                    </p>
+                <article class="svc reveal" id="website-support">
+                    <div class="svc-body">
+                        <div class="svc-top"><span class="svc-num">04</span><span class="svc-label">after the build</span></div>
+                        <h2>Website <span>support</span></h2>
+                        <p>Ongoing support for businesses that need their website kept current, maintained, and adjusted as their needs change.</p>
+                    </div>
+                    <div class="svc-spec">
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// includes</p>
+                            <ul>
+                                <li>Content and image updates</li>
+                                <li>Minor website adjustments</li>
+                                <li>Basic maintenance</li>
+                                <li>Technical support</li>
+                            </ul>
+                        </div>
+                        <div class="svc-spec-group">
+                            <p class="svc-spec-key">// built with</p>
+                            <ul class="cs-tags"><li>netlify</li><li>git</li><li>github</li></ul>
+                        </div>
+                    </div>
+                </article>
 
-                    <h2>
-                        WEBSITE
-                        <span>
-                            DESIGN & DEVELOPMENT
-                        </span>
-                    </h2>
-
-                    <p>
-                        Custom websites designed around your
-                        business, your audience, and the way you
-                        want your brand to be experienced online.
-                    </p>
-
-                    <ul>
-                        <li>Custom visual design</li>
-                        <li>Responsive development</li>
-                        <li>Clear calls-to-action</li>
-                        <li>Mobile, tablet and desktop layouts</li>
-                    </ul>
-
-                    <ul class="service-tools" aria-label="Tools">
-                        <li>html</li>
-                        <li>css</li>
-                        <li>javascript</li>
-                        <li>gsap</li>
-                        <li>three.js</li>
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-            <!-- SERVICE 02 -->
-
-            <article class="service-card" id="website-redesign">
-
-                <div class="service-number">
-                    02
-                </div>
-
-                <div class="service-content">
-
-                    <p class="service-label">
-                        REFRESH + IMPROVEMENT
-                    </p>
-
-                    <h2>
-                        WEBSITE
-                        <span>
-                            REDESIGN
-                        </span>
-                    </h2>
-
-                    <p>
-                        We can improve an existing website's
-                        presentation, structure, usability, and
-                        responsiveness without losing what already
-                        works.
-                    </p>
-
-                    <ul>
-                        <li>Visual redesigns</li>
-                        <li>Navigation improvements</li>
-                        <li>Content and layout updates</li>
-                        <li>Responsive optimisation</li>
-                    </ul>
-
-                    <ul class="service-tools" aria-label="Tools">
-                        <li>html</li>
-                        <li>css</li>
-                        <li>javascript</li>
-                        <li>netlify</li>
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-            <!-- SERVICE 03 -->
-
-            <article class="service-card" id="web-applications">
-
-                <div class="service-number">
-                    03
-                </div>
-
-                <div class="service-content">
-
-                    <p class="service-label">
-                        FULL-STACK DEVELOPMENT
-                    </p>
-
-                    <h2>
-                        CUSTOM WEB
-                        <span>
-                            APPLICATIONS
-                        </span>
-                    </h2>
-
-                    <p>
-                        Beyond the public-facing website, we build
-                        the functionality behind it — from secure
-                        login areas and maintenance portals to
-                        dashboards, data-driven features, and
-                        custom business systems.
-                    </p>
-
-                    <ul>
-                        <li>Login & authentication systems</li>
-                        <li>Admin & maintenance portals</li>
-                        <li>Interactive dashboards</li>
-                        <li>Custom forms & data handling</li>
-                        <li>API & third-party integrations</li>
-                    </ul>
-
-                    <ul class="service-tools" aria-label="Tools">
-                        <li>java</li>
-                        <li>spring boot</li>
-                        <li>mysql</li>
-                        <li>rest apis</li>
-                    </ul>
-
-                </div>
-
-            </article>
-
-
-            <!-- SERVICE 04 -->
-
-            <article class="service-card" id="website-support">
-
-                <div class="service-number">
-                    04
-                </div>
-
-                <div class="service-content">
-
-                    <p class="service-label">
-                        AFTER THE BUILD
-                    </p>
-
-                    <h2>
-                        WEBSITE
-                        <span>
-                            SUPPORT
-                        </span>
-                    </h2>
-
-                    <p>
-                        Ongoing support for businesses that need
-                        their website kept current, maintained,
-                        and adjusted as their needs change.
-                    </p>
-
-                    <ul>
-                        <li>Content and image updates</li>
-                        <li>Minor website adjustments</li>
-                        <li>Basic maintenance</li>
-                        <li>Technical support</li>
-                    </ul>
-
-                    <ul class="service-tools" aria-label="Tools">
-                        <li>netlify</li>
-                        <li>git</li>
-                        <li>github</li>
-                    </ul>
-
-                </div>
-
-            </article>
+            </div>
 
         </section>
+
 
 
         <!-- ======================================
              PROCESS
         ======================================= -->
 
-        <section class="services-process">
+        <section class="cs-section" aria-labelledby="process-title">
 
-            <div class="process-heading">
+            <div class="cs-wrap">
 
-                <p class="section-label">
-                    HOW WE WORK
-                </p>
-
-                <h2>
-                    FROM CONCEPT
-                    <span>
-                        TO DEPLOYMENT.
-                    </span>
-                </h2>
-
-                <p class="process-cmd"><span>$</span> cornerstone run --project=yours</p>
-
-            </div>
-
-
-            <div class="process-grid">
-
-                <div class="process-step">
-
-                    <span>
-                        01
-                    </span>
-
-                    <h3>
-                        UNDERSTAND
-                    </h3>
-
-                    <p>
-                        We learn about your business, your goals,
-                        your audience, and what the project needs
-                        to achieve.
-                    </p>
-
+                <div class="cs-head">
+                    <p class="cs-eyebrow">// how we work</p>
+                    <h2 class="cs-h2" id="process-title">
+                        From concept
+                        <span>to deployment.</span>
+                    </h2>
+                    <p class="cs-cmd"><span>$</span> cornerstone run --project=yours</p>
                 </div>
 
-
-                <div class="process-step">
-
-                    <span>
-                        02
-                    </span>
-
-                    <h3>
-                        DESIGN
-                    </h3>
-
-                    <p>
-                        We shape the visual direction, structure,
-                        content flow, and experience before
-                        building the final interface.
-                    </p>
-
-                </div>
-
-
-                <div class="process-step">
-
-                    <span>
-                        03
-                    </span>
-
-                    <h3>
-                        BUILD
-                    </h3>
-
-                    <p>
-                        We build both the user-facing interface
-                        and the underlying functionality, make it
-                        responsive, test the system, and prepare it
-                        for deployment.
-                    </p>
-
-                </div>
-
-
-                <div class="process-step">
-
-                    <span>
-                        04
-                    </span>
-
-                    <h3>
-                        LAUNCH
-                    </h3>
-
-                    <p>
-                        We complete the final checks, deploy the
-                        website, and provide support as the project
-                        moves forward.
-                    </p>
-
-                </div>
+                <ol class="cs-pipeline" data-pipeline>
+                    <li class="cs-stage">
+                        <span class="cs-node" aria-hidden="true">01</span>
+                        <p class="cs-stage-time">day 1</p>
+                        <h3>Understand</h3>
+                        <p>We learn about your business, your goals, your audience, and what the project needs to achieve.</p>
+                    </li>
+                    <li class="cs-stage">
+                        <span class="cs-node" aria-hidden="true">02</span>
+                        <p class="cs-stage-time">week 1</p>
+                        <h3>Design</h3>
+                        <p>We shape the visual direction, structure, content flow and experience before building the final interface.</p>
+                    </li>
+                    <li class="cs-stage">
+                        <span class="cs-node" aria-hidden="true">03</span>
+                        <p class="cs-stage-time">weeks 2–3</p>
+                        <h3>Build</h3>
+                        <p>We build the interface and the functionality underneath it, make it responsive, test it, and prepare it for deployment.</p>
+                    </li>
+                    <li class="cs-stage is-live">
+                        <span class="cs-node" aria-hidden="true">↑</span>
+                        <p class="cs-stage-time">launch + ongoing</p>
+                        <h3>Launch</h3>
+                        <p>We complete the final checks, deploy the website, and provide support as the project moves forward.</p>
+                    </li>
+                </ol>
 
             </div>
 
         </section>
 
 
+
         <!-- ======================================
-             FINAL CTA
+             CTA
         ======================================= -->
 
-        <section class="services-cta">
-
-            <p class="section-label">
-                READY TO BUILD?
-            </p>
-
-            <h2>
-                LET'S BUILD
-                <span>
-                    SOMETHING GREAT.
-                </span>
-            </h2>
-
-            <a
-                href="contact.html"
-                class="btn btn-primary"
-            >
-                Start a Project
-            </a>
-
+        <section class="cs-section cs-cta" aria-labelledby="cta-title">
+            <div class="cs-wrap">
+                <div class="cs-start">
+                    <div class="cs-hero-grid-bg" aria-hidden="true"></div>
+                    <div class="cs-start-glow" aria-hidden="true"></div>
+                    <div class="cs-start-body">
+                        <p class="cs-eyebrow">// ready to build?</p>
+                        <h2 id="cta-title">Let's build <span>something great.</span></h2>
+                        <div class="cs-actions">
+                            <a href="contact.html" class="cs-btn cs-btn-primary">Start a project <span aria-hidden="true">→</span></a>
+                            <a href="portfolio.html" class="cs-btn cs-btn-ghost">See the work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -647,124 +498,10 @@
 
 
     <!-- ==========================================
-         MOBILE NAVIGATION
+         SHARED: MOBILE MENU + SCROLL REVEALS
     =========================================== -->
 
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
-
-                const menuToggle =
-                    document.getElementById(
-                        "menu-toggle"
-                    );
-
-                const navLinks =
-                    document.getElementById(
-                        "nav-links"
-                    );
-
-                if (
-                    !menuToggle ||
-                    !navLinks
-                ) {
-                    return;
-                }
-
-
-                function closeMenu() {
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                    document.body.classList.remove(
-                        "menu-open"
-                    );
-
-                }
-
-
-                menuToggle.addEventListener(
-                    "click",
-                    () => {
-
-                        const isOpen =
-                            navLinks.classList.toggle(
-                                "active"
-                            );
-
-                        menuToggle.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            String(isOpen)
-                        );
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            isOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        );
-
-                        document.body.classList.toggle(
-                            "menu-open",
-                            isOpen
-                        );
-
-                    }
-                );
-
-
-                navLinks
-                    .querySelectorAll("a")
-                    .forEach((link) => {
-
-                        link.addEventListener(
-                            "click",
-                            closeMenu
-                        );
-
-                    });
-
-
-                document.addEventListener(
-                    "keydown",
-                    (event) => {
-
-                        if (
-                            event.key === "Escape"
-                        ) {
-                            closeMenu();
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-    </script>
+    <script src="../js/site.js" defer></script>
 
 </body>
 

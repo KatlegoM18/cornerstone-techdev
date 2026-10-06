@@ -38,7 +38,6 @@
     <!-- MAIN SITE STYLES -->
     <link rel="stylesheet" href="../css/index.css">
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -46,10 +45,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
     <!-- ABOUT PAGE STYLES -->
     
@@ -167,9 +166,55 @@
     </header>
 
 
-    <main>
+    <main class="cs" id="main">
 
-        <section class="legal-content">
+
+        <!-- ======================================
+             HERO
+        ======================================= -->
+
+        <section class="pg-hero" aria-labelledby="page-title">
+
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
+
+            <div class="cs-wrap pg-hero-layout is-single">
+                <div>
+                    <p class="pg-path">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.2"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>
+                        <span>cornerstonetechdev.co.za/<b>privacy</b></span>
+                    </p>
+                    <p class="cs-eyebrow">// legal</p>
+                    <h1 id="page-title">Privacy <span>policy.</span></h1>
+                    <p class="pg-lede">What we collect through this website, why we collect it, and your rights under POPIA.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             POLICY
+        ======================================= -->
+
+        <section class="cs-section" aria-label="Privacy policy">
+
+            <div class="cs-wrap pg-legal">
+
+                <nav class="pg-toc" aria-label="On this page">
+                    <p>// on this page</p>
+                    <ol>
+                        <li><a href="#who-we-are">Who we are</a></li>
+                        <li><a href="#what-we-collect">What we collect</a></li>
+                        <li><a href="#why-we-use-it">Why we use it</a></li>
+                        <li><a href="#who-we-share-it-with">Who we share it with</a></li>
+                        <li><a href="#how-long-we-keep-it">How long we keep it</a></li>
+                        <li><a href="#cookies">Cookies</a></li>
+                        <li><a href="#your-rights">Your rights</a></li>
+                    </ol>
+                </nav>
+
+                <section class="legal-content">
 
             <p class="section-label">LEGAL</p>
 
@@ -183,14 +228,14 @@
                 under the Protection of Personal Information Act, 2013 (POPIA).
             </p>
 
-            <h2>Who we are</h2>
+            <h2 id="who-we-are">Who we are</h2>
             <p>
                 CornerStone TechDev is a web design and development business based in Cape Town,
                 South Africa. Our Information Officer is Katlego Mokgofa, who can be reached at
                 <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>.
             </p>
 
-            <h2>What we collect</h2>
+            <h2 id="what-we-collect">What we collect</h2>
             <p>When you send an enquiry through our contact form, we collect:</p>
             <ul>
                 <li>your name and email address</li>
@@ -203,14 +248,14 @@
                 choose to send us on those platforms.
             </p>
 
-            <h2>Why we use it</h2>
+            <h2 id="why-we-use-it">Why we use it</h2>
             <p>
                 We use your information only to respond to your enquiry, discuss your project,
                 prepare quotes and, if we work together, deliver and support your project.
                 We do not sell your information or add you to marketing lists without your permission.
             </p>
 
-            <h2>Who we share it with</h2>
+            <h2 id="who-we-share-it-with">Who we share it with</h2>
             <p>
                 To run this website and receive enquiries, we use trusted service providers:
                 Netlify (website hosting), Resend (sending enquiry emails) and Google (email).
@@ -218,20 +263,20 @@
                 that protect personal information to an appropriate standard.
             </p>
 
-            <h2>How long we keep it</h2>
+            <h2 id="how-long-we-keep-it">How long we keep it</h2>
             <p>
                 We keep enquiry details for as long as needed to respond to you and manage any
                 project that follows, and for any period required by law. After that, we delete it.
             </p>
 
-            <h2>Cookies</h2>
+            <h2 id="cookies">Cookies</h2>
             <p>
                 This website does not use advertising or tracking cookies. Some features load
                 code libraries from third-party content networks (such as jsDelivr), which may
                 record basic technical information like your IP address.
             </p>
 
-            <h2>Your rights</h2>
+            <h2 id="your-rights">Your rights</h2>
             <p>Under POPIA, you may:</p>
             <ul>
                 <li>ask what personal information we hold about you</li>
@@ -246,6 +291,10 @@
                 To make a request, email us at
                 <a href="mailto:cornerstonetechdevsa@gmail.com">cornerstonetechdevsa@gmail.com</a>.
             </p>
+
+        </section>
+
+            </div>
 
         </section>
 
@@ -289,98 +338,10 @@
 
 
     <!-- ==========================================
-         MOBILE MENU
+         SHARED: MOBILE MENU + SCROLL REVEALS
     =========================================== -->
 
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
-
-                const menuToggle =
-                    document.getElementById("menu-toggle");
-
-                const navLinks =
-                    document.getElementById("nav-links");
-
-
-                if (!menuToggle || !navLinks) {
-                    return;
-                }
-
-
-                menuToggle.addEventListener(
-                    "click",
-                    () => {
-
-                        const isOpen =
-                            navLinks.classList.toggle(
-                                "active"
-                            );
-
-
-                        menuToggle.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            String(isOpen)
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            isOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        );
-
-                    }
-                );
-
-
-                navLinks
-                    .querySelectorAll("a")
-                    .forEach(
-                        (link) => {
-
-                            link.addEventListener(
-                                "click",
-                                () => {
-
-                                    navLinks.classList.remove(
-                                        "active"
-                                    );
-
-                                    menuToggle.classList.remove(
-                                        "active"
-                                    );
-
-                                    menuToggle.setAttribute(
-                                        "aria-expanded",
-                                        "false"
-                                    );
-
-                                    menuToggle.setAttribute(
-                                        "aria-label",
-                                        "Open navigation menu"
-                                    );
-
-                                }
-                            );
-
-                        }
-                    );
-
-            }
-        );
-
-    </script>
-
+    <script src="../js/site.js" defer></script>
 
 </body>
 

@@ -26,10 +26,7 @@
     <meta name="description" content="Six Strings Higher: a creative concept site by CornerStone TechDev, where an acoustic guitar comes apart as you scroll and rebuilds itself in the teacher's hands.">
 
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/barc-house.css">
-    <link rel="stylesheet" href="../css/portfolio.css">
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -37,10 +34,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
     <script type="module" src="../js/barc-molten-metal.js"></script>
     <script type="module" src="../js/ct-logo-3d.js"></script>
@@ -79,235 +76,150 @@
         </nav>
     </header>
 
-    <main class="six-strings-case">
+    <main class="cs" id="main">
 
-        <section class="case-hero">
-            <div class="case-hero-content">
-                <p class="case-eyebrow">01 / PORTFOLIO PIECE</p>
-                <p class="case-category">CREATIVE CONCEPT · GUITAR LESSONS</p>
-                <h1>SIX STRINGS <span>HIGHER.</span></h1>
-                <p class="case-intro">
-                    A self-initiated concept for a private guitar teacher. The site
-                    takes the instrument apart as you scroll, then puts it back
-                    together in the teacher's hands.
-                </p>
 
-                <div class="case-details">
-                    <div>
-                        <span>TYPE</span>
-                        <strong>SELF-INITIATED CONCEPT</strong>
-                    </div>
-                    <div>
-                        <span>FOCUS</span>
-                        <strong>SCROLL STORYTELLING + MOTION</strong>
-                    </div>
-                    <div>
-                        <span>SCOPE</span>
-                        <strong>CONCEPT + ART DIRECTION + DEVELOPMENT</strong>
-                    </div>
-                </div>
+        <!-- ======================================
+             HERO
+        ======================================= -->
 
-                <p class="case-stack"><span>built with</span> html · css · javascript · gsap · scrolltrigger</p>
-            </div>
-        </section>
+        <section class="pg-hero" aria-labelledby="page-title">
 
-        <!-- =====================================================
-             PROJECT PREVIEW
-             ===================================================== -->
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
 
-        <section class="case-visual">
+            <div class="cs-wrap pg-hero-layout">
 
-            <!-- HERO: DESKTOP + MOBILE -->
+                <div>
+                    <a href="portfolio.html" class="case-back">← portfolio</a>
 
-            <div class="device-composition composition-primary">
-                <div class="composition-laptop">
-                    <span class="composition-label">THE INSTRUMENT / DESKTOP</span>
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/portfolio/six-strings-desktop-hero.webp"
-                            alt="Six Strings Higher homepage: a large acoustic guitar beside the headline Six Strings. One starting point."
-                            draggable="false"
-                            loading="lazy"
-                        >
+                    <p class="cs-eyebrow">// 01 / creative concept · guitar lessons</p>
+
+                    <h1 id="page-title">
+                        Six Strings
+                        <span>Higher.</span>
+                    </h1>
+
+                    <p class="pg-lede">
+                        A self-initiated concept for a private guitar teacher. The site takes the
+                        instrument apart as you scroll, puts it back together in the teacher's hands,
+                        then dives through the soundhole into a lesson menu made of strings.
+                    </p>
+
+                    <div class="cs-actions">
+                        <a href="../projects/six-strings-higher/index.html" class="cs-btn cs-btn-primary" target="_blank" rel="noopener">Visit the site <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/KatlegoM18/SixString-Higher" class="cs-btn cs-btn-ghost cs-mono" target="_blank" rel="noopener">view --code</a>
                     </div>
                 </div>
-                <div class="composition-phone">
-                    <span class="composition-label">THE INSTRUMENT / MOBILE</span>
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/portfolio/six-strings-mobile-hero.webp"
-                                alt="Six Strings Higher homepage on mobile"
-                                draggable="false"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- EXPLODED VIEW: DESKTOP + MOBILE -->
+                <dl class="case-meta reveal">
+                    <div><dt>type</dt><dd>Self-initiated concept</dd></div>
+                    <div><dt>focus</dt><dd>Scroll storytelling + motion</dd></div>
+                    <div><dt>scope</dt><dd>Concept, art direction, development</dd></div>
+                    <div><dt>built with</dt><dd>html · css · javascript · gsap · scrolltrigger · lenis · web audio</dd></div>
+                </dl>
 
-            <div class="device-composition composition-secondary">
-                <div class="composition-laptop">
-                    <span class="composition-label">DISASSEMBLED / DESKTOP</span>
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/portfolio/six-strings-desktop-exploded.webp"
-                            alt="The guitar taken apart into 21 labelled pieces"
-                            draggable="false"
-                            loading="lazy"
-                        >
-                    </div>
-                </div>
-                <div class="composition-phone">
-                    <span class="composition-label">DISASSEMBLED / MOBILE</span>
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/portfolio/six-strings-mobile-exploded.webp"
-                                alt="The taken-apart guitar on mobile"
-                                draggable="false"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TEACHER: DESKTOP + MOBILE -->
-
-            <div class="device-composition composition-primary">
-                <div class="composition-laptop">
-                    <span class="composition-label">THE TEACHER / DESKTOP</span>
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/portfolio/six-strings-desktop-teacher.webp"
-                            alt="The rebuilt guitar in the teacher's hands, in an anime-style lamp-lit room"
-                            draggable="false"
-                            loading="lazy"
-                        >
-                    </div>
-                </div>
-                <div class="composition-phone">
-                    <span class="composition-label">THE TEACHER / MOBILE</span>
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/portfolio/six-strings-mobile-teacher.webp"
-                                alt="The teacher section on mobile"
-                                draggable="false"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
             </div>
 
         </section>
 
-        <!-- =====================================================
+
+
+        <!-- ======================================
+             GALLERY
+        ======================================= -->
+
+        <section class="cs-section" aria-label="Screens">
+            <div class="cs-wrap case-gallery">
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>the instrument · desktop</span></span>
+                            <img src="../images/portfolio/six-strings-desktop-hero.webp" alt="Six Strings Higher homepage: a large acoustic guitar beside the headline Six Strings. One starting point." loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/portfolio/six-strings-mobile-hero.webp" alt="Six Strings Higher homepage on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">mobile</figcaption></figure>
+                </div>
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>disassembled · desktop</span></span>
+                            <img src="../images/portfolio/six-strings-desktop-exploded.webp" alt="The guitar taken apart into 21 labelled pieces" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/portfolio/six-strings-mobile-exploded.webp" alt="The taken-apart guitar on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">mobile</figcaption></figure>
+                </div>
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>the teacher · desktop</span></span>
+                            <img src="../images/portfolio/six-strings-desktop-teacher.webp" alt="The rebuilt guitar in the teacher's hands, in an anime-style lamp-lit room" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/portfolio/six-strings-mobile-teacher.webp" alt="The teacher section on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">mobile</figcaption></figure>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ======================================
              IDEA + BUILD
-             ===================================================== -->
+        ======================================= -->
 
-        <section class="case-story">
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-label="The idea and the build">
+            <div class="cs-wrap case-story">
 
-            <article class="case-story-block challenge">
-                <div class="case-story-label">
-                    01 / THE IDEA
-                </div>
-                <div class="case-story-content">
-                    <h2>
-                        THE <span>IDEA.</span>
-                    </h2>
-                    <p>
-                        Most lesson websites open with a price list. This one opens with
-                        the instrument, because that is where every player starts.
-                    </p>
-                    <p>
-                        As you scroll, the guitar comes apart piece by piece: the strings
-                        go slack and lift away, the tuners unscrew, the neck and headstock
-                        separate, and the soundboard lifts off the body. It is the whole
-                        journey from wood to sound, told without a paragraph of text.
-                    </p>
-                    <p>
-                        Then the story turns. The pieces fly back together and land in
-                        the teacher's arms, so you meet the person and the instrument
-                        in the same moment.
-                    </p>
-                </div>
-            </article>
+                <article class="case-block reveal">
+                    <p class="case-block-label">01 / the idea</p>
+                    <h2>The idea.</h2>
+                    <p>Most lesson websites open with a price list. This one opens with the instrument, because that is where every player starts.</p>
+                    <p>As you scroll, the guitar comes apart piece by piece: the strings go slack and lift away, the tuners unscrew, the neck and headstock separate, and the soundboard lifts off the body. It is the whole journey from wood to sound, told without a paragraph of text.</p>
+                    <p>Then the story turns. The pieces fly back together and land in the teacher's arms, so you meet the person and the instrument in the same moment.</p>
+                </article>
 
-            <article class="case-story-block solution">
-                <div class="case-story-label">
-                    02 / THE BUILD
-                </div>
-                <div class="case-story-content">
-                    <h2>
-                        THE <span>BUILD.</span>
-                    </h2>
-                    <p>
-                        A single guitar illustration was cut into 21 separate parts that
-                        line up to the pixel. The strings are drawn as live vector lines
-                        so they can bow, lift and pull tight again.
-                    </p>
-                    <p>
-                        The teacher was illustrated in the same anime style, with his arms
-                        on their own layer, so the guitar genuinely slides in under his
-                        hands rather than fading in on top of them.
-                    </p>
-                    <p>
-                        The whole sequence is driven by scroll and rebuilt for phones,
-                        from the lessons picker through to a working booking flow with a
-                        calendar and time slots.
-                    </p>
-                </div>
-            </article>
+                <article class="case-block reveal">
+                    <p class="case-block-label">02 / the build</p>
+                    <h2>The build.</h2>
+                    <p>A single guitar illustration was cut into 21 separate parts that line up to the pixel. The strings are drawn as live vector lines so they can bow, lift and pull tight again.</p>
+                    <p>The teacher was illustrated in the same anime style, with his arms on their own layer, so the guitar genuinely slides in under his hands rather than fading in on top of them.</p>
+                    <p>One master timeline drives the whole sequence, so it holds together however fast you scroll. The six lesson paths are six real strings: brush across them and they vibrate where you touched, with each note synthesised in the browser. A sideways-scrolling fretboard explains how lessons work, and a three-step booking flow runs from path and time to confirmation.</p>
+                </article>
 
+            </div>
         </section>
 
-        <!-- =====================================================
+
+
+        <!-- ======================================
              OUTCOME
-             ===================================================== -->
+        ======================================= -->
 
-        <section class="case-outcome">
-            <p class="case-outcome-label">
-                WHY IT'S HERE
-            </p>
-            <h2>
-                ONE INSTRUMENT.<br>
-                <span>TWENTY-ONE PIECES.</span>
-            </h2>
-            <p>
-                Six Strings Higher is not a client project. It is a study in how far
-                a small business website can go when motion does the storytelling,
-                built to show the kind of creative work CornerStone can deliver.
-            </p>
+        <section class="cs-section case-outcome" aria-labelledby="outcome-title">
+            <div class="cs-wrap">
+                <p class="cs-eyebrow">// why it's here</p>
+                <h2 id="outcome-title" class="reveal">One instrument. <span>Twenty-one pieces.</span></h2>
+                <p>Six Strings Higher is not a client project. It is a study in how far a small business website can go when motion does the storytelling, built to show the kind of creative work CornerStone can deliver.</p>
+                <div class="cs-actions">
+                    <a href="../projects/six-strings-higher/index.html" class="cs-btn cs-btn-primary" target="_blank" rel="noopener">See it live <span aria-hidden="true">↗</span></a>
+                    <a href="contact.html" class="cs-btn cs-btn-ghost">Start a project like this</a>
+                </div>
+            </div>
         </section>
 
-        <!-- =====================================================
-             CTA
-             ===================================================== -->
 
-        <section class="case-cta">
-            <p>
-                WANT TO SEE IT LIVE?
-            </p>
-            <!-- Live site address: update if the Netlify name differs -->
-            <a href="https://sixstringshigher.netlify.app/" target="_blank" rel="noopener" class="six-strings-live-link">
-                VISIT SIX STRINGS HIGHER
-                <span>→</span>
-            </a>
-            <a href="https://github.com/KatlegoM18/SixStrings-Higher" target="_blank" rel="noopener" class="case-code-link">
-                VIEW THE CODE
-                <span>&lt;/&gt;</span>
-            </a>
+
+        <!-- ======================================
+             NEXT
+        ======================================= -->
+
+        <section class="cs-section" style="padding-top: 0; border-top: 0" aria-label="Next case study">
+            <div class="cs-wrap">
+                <a href="lesedi.html" class="case-next">
+                    <div><small>next case study · 02</small><strong>Lesedi Wine Estate</strong></div>
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
         </section>
 
     </main>
@@ -349,84 +261,11 @@
     </footer>
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+    <!-- ==========================================
+         SHARED: MOBILE MENU + SCROLL REVEALS
+    =========================================== -->
 
-            const menuToggle = document.getElementById("menu-toggle");
-            const navLinks = document.getElementById("nav-links");
-
-            if (!menuToggle || !navLinks) return;
-
-
-            function closeMenu() {
-                navLinks.classList.remove("active");
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                document.body.classList.remove("menu-open");
-            }
-
-
-            menuToggle.addEventListener("click", () => {
-
-                const isOpen =
-                    navLinks.classList.toggle("active");
-
-                menuToggle.classList.toggle(
-                    "active",
-                    isOpen
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close navigation menu"
-                        : "Open navigation menu"
-                );
-
-                document.body.classList.toggle(
-                    "menu-open",
-                    isOpen
-                );
-
-            });
-
-
-            navLinks
-                .querySelectorAll("a")
-                .forEach(link => {
-                    link.addEventListener(
-                        "click",
-                        closeMenu
-                    );
-                });
-
-
-            document.addEventListener(
-                "keydown",
-                event => {
-                    if (event.key === "Escape") {
-                        closeMenu();
-                    }
-                }
-            );
-
-        });
-    </script>
+    <script src="../js/site.js" defer></script>
 
 </body>
 </html>

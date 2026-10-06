@@ -52,12 +52,7 @@
          PORTFOLIO CSS
     =========================================== -->
 
-    <link
-        rel="stylesheet"
-        href="../css/portfolio.css"
-    >
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -65,10 +60,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
 
     <!-- ==========================================
@@ -200,327 +195,172 @@
          MAIN
     =========================================== -->
 
-    <main>
+    <main class="cs" id="main">
+
 
         <!-- ======================================
-             PORTFOLIO HERO
+             HERO
         ======================================= -->
 
-        <section class="portfolio-coming-soon portfolio-intro">
+        <section class="pg-hero" aria-labelledby="page-title">
 
-            <!-- Decorative index -->
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
 
-            <div class="portfolio-index">
-                <span>
-                    01
-                </span>
-                <span class="portfolio-index-line"></span>
-                <span>
-                    PORTFOLIO
-                </span>
-            </div>
+            <div class="cs-wrap pg-hero-layout">
 
-            <!-- Main content -->
+                <div>
+                    <p class="pg-path">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.2"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>
+                        <span>cornerstonetechdev.co.za/<b>portfolio</b></span>
+                    </p>
 
-            <div class="portfolio-coming-soon-content">
+                    <p class="cs-eyebrow">// creative work</p>
 
-                <div class="portfolio-eyebrow">
-                    <span class="eyebrow-line"></span>
-                    <span>
-                        CREATIVE WORK
-                    </span>
+                    <h1 id="page-title">
+                        Made to
+                        <span>move.</span>
+                    </h1>
+
+                    <p class="pg-lede">
+                        Self-initiated concepts and experiments. Where client projects solve a brief,
+                        these pieces push the craft: motion, storytelling and interaction that make
+                        a website feel like an experience.
+                    </p>
+
+                    <div class="cs-actions">
+                        <a href="#portfolio-work" class="cs-btn cs-btn-ghost cs-mono">ls ./work <span aria-hidden="true">↓</span></a>
+                    </div>
                 </div>
 
-                <h1>
-                    MADE TO
-                    <span>
-                        MOVE.
-                    </span>
-                </h1>
-
-                <p class="portfolio-description">
-                    Self-initiated concepts and experiments. Where client
-                    projects solve a brief, these pieces push the craft:
-                    motion, storytelling and interaction that make a
-                    website feel like an experience.
-                </p>
-
-                <a href="#portfolio-work" class="portfolio-coming-soon-banner portfolio-scroll-link">
-                    <span class="banner-dot"></span>
-                    <span>
-                        VIEW THE WORK
-                    </span>
-                    <span class="banner-line"></span>
+                <a href="#portfolio-work" class="pf-fan" aria-label="Jump to the work">
+                    <span class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="../images/portfolio/barc-house-card.webp" alt="" width="1200" height="750" decoding="async"></span>
+                    <span class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="../images/portfolio/paddle-out-card.webp" alt="" width="1200" height="750" decoding="async"></span>
+                    <span class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="../images/portfolio/lesedi-card.webp" alt="" width="1200" height="750" decoding="async"></span>
+                    <span class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="../images/portfolio/six-strings-card.webp" alt="" width="1200" height="750" decoding="async"></span>
                 </a>
 
-            </div>
-
-            <!-- Decorative statement -->
-
-            <div class="portfolio-side-note">
-                <span>
-                    CREATIVE WORK
-                </span>
-                <span>
-                    DIGITAL EXPERIENCES
-                </span>
-                <span>
-                    EXPERIMENTS
-                </span>
-            </div>
-
-            <!-- Bottom marker -->
-
-            <div class="portfolio-bottom-marker">
-                <span>
-                    CORNERSTONE TECHDEV
-                </span>
-                <span>
-                    2026
-                </span>
             </div>
 
         </section>
 
 
+
         <!-- ======================================
-             PORTFOLIO PIECES
+             PIECES
              Add new pieces as more <article>s
         ======================================= -->
 
-        <section class="portfolio-work" id="portfolio-work">
+        <section class="cs-section" id="portfolio-work" aria-label="Portfolio pieces">
 
-            <article class="portfolio-piece">
+            <div class="cs-wrap pf-list">
 
-                <a href="six-strings-higher.html" class="portfolio-piece-image" aria-label="Six Strings Higher case study">
-                    <img
-                        src="../images/portfolio/six-strings-card.webp"
-                        alt="Six Strings Higher: an acoustic guitar taken apart into labelled pieces"
-                        width="1200"
-                        height="750"
-                        loading="lazy"
-                    >
-                </a>
-
-                <div class="portfolio-piece-copy">
-
-                    <p class="portfolio-piece-index">
-                        01 / CONCEPT SITE
-                    </p>
-
-                    <h2>
-                        SIX STRINGS
-                        <span>HIGHER.</span>
-                    </h2>
-
-                    <p class="portfolio-piece-description">
-                        A guitar-lesson site where the instrument comes apart
-                        as you scroll, piece by piece, then rebuilds itself in
-                        the teacher's hands.
-                    </p>
-
-                    <ul class="portfolio-piece-tags">
-                        <li>SCROLL ANIMATION</li>
-                        <li>ART DIRECTION</li>
-                        <li>RESPONSIVE</li>
-                    </ul>
-                    <ul class="portfolio-piece-stack" aria-label="Built with">
-                        <li>html</li>
-                        <li>css</li>
-                        <li>javascript</li>
-                        <li>gsap</li>
-                        <li>scrolltrigger</li>
-                    </ul>
-
-                    <div class="portfolio-piece-links">
-                        <a href="six-strings-higher.html" class="portfolio-piece-link">
-                            VIEW CASE STUDY
-                            <span>→</span>
-                        </a>
-                        <a href="https://sixstringshigher.netlify.app/" class="portfolio-piece-link is-secondary six-strings-live-link" target="_blank" rel="noopener">
-                            VISIT LIVE SITE
-                            <span>↗</span>
-                        </a>
-                        <a href="https://github.com/KatlegoM18/SixStrings-Higher" class="portfolio-piece-link is-secondary is-code" target="_blank" rel="noopener">
-                            VIEW CODE
-                            <span>&lt;/&gt;</span>
-                        </a>
+                <!-- 01 SIX STRINGS HIGHER -->
+                <article class="pf-piece reveal">
+                    <a href="six-strings-higher.html" class="cs-frame" aria-label="Six Strings Higher case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>six strings higher · lessons</span></span>
+                        <img src="../images/portfolio/six-strings-card.webp" alt="Six Strings Higher: an acoustic guitar taken apart into labelled pieces" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <div>
+                        <p class="pf-index">01 / concept site</p>
+                        <h2><a href="six-strings-higher.html">Six Strings <span>Higher.</span></a></h2>
+                        <p class="pf-desc">A guitar-lesson booking site where the instrument comes apart as you scroll, rebuilds in the teacher's hands, then dives through the soundhole into six strings you can play.</p>
+                        <ul class="cs-tags"><li>scroll animation</li><li>art direction</li><li>responsive</li></ul>
+                        <p class="pf-stack"><span>built with</span> html · css · javascript · gsap · scrolltrigger · web audio</p>
+                        <div class="pf-links">
+                            <a href="six-strings-higher.html" class="cs-btn cs-btn-primary">Case study <span aria-hidden="true">→</span></a>
+                            <a href="../projects/six-strings-higher/index.html" class="cs-link" target="_blank" rel="noopener">live site ↗</a>
+                            <a href="https://github.com/KatlegoM18/SixString-Higher" class="cs-link" target="_blank" rel="noopener">code &lt;/&gt;</a>
+                        </div>
                     </div>
+                </article>
 
-                </div>
-
-            </article>
-
-            <article class="portfolio-piece">
-
-                <a href="lesedi.html" class="portfolio-piece-image" aria-label="Lesedi case study">
-                    <img
-                        src="../images/portfolio/lesedi-card.webp"
-                        alt="Lesedi: a 3D wine bottle at golden hour beside its label reader"
-                        width="1200"
-                        height="750"
-                        loading="lazy"
-                    >
-                </a>
-
-                <div class="portfolio-piece-copy">
-
-                    <p class="portfolio-piece-index">
-                        02 / CONCEPT SITE
-                    </p>
-
-                    <h2>
-                        LESEDI
-                        <span>WINE ESTATE.</span>
-                    </h2>
-
-                    <p class="portfolio-piece-description">
-                        A Stellenbosch wine estate where you turn the bottle in your hand. Every quarter-turn brings a new part of the label round to the front.
-                    </p>
-
-                    <ul class="portfolio-piece-tags">
-                        <li>REAL-TIME 3D</li>
-                        <li>INTERACTION</li>
-                        <li>RESPONSIVE</li>
-                    </ul>
-                    <ul class="portfolio-piece-stack" aria-label="Built with">
-                        <li>three.js</li>
-                        <li>webgl</li>
-                        <li>javascript</li>
-                        <li>css</li>
-                    </ul>
-
-                    <div class="portfolio-piece-links">
-                        <a href="lesedi.html" class="portfolio-piece-link">
-                            VIEW CASE STUDY
-                            <span>→</span>
-                        </a>
-                        <a href="../projects/lesedi/index.html" class="portfolio-piece-link is-secondary" target="_blank" rel="noopener">
-                            VISIT LIVE SITE
-                            <span>↗</span>
-                        </a>
-                        <a href="https://github.com/KatlegoM18/lesedi-wine-estate" class="portfolio-piece-link is-secondary is-code" target="_blank" rel="noopener">
-                            VIEW CODE
-                            <span>&lt;/&gt;</span>
-                        </a>
+                <!-- 02 LESEDI -->
+                <article class="pf-piece reveal">
+                    <a href="lesedi.html" class="cs-frame" aria-label="Lesedi Wine Estate case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>lesedi · wine estate</span></span>
+                        <img src="../images/portfolio/lesedi-card.webp" alt="Lesedi: a 3D wine bottle at golden hour beside its label reader" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <div>
+                        <p class="pf-index">02 / concept site</p>
+                        <h2><a href="lesedi.html">Lesedi <span>Wine Estate.</span></a></h2>
+                        <p class="pf-desc">A Stellenbosch wine estate where you turn the bottle in your hand. Every quarter-turn brings a new part of the label round to the front, beside a full estate site with tastings, a cart and a wine club.</p>
+                        <ul class="cs-tags"><li>real-time 3d</li><li>interaction</li><li>responsive</li></ul>
+                        <p class="pf-stack"><span>built with</span> three.js · webgl · javascript · css</p>
+                        <div class="pf-links">
+                            <a href="lesedi.html" class="cs-btn cs-btn-primary">Case study <span aria-hidden="true">→</span></a>
+                            <a href="../projects/lesedi/index.html" class="cs-link" target="_blank" rel="noopener">live site ↗</a>
+                            <a href="https://github.com/KatlegoM18/lesedi-wine-estate" class="cs-link" target="_blank" rel="noopener">code &lt;/&gt;</a>
+                        </div>
                     </div>
+                </article>
 
-                </div>
-
-            </article>
-
-            <article class="portfolio-piece">
-
-                <a href="paddle-out.html" class="portfolio-piece-image" aria-label="Paddle Out case study">
-                    <img
-                        src="../images/portfolio/paddle-out-card.webp"
-                        alt="Paddle Out at Big Bay on a glassy morning: Table Mountain behind the beach, kites in the air and the headline Glassy. Get in."
-                        width="1200"
-                        height="750"
-                        loading="lazy"
-                    >
-                </a>
-
-                <div class="portfolio-piece-copy">
-
-                    <p class="portfolio-piece-index">
-                        03 / CONCEPT SITE
-                    </p>
-
-                    <h2>
-                        PADDLE
-                        <span>OUT.</span>
-                    </h2>
-
-                    <p class="portfolio-piece-description">
-                        Live surf conditions for 34 South African beaches across three provinces, each drawn with its own landmark and a sea and sky that follow the real weather.
-                    </p>
-
-                    <ul class="portfolio-piece-tags">
-                        <li>LIVE DATA</li>
-                        <li>GENERATIVE VISUALS</li>
-                        <li>34 BEACHES</li>
-                    </ul>
-                    <ul class="portfolio-piece-stack" aria-label="Built with">
-                        <li>html</li>
-                        <li>css</li>
-                        <li>javascript</li>
-                        <li>open-meteo api</li>
-                        <li>netlify functions</li>
-                    </ul>
-
-                    <div class="portfolio-piece-links">
-                        <a href="paddle-out.html" class="portfolio-piece-link">
-                            VIEW CASE STUDY
-                            <span>→</span>
-                        </a>
-                        <a href="../projects/paddle-out/index.html" class="portfolio-piece-link is-secondary" target="_blank" rel="noopener">
-                            VISIT LIVE SITE
-                            <span>↗</span>
-                        </a>
+                <!-- 03 PADDLE OUT -->
+                <article class="pf-piece reveal">
+                    <a href="paddle-out.html" class="cs-frame" aria-label="Paddle Out case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>paddle out · live conditions</span></span>
+                        <img src="../images/portfolio/paddle-out-card.webp" alt="Paddle Out at Big Bay on a glassy morning: Table Mountain behind the beach, kites in the air and the headline Glassy. Get in." width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <div>
+                        <p class="pf-index">03 / concept web app</p>
+                        <h2><a href="paddle-out.html">Paddle <span>Out.</span></a></h2>
+                        <p class="pf-desc">Live surf conditions for 34 South African beaches across three provinces, each drawn with its own landmark and a sea and sky that follow the real weather.</p>
+                        <ul class="cs-tags"><li>live data</li><li>generative visuals</li><li>34 beaches</li></ul>
+                        <p class="pf-stack"><span>built with</span> html · css · javascript · open-meteo api · netlify functions</p>
+                        <div class="pf-links">
+                            <a href="paddle-out.html" class="cs-btn cs-btn-primary">Case study <span aria-hidden="true">→</span></a>
+                            <a href="../projects/paddle-out/index.html" class="cs-link" target="_blank" rel="noopener">live site ↗</a>
+                        </div>
                     </div>
+                </article>
 
-                </div>
-
-            </article>
-
-            <article class="portfolio-piece">
-
-                <a href="barc-house.html" class="portfolio-piece-image" aria-label="Barc House case study">
-                    <img
-                        src="../images/portfolio/barc-house-card.webp"
-                        alt="Barc House: a student accommodation homepage with its two residences, Irene and Karoo"
-                        width="1200"
-                        height="750"
-                        loading="lazy"
-                    >
-                </a>
-
-                <div class="portfolio-piece-copy">
-
-                    <p class="portfolio-piece-index">
-                        04 / CONCEPT SITE
-                    </p>
-
-                    <h2>
-                        BARC
-                        <span>HOUSE.</span>
-                    </h2>
-
-                    <p class="portfolio-piece-description">
-                        Student accommodation you can explore and apply to from anywhere, backed by a secure portal for applications, residents and maintenance.
-                    </p>
-
-                    <ul class="portfolio-piece-tags">
-                        <li>WEB DESIGN</li>
-                        <li>FULL-STACK</li>
-                        <li>MANAGEMENT PORTAL</li>
-                    </ul>
-                    <ul class="portfolio-piece-stack" aria-label="Built with">
-                        <li>html</li>
-                        <li>css</li>
-                        <li>javascript</li>
-                    </ul>
-
-                    <div class="portfolio-piece-links">
-                        <a href="barc-house.html" class="portfolio-piece-link">
-                            VIEW CASE STUDY
-                            <span>→</span>
-                        </a>
-                        <a href="../projects/BarcHouse/index.html" class="portfolio-piece-link is-secondary" target="_blank" rel="noopener">
-                            VISIT LIVE SITE
-                            <span>↗</span>
-                        </a>
+                <!-- 04 BARC HOUSE -->
+                <article class="pf-piece reveal">
+                    <a href="barc-house.html" class="cs-frame" aria-label="Barc House case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>barc house · website + portal</span></span>
+                        <img src="../images/portfolio/barc-house-card.webp" alt="Barc House: a student accommodation homepage with its two residences, Irene and Karoo" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <div>
+                        <p class="pf-index">04 / concept site + portal</p>
+                        <h2><a href="barc-house.html">Barc <span>House.</span></a></h2>
+                        <p class="pf-desc">Student accommodation you can explore and apply to from anywhere, backed by a secure portal for applications, residents and maintenance.</p>
+                        <ul class="cs-tags"><li>web design</li><li>full-stack</li><li>management portal</li></ul>
+                        <p class="pf-stack"><span>built with</span> html · css · javascript</p>
+                        <div class="pf-links">
+                            <a href="barc-house.html" class="cs-btn cs-btn-primary">Case study <span aria-hidden="true">→</span></a>
+                            <a href="../projects/BarcHouse/index.html" class="cs-link" target="_blank" rel="noopener">live site ↗</a>
+                        </div>
                     </div>
+                </article>
 
+            </div>
+
+            <div class="cs-wrap">
+                <p class="pf-more">$ more pieces in progress<span aria-hidden="true">_</span></p>
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             CTA
+        ======================================= -->
+
+        <section class="cs-section cs-cta" aria-labelledby="cta-title">
+            <div class="cs-wrap">
+                <div class="cs-start">
+                    <div class="cs-hero-grid-bg" aria-hidden="true"></div>
+                    <div class="cs-start-glow" aria-hidden="true"></div>
+                    <div class="cs-start-body">
+                        <p class="cs-eyebrow">// like what you see?</p>
+                        <h2 id="cta-title">Let's build <span>yours next.</span></h2>
+                        <div class="cs-actions">
+                            <a href="contact.html" class="cs-btn cs-btn-primary">Start a project <span aria-hidden="true">→</span></a>
+                            <a href="services.html" class="cs-btn cs-btn-ghost">View services</a>
+                        </div>
+                    </div>
                 </div>
-
-            </article>
-
-            <p class="portfolio-work-more">
-                MORE PIECES IN PROGRESS
-            </p>
-
+            </div>
         </section>
 
     </main>
@@ -567,140 +407,10 @@
 
 
     <!-- ==========================================
-         MOBILE NAVIGATION
+         SHARED: MOBILE MENU + SCROLL REVEALS
     =========================================== -->
 
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
-
-                const menuToggle =
-                    document.getElementById(
-                        "menu-toggle"
-                    );
-
-                const navLinks =
-                    document.getElementById(
-                        "nav-links"
-                    );
-
-
-                if (
-                    !menuToggle ||
-                    !navLinks
-                ) {
-
-                    return;
-
-                }
-
-
-                function closeMenu() {
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-
-                    document.body.classList.remove(
-                        "menu-open"
-                    );
-
-                }
-
-
-                menuToggle.addEventListener(
-                    "click",
-                    () => {
-
-                        const isOpen =
-                            navLinks.classList.toggle(
-                                "active"
-                            );
-
-
-                        menuToggle.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            String(isOpen)
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            isOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        );
-
-
-                        document.body.classList.toggle(
-                            "menu-open",
-                            isOpen
-                        );
-
-                    }
-                );
-
-
-                navLinks
-                    .querySelectorAll("a")
-                    .forEach(
-                        (link) => {
-
-                            link.addEventListener(
-                                "click",
-                                closeMenu
-                            );
-
-                        }
-                    );
-
-
-                document.addEventListener(
-                    "keydown",
-                    (event) => {
-
-                        if (
-                            event.key === "Escape"
-                        ) {
-
-                            closeMenu();
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-    </script>
-
+    <script src="../js/site.js" defer></script>
 
 </body>
 

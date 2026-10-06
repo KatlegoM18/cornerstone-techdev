@@ -1,6 +1,13 @@
 /* =========================================================
    CORNERSTONE TECHDEV
-   HOMEPAGE — HERO CODE EDITOR TYPING ANIMATION
+   HOMEPAGE SCRIPTS
+   1. Hero code editor typing animation
+   2. Start picker (closing CTA)
+========================================================= */
+
+
+/* =========================================================
+   1. HERO CODE EDITOR TYPING ANIMATION
    The full code is already in the HTML (so it shows with
    JavaScript off or reduced motion). This script hides the
    lines and reveals them one by one, then loops.
@@ -91,5 +98,72 @@
     );
 
     observer.observe(editor);
+
+})();
+
+
+/* =========================================================
+   2. START PICKER (CLOSING CTA)
+   Picking what you're building rewrites the WhatsApp
+   message and points "Start A Project" at the contact form
+   with that service pre-selected. Without JavaScript the
+   links still work with the "New website" defaults.
+========================================================= */
+
+(() => {
+
+    const picker = document.querySelector(".ht-start");
+
+    if (!picker) {
+        return;
+    }
+
+    const chips = Array.from(picker.querySelectorAll(".ht-chip"));
+    const msgBox = picker.querySelector(".ht-start-msg");
+    const msgText = picker.querySelector("[data-start-msg]");
+    const waLink = picker.querySelector("[data-start-wa]");
+    const formLink = picker.querySelector("[data-start-form]");
+
+    const WHATSAPP = "https://wa.me/27813694172";
+    const CONTACT = "pages/contact.html";
+
+    const reduceMotion =
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const messageFor = (label) => label
+        ? `Hi CornerStone, I'm looking for ${label}. Can we chat?`
+        : "Hi CornerStone, I have an idea and I'd like help working out what to build.";
+
+    let swapTimer = null;
+
+    const select = (chip) => {
+
+        chips.forEach((c) => {
+            c.setAttribute("aria-pressed", String(c === chip));
+        });
+
+        const message = messageFor(chip.dataset.label);
+
+        waLink.href = `${WHATSAPP}?text=${encodeURIComponent(message)}`;
+        formLink.href = `${CONTACT}?project=${encodeURIComponent(chip.dataset.project)}`;
+
+        if (reduceMotion) {
+            msgText.textContent = message;
+            return;
+        }
+
+        // Brief blur so the old and new message read as one change.
+        clearTimeout(swapTimer);
+        msgBox.classList.add("is-swapping");
+
+        swapTimer = setTimeout(() => {
+            msgText.textContent = message;
+            msgBox.classList.remove("is-swapping");
+        }, 120);
+    };
+
+    chips.forEach((chip) => {
+        chip.addEventListener("click", () => select(chip));
+    });
 
 })();

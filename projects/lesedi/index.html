@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lesedi Wine Estate | Stellenbosch</title>
-    <meta name="description" content="Lesedi: wine made in the last light of the Helderberg. Turn the bottle to read the label. A concept site by CornerStone TechDev.">
+    <title>Lesedi Wine Estate | Helderberg, Stellenbosch</title>
+    <meta name="description" content="Lesedi Wine Estate: wine made in the last light of the Helderberg, Stellenbosch. Explore the collection, book a sunset tasting and join the Last Light Society.">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lesedi Wine Estate">
-    <meta property="og:title" content="Lesedi Wine Estate | Stellenbosch">
+    <meta property="og:title" content="Lesedi Wine Estate | Helderberg, Stellenbosch">
     <meta property="og:description" content="Wine made in the last light of the Helderberg. Turn the bottle to read the label.">
     <meta property="og:url" content="https://cornerstonetechdev.co.za/projects/lesedi/">
     <meta property="og:image" content="https://cornerstonetechdev.co.za/images/portfolio/lesedi-card.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#1a0f12">
+    <meta name="theme-color" content="#140b0d">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a0f12'/%3E%3Ccircle cx='16' cy='19' r='7' fill='%23e6b36a'/%3E%3Cpath d='M3 22c5-4 9-5 13-3s8 1 13-3v13H3z' fill='%231a0f12'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23140b0d'/%3E%3Ccircle cx='16' cy='19' r='7' fill='%23d9b273'/%3E%3Cpath d='M3 22c5-4 9-5 13-3s8 1 13-3v13H3z' fill='%23140b0d'/%3E%3C/svg%3E">
 
     <link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -32,10 +32,33 @@
             }
         }
     </script>
+    <script type="module" src="js/site.js"></script>
     <script type="module" src="js/main.js"></script>
 </head>
 
 <body data-wine="0" data-face="0">
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ======================================
+         AGE GATE
+    ======================================= -->
+
+    <div class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" hidden>
+        <div class="age-gate-card">
+            <svg class="emblem" viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M1 18c6-4 11-5 19-3s13 1 19-3"/></svg>
+            <p class="age-gate-brand">Lesedi</p>
+            <p class="eyebrow">Wine Estate · Stellenbosch</p>
+            <h2 id="age-title">Are you of legal drinking age?</h2>
+            <p class="age-gate-text">You must be 18 or older to enter this site.</p>
+            <div class="age-gate-actions">
+                <button type="button" class="btn btn-solid" data-age="yes">Yes, I am 18 or older</button>
+                <button type="button" class="btn btn-ghost" data-age="no">No</button>
+            </div>
+            <p class="age-gate-note" id="age-gate-note" role="status"></p>
+            <p class="age-gate-fine">Please enjoy responsibly. Not for sale to persons under the age of 18.</p>
+        </div>
+    </div>
 
     <div class="sky" aria-hidden="true">
         <div class="sky-sun"></div>
@@ -45,33 +68,90 @@
         </svg>
     </div>
 
+    <!-- ======================================
+         HEADER
+    ======================================= -->
+
+    <div class="announce">
+        <p>Tasting room open Friday to Sunday, 10:00 to 18:00 <span class="hide-sm">· Complimentary delivery in South Africa on orders over R1 500</span></p>
+    </div>
+
     <header class="site-header">
-        <a href="#top" class="brand" aria-label="Lesedi, back to top">
-            <svg viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M1 18c6-4 11-5 19-3s13 1 19-3"/></svg>
-            <span>Lesedi</span>
-        </a>
-        <nav class="site-nav" aria-label="Main">
-            <a href="#wines">The wines</a>
-            <a href="#estate">The estate</a>
-            <a href="#visit">Visit</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+            <div class="nav-group">
+                <a href="#wines">The Wines</a>
+                <a href="#estate">The Estate</a>
+                <a href="#experiences">Experiences</a>
+            </div>
+            <div class="nav-group">
+                <a href="#club">Wine Club</a>
+                <a href="#visit">Visit</a>
+            </div>
+            <p class="nav-foot">Helderberg slopes, Stellenbosch<br>Fri–Sun · 10:00–18:00</p>
         </nav>
-        <a href="#visit" class="header-cta">Book <span class="hide-sm">a sunset </span>tasting</a>
+
+        <a href="#top" class="brand" aria-label="Lesedi Wine Estate, back to top">
+            <svg class="emblem" viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M1 18c6-4 11-5 19-3s13 1 19-3"/></svg>
+            <span class="brand-name">Lesedi</span>
+            <span class="brand-sub">Wine Estate</span>
+        </a>
+
+        <div class="header-actions">
+            <button type="button" class="cart-toggle" aria-controls="cart" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+                <span class="visually-hidden">Cart,</span>
+                <span class="cart-count" data-cart-count>0</span>
+                <span class="visually-hidden">items</span>
+            </button>
+            <a href="#visit" class="header-cta">Book<span class="hide-md">&nbsp;a tasting</span></a>
+        </div>
     </header>
 
-    <main id="top">
+
+    <main id="main">
 
         <!-- ======================================
-             THE STAGE: 3D BOTTLE + LABEL READER
+             HERO
         ======================================= -->
 
-        <section class="stage" id="wines" aria-label="The wines">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <p class="eyebrow reveal">Helderberg · Stellenbosch · Est. 1968</p>
+                <h1 id="hero-title" class="reveal">Wine made in<br> the <em>last light.</em></h1>
+                <p class="hero-lede reveal">
+                    Lesedi means “light” in Setswana. Our slopes hold the sun long after
+                    the valley has gone dark, and every bottle carries that last hour of it.
+                </p>
+                <div class="hero-actions reveal">
+                    <a href="#wines" class="btn btn-solid">Explore the wines</a>
+                    <a href="#visit" class="btn btn-ghost">Book a sunset tasting</a>
+                </div>
+            </div>
+
+            <div class="hero-foot">
+                <span>33°59′ S · 18°52′ E</span>
+                <a href="#wines" class="scroll-cue" aria-label="Scroll to the wines"><i></i></a>
+                <span>280–420 m above False Bay</span>
+            </div>
+        </section>
+
+
+        <!-- ======================================
+             THE COLLECTION: 3D BOTTLE + LABEL READER
+        ======================================= -->
+
+        <section class="stage" id="wines" aria-labelledby="wines-title">
 
             <div class="stage-intro">
-                <p class="eyebrow">Stellenbosch · Helderberg · Est. 1968</p>
-                <h1>Wine made<br> in the <em>last light.</em></h1>
+                <p class="eyebrow">The Collection</p>
+                <h2 id="wines-title">Three wines,<br> <em>three slopes.</em></h2>
                 <p class="stage-lede">
-                    Lesedi means "light" in Setswana. Our slopes catch the sun long
-                    after the valley has gone dark, and every bottle carries that last hour of it.
+                    Each wine comes from a single block, picked by hand and fermented on its own.
+                    Turn the bottle to read the label.
                 </p>
 
                 <div class="wine-picker" role="radiogroup" aria-label="Choose a wine">
@@ -98,7 +178,7 @@
                 <div class="bottle-fallback">
                     <svg viewBox="0 0 120 360"><path d="M48 10h24v70c0 20 38 40 38 80v180c0 8-6 12-12 12H22c-6 0-12-4-12-12V160c0-40 38-60 38-80z"/></svg>
                 </div>
-                <p class="drag-hint"><span class="drag-hint-icon">⟷</span> Drag the bottle to read the label</p>
+                <p class="drag-hint"><span class="drag-hint-icon">⟷</span> Drag to turn the bottle</p>
             </div>
 
             <div class="label-reader">
@@ -117,8 +197,33 @@
                 <div class="face-panel" id="face-panel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
                     <!-- filled by main.js -->
                 </div>
+
+                <div class="reader-buy">
+                    <div class="reader-buy-price">
+                        <strong data-buy-price>R245</strong>
+                        <span data-buy-meta>750 ml · 13.5%</span>
+                    </div>
+                    <button type="button" class="btn btn-solid" data-add="0">Add to cart</button>
+                </div>
             </div>
 
+        </section>
+
+
+        <!-- ======================================
+             PHILOSOPHY
+        ======================================= -->
+
+        <section class="philosophy light" aria-label="Our philosophy">
+            <svg class="emblem emblem-lg reveal" viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M1 18c6-4 11-5 19-3s13 1 19-3"/></svg>
+            <blockquote class="reveal">
+                <p>“We don’t chase the sun. We wait for the hour it leaves, when the slope cools,
+                   the breeze comes off the bay, and the grapes finally <em>slow down.</em>”</p>
+                <footer>
+                    <span class="sig">Lerato Mokgosi</span>
+                    <span class="sig-role">Cellarmaster</span>
+                </footer>
+            </blockquote>
         </section>
 
 
@@ -126,52 +231,189 @@
              THE ESTATE
         ======================================= -->
 
-        <section class="estate" id="estate">
-            <div class="estate-copy">
-                <p class="eyebrow">The estate</p>
-                <h2>Three generations, <em>one late hour.</em></h2>
-                <p>
-                    The farm sits high on the western face of the Helderberg, where
-                    the False Bay breeze arrives every afternoon and the sun sets
-                    over the water instead of behind the mountain. That extra hour of
-                    light ripens the grapes slowly. The breeze keeps them fresh.
-                </p>
-                <p>
-                    We pick by hand and ferment each block on its own, so each bottle tastes of
-                    one slope, one soil and one season.
-                </p>
+        <section class="estate light" id="estate" aria-labelledby="estate-title">
+
+            <div class="estate-grid">
+                <figure class="media media-tall reveal">
+                    <svg viewBox="0 0 600 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: vineyard rows running down the Helderberg at sunset">
+                        <defs>
+                            <linearGradient id="vy-sky" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#2a1719"/>
+                                <stop offset=".55" stop-color="#8a4630"/>
+                                <stop offset="1" stop-color="#e3a764"/>
+                            </linearGradient>
+                            <linearGradient id="vy-ground" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#3b2220"/>
+                                <stop offset="1" stop-color="#140b0d"/>
+                            </linearGradient>
+                            <radialGradient id="vy-sun" cx=".5" cy=".5" r=".5">
+                                <stop offset="0" stop-color="#ffe2a8"/>
+                                <stop offset=".35" stop-color="#f5c56a" stop-opacity=".7"/>
+                                <stop offset="1" stop-color="#f5c56a" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                        <rect width="600" height="760" fill="url(#vy-sky)"/>
+                        <circle cx="360" cy="262" r="190" fill="url(#vy-sun)"/>
+                        <circle cx="360" cy="262" r="30" fill="#ffe7b8"/>
+                        <path d="M0 330 C80 300 140 250 220 262 C300 274 340 230 420 236 C500 242 550 290 600 300 V420 H0Z" fill="#5a2c27"/>
+                        <path d="M0 380 C110 360 200 372 300 356 C400 340 500 360 600 350 V440 H0Z" fill="#3a1f1f"/>
+                        <path d="M0 410 L600 400 V760 H0Z" fill="url(#vy-ground)"/>
+                        <g stroke="#d99a5a" stroke-opacity=".55" stroke-width="2" fill="none" stroke-dasharray="1 7" stroke-linecap="round">
+                            <path d="M300 404 L-400 760"/><path d="M300 404 L-200 760"/><path d="M300 404 L-30 760"/>
+                            <path d="M300 404 L120 760"/><path d="M300 404 L250 760"/><path d="M300 404 L370 760"/>
+                            <path d="M300 404 L500 760"/><path d="M300 404 L640 760"/><path d="M300 404 L800 760"/>
+                            <path d="M300 404 L1000 760"/>
+                        </g>
+                        <g stroke="#f0c079" stroke-opacity=".25" stroke-width="1">
+                            <path d="M0 470 H600"/><path d="M0 540 H600"/><path d="M0 640 H600"/>
+                        </g>
+                    </svg>
+                    <figcaption>The Klipkop bush vines, planted 1974</figcaption>
+                </figure>
+
+                <div class="estate-copy">
+                    <p class="eyebrow">The Estate</p>
+                    <h2 id="estate-title" class="reveal">Three generations,<br> <em>one late hour.</em></h2>
+                    <p class="reveal">
+                        The farm sits high on the western face of the Helderberg, where the False Bay
+                        breeze arrives every afternoon and the sun sets over the water instead of behind
+                        the mountain. That extra hour of light ripens the grapes slowly. The breeze keeps
+                        them fresh.
+                    </p>
+                    <p class="reveal">
+                        We farm forty-two hectares by hand and without irrigation on the old blocks,
+                        and ferment each one on its own, so every bottle tastes of one slope, one soil
+                        and one season.
+                    </p>
+
+                    <dl class="estate-stats reveal">
+                        <div><dt>Under vine</dt><dd>42<small>ha</small></dd></div>
+                        <div><dt>Elevation</dt><dd>280–420<small>m</small></dd></div>
+                        <div><dt>Oldest block</dt><dd>1974</dd></div>
+                        <div><dt>To the ocean</dt><dd>9<small>km</small></dd></div>
+                    </dl>
+                </div>
             </div>
 
-            <dl class="estate-stats">
-                <div><dt>Under vine</dt><dd>42<small>ha</small></dd></div>
-                <div><dt>Elevation</dt><dd>280–420<small>m</small></dd></div>
-                <div><dt>Oldest block</dt><dd>1974</dd></div>
-                <div><dt>To the ocean</dt><dd>9<small>km</small></dd></div>
-            </dl>
+            <ol class="timeline reveal" aria-label="Estate history">
+                <li><span class="tl-year">1968</span><span class="tl-text">The first vines go into the lower slopes of the farm.</span></li>
+                <li><span class="tl-year">1974</span><span class="tl-text">Klipkop is planted to Chenin Blanc bush vines. They still bear today.</span></li>
+                <li><span class="tl-year">1998</span><span class="tl-text">Laaste Lig, our highest block, is planted to Pinotage at 420 m.</span></li>
+                <li><span class="tl-year">2019</span><span class="tl-text">A new gravity-fed cellar, and the first Cap Classique is disgorged.</span></li>
+            </ol>
         </section>
 
 
         <!-- ======================================
-             VISIT
+             EXPERIENCES
         ======================================= -->
 
-        <section class="visit" id="visit">
+        <section class="experiences light-alt" id="experiences" aria-labelledby="exp-title">
+            <div class="section-head">
+                <p class="eyebrow">Experiences</p>
+                <h2 id="exp-title" class="reveal">Come for the wine.<br> <em>Stay for the light.</em></h2>
+                <p class="section-lede reveal">Forty-five minutes from Cape Town, at the top of a gravel road. Every visit is seated and hosted, so please book ahead.</p>
+            </div>
+
+            <div class="exp-grid">
+                <article class="exp-card reveal">
+                    <div class="exp-media exp-media-sunset" aria-hidden="true">
+                        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+                            <circle cx="200" cy="190" r="46" fill="#ffd894"/>
+                            <path d="M0 200 C80 180 140 150 220 162 C300 174 340 150 400 156 V260 H0Z" fill="#4a2424"/>
+                            <path d="M0 226 C120 212 220 222 400 208 V260 H0Z" fill="#1e1012"/>
+                        </svg>
+                    </div>
+                    <div class="exp-body">
+                        <p class="exp-meta">75 minutes · Friday to Sunday</p>
+                        <h3>Sunset Tasting</h3>
+                        <p>Five wines on the stoep as the light goes, seated at 17:00 in summer and 16:00 in winter.</p>
+                        <div class="exp-foot">
+                            <span class="exp-price">R180 <small>per person</small></span>
+                            <a href="#visit" class="link-arrow" data-experience="sunset">Reserve</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-card reveal">
+                    <div class="exp-media exp-media-cellar" aria-hidden="true">
+                        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+                            <g fill="none" stroke="#c99a5c" stroke-opacity=".7">
+                                <circle cx="90" cy="150" r="58"/><circle cx="90" cy="150" r="44"/><circle cx="90" cy="150" r="8"/>
+                                <circle cx="210" cy="150" r="58"/><circle cx="210" cy="150" r="44"/><circle cx="210" cy="150" r="8"/>
+                                <circle cx="330" cy="150" r="58"/><circle cx="330" cy="150" r="44"/><circle cx="330" cy="150" r="8"/>
+                                <path d="M0 214 H400"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="exp-body">
+                        <p class="exp-meta">2 hours · Saturday mornings</p>
+                        <h3>Block &amp; Barrel Walk</h3>
+                        <p>Walk the 1974 bush vines with our viticulturist, then taste from barrel in the cellar.</p>
+                        <div class="exp-foot">
+                            <span class="exp-price">R420 <small>per person</small></span>
+                            <a href="#visit" class="link-arrow" data-experience="walk">Reserve</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-card reveal">
+                    <div class="exp-media exp-media-table" aria-hidden="true">
+                        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+                            <g fill="none" stroke="#6e1f2e" stroke-opacity=".55" stroke-width="1.5">
+                                <path d="M40 170 H360"/><path d="M60 170 L46 230"/><path d="M340 170 L354 230"/>
+                            </g>
+                            <g fill="#6e1f2e" fill-opacity=".8">
+                                <path d="M110 118 h16 l-2 26 a6 6 0 0 1-12 0z"/><rect x="117" y="144" width="2" height="22"/><rect x="110" y="166" width="16" height="3"/>
+                                <path d="M190 118 h16 l-2 26 a6 6 0 0 1-12 0z"/><rect x="197" y="144" width="2" height="22"/><rect x="190" y="166" width="16" height="3"/>
+                                <path d="M270 118 h16 l-2 26 a6 6 0 0 1-12 0z"/><rect x="277" y="144" width="2" height="22"/><rect x="270" y="166" width="16" height="3"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="exp-body">
+                        <p class="exp-meta">3 courses · Sundays from 12:30</p>
+                        <h3>Long-Table Lunch</h3>
+                        <p>A seasonal Cape menu at one shared table, paired with library vintages from the cellar.</p>
+                        <div class="exp-foot">
+                            <span class="exp-price">R950 <small>per person</small></span>
+                            <a href="#visit" class="link-arrow" data-experience="lunch">Reserve</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- ======================================
+             VISIT / RESERVE
+        ======================================= -->
+
+        <section class="visit" id="visit" aria-labelledby="visit-title">
             <div class="visit-card">
                 <div class="visit-info">
                     <p class="eyebrow">Visit</p>
-                    <h2>Sunset <em>tastings.</em></h2>
+                    <h2 id="visit-title">Reserve <em>a table.</em></h2>
                     <p>
-                        Five wines on the stoep as the light goes. Friday to Sunday,
-                        seated at 17:00 in summer and 16:00 in winter.
+                        Tell us when you’d like to come and we’ll hold a table on the stoep.
+                        Groups larger than eight, please call the cellar door.
                     </p>
                     <ul class="visit-meta">
-                        <li><span>Where</span>Helderberg slopes, Stellenbosch</li>
-                        <li><span>When</span>Fri–Sun · Tastings 10:00–18:00</li>
-                        <li><span>Sunset flight</span>R180 per person</li>
+                        <li><span>Where</span>Helderberg slopes, Stellenbosch, 7600</li>
+                        <li><span>Tasting room</span>Fri–Sun · 10:00–18:00</li>
+                        <li><span>Cellar door</span>+27 (0)21 000 0000</li>
+                        <li><span>From Cape Town</span>45 minutes via the N2</li>
                     </ul>
                 </div>
 
                 <form class="visit-form" id="visit-form" novalidate>
+                    <label class="visit-form-wide">
+                        <span>Experience</span>
+                        <select name="experience">
+                            <option value="sunset">Sunset Tasting · R180 pp</option>
+                            <option value="walk">Block &amp; Barrel Walk · R420 pp</option>
+                            <option value="lunch">Long-Table Lunch · R950 pp</option>
+                        </select>
+                    </label>
                     <label>
                         <span>Date</span>
                         <input type="date" name="date" required>
@@ -179,28 +421,152 @@
                     <label>
                         <span>Guests</span>
                         <select name="guests">
-                            <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                            <option>1</option><option selected>2</option><option>3</option><option>4</option>
+                            <option>5</option><option>6</option><option>7</option><option>8</option>
                         </select>
                     </label>
                     <label class="visit-form-wide">
-                        <span>Name</span>
+                        <span>Full name</span>
                         <input type="text" name="name" autocomplete="name" required>
                     </label>
-                    <button type="submit">Reserve a table</button>
+                    <label class="visit-form-wide">
+                        <span>Email</span>
+                        <input type="email" name="email" autocomplete="email" required>
+                    </label>
+                    <button type="submit" class="btn btn-solid">Request reservation</button>
                     <p class="visit-form-note" id="visit-form-note" role="status"></p>
                 </form>
             </div>
         </section>
 
+
+        <!-- ======================================
+             WINE CLUB
+        ======================================= -->
+
+        <section class="club light" id="club" aria-labelledby="club-title">
+            <div class="club-grid">
+                <div class="club-copy">
+                    <p class="eyebrow">The Last Light Society</p>
+                    <h2 id="club-title" class="reveal">First to the cellar,<br> <em>twice a year.</em></h2>
+                    <p class="reveal">
+                        Members receive each release before it reaches the cellar door, along with
+                        library wines we never sell publicly and an evening on the farm at harvest.
+                    </p>
+                    <ul class="club-benefits reveal">
+                        <li>15% off every bottle, all year</li>
+                        <li>Access to library vintages and large formats</li>
+                        <li>Two complimentary sunset tastings each year</li>
+                        <li>An invitation to the members’ harvest supper</li>
+                    </ul>
+                </div>
+
+                <div class="club-tiers">
+                    <article class="tier reveal">
+                        <p class="tier-name">Six</p>
+                        <p class="tier-price">R1 750 <small>per release</small></p>
+                        <p class="tier-text">Six bottles in autumn and spring, chosen by the cellarmaster.</p>
+                        <a href="#club-join" class="btn btn-outline-dark" data-tier="Six">Choose Six</a>
+                    </article>
+                    <article class="tier tier-featured reveal">
+                        <p class="tier-flag">Most chosen</p>
+                        <p class="tier-name">Twelve</p>
+                        <p class="tier-price">R3 300 <small>per release</small></p>
+                        <p class="tier-text">Twelve bottles, including one library wine in every case.</p>
+                        <a href="#club-join" class="btn btn-solid" data-tier="Twelve">Choose Twelve</a>
+                    </article>
+
+                    <form class="club-join" id="club-join" novalidate>
+                        <label>
+                            <span class="visually-hidden">Email address</span>
+                            <input type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+                        </label>
+                        <input type="hidden" name="tier" value="Twelve">
+                        <button type="submit" class="btn btn-solid">Request membership</button>
+                        <p class="club-note" role="status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+
+    <!-- ======================================
+         FOOTER
+    ======================================= -->
+
     <footer class="site-footer">
-        <p>
-            Lesedi is a fictional estate: a concept site designed and built by
-            <a href="https://cornerstonetechdev.co.za/pages/portfolio">CornerStone TechDev</a>.
-        </p>
-        <p>Please enjoy responsibly. Not for sale to persons under the age of 18.</p>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#top" class="brand brand-footer" aria-label="Lesedi Wine Estate, back to top">
+                    <svg class="emblem" viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M1 18c6-4 11-5 19-3s13 1 19-3"/></svg>
+                    <span class="brand-name">Lesedi</span>
+                    <span class="brand-sub">Wine Estate</span>
+                </a>
+                <p>Wine made in the last light of the Helderberg.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Visit</h3>
+                <p>Helderberg slopes<br>Stellenbosch, 7600<br>South Africa</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hours</h3>
+                <p>Tasting room<br>Fri–Sun · 10:00–18:00<br>Closed public holidays</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#wines">The Wines</a></li>
+                    <li><a href="#estate">The Estate</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#club">Wine Club</a></li>
+                </ul>
+            </div>
+
+            <form class="footer-news" id="news-form" novalidate>
+                <h3>Letters from the farm</h3>
+                <p>Harvest notes and new releases, four times a year.</p>
+                <div class="news-row">
+                    <label><span class="visually-hidden">Email address</span>
+                        <input type="email" name="email" placeholder="Email address" autocomplete="email" required>
+                    </label>
+                    <button type="submit" aria-label="Subscribe">→</button>
+                </div>
+                <p class="news-note" role="status"></p>
+            </form>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span data-year>2026</span> Lesedi Wine Estate · Please enjoy responsibly. Not for sale to persons under the age of 18.</p>
+            <p>
+                A fictional estate: concept site designed and built by
+                <a href="https://cornerstonetechdev.co.za/pages/portfolio">CornerStone TechDev</a>.
+            </p>
+        </div>
     </footer>
+
+
+    <!-- ======================================
+         CART DRAWER
+    ======================================= -->
+
+    <div class="cart-scrim" data-cart-close hidden></div>
+    <aside class="cart" id="cart" aria-label="Your cart" aria-hidden="true" inert>
+        <div class="cart-head">
+            <h2>Your cart</h2>
+            <button type="button" class="cart-close" data-cart-close aria-label="Close cart">×</button>
+        </div>
+        <ul class="cart-items" data-cart-items></ul>
+        <p class="cart-empty" data-cart-empty>Your cart is empty. Turn a bottle and add a wine you like.</p>
+        <div class="cart-foot">
+            <div class="cart-total"><span>Subtotal</span><strong data-cart-total>R0</strong></div>
+            <p class="cart-ship" data-cart-ship></p>
+            <button type="button" class="btn btn-solid cart-checkout" data-checkout>Checkout</button>
+            <p class="cart-note" data-cart-note role="status"></p>
+        </div>
+    </aside>
 
 </body>
 </html>

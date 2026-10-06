@@ -42,12 +42,7 @@
     >
 
     <!-- PORTFOLIO CSS -->
-    <link
-        rel="stylesheet"
-        href="../css/projects.css"
-    >
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -55,10 +50,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
     <!-- MOLTEN METAL BACKGROUND -->
     <script
@@ -170,256 +165,198 @@
          MAIN
     =========================================== -->
 
-    <main>
+    <main class="cs" id="main">
 
 
         <!-- ======================================
              HERO
         ======================================= -->
 
-        <section class="portfolio-hero">
+        <section class="pg-hero" aria-labelledby="page-title">
 
-            <div class="portfolio-hero-content">
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
 
-                <p class="portfolio-eyebrow">
-                    CLIENT PROJECTS
-                </p>
+            <div class="cs-wrap pg-hero-layout is-single">
 
-                <h1>
-                    BUILT FOR
-                    <span>
-                        REAL PEOPLE.
-                    </span>
-                </h1>
+                <div>
+                    <p class="pg-path">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.2"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>
+                        <span>cornerstonetechdev.co.za/<b>projects</b></span>
+                    </p>
 
-                <p class="portfolio-hero-description">
-                    Real websites and digital solutions built for
-                    real clients. Each project starts with a problem,
-                    a purpose, and an understanding of the people
-                    it needs to serve.
-                </p>
+                    <p class="cs-eyebrow">// client projects</p>
+
+                    <h1 id="page-title">
+                        Built for
+                        <span>real people.</span>
+                    </h1>
+
+                    <p class="pg-lede">
+                        Real websites and digital solutions built for real clients. Each project starts
+                        with a problem, a purpose, and an understanding of the people it needs to serve.
+                    </p>
+                </div>
 
             </div>
 
         </section>
 
 
+
         <!-- ======================================
-             PROJECT CAROUSEL
+             CLIENT WORK (slots fill as case studies are published)
+             To add a project: replace a .pj-slot with a .cs-card-work style card.
         ======================================= -->
 
-        <section class="portfolio-projects">
+        <section class="cs-section" aria-labelledby="work-title">
 
-            <div class="portfolio-heading">
+            <div class="cs-wrap">
 
-                <div>
-
-                    <p class="portfolio-section-label">
-                        SELECTED CLIENT WORK
-                    </p>
-
-                    <h2>
-                        BUILT WITH
-                        <span>
-                            PURPOSE.
-                        </span>
-                    </h2>
-
+                <div class="cs-head cs-head-row">
+                    <div>
+                        <p class="cs-eyebrow">// selected client work</p>
+                        <h2 class="cs-h2" id="work-title">
+                            Case studies
+                            <span>are on their way.</span>
+                        </h2>
+                    </div>
+                    <a href="portfolio.html" class="cs-link">see concept work →</a>
                 </div>
 
-                <p class="portfolio-heading-description">
-                    A look at the client work behind CornerStone —
-                    from the problem that needed solving to the
-                    experience we built around it.
-                </p>
+                <div class="pj-grid">
 
-            </div>
-
-
-            <div
-                class="portfolio-carousel"
-                id="portfolio-carousel"
-            >
-
-                <div
-                    class="portfolio-carousel-viewport"
-                    aria-label="CornerStone TechDev project portfolio"
-                >
-
-                    <div
-                        class="portfolio-carousel-track"
-                        id="portfolio-carousel-track"
-                    ></div>
-
-                </div>
-
-
-                <!-- CONTROLS -->
-
-                <div class="portfolio-carousel-controls">
-
-                    <button
-                        type="button"
-                        class="portfolio-carousel-prev"
-                        id="portfolio-carousel-prev"
-                        aria-label="Previous project"
-                    >
-                        ←
-                    </button>
-
-
-                    <div class="portfolio-carousel-status">
-
-                        <span
-                            class="portfolio-carousel-current"
-                            id="portfolio-carousel-current"
-                        >
-                            01
-                        </span>
-
-                        <span>/</span>
-
-                        <span
-                            class="portfolio-carousel-total"
-                            id="portfolio-carousel-total"
-                        >
-                            02
-                        </span>
-
+                    <div class="pj-slot reveal" aria-hidden="true">
+                        <span class="cs-frame-bar"><i></i><i></i><i></i><span>loading case study…</span></span>
+                        <div class="pj-skel"><i class="is-img"></i><i class="is-w60"></i><i class="is-w80"></i><i class="is-w40"></i></div>
+                        <div class="pj-slot-foot"><span>status</span><b>coming soon</b></div>
                     </div>
 
+                    <div class="pj-slot is-yours reveal">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>your-business.co.za</span></span>
+                        <div class="pj-skel" aria-hidden="true"><i class="is-img"></i><i class="is-w60"></i><i class="is-w80"></i><i class="is-w40"></i></div>
+                        <div class="pj-yours">
+                            <p>This spot could be yours.</p>
+                            <a href="contact.html" class="cs-btn cs-btn-primary">Start a project <span aria-hidden="true">→</span></a>
+                        </div>
+                        <div class="pj-slot-foot"><span>status</span><b>open</b></div>
+                    </div>
 
-                    <button
-                        type="button"
-                        class="portfolio-carousel-next"
-                        id="portfolio-carousel-next"
-                        aria-label="Next project"
-                    >
-                        →
-                    </button>
+                    <div class="pj-slot reveal" aria-hidden="true">
+                        <span class="cs-frame-bar"><i></i><i></i><i></i><span>loading case study…</span></span>
+                        <div class="pj-skel"><i class="is-img"></i><i class="is-w80"></i><i class="is-w60"></i><i class="is-w40"></i></div>
+                        <div class="pj-slot-foot"><span>status</span><b>coming soon</b></div>
+                    </div>
 
                 </div>
-
-
-                <!-- INDICATORS -->
-
-                <div
-                    class="portfolio-carousel-indicators"
-                    id="portfolio-carousel-indicators"
-                    aria-label="Project slides"
-                ></div>
-
-
-                <p class="portfolio-carousel-hint">
-                    SWIPE OR DRAG TO EXPLORE
-                </p>
 
             </div>
 
         </section>
+
 
 
         <!-- ======================================
-             FULL-STACK CAPABILITY
+             BEHIND THE BUILD
         ======================================= -->
 
-        <section class="portfolio-capability">
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-labelledby="behind-title">
 
-            <div class="portfolio-capability-inner">
+            <div class="cs-wrap pg-split">
 
                 <div>
-
-                    <p class="portfolio-capability-label">
-                        EVERY PROJECT HAS A STORY
-                    </p>
-
-                    <h2>
-                        BEHIND THE
-                        <span>
-                            BUILD.
-                        </span>
+                    <p class="cs-eyebrow">// every project has a story</p>
+                    <h2 class="cs-h2" id="behind-title">
+                        Behind
+                        <span>the build.</span>
                     </h2>
-
                 </div>
 
-
-                <div class="portfolio-capability-copy">
-
+                <div class="pg-copy reveal">
                     <p>
-                        A finished website is only the surface.
-                        Every client project starts with a problem,
-                        a direction, and decisions about how the
-                        experience should work.
+                        A finished website is only the surface. Every client project starts with a
+                        problem, a direction, and decisions about how the experience should work.
                     </p>
-
                     <p>
-                        Client case studies will appear here as
-                        projects are completed. In the meantime,
-                        explore the portfolio to see the thinking
-                        behind the build.
+                        Client case studies will appear here as projects are completed, each one
+                        showing that thinking from start to launch. Every client project includes:
                     </p>
-
-                    <a
-                        href="portfolio.html"
-                        class="portfolio-services-link"
-                    >
-                        EXPLORE THE PORTFOLIO
-                        <span>→</span>
-                    </a>
-
+                    <ul class="pj-includes">
+                        <li>A direct line to the developer, from first chat to launch</li>
+                        <li>Design signed off before any code is written</li>
+                        <li>Responsive on every phone, tablet and desktop</li>
+                        <li>Portals, dashboards or logins when the business needs them</li>
+                        <li>Deployment, hosting setup and a clear handover</li>
+                        <li>Support and updates after launch</li>
+                    </ul>
                 </div>
 
             </div>
 
         </section>
+
+
+
+        <!-- ======================================
+             CONCEPT WORK STRIP
+        ======================================= -->
+
+        <section class="cs-section" aria-labelledby="concepts-title">
+
+            <div class="cs-wrap">
+
+                <div class="cs-head cs-head-row">
+                    <div>
+                        <p class="cs-eyebrow">// in the meantime</p>
+                        <h2 class="cs-h2 cs-h2-sm" id="concepts-title">Explore the concept work.</h2>
+                    </div>
+                    <a href="portfolio.html" class="cs-link">open portfolio →</a>
+                </div>
+
+                <div class="pj-strip">
+                    <a href="six-strings-higher.html" class="cs-frame reveal" aria-label="Six Strings Higher case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>six strings higher</span></span>
+                        <img src="../images/portfolio/six-strings-card.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <a href="lesedi.html" class="cs-frame reveal" aria-label="Lesedi Wine Estate case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>lesedi</span></span>
+                        <img src="../images/portfolio/lesedi-card.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <a href="paddle-out.html" class="cs-frame reveal" aria-label="Paddle Out case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>paddle out</span></span>
+                        <img src="../images/portfolio/paddle-out-card.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                    <a href="barc-house.html" class="cs-frame reveal" aria-label="Barc House case study">
+                        <span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>barc house</span></span>
+                        <img src="../images/portfolio/barc-house-card.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
 
 
         <!-- ======================================
              CTA
         ======================================= -->
 
-        <section class="portfolio-cta">
-
-            <div class="portfolio-cta-inner">
-
-                <p class="portfolio-cta-label">
-                    HAVE A PROJECT IN MIND?
-                </p>
-
-                <h2>
-                    LET'S BUILD
-                    <span>
-                        IT.
-                    </span>
-                </h2>
-
-                <p>
-                    Have an idea, a business, or a digital
-                    problem that needs solving? Let's turn
-                    it into something real.
-                </p>
-
-
-                <div class="portfolio-cta-buttons">
-
-                    <a
-                        href="contact.html"
-                        class="portfolio-cta-button primary"
-                    >
-                        START A PROJECT
-                    </a>
-
-                    <a
-                        href="services.html"
-                        class="portfolio-cta-button"
-                    >
-                        VIEW SERVICES
-                    </a>
-
+        <section class="cs-section cs-cta" aria-labelledby="cta-title">
+            <div class="cs-wrap">
+                <div class="cs-start">
+                    <div class="cs-hero-grid-bg" aria-hidden="true"></div>
+                    <div class="cs-start-glow" aria-hidden="true"></div>
+                    <div class="cs-start-body">
+                        <p class="cs-eyebrow">// have a project in mind?</p>
+                        <h2 id="cta-title">Let's build <span>it.</span></h2>
+                        <p class="cs-lead" style="margin: 18px auto 0">Have an idea, a business, or a digital problem that needs solving? Let's turn it into something real.</p>
+                        <div class="cs-actions">
+                            <a href="contact.html" class="cs-btn cs-btn-primary">Start a project <span aria-hidden="true">→</span></a>
+                            <a href="services.html" class="cs-btn cs-btn-ghost">View services</a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </section>
 
     </main>
@@ -466,142 +403,10 @@
 
 
     <!-- ==========================================
-         PORTFOLIO CAROUSEL
+         SHARED: MOBILE MENU + SCROLL REVEALS
     =========================================== -->
 
-    <script
-        src="../js/projects-carousel.js"
-    ></script>
-
-
-    <!-- ==========================================
-         MOBILE NAVIGATION
-    =========================================== -->
-
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
-
-                const menuToggle =
-                    document.getElementById(
-                        "menu-toggle"
-                    );
-
-                const navLinks =
-                    document.getElementById(
-                        "nav-links"
-                    );
-
-
-                if (
-                    !menuToggle ||
-                    !navLinks
-                ) {
-                    return;
-                }
-
-
-                function closeMenu() {
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                    document.body.classList.remove(
-                        "menu-open"
-                    );
-
-                }
-
-
-                menuToggle.addEventListener(
-                    "click",
-                    () => {
-
-                        const isOpen =
-                            navLinks.classList.toggle(
-                                "active"
-                            );
-
-
-                        menuToggle.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            String(isOpen)
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            isOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        );
-
-
-                        document.body.classList.toggle(
-                            "menu-open",
-                            isOpen
-                        );
-
-                    }
-                );
-
-
-                navLinks
-                    .querySelectorAll("a")
-                    .forEach(
-                        (link) => {
-
-                            link.addEventListener(
-                                "click",
-                                closeMenu
-                            );
-
-                        }
-                    );
-
-
-                document.addEventListener(
-                    "keydown",
-                    (event) => {
-
-                        if (
-                            event.key === "Escape"
-                        ) {
-
-                            closeMenu();
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-    </script>
+    <script src="../js/site.js" defer></script>
 
 </body>
 

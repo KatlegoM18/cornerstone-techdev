@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Six Strings Higher | Private Guitar Lessons</title>
+    <meta name="description" content="Private one-on-one acoustic guitar lessons for every level. Choose one of six paths, book a time that suits you, and learn the music you actually want to play.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Six Strings Higher">
+    <meta property="og:title" content="Six Strings Higher | Private Guitar Lessons">
+    <meta property="og:description" content="One-on-one guitar lessons, from your first chord to your own sound.">
+    <meta property="og:url" content="https://cornerstonetechdev.co.za/projects/six-strings-higher/">
+    <meta property="og:image" content="https://cornerstonetechdev.co.za/projects/six-strings-higher/assets/social-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0b0908">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+    <!-- start downloading the guitar straight away -->
+    <link rel="preload" as="image" href="assets/guitar/parts/top.webp">
+    <link rel="preload" as="image" href="assets/guitar/parts/shell.webp">
+    <link rel="preload" as="image" href="assets/guitar/parts/neck.webp">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="is-loading">
+
+    <a class="skip-link" href="#book">Skip to booking</a>
+
+
+    <!-- =========================================
+         LOADER: the six strings tune up while
+         the guitar downloads (js/core.js)
+    ========================================== -->
+
+    <div class="loader" id="loader" role="dialog" aria-modal="true" aria-labelledby="loader-title">
+        <div class="loader-inner">
+            <p class="loader-brand" id="loader-title">Six Strings Higher</p>
+
+            <div class="loader-strings" aria-hidden="true">
+                <svg viewBox="0 0 600 180" preserveAspectRatio="none">
+                    <path d="M0 15 H600"/><path d="M0 45 H600"/><path d="M0 75 H600"/>
+                    <path d="M0 105 H600"/><path d="M0 135 H600"/><path d="M0 165 H600"/>
+                </svg>
+                <ol class="loader-notes"><li>E</li><li>A</li><li>D</li><li>G</li><li>B</li><li>E</li></ol>
+            </div>
+
+            <p class="loader-status" aria-live="polite"><span data-loader-text>Tuning</span> <span class="loader-pct" data-loader-pct>0</span></p>
+
+            <div class="loader-enter" hidden>
+                <button type="button" class="btn btn-solid" data-enter="sound">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+                    Enter with sound
+                </button>
+                <button type="button" class="btn btn-ghost" data-enter="mute">Enter without sound</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- custom cursor (a guitar pick) and the scroll progress string -->
+    <div class="cursor" aria-hidden="true"><svg viewBox="0 0 40 46"><path d="M20 44C12 36 2 22 2 12 2 5 9 2 20 2s18 3 18 10c0 10-10 24-18 32z"/></svg></div>
+    <div class="progress-string" aria-hidden="true"><span></span></div>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <a href="#top" class="brand" aria-label="Six Strings Higher, back to top">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 13v38M26 13v38M34 13v38M42 13v38M50 13v38" class="brand-strings"/><path d="M39 17c-10 0-18 5-18 12 0 6 6 9 14 10 6 1 9 3 9 6 0 4-5 7-12 7-6 0-11-2-14-5" class="brand-s"/></svg>
+            <span>Six Strings <em>Higher</em></span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+            <a href="#teacher">Teacher</a>
+            <a href="#paths">Lessons</a>
+            <a href="#how">How it works</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" class="sound-toggle" aria-pressed="false" aria-label="Sound off">
+                <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="sound-label">Sound</span>
+            </button>
+            <a href="#book" class="btn btn-solid btn-sm">Book a lesson</a>
+            <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+        </div>
+
+    </header>
+
+
+    <main id="top">
+
+
+        <!-- =====================================
+             01  THE INSTRUMENT
+             The hero pins while the guitar comes
+             apart (js/guitar.js).
+        ====================================== -->
+
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+
+            <div class="hero-glow" aria-hidden="true"></div>
+
+            <div class="hero-copy">
+                <p class="kicker"><span class="dot"></span> Private guitar lessons · one-on-one · all levels</p>
+
+                <h1 id="hero-title" data-split>Every player starts with <em>one string.</em></h1>
+
+                <p class="hero-lede" data-fade>
+                    One-on-one lessons built around the music you want to play,
+                    from your first chord to your own sound.
+                </p>
+
+                <div class="hero-actions" data-fade>
+                    <a href="#book" class="btn btn-solid">Book your first lesson <span aria-hidden="true">→</span></a>
+                    <a href="#paths" class="btn btn-ghost">Explore the six paths</a>
+                </div>
+
+                <ul class="hero-facts" data-fade>
+                    <li><b>6</b> lesson paths</li>
+                    <li><b>1:1</b> every lesson</li>
+                    <li><b>R450</b> from / month</li>
+                </ul>
+            </div>
+
+            <!-- narration while the guitar comes apart -->
+            <div class="hero-narration" aria-hidden="true">
+                <p class="narr-count"><span data-part-count>00</span><small>/ 21 parts</small></p>
+                <ol class="narr-steps">
+                    <li>The strings go slack</li>
+                    <li>Tuners, neck and headstock</li>
+                    <li>Bridge, rosette and soundboard</li>
+                    <li>Every piece, one instrument</li>
+                </ol>
+            </div>
+
+            <div class="scroll-cue" aria-hidden="true">
+                <span>Scroll to take it apart</span>
+                <i></i>
+            </div>
+
+
+            <!-- GUITAR STAGE
+                 Parts were cut from one 1024 x 1536 illustration.
+                 Positions are % of that frame, so they line up exactly. -->
+
+            <div class="guitar-stage">
+                <div class="guitar-assembly" role="img" aria-label="An acoustic guitar">
+
+                    <img class="guitar-part" data-part="shell" src="assets/guitar/parts/shell.webp" alt="" style="left:18.2617%;top:45.1172%;width:64.2578%;z-index:1;">
+                    <img class="guitar-part" data-part="top" src="assets/guitar/parts/top.webp" alt="" style="left:25.9766%;top:45.1172%;width:56.5430%;z-index:2;">
+                    <img class="guitar-part" data-part="rosette" src="assets/guitar/parts/rosette.webp" alt="" style="left:44.2383%;top:55.0781%;width:19.8242%;z-index:3;">
+                    <img class="guitar-part" data-part="pickguard" src="assets/guitar/parts/pickguard.webp" alt="" style="left:58.3008%;top:55.8594%;width:14.1602%;z-index:3;">
+                    <img class="guitar-part" data-part="bridge" src="assets/guitar/parts/bridge.webp" alt="" style="left:42.6758%;top:74.7396%;width:24.8047%;z-index:3;">
+                    <img class="guitar-part" data-part="saddle" src="assets/guitar/parts/saddle.webp" alt="" style="left:50.0000%;top:75.7161%;width:11.5234%;z-index:4;">
+                    <img class="guitar-part" data-part="pin-1" src="assets/guitar/parts/pin-1.webp" alt="" style="left:50.3906%;top:77.2135%;width:1.8555%;z-index:5;">
+                    <img class="guitar-part" data-part="pin-2" src="assets/guitar/parts/pin-2.webp" alt="" style="left:52.1484%;top:77.1484%;width:1.8555%;z-index:5;">
+                    <img class="guitar-part" data-part="pin-3" src="assets/guitar/parts/pin-3.webp" alt="" style="left:54.0039%;top:77.0182%;width:1.8555%;z-index:5;">
+                    <img class="guitar-part" data-part="pin-4" src="assets/guitar/parts/pin-4.webp" alt="" style="left:55.7617%;top:76.9531%;width:1.8555%;z-index:5;">
+                    <img class="guitar-part" data-part="pin-5" src="assets/guitar/parts/pin-5.webp" alt="" style="left:57.5195%;top:76.8880%;width:1.8555%;z-index:5;">
+                    <img class="guitar-part" data-part="pin-6" src="assets/guitar/parts/pin-6.webp" alt="" style="left:59.2773%;top:76.7578%;width:1.8555%;z-index:5;">
+                    <img class="guitar-part" data-part="neck" src="assets/guitar/parts/neck.webp" alt="" style="left:44.6289%;top:13.4766%;width:14.5508%;z-index:6;">
+                    <img class="guitar-part" data-part="nut" src="assets/guitar/parts/nut.webp" alt="" style="left:49.8047%;top:13.4115%;width:6.2500%;z-index:7;">
+                    <img class="guitar-part" data-part="headstock" src="assets/guitar/parts/headstock.webp" alt="" style="left:44.7266%;top:0.0651%;width:12.0117%;z-index:7;">
+                    <img class="guitar-part" data-part="tuner-1" src="assets/guitar/parts/tuner-1.webp" alt="" style="left:43.0664%;top:8.7240%;width:7.8125%;z-index:8;">
+                    <img class="guitar-part" data-part="tuner-2" src="assets/guitar/parts/tuner-2.webp" alt="" style="left:42.5781%;top:5.5990%;width:7.8125%;z-index:8;">
+                    <img class="guitar-part" data-part="tuner-3" src="assets/guitar/parts/tuner-3.webp" alt="" style="left:42.0898%;top:2.4089%;width:7.9102%;z-index:8;">
+                    <img class="guitar-part" data-part="tuner-4" src="assets/guitar/parts/tuner-4.webp" alt="" style="left:52.9297%;top:2.9948%;width:4.7852%;z-index:8;">
+                    <img class="guitar-part" data-part="tuner-5" src="assets/guitar/parts/tuner-5.webp" alt="" style="left:53.0273%;top:5.9896%;width:5.2734%;z-index:8;">
+                    <img class="guitar-part" data-part="tuner-6" src="assets/guitar/parts/tuner-6.webp" alt="" style="left:53.8086%;top:9.1797%;width:5.0781%;z-index:8;">
+
+                    <!-- strings are vector lines so they can go slack and vibrate -->
+                    <svg class="guitar-strings" viewBox="0 0 1024 1536" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="guitar-string" d="M506 149 L519.2 215 L530.1 1172 L528 1198"/>
+                        <path class="guitar-string" d="M501 100 L532.7 215 L547.1 1172 L546 1197.5"/>
+                        <path class="guitar-string" d="M497 53 L542.5 215 L564.2 1172 L563.5 1196"/>
+                        <path class="guitar-string" d="M556 60 L552.3 215 L581.2 1172 L580.5 1193.5"/>
+                        <path class="guitar-string" d="M557 106 L562.2 215 L598.3 1172 L598.5 1191.5"/>
+                        <path class="guitar-string" d="M565 155 L571.0 215 L614.3 1172 L616 1190"/>
+                    </svg>
+
+                    <!-- part labels for the exploded view (filled by js/guitar.js) -->
+                    <div class="part-labels" aria-hidden="true"></div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             02  THE TEACHER
+             The parts fly back together into his
+             hands, then the scroll dives into the
+             soundhole (js/guitar.js).
+        ====================================== -->
+
+        <section class="teacher" id="teacher" aria-labelledby="teacher-title">
+
+            <div class="teacher-copy">
+                <p class="kicker"><span class="dot"></span> Meet your teacher</p>
+                <h2 id="teacher-title">Patient teaching. <em>Real music.</em></h2>
+                <p class="teacher-lede">
+                    Every lesson moves at your pace, with practical exercises and songs you
+                    actually want to play. No pressure, no theory for its own sake, just
+                    steady progress you can hear.
+                </p>
+                <ul class="teacher-points">
+                    <li><b>One-on-one</b><span>Every lesson is just you and your teacher.</span></li>
+                    <li><b>Structured</b><span>A clear path from your very first week.</span></li>
+                    <li><b>Personal</b><span>Built around your songs and your goals.</span></li>
+                </ul>
+            </div>
+
+            <div class="teacher-stage">
+                <div class="teacher-image">
+                    <!-- room and teacher (empty-handed), the hero guitar, then his
+                         hands on top so the guitar sits in them -->
+                    <div class="teacher-scene">
+                        <img class="teacher-bg" src="assets/teacher/teacher-anime.webp" alt="Your guitar teacher, seated in a lamp-lit room, playing an acoustic guitar" loading="lazy">
+                        <img class="teacher-guitar" src="assets/guitar/guitar-assembled.webp" alt="" aria-hidden="true" loading="lazy">
+                        <img class="teacher-hands" src="assets/teacher/teacher-anime-hands.webp" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- the soundhole: grows to fill the screen at the end of the dive -->
+            <div class="soundhole" aria-hidden="true"></div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             03  SIX PATHS
+             The strings are the lesson menu: touch
+             one to hear it, choose it to see the
+             path (js/strings.js).
+        ====================================== -->
+
+        <section class="paths" id="paths" aria-labelledby="paths-title">
+
+            <div class="paths-inner">
+
+                <div class="paths-head">
+                    <p class="kicker"><span class="dot"></span> Six strings. Six paths.</p>
+                    <h2 id="paths-title" data-split>Find your <em>sound.</em></h2>
+                    <p class="paths-lede">Run your cursor across the strings, then choose the one that fits where you are now.</p>
+                </div>
+
+                <div class="paths-board">
+
+                    <div class="strings" role="radiogroup" aria-label="Lesson paths">
+                        <button type="button" class="string-row" role="radio" aria-checked="true" data-path="foundations" data-note="E2" style="--gauge: 4.2px">
+                            <span class="sr-num">01</span><span class="sr-note">E</span>
+                            <span class="sr-name">Foundations</span><span class="sr-price">R450<small>/mo</small></span>
+                            <svg class="sr-wire" aria-hidden="true"><path/></svg>
+                        </button>
+                        <button type="button" class="string-row" role="radio" aria-checked="false" data-path="chords" data-note="A2" style="--gauge: 3.5px">
+                            <span class="sr-num">02</span><span class="sr-note">A</span>
+                            <span class="sr-name">Chords</span><span class="sr-price">R550<small>/mo</small></span>
+                            <svg class="sr-wire" aria-hidden="true"><path/></svg>
+                        </button>
+                        <button type="button" class="string-row" role="radio" aria-checked="false" data-path="rhythm" data-note="D3" style="--gauge: 2.9px">
+                            <span class="sr-num">03</span><span class="sr-note">D</span>
+                            <span class="sr-name">Rhythm</span><span class="sr-price">R550<small>/mo</small></span>
+                            <svg class="sr-wire" aria-hidden="true"><path/></svg>
+                        </button>
+                        <button type="button" class="string-row" role="radio" aria-checked="false" data-path="scales" data-note="G3" style="--gauge: 2.3px">
+                            <span class="sr-num">04</span><span class="sr-note">G</span>
+                            <span class="sr-name">Scales</span><span class="sr-price">R650<small>/mo</small></span>
+                            <svg class="sr-wire" aria-hidden="true"><path/></svg>
+                        </button>
+                        <button type="button" class="string-row" role="radio" aria-checked="false" data-path="lead" data-note="B3" style="--gauge: 1.7px">
+                            <span class="sr-num">05</span><span class="sr-note">B</span>
+                            <span class="sr-name">Lead guitar</span><span class="sr-price">R750<small>/mo</small></span>
+                            <svg class="sr-wire" aria-hidden="true"><path/></svg>
+                        </button>
+                        <button type="button" class="string-row" role="radio" aria-checked="false" data-path="advanced" data-note="E4" style="--gauge: 1.2px">
+                            <span class="sr-num">06</span><span class="sr-note">E</span>
+                            <span class="sr-name">Advanced</span><span class="sr-price">R850<small>/mo</small></span>
+                            <svg class="sr-wire" aria-hidden="true"><path/></svg>
+                        </button>
+                    </div>
+
+                    <aside class="path-card" aria-live="polite">
+                        <p class="path-level" data-path-level>Beginner</p>
+                        <h3 data-path-title>Foundations</h3>
+                        <p class="path-desc" data-path-desc>Build a strong foundation in posture, picking, basic chords and the fundamentals every guitarist needs.</p>
+                        <ul class="path-learn" data-path-learn></ul>
+                        <div class="path-foot">
+                            <p class="path-price"><span data-path-price>R450</span><small>per month · weekly lessons</small></p>
+                            <a href="#book" class="btn btn-solid" data-book-path>Book this path <span aria-hidden="true">→</span></a>
+                        </div>
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             04  HOW IT WORKS
+             A fretboard that slides sideways as
+             you scroll (js/fretboard.js).
+        ====================================== -->
+
+        <section class="how" id="how" aria-labelledby="how-title">
+
+            <div class="how-head">
+                <p class="kicker"><span class="dot"></span> How lessons work</p>
+                <h2 id="how-title" data-split>From your first lesson <em>to your own sound.</em></h2>
+            </div>
+
+            <div class="fret-viewport">
+                <div class="fret-track">
+
+                    <div class="fretboard" aria-hidden="true">
+                        <div class="fb-strings"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </div>
+
+                    <ol class="fret-steps">
+                        <li class="fret-step">
+                            <span class="fs-num">Fret 01</span>
+                            <h3>Choose your path</h3>
+                            <p>Pick the string that matches where you are. Not sure? Start with Foundations and we'll adjust after your first lesson.</p>
+                        </li>
+                        <li class="fret-step">
+                            <span class="fs-num">Fret 02</span>
+                            <h3>Book a time</h3>
+                            <p>Choose a day and time that suits you, Monday to Saturday. Your slot is held for you every week.</p>
+                        </li>
+                        <li class="fret-step">
+                            <span class="fs-num">Fret 03</span>
+                            <h3>Your first lesson</h3>
+                            <p>We look at where you are, what you want to play, and set clear goals for the months ahead.</p>
+                        </li>
+                        <li class="fret-step">
+                            <span class="fs-num">Fret 04</span>
+                            <h3>Practise with a plan</h3>
+                            <p>After every lesson you get a short practice plan, so the week between lessons really counts.</p>
+                        </li>
+                        <li class="fret-step">
+                            <span class="fs-num">Fret 05</span>
+                            <h3>Play the songs you love</h3>
+                            <p>Technique always serves the music. Every path builds toward songs you choose.</p>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             05  FAQ
+        ====================================== -->
+
+        <section class="faq" id="faq" aria-labelledby="faq-title">
+
+            <div class="faq-head">
+                <p class="kicker"><span class="dot"></span> Good to know</p>
+                <h2 id="faq-title" data-split>Questions, <em>answered.</em></h2>
+                <p>Something else on your mind? Mention it when you book and we'll get back to you before your first lesson.</p>
+            </div>
+
+            <div class="faq-list">
+                <details>
+                    <summary>I've never played before. Is that okay?</summary>
+                    <div class="faq-a"><p>Completely. Foundations starts from how to hold the guitar and your first chord. Most beginners are playing simple songs within the first few weeks.</p></div>
+                </details>
+                <details>
+                    <summary>Do I need my own guitar?</summary>
+                    <div class="faq-a"><p>It helps to have one to practise on between lessons. If you're not sure what to buy, ask in your first lesson and we'll point you in the right direction.</p></div>
+                </details>
+                <details>
+                    <summary>How long is each lesson?</summary>
+                    <div class="faq-a"><p>Lessons are weekly and an hour long. Your monthly price covers every lesson in the month, plus a practice plan after each one.</p></div>
+                </details>
+                <details>
+                    <summary>Can I switch paths later?</summary>
+                    <div class="faq-a"><p>Any time. Paths are a starting point, not a contract. If you'd be happier on a different string, we'll move you across.</p></div>
+                </details>
+                <details>
+                    <summary>Acoustic or electric?</summary>
+                    <div class="faq-a"><p>Lessons are taught on acoustic guitar. Almost everything you learn carries straight over to electric if you switch later.</p></div>
+                </details>
+                <details>
+                    <summary>What if I need to miss a lesson?</summary>
+                    <div class="faq-a"><p>Let us know at least 24 hours before and we'll move it to another time that week or the next.</p></div>
+                </details>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             06  BOOKING
+             Three steps: lesson and time, your
+             details, confirmation (js/booking.js).
+        ====================================== -->
+
+        <section class="book" id="book" aria-labelledby="book-title">
+
+            <div class="book-head">
+                <p class="kicker"><span class="dot"></span> Your next step</p>
+                <h2 id="book-title" data-split>Choose your <em>time.</em></h2>
+            </div>
+
+            <div class="book-card">
+
+                <ol class="book-progress" aria-label="Booking steps">
+                    <li class="is-current"><span>1</span> Lesson &amp; time</li>
+                    <li><span>2</span> Your details</li>
+                    <li><span>3</span> Confirmed</li>
+                </ol>
+
+                <div class="book-body">
+
+                    <div class="book-panes">
+
+                        <!-- STEP 1 -->
+                        <div class="book-pane is-active" data-pane="1">
+
+                            <fieldset class="book-field">
+                                <legend>Your path</legend>
+                                <div class="path-chips" data-path-chips></div>
+                            </fieldset>
+
+                            <div class="book-field">
+                                <div class="cal-head">
+                                    <p class="book-label" id="cal-month" aria-live="polite">Month</p>
+                                    <div class="cal-nav">
+                                        <button type="button" data-cal="-1" aria-label="Previous month">←</button>
+                                        <button type="button" data-cal="1" aria-label="Next month">→</button>
+                                    </div>
+                                </div>
+                                <div class="cal-week" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+                                <div class="cal-grid" data-cal-grid role="grid" aria-labelledby="cal-month"></div>
+                            </div>
+
+                            <fieldset class="book-field">
+                                <legend>Available times</legend>
+                                <div class="times" data-times>
+                                    <button type="button" aria-pressed="false">09:00</button>
+                                    <button type="button" aria-pressed="false">10:30</button>
+                                    <button type="button" aria-pressed="false">13:00</button>
+                                    <button type="button" aria-pressed="false">15:30</button>
+                                    <button type="button" aria-pressed="false">18:00</button>
+                                    <button type="button" aria-pressed="false">19:30</button>
+                                </div>
+                            </fieldset>
+
+                            <div class="book-actions">
+                                <p class="book-note" data-note-1 role="status"></p>
+                                <button type="button" class="btn btn-solid" data-next>Continue <span aria-hidden="true">→</span></button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <form class="book-pane" data-pane="2" id="book-form" novalidate>
+                            <div class="form-grid">
+                                <label class="field"><span>Full name</span><input type="text" name="name" autocomplete="name" required></label>
+                                <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+                                <label class="field"><span>Phone</span><input type="tel" name="phone" autocomplete="tel" placeholder="+27 …"></label>
+                                <label class="field"><span>Experience</span>
+                                    <select name="experience">
+                                        <option>Complete beginner</option>
+                                        <option>Some experience</option>
+                                        <option>Intermediate</option>
+                                        <option>Advanced</option>
+                                    </select>
+                                </label>
+                                <label class="field is-wide"><span>Anything we should know?</span><textarea name="message" rows="4" placeholder="Songs you want to learn, goals, questions…"></textarea></label>
+                            </div>
+                            <div class="book-actions">
+                                <button type="button" class="btn btn-ghost" data-back>← Back</button>
+                                <p class="book-note" data-note-2 role="status"></p>
+                                <button type="submit" class="btn btn-solid">Confirm booking <span aria-hidden="true">→</span></button>
+                            </div>
+                        </form>
+
+                        <!-- STEP 3 -->
+                        <div class="book-pane book-done" data-pane="3" tabindex="-1">
+                            <svg class="done-mark" viewBox="0 0 120 60" aria-hidden="true"><path d="M2 30 C 20 30, 26 30, 34 30 L 48 46 L 80 10 C 90 30, 100 30, 118 30"/></svg>
+                            <h3>You're in, <span data-done-name>friend</span>.</h3>
+                            <p data-done-text>Your first lesson is booked.</p>
+                            <p class="book-concept">This is a concept site by CornerStone TechDev, so no booking was made and nothing was sent.</p>
+                            <button type="button" class="btn btn-ghost" data-restart>Book another lesson</button>
+                        </div>
+
+                    </div>
+
+                    <!-- summary, always visible -->
+                    <aside class="book-summary" aria-label="Booking summary">
+                        <p class="book-label">Summary</p>
+                        <h3 data-sum-title>Foundations</h3>
+                        <dl>
+                            <div><dt>Level</dt><dd data-sum-level>Beginner</dd></div>
+                            <div><dt>Day</dt><dd data-sum-day>Choose a day</dd></div>
+                            <div><dt>Time</dt><dd data-sum-time>Choose a time</dd></div>
+                            <div><dt>Lessons</dt><dd>Weekly, one hour</dd></div>
+                        </dl>
+                        <p class="sum-price"><span data-sum-price>R450</span><small>/ month</small></p>
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+        <div class="footer-mark" aria-hidden="true">
+            <span>Six Strings</span><span><em>Higher</em></span>
+            <div class="footer-strings"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="footer-row">
+            <p>Private guitar lessons · one-on-one · all levels</p>
+            <nav aria-label="Footer">
+                <a href="#teacher">Teacher</a>
+                <a href="#paths">Lessons</a>
+                <a href="#how">How it works</a>
+                <a href="#faq">FAQ</a>
+                <a href="#book">Book</a>
+            </nav>
+        </div>
+        <p class="footer-credit">A concept site designed and built by <a href="https://cornerstonetechdev.co.za/pages/six-strings-higher.html">CornerStone TechDev</a>.</p>
+    </footer>
+
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/guitar.js"></script>
+    <script src="js/strings.js"></script>
+    <script src="js/fretboard.js"></script>
+    <script src="js/booking.js"></script>
+
+</body>
+</html>

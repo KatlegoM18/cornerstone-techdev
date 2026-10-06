@@ -39,9 +39,7 @@
     <link rel="stylesheet" href="../css/index.css">
 
     <!-- ABOUT PAGE STYLES -->
-    <link rel="stylesheet" href="../css/about.css">
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -49,10 +47,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
     <!-- MOLTEN METAL BACKGROUND -->
     <script
@@ -179,436 +177,260 @@
          MAIN CONTENT
     =========================================== -->
 
-    <main>
+    <main class="cs" id="main">
 
 
         <!-- ======================================
-             ABOUT HERO
+             HERO
         ======================================= -->
 
-        <section class="about-hero">
+        <section class="pg-hero" aria-labelledby="page-title">
 
-            <div class="about-hero-content">
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
 
-                <p class="section-label">
-                    ABOUT CORNERSTONE
-                </p>
+            <div class="cs-wrap pg-hero-layout">
 
-                <h1>
-                    Built with
-                    <span>
-                        purpose.
-                    </span>
-                </h1>
+                <div>
+                    <p class="pg-path">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.2"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>
+                        <span>cornerstonetechdev.co.za/<b>about</b></span>
+                    </p>
 
-                <p class="about-hero-description">
-                    We create modern websites and digital
-                    solutions for businesses that want to
-                    build a stronger presence online.
-                </p>
+                    <p class="cs-eyebrow">// about cornerstone</p>
 
-            </div>
+                    <h1 id="page-title">
+                        Built with
+                        <span>purpose.</span>
+                    </h1>
 
-        </section>
-
-
-        <!-- ======================================
-             OUR STORY
-        ======================================= -->
-
-        <section class="about-story">
-
-            <div class="story-label">
-
-                <p class="section-label">
-                    THE CORNERSTONE
-                </p>
-
-            </div>
-
-
-            <div class="story-content">
-
-                <h2>
-                    I didn't start CornerStone because I had
-                    <span>
-                        everything figured out.
-                    </span>
-                </h2>
-
-                <p>
-                    I started it because I didn't.
-                </p>
-
-                <p>
-                    I could feel the weight of the life I wanted
-                    sitting on my shoulders, while the reality of
-                    where I found myself felt further away than
-                    I wanted it to be. I knew I wanted to change
-                    that.
-                </p>
-
-                <p>
-                    So I decided to build.
-                </p>
-
-                <p>
-                    The name CornerStone comes from the biblical
-                    depiction of Christ as the cornerstone — the
-                    stone placed at the corner of a building's
-                    foundation, supporting and helping define the
-                    structure built upon it.
-                </p>
-
-                <p>
-                    For me, CornerStone became more than a name.
-                    It became a reminder that every structure has
-                    to start somewhere.
-                </p>
-
-                <p class="story-emphasis">
-                    This one started with the cornerstone.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ======================================
-             DESIGN PHILOSOPHY
-        ======================================= -->
-
-        <section class="about-approach">
-
-            <div class="approach-heading">
-
-                <p class="section-label">
-                    THE PHILOSOPHY
-                </p>
-
-                <h2>
-                    Web design is
-                    <span>
-                        digital art.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="philosophy-copy">
-
-                <p>
-                    I've always had a passion for design. Whether
-                    it was drawing, writing, or simply letting my
-                    imagination run, my mind never really stopped
-                    creating.
-                </p>
-
-                <p>
-                    Digital design gave that imagination somewhere
-                    to go — and a way to help other people express
-                    themselves too.
-                </p>
-
-                <p>
-                    I believe corporate work shouldn't have to feel
-                    corporate. A website can communicate what a
-                    business does while also communicating how that
-                    business wants people to feel.
-                </p>
-
-                <p class="philosophy-statement">
-                    I don't want to simply make something people
-                    see. I want to make something they experience.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ======================================
-             OUR APPROACH
-        ======================================= -->
-
-        <section class="why-cornerstone">
-
-            <div class="why-heading">
-
-                <p class="section-label">
-                    THE EXPERIENCE
-                </p>
-
-                <h2>
-                    Don't just make it
-                    <span>
-                        look good.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="why-grid">
-
-                <article class="why-item">
-
-                    <span>
-                        01
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Make It Feel
-                        </h3>
-
-                        <p>
-                            Visuals matter, but the experience
-                            matters more. Every decision should
-                            contribute to how someone feels when
-                            they interact with a digital product.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="why-item">
-
-                    <span>
-                        02
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Start With People
-                        </h3>
-
-                        <p>
-                            Good design begins with the person on
-                            the other side of the screen. Their
-                            attention, expectations and journey
-                            shape the experience.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="why-item">
-
-                    <span>
-                        03
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Turn Feeling Into Form
-                        </h3>
-
-                        <p>
-                            The hardest ideas aren't always visual.
-                            Sometimes the challenge is taking a
-                            feeling that words can't explain and
-                            translating it into an experience.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="why-item">
-
-                    <span>
-                        04
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Build With Intention
-                        </h3>
-
-                        <p>
-                            From the first idea to the final line
-                            of code, the goal is to create something
-                            purposeful — not something that simply
-                            fills a screen.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ======================================
-             BUILD
-        ======================================= -->
-
-        <section class="about-build">
-
-            <div class="build-label">
-
-                <p class="section-label">
-                    BRICK BY BRICK
-                </p>
-
-            </div>
-
-            <div class="build-content">
-
-                <h2>
-                    Start with an idea.
-                    <span>
-                        Build from there.
-                    </span>
-                </h2>
-
-                <p>
-                    Every project begins somewhere. I take the
-                    concept, break it down, and build it into
-                    something real — combining design and
-                    development from the ground up.
-                </p>
-
-                <div class="terminal-window whoami" role="group" aria-label="About the developer">
-
-                    <div class="terminal-bar" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <b>~/cornerstone</b>
-                    </div>
-
-                    <div class="terminal-body">
-                        <p><span class="prompt">$</span> whoami</p>
-                        <p class="hint">founder + developer, cornerstone techdev</p>
-                        <div class="gap"></div>
-                        <p><span class="prompt">$</span> cat stack.txt</p>
-                        <ul class="whoami-stack">
-                            <li>html</li>
-                            <li>css</li>
-                            <li>javascript</li>
-                            <li>sql</li>
-                            <li>java</li>
-                            <li>spring boot</li>
-                        </ul>
-                        <div class="gap"></div>
-                        <p><span class="prompt">$</span> cat learning.txt</p>
-                        <p class="hint">python · data analysis</p>
-                        <div class="gap"></div>
-                        <p><span class="prompt">$</span> echo $LOCATION</p>
-                        <p class="hint">cape town, south africa</p>
-                        <div class="gap"></div>
-                        <p><span class="prompt">$</span> <span class="terminal-caret" aria-hidden="true"></span></p>
-                    </div>
-
+                    <p class="pg-lede">
+                        We create modern websites and digital solutions for businesses that want to
+                        build a stronger presence online.
+                    </p>
                 </div>
 
-                <p>
-                    No shortcuts in the thinking. No separation
-                    between what something should feel like and
-                    how it should work.
-                </p>
+                <div class="term reveal" role="group" aria-label="About the developer">
+                    <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><b>~/cornerstone</b></div>
+                    <div class="term-body">
+                        <p><span class="prompt">$</span>whoami</p>
+                        <p class="out">founder + developer, cornerstone techdev</p>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span>cat stack.txt</p>
+                        <ul>
+                            <li>html</li><li>css</li><li>javascript</li><li>sql</li><li>java</li><li>spring boot</li>
+                        </ul>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span>cat learning.txt</p>
+                        <p class="out">python · data analysis</p>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span>echo $LOCATION</p>
+                        <p class="out">cape town, south africa</p>
+                        <div class="gap"></div>
+                        <p><span class="prompt">$</span><span class="term-caret" aria-hidden="true"></span></p>
+                    </div>
+                </div>
 
             </div>
 
         </section>
 
 
+
         <!-- ======================================
-             WORK
+             THE STORY
         ======================================= -->
 
-        <section class="about-work">
+        <section class="cs-section" aria-labelledby="story-title">
 
-            <div class="work-content">
+            <div class="cs-wrap pg-split">
 
-                <p class="section-label">
-                    THE WORK SPEAKS
-                </p>
+                <div>
+                    <svg class="ab-mark" viewBox="0 0 74 74" aria-hidden="true">
+                        <path class="is-fill" d="M37 8 L64 22 L37 36 L10 22 Z"/>
+                        <path d="M10 22 L10 52 L37 66 L37 36"/>
+                        <path d="M64 22 L64 52 L37 66"/>
+                    </svg>
+                    <p class="cs-eyebrow">// the cornerstone</p>
+                    <h2 class="cs-h2" id="story-title">
+                        I didn't start CornerStone because I had
+                        <span>everything figured out.</span>
+                    </h2>
+                </div>
 
-                <h2>
-                    Every project is
-                    <span>
-                        different.
-                    </span>
-                </h2>
-
-                <p>
-                    Every project presents a different challenge
-                    and an opportunity to turn an idea, a business
-                    or a feeling into something people can
-                    experience.
-                </p>
+                <div class="pg-copy reveal">
+                    <p><strong>I started it because I didn't.</strong></p>
+                    <p>
+                        I could feel the weight of the life I wanted sitting on my shoulders, while the
+                        reality of where I found myself felt further away than I wanted it to be. I knew
+                        I wanted to change that.
+                    </p>
+                    <p><strong>So I decided to build.</strong></p>
+                    <p>
+                        The name CornerStone comes from the biblical depiction of Christ as the
+                        cornerstone — the stone placed at the corner of a building's foundation,
+                        supporting and helping define the structure built upon it.
+                    </p>
+                    <p>
+                        For me, CornerStone became more than a name. It became a reminder that every
+                        structure has to start somewhere.
+                    </p>
+                    <p class="pg-statement">This one started with the cornerstone.</p>
+                </div>
 
             </div>
 
-
-            <a
-                href="../index.html#portfolio"
-                class="work-link"
-            >
-
-                <span>
-                    Explore Our Work
-                </span>
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
         </section>
+
 
 
         <!-- ======================================
-             FINAL CTA
+             THE PHILOSOPHY
         ======================================= -->
 
-        <section class="about-cta">
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-labelledby="philosophy-title">
 
-            <p class="section-label">
-                HAVE SOMETHING IN MIND?
-            </p>
+            <div class="cs-wrap pg-split">
 
-            <h2>
-                Let's build
-                <span>
-                    it.
-                </span>
-            </h2>
+                <div>
+                    <p class="cs-eyebrow">// the philosophy</p>
+                    <h2 class="cs-h2" id="philosophy-title">
+                        Web design is
+                        <span>digital art.</span>
+                    </h2>
+                </div>
 
-            <a
-                href="contact.html"
-                class="cta-button"
-            >
+                <div class="pg-copy reveal">
+                    <p>
+                        I've always had a passion for design. Whether it was drawing, writing, or simply
+                        letting my imagination run, my mind never really stopped creating.
+                    </p>
+                    <p>
+                        Digital design gave that imagination somewhere to go — and a way to help other
+                        people express themselves too.
+                    </p>
+                    <p>
+                        I believe corporate work shouldn't have to feel corporate. A website can
+                        communicate what a business does while also communicating how that business
+                        wants people to feel.
+                    </p>
+                    <p class="pg-statement">
+                        I don't want to simply make something people see.
+                        I want to make something they experience.
+                    </p>
+                </div>
 
-                <span>
-                    Start A Project
-                </span>
-
-                <span>
-                    →
-                </span>
-
-            </a>
+            </div>
 
         </section>
 
+
+
+        <!-- ======================================
+             THE EXPERIENCE
+        ======================================= -->
+
+        <section class="cs-section" aria-labelledby="experience-title">
+
+            <div class="cs-wrap">
+
+                <div class="cs-head">
+                    <p class="cs-eyebrow">// the experience</p>
+                    <h2 class="cs-h2" id="experience-title">
+                        Don't just make it
+                        <span>look good.</span>
+                    </h2>
+                </div>
+
+                <div class="ab-principles">
+                    <article class="ab-principle reveal">
+                        <span>01</span>
+                        <h3>Make it feel</h3>
+                        <p>Visuals matter, but the experience matters more. Every decision should contribute to how someone feels when they interact with a digital product.</p>
+                    </article>
+                    <article class="ab-principle reveal">
+                        <span>02</span>
+                        <h3>Start with people</h3>
+                        <p>Good design begins with the person on the other side of the screen. Their attention, expectations and journey shape the experience.</p>
+                    </article>
+                    <article class="ab-principle reveal">
+                        <span>03</span>
+                        <h3>Turn feeling into form</h3>
+                        <p>The hardest ideas aren't always visual. Sometimes the challenge is taking a feeling that words can't explain and translating it into an experience.</p>
+                    </article>
+                    <article class="ab-principle reveal">
+                        <span>04</span>
+                        <h3>Build with intention</h3>
+                        <p>From the first idea to the final line of code, the goal is to create something purposeful — not something that simply fills a screen.</p>
+                    </article>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             BRICK BY BRICK
+        ======================================= -->
+
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-labelledby="build-title">
+
+            <div class="cs-wrap pg-split">
+
+                <div>
+                    <p class="cs-eyebrow">// brick by brick</p>
+                    <h2 class="cs-h2" id="build-title">
+                        Start with an idea.
+                        <span>Build from there.</span>
+                    </h2>
+                </div>
+
+                <div class="pg-copy reveal">
+                    <p>
+                        Every project begins somewhere. I take the concept, break it down, and build it
+                        into something real — combining design and development from the ground up.
+                    </p>
+                    <p class="pg-statement">
+                        No shortcuts in the thinking. No separation between what something should
+                        feel like and how it should work.
+                    </p>
+                    <p>
+                        <strong>Every project is different.</strong> Every project presents a different
+                        challenge and an opportunity to turn an idea, a business or a feeling into
+                        something people can experience.
+                    </p>
+                    <div class="cs-actions">
+                        <a href="portfolio.html" class="cs-btn cs-btn-ghost">Explore our work <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             CTA
+        ======================================= -->
+
+        <section class="cs-section cs-cta" aria-labelledby="cta-title">
+            <div class="cs-wrap">
+                <div class="cs-start">
+                    <div class="cs-hero-grid-bg" aria-hidden="true"></div>
+                    <div class="cs-start-glow" aria-hidden="true"></div>
+                    <div class="cs-start-body">
+                        <p class="cs-eyebrow">// have something in mind?</p>
+                        <h2 id="cta-title">Let's build <span>it.</span></h2>
+                        <div class="cs-actions">
+                            <a href="contact.html" class="cs-btn cs-btn-primary">Start a project <span aria-hidden="true">→</span></a>
+                            <a href="https://wa.me/27813694172" class="cs-btn cs-btn-ghost" target="_blank" rel="noopener">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -654,98 +476,10 @@
 
 
     <!-- ==========================================
-         MOBILE MENU
+         SHARED: MOBILE MENU + SCROLL REVEALS
     =========================================== -->
 
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
-
-                const menuToggle =
-                    document.getElementById("menu-toggle");
-
-                const navLinks =
-                    document.getElementById("nav-links");
-
-
-                if (!menuToggle || !navLinks) {
-                    return;
-                }
-
-
-                menuToggle.addEventListener(
-                    "click",
-                    () => {
-
-                        const isOpen =
-                            navLinks.classList.toggle(
-                                "active"
-                            );
-
-
-                        menuToggle.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            String(isOpen)
-                        );
-
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            isOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        );
-
-                    }
-                );
-
-
-                navLinks
-                    .querySelectorAll("a")
-                    .forEach(
-                        (link) => {
-
-                            link.addEventListener(
-                                "click",
-                                () => {
-
-                                    navLinks.classList.remove(
-                                        "active"
-                                    );
-
-                                    menuToggle.classList.remove(
-                                        "active"
-                                    );
-
-                                    menuToggle.setAttribute(
-                                        "aria-expanded",
-                                        "false"
-                                    );
-
-                                    menuToggle.setAttribute(
-                                        "aria-label",
-                                        "Open navigation menu"
-                                    );
-
-                                }
-                            );
-
-                        }
-                    );
-
-            }
-        );
-
-    </script>
-
+    <script src="../js/site.js" defer></script>
 
 </body>
 

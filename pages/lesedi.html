@@ -26,10 +26,7 @@
     <meta name="description" content="Lesedi: a creative concept site by CornerStone TechDev. A 3D wine bottle you turn by hand, with a label that doubles as the menu.">
 
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/barc-house.css">
-    <link rel="stylesheet" href="../css/portfolio.css">
 
-    <!-- Shared typography (Space Grotesk + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -37,10 +34,10 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     >
 
-    <link
-        rel="stylesheet"
-        href="../css/typography.css"
-    >
+    <!-- Design system + inner page styles -->
+    <link rel="stylesheet" href="../css/cs.css">
+    <link rel="stylesheet" href="../css/pages.css">
+
 
     <script type="module" src="../js/barc-molten-metal.js"></script>
     <script type="module" src="../js/ct-logo-3d.js"></script>
@@ -79,212 +76,149 @@
         </nav>
     </header>
 
-    <main class="six-strings-case lesedi-case">
+    <main class="cs" id="main">
 
-        <section class="case-hero">
-            <div class="case-hero-content">
-                <p class="case-eyebrow">02 / PORTFOLIO PIECE</p>
-                <p class="case-category">CREATIVE CONCEPT · WINE ESTATE</p>
-                <h1>LESEDI <span>WINE ESTATE.</span></h1>
-                <p class="case-intro">
-                    A self-initiated concept for a Stellenbosch wine estate. Instead of a product grid, you pick up the bottle and turn it in your hand, and the label tells you everything.
-                </p>
 
-                <div class="case-details">
-                    <div>
-                        <span>TYPE</span>
-                        <strong>SELF-INITIATED CONCEPT</strong>
-                    </div>
-                    <div>
-                        <span>FOCUS</span>
-                        <strong>REAL-TIME 3D + INTERACTION</strong>
-                    </div>
-                    <div>
-                        <span>SCOPE</span>
-                        <strong>CONCEPT + ART DIRECTION + DEVELOPMENT</strong>
+        <!-- ======================================
+             HERO
+        ======================================= -->
+
+        <section class="pg-hero" aria-labelledby="page-title">
+
+            <div class="cs-hero-grid-bg" aria-hidden="true"></div>
+
+            <div class="cs-wrap pg-hero-layout">
+
+                <div>
+                    <a href="portfolio.html" class="case-back">← portfolio</a>
+
+                    <p class="cs-eyebrow">// 02 / creative concept · wine estate</p>
+
+                    <h1 id="page-title">
+                        Lesedi
+                        <span>Wine Estate.</span>
+                    </h1>
+
+                    <p class="pg-lede">
+                        A self-initiated concept for a Stellenbosch wine estate. Instead of a product grid,
+                        you pick up the bottle and turn it in your hand, and the label tells you everything.
+                    </p>
+
+                    <div class="cs-actions">
+                        <a href="../projects/lesedi/index.html" class="cs-btn cs-btn-primary" target="_blank" rel="noopener">Visit Lesedi <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/KatlegoM18/lesedi-wine-estate" class="cs-btn cs-btn-ghost cs-mono" target="_blank" rel="noopener">view --code</a>
                     </div>
                 </div>
 
-                <p class="case-stack"><span>built with</span> three.js · webgl · javascript · css</p>
-            </div>
-        </section>
+                <dl class="case-meta reveal">
+                    <div><dt>type</dt><dd>Self-initiated concept</dd></div>
+                    <div><dt>focus</dt><dd>Real-time 3D + interaction</dd></div>
+                    <div><dt>scope</dt><dd>Concept, art direction, development</dd></div>
+                    <div><dt>built with</dt><dd>three.js · webgl · javascript · css</dd></div>
+                </dl>
 
-        <!-- =====================================================
-             PROJECT PREVIEW
-             ===================================================== -->
-
-        <section class="case-visual">
-
-            <div class="device-composition composition-primary">
-                <div class="composition-laptop">
-                    <span class="composition-label">THE LABEL / DESKTOP</span>
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/portfolio/lesedi-desktop-label.webp"
-                            alt="Lesedi homepage at golden hour: a Chenin Blanc bottle between the headline and the label reader"
-                            draggable="false"
-                            loading="lazy"
-                        >
-                    </div>
-                </div>
-                <div class="composition-phone">
-                    <span class="composition-label">THE LABEL / MOBILE</span>
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/portfolio/lesedi-mobile-label.webp"
-                                alt="Lesedi homepage on mobile"
-                                draggable="false"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="device-composition composition-secondary">
-                <div class="composition-laptop">
-                    <span class="composition-label">IN THE GLASS / DESKTOP</span>
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/portfolio/lesedi-desktop-glass.webp"
-                            alt="The Pinotage bottle in dark green glass, turned to its tasting note, under a plum dusk sky"
-                            draggable="false"
-                            loading="lazy"
-                        >
-                    </div>
-                </div>
-                <div class="composition-phone">
-                    <span class="composition-label">IN THE GLASS / MOBILE</span>
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/portfolio/lesedi-mobile-glass.webp"
-                                alt="The Pinotage tasting note on mobile"
-                                draggable="false"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="device-composition composition-primary">
-                <div class="composition-laptop">
-                    <span class="composition-label">AT THE TABLE / DESKTOP</span>
-                    <div class="desktop-preview">
-                        <img
-                            src="../images/portfolio/lesedi-desktop-table.webp"
-                            alt="The Cap Classique bottle with a long gold foil, turned to its serving panel"
-                            draggable="false"
-                            loading="lazy"
-                        >
-                    </div>
-                </div>
-                <div class="composition-phone">
-                    <span class="composition-label">AT THE TABLE / MOBILE</span>
-                    <div class="iphone">
-                        <div class="iphone-dynamic-island"></div>
-                        <div class="iphone-screen">
-                            <img
-                                src="../images/portfolio/lesedi-mobile-table.webp"
-                                alt="The Cap Classique serving panel on mobile"
-                                draggable="false"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="iphone-home-indicator"></div>
-                    </div>
-                </div>
             </div>
 
         </section>
 
-        <!-- =====================================================
+
+
+        <!-- ======================================
+             GALLERY
+        ======================================= -->
+
+        <section class="cs-section" aria-label="Screens">
+            <div class="cs-wrap case-gallery">
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>the label · desktop</span></span>
+                            <img src="../images/portfolio/lesedi-desktop-label.webp" alt="Lesedi homepage at golden hour: a Chenin Blanc bottle between the headline and the label reader" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/portfolio/lesedi-mobile-label.webp" alt="Lesedi homepage on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">mobile</figcaption></figure>
+                </div>
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>in the glass · desktop</span></span>
+                            <img src="../images/portfolio/lesedi-desktop-glass.webp" alt="The Pinotage bottle in dark green glass, turned to its tasting note, under a plum dusk sky" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/portfolio/lesedi-mobile-glass.webp" alt="The Pinotage tasting note on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">mobile</figcaption></figure>
+                </div>
+
+                <div class="case-shot reveal">
+                    <figure>
+                        <div class="cs-frame"><span class="cs-frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>at the table · desktop</span></span>
+                            <img src="../images/portfolio/lesedi-desktop-table.webp" alt="The Cap Classique bottle with a long gold foil, turned to its serving panel" loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <figure><div class="case-phone"><img src="../images/portfolio/lesedi-mobile-table.webp" alt="The Cap Classique serving panel on mobile" loading="lazy" decoding="async"></div><figcaption class="case-phone-cap">mobile</figcaption></figure>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ======================================
              IDEA + BUILD
-             ===================================================== -->
+        ======================================= -->
 
-        <section class="case-story">
+        <section class="cs-section" style="background: var(--cs-bg-2)" aria-label="The idea and the build">
+            <div class="cs-wrap case-story">
 
-            <article class="case-story-block challenge">
-                <div class="case-story-label">
-                    01 / THE IDEA
-                </div>
-                <div class="case-story-content">
-                    <h2>
-                        THE <span>IDEA.</span>
-                    </h2>
-                    <p>
-                        Wine is bought in the hand. You pick up a bottle, turn it over and read the back. Most estate websites skip that moment and show a thumbnail and a paragraph instead.
-                    </p>
-                    <p>
-                        Lesedi puts the bottle back in your hand. Drag it and it turns. Each quarter-turn brings a new panel of the label round to the front: the wine, the tasting note, the vineyard block and what to eat with it. A reader beside the bottle shows the same panel at full size.
-                    </p>
-                    <p>
-                        Choose another wine and the bottle spins, changes shape and colour, and the whole evening sky shifts with it, from golden hour to dusk. The name comes from the same idea: Lesedi is Setswana for "light", for the last hour of sun the slopes hold onto.
-                    </p>
-                </div>
-            </article>
+                <article class="case-block reveal">
+                    <p class="case-block-label">01 / the idea</p>
+                    <h2>The idea.</h2>
+                    <p>Wine is bought in the hand. You pick up a bottle, turn it over and read the back. Most estate websites skip that moment and show a thumbnail and a paragraph instead.</p>
+                    <p>Lesedi puts the bottle back in your hand. Drag it and it turns. Each quarter-turn brings a new panel of the label round to the front: the wine, the tasting note, the vineyard block and what to eat with it. A reader beside the bottle shows the same panel at full size.</p>
+                    <p>Choose another wine and the bottle spins, changes shape and colour, and the whole evening sky shifts with it, from golden hour to dusk. The name comes from the same idea: Lesedi is Setswana for "light", for the last hour of sun the slopes hold onto.</p>
+                </article>
 
-            <article class="case-story-block solution">
-                <div class="case-story-label">
-                    02 / THE BUILD
-                </div>
-                <div class="case-story-content">
-                    <h2>
-                        THE <span>BUILD.</span>
-                    </h2>
-                    <p>
-                        There is no 3D model file. Each bottle is drawn as a side profile in code and spun into shape, so a Burgundy bottle can morph smoothly into a Bordeaux or a sparkling bottle.
-                    </p>
-                    <p>
-                        The labels are drawn live onto a canvas and wrapped around the glass as a texture. The glass highlights stay fixed to the "studio lights" while the bottle turns beneath them, which is what makes it read as real glass.
-                    </p>
-                    <p>
-                        It works with a mouse, a finger or the keyboard, settles on the nearest panel when you let go, respects reduced-motion settings and falls back to a flat bottle if 3D is unavailable.
-                    </p>
-                </div>
-            </article>
+                <article class="case-block reveal">
+                    <p class="case-block-label">02 / the build</p>
+                    <h2>The build.</h2>
+                    <p>There is no 3D model file. Each bottle is drawn as a side profile in code and spun into shape, so a Burgundy bottle can morph smoothly into a Bordeaux or a sparkling bottle.</p>
+                    <p>The labels are drawn live onto a canvas and wrapped around the glass as a texture. The glass highlights stay fixed to the "studio lights" while the bottle turns beneath them, which is what makes it read as real glass.</p>
+                    <p>Around the bottle sits a complete estate site: an age gate, a cart, bookable tastings and a wine club. It works with a mouse, a finger or the keyboard, respects reduced-motion settings and falls back to a flat bottle if 3D is unavailable.</p>
+                </article>
 
+            </div>
         </section>
 
-        <!-- =====================================================
+
+
+        <!-- ======================================
              OUTCOME
-             ===================================================== -->
+        ======================================= -->
 
-        <section class="case-outcome">
-            <p class="case-outcome-label">
-                WHY IT'S HERE
-            </p>
-            <h2>
-                ONE BOTTLE.<br>
-                <span>FOUR SIDES TO READ.</span>
-            </h2>
-            <p>
-                Lesedi is not a client project, and the estate is fictional. It shows how a product site can let people handle the product, built to show the interactive 3D work CornerStone can deliver.
-            </p>
+        <section class="cs-section case-outcome" aria-labelledby="outcome-title">
+            <div class="cs-wrap">
+                <p class="cs-eyebrow">// why it's here</p>
+                <h2 id="outcome-title" class="reveal">One bottle. <span>Four sides to read.</span></h2>
+                <p>Lesedi is not a client project, and the estate is fictional. It shows how a product site can let people handle the product, built to show the interactive 3D work CornerStone can deliver.</p>
+                <div class="cs-actions">
+                    <a href="../projects/lesedi/index.html" class="cs-btn cs-btn-primary" target="_blank" rel="noopener">Turn the bottle <span aria-hidden="true">↗</span></a>
+                    <a href="contact.html" class="cs-btn cs-btn-ghost">Start a project like this</a>
+                </div>
+            </div>
         </section>
 
-        <!-- =====================================================
-             CTA
-             ===================================================== -->
 
-        <section class="case-cta">
-            <p>
-                WANT TO TURN THE BOTTLE?
-            </p>
-            <a href="../projects/lesedi/index.html" target="_blank" rel="noopener" class="six-strings-live-link">
-                VISIT LESEDI
-                <span>→</span>
-            </a>
-            <a href="https://github.com/KatlegoM18/lesedi-wine-estate" target="_blank" rel="noopener" class="case-code-link">
-                VIEW THE CODE
-                <span>&lt;/&gt;</span>
-            </a>
+
+        <!-- ======================================
+             NEXT
+        ======================================= -->
+
+        <section class="cs-section" style="padding-top: 0; border-top: 0" aria-label="Next case study">
+            <div class="cs-wrap">
+                <a href="paddle-out.html" class="case-next">
+                    <div><small>next case study · 03</small><strong>Paddle Out</strong></div>
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
         </section>
 
     </main>
@@ -326,84 +260,11 @@
     </footer>
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+    <!-- ==========================================
+         SHARED: MOBILE MENU + SCROLL REVEALS
+    =========================================== -->
 
-            const menuToggle = document.getElementById("menu-toggle");
-            const navLinks = document.getElementById("nav-links");
-
-            if (!menuToggle || !navLinks) return;
-
-
-            function closeMenu() {
-                navLinks.classList.remove("active");
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                document.body.classList.remove("menu-open");
-            }
-
-
-            menuToggle.addEventListener("click", () => {
-
-                const isOpen =
-                    navLinks.classList.toggle("active");
-
-                menuToggle.classList.toggle(
-                    "active",
-                    isOpen
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close navigation menu"
-                        : "Open navigation menu"
-                );
-
-                document.body.classList.toggle(
-                    "menu-open",
-                    isOpen
-                );
-
-            });
-
-
-            navLinks
-                .querySelectorAll("a")
-                .forEach(link => {
-                    link.addEventListener(
-                        "click",
-                        closeMenu
-                    );
-                });
-
-
-            document.addEventListener(
-                "keydown",
-                event => {
-                    if (event.key === "Escape") {
-                        closeMenu();
-                    }
-                }
-            );
-
-        });
-    </script>
+    <script src="../js/site.js" defer></script>
 
 </body>
 </html>

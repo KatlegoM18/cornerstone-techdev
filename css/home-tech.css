@@ -905,25 +905,45 @@
 
 
 /* =========================================================
-   CLOSING CTA
+   CLOSING CTA — "START" PICKER
+   A card with a project-type picker. The chosen type
+   rewrites the WhatsApp message and pre-selects the
+   service on the contact form (js/home-tech.js).
 ========================================================= */
 
 .ht-cta {
+    --ht-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
     overflow: hidden;
-    text-align: center;
 }
 
-.ht-cta .ht-grid-bg {
-    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 18%, transparent 68%);
-    mask-image: radial-gradient(ellipse at 50% 50%, #000 18%, transparent 68%);
-}
-
-.ht-cta .ht-wrap {
+.ht-start {
     position: relative;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow: hidden;
+    padding: clamp(32px, 6vw, 80px);
+    border: 1px solid var(--ht-line-warm);
+    border-radius: 24px;
+    background: var(--ht-card-solid);
+}
+
+.ht-start .ht-grid-bg {
+    -webkit-mask-image: radial-gradient(ellipse at 85% 100%, #000 10%, transparent 60%);
+    mask-image: radial-gradient(ellipse at 85% 100%, #000 10%, transparent 60%);
+}
+
+.ht-start-glow {
+    position: absolute;
+    right: -140px;
+    bottom: -180px;
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 138, 61, 0.26), transparent 65%);
+    pointer-events: none;
+}
+
+.ht-start-body {
+    position: relative;
+    max-width: 760px;
 }
 
 .ht-cta h2 {
@@ -933,6 +953,7 @@
     font-weight: 700;
     letter-spacing: -0.03em;
     color: var(--white);
+    text-wrap: balance;
 }
 
 .ht-cta h2 span {
@@ -943,13 +964,108 @@
     color: var(--beige-light);
 }
 
-.ht-cta .ht-lead {
-    margin-left: auto;
-    margin-right: auto;
+/* Picker */
+
+.ht-start-pick {
+    margin: 40px 0 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
 }
 
-.ht-cta .ht-actions {
-    justify-content: center;
+.ht-start-pick legend {
+    margin-bottom: 14px;
+    padding: 0;
+    font-family: var(--ht-mono);
+    font-size: 0.82rem;
+    color: var(--ht-dim);
+}
+
+.ht-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ht-chip {
+    min-height: 44px;
+    padding: 10px 18px;
+    border: 1px solid var(--ht-line-warm-strong);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-light);
+    font-family: var(--ht-font);
+    font-size: 0.98rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        transform 160ms var(--ht-ease-out),
+        background-color 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease;
+}
+
+.ht-chip:active {
+    transform: scale(0.97);
+}
+
+.ht-chip[aria-pressed="true"] {
+    border-color: var(--beige);
+    background: var(--beige);
+    color: var(--black);
+    font-weight: 600;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ht-chip[aria-pressed="false"]:hover {
+        border-color: var(--beige-light);
+        color: var(--white);
+    }
+}
+
+/* Message preview */
+
+.ht-start-msg {
+    max-width: 560px;
+    margin-top: 22px;
+    padding: 16px 18px;
+    border: 1px solid var(--ht-line);
+    border-radius: 12px;
+    background: var(--ht-panel-deep);
+    font-family: var(--ht-mono);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.ht-start-msg-key {
+    color: var(--ht-faint);
+}
+
+.ht-start-msg [data-start-msg] {
+    display: inline;
+    transition: opacity 200ms ease, filter 200ms ease;
+}
+
+.ht-start-msg.is-swapping [data-start-msg] {
+    opacity: 0.4;
+    filter: blur(2px);
+}
+
+.ht-start .ht-actions {
+    margin-top: 28px;
+}
+
+.ht-start .ht-actions .btn {
+    transition:
+        transform 160ms var(--ht-ease-out),
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.ht-start .ht-actions .btn:active {
+    transform: scale(0.97);
 }
 
 
@@ -977,6 +1093,20 @@
     .ht-status-dot,
     .ht-step.is-live .ht-step-check {
         animation: none;
+    }
+
+    .ht-chip,
+    .ht-start .ht-actions .btn {
+        transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+
+    .ht-chip:active,
+    .ht-start .ht-actions .btn:active {
+        transform: none;
+    }
+
+    .ht-start-msg.is-swapping [data-start-msg] {
+        filter: none;
     }
 }
 
