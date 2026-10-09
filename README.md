@@ -19,7 +19,8 @@ service businesses and more.
 
 - **Shows the work, not just a sales pitch.** Real client projects sit under
   Projects; self-initiated concepts (Paddle Out, Lesedi, Six Strings Higher,
-  Hut Nine) sit under Portfolio, each with a write-up of the idea and the
+  Hut Nine) and redesign concepts for real businesses (Ijumba Signature
+  Hotel, 054 River Lodge) sit under Portfolio, each with a write-up of the idea and the
   build, so a business owner can see what's possible before they enquire.
 - **Makes it easy to get in touch.** The contact form sends enquiries
   straight to the business inbox through a serverless function, with a

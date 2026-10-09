@@ -349,7 +349,7 @@
 }
 .pj-includes li::before { content: "✓"; color: var(--cs-ok); font-family: var(--cs-mono); }
 
-.pj-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.pj-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .pj-strip .cs-frame span { font-size: 0.66rem; }
 
 

@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>054 River Lodge · Mokopane</title>
+<meta name="description" content="054 River Lodge, a private retreat in the heart of Mokopane, Limpopo. Refined accommodation, massage and wellness, celebrations, catering and fireside evenings.">
+<meta name="theme-color" content="#0c0a09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ───────────────── Tokens ───────────────── */
+:root{
+  --ink:#0c0a09;
+  --stone:#1c1917;
+  --stone-2:#292524;
+  --stone-3:#44403c;
+  --ivory:#f6f1e9;
+  --ivory-2:#ece4d6;
+  --text:#ede7dd;
+  --text-dim:#a8a29e;
+  --text-dark:#1c1917;
+  --text-dark-dim:#57534e;
+  --gold:#c9a45c;          /* on dark: 8.4:1 vs ink */
+  --gold-soft:#dcc08a;
+  --gold-deep:#a16207;     /* on ivory: 5.0:1 */
+  --rule:rgba(201,164,92,.22);
+  --rule-dark:rgba(28,25,23,.14);
+
+  --serif:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+
+  --gutter:clamp(20px,5vw,72px);
+  --max:1360px;
+  --space-xl:clamp(112px,16vw,224px);
+  --space-l:clamp(80px,11vw,160px);
+}
+
+/* ───────────────── Base ───────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Type */
+.kicker{font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+.display{font-family:var(--serif);font-weight:300;line-height:1;letter-spacing:-.035em}
+.display em{font-weight:300;color:var(--gold-soft)}
+em,i,.numeral,.rooms-foot p,.addon-list li::before,.foot-word em{font-style:normal}
+.h-xl{font-size:clamp(2.9rem,7.6vw,7.2rem)}
+.h-l{font-size:clamp(2.3rem,4.8vw,4.4rem)}
+.h-m{font-size:clamp(1.9rem,3.3vw,2.9rem);line-height:1.08}
+.body-l{font-size:clamp(1.02rem,1.25vw,1.12rem);color:var(--text-dim);max-width:46ch}
+.numeral{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:54px;padding:0 34px;font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;transition:transform 160ms var(--ease-out),background-color 300ms ease,color 300ms ease,border-color 300ms ease;cursor:pointer;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-solid{background:var(--gold);color:var(--ink)}
+.btn-line{border:1px solid rgba(237,231,221,.4);color:var(--text)}
+.btn-line-dark{border:1px solid var(--rule-dark);color:var(--text-dark)}
+.link-arrow{display:inline-flex;align-items:center;gap:16px;font-size:.7rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);padding:12px 0}
+.link-arrow i{display:block;width:44px;height:1px;background:currentColor;transform-origin:left;transition:transform 400ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .btn-solid:hover{background:var(--gold-soft)}
+  .btn-line:hover{border-color:var(--gold);color:var(--gold-soft)}
+  .btn-line-dark:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
+  .link-arrow:hover i{transform:scaleX(1.5)}
+}
+
+/* ───────────────── Navigation ───────────────── */
+.nav{position:fixed;inset:0 0 auto;z-index:60;padding:26px 0;transition:background-color 500ms ease,padding 500ms var(--ease-out),border-color 500ms ease;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(12,10,9,.82);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);padding:14px 0;border-color:var(--rule)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.nav-left{display:flex;gap:40px;list-style:none}
+.nav-left a{font-size:.68rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:rgba(237,231,221,.78);transition:color 250ms ease;padding:10px 0}
+.nav-left a:hover{color:var(--text)}
+.logo{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.logo svg{width:40px;height:40px;transition:width 500ms var(--ease-out),height 500ms var(--ease-out)}
+.nav.solid .logo svg{width:32px;height:32px}
+.logo-word{font-family:var(--serif);font-weight:500;font-size:1rem;letter-spacing:.3em;line-height:1}
+.logo-sub{font-size:.52rem;letter-spacing:.62em;color:var(--gold);margin-right:-.62em;line-height:1}
+.nav-right{display:flex;justify-content:flex-end;align-items:center;gap:28px}
+.nav-right .tel{font-size:.7rem;letter-spacing:.18em;color:rgba(237,231,221,.78)}
+.nav .btn{min-height:46px;padding:0 24px}
+.burger{display:none;width:48px;height:48px;align-items:center;justify-content:center;flex-direction:column;gap:7px}
+.burger span{display:block;width:26px;height:1px;background:var(--text);transition:transform 400ms var(--ease-out),opacity 200ms ease}
+.menu-open .burger span:first-child{transform:translateY(4px) rotate(45deg)}
+.menu-open .burger span:last-child{transform:translateY(-4px) rotate(-45deg)}
+
+.overlay{position:fixed;inset:0;z-index:55;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:120px var(--gutter) 48px;clip-path:inset(0 0 100% 0);transition:clip-path 700ms var(--ease-in-out);visibility:hidden}
+.menu-open .overlay{clip-path:inset(0 0 0 0);visibility:visible}
+.overlay ol{list-style:none;counter-reset:m}
+.overlay li{border-bottom:1px solid var(--rule);overflow:hidden}
+.overlay li a{display:flex;align-items:baseline;gap:18px;padding:18px 0;font-family:var(--serif);font-size:clamp(1.8rem,7vw,2.6rem);font-weight:300;line-height:1.1;transform:translateY(100%);transition:transform 700ms var(--ease-out)}
+.overlay li a::before{counter-increment:m;content:"0" counter(m);font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;color:var(--gold)}
+.menu-open .overlay li a{transform:none}
+.menu-open .overlay li:nth-child(2) a{transition-delay:60ms}
+.menu-open .overlay li:nth-child(3) a{transition-delay:120ms}
+.menu-open .overlay li:nth-child(4) a{transition-delay:180ms}
+.menu-open .overlay li:nth-child(5) a{transition-delay:240ms}
+.overlay-foot{margin-top:40px;display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--text-dim)}
+body.menu-open{overflow:hidden}
+
+/* ───────────────── Hero ───────────────── */
+.hero{position:relative;height:100svh;min-height:680px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-media{position:absolute;inset:0;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;animation:settle 2.8s var(--ease-out) both;transform-origin:50% 60%}
+@keyframes settle{from{transform:scale(1.14);opacity:0}to{transform:scale(1);opacity:1}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(12,10,9,.55) 0%,rgba(12,10,9,.05) 28%,rgba(12,10,9,.15) 55%,rgba(12,10,9,.92) 100%)}
+.hero-content{position:relative;z-index:2;padding-bottom:clamp(28px,5vh,56px)}
+.hero .kicker{display:block;margin-bottom:28px}
+.hero h1{max-width:12ch}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:clamp(36px,6vh,64px);flex-wrap:wrap}
+.hero-foot p{max-width:38ch;color:rgba(237,231,221,.82);font-size:1rem}
+
+/* Booking bar */
+.bookbar{position:relative;z-index:2;border-top:1px solid rgba(237,231,221,.16);background:rgba(12,10,9,.55);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.bookbar form{display:grid;grid-template-columns:repeat(3,1fr) auto;align-items:stretch}
+.bb-field{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:18px 28px;border-right:1px solid rgba(237,231,221,.12)}
+.bb-field:first-child{padding-left:0}
+.bb-field label{font-size:.6rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.bb-field input,.bb-field select{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--text);background:transparent;border:0;outline:none;padding:2px 0;width:100%;color-scheme:dark;appearance:none;-webkit-appearance:none;cursor:pointer;min-height:36px}
+.bb-field input::placeholder{color:rgba(237,231,221,.55)}
+.bb-field select option{background:var(--stone);font-family:var(--sans);font-size:1rem}
+.bookbar .btn{min-height:auto;align-self:stretch;padding:0 44px}
+
+/* ───────────────── Reveal system ───────────────── */
+.r{opacity:0;transform:translateY(28px);transition:opacity 1100ms var(--ease-out),transform 1100ms var(--ease-out);transition-delay:calc(var(--d,0) * 90ms)}
+.r.in{opacity:1;transform:none}
+.lines .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.lines .w > span{display:inline-block;transform:translateY(105%);transition:transform 1200ms var(--ease-out);transition-delay:calc(var(--i,0) * 45ms)}
+.lines.in .w > span{transform:none}
+/* Clip the image, not its frame: a fully clipped frame never registers with IntersectionObserver */
+.img-reveal > img{clip-path:inset(100% 0 0 0);transform:scale(1.18);transition:clip-path 1400ms var(--ease-in-out),transform 2200ms var(--ease-out)}
+.img-reveal.in > img{clip-path:inset(0 0 0 0);transform:scale(1)}
+.img-reveal > img.parallax{transition:clip-path 1400ms var(--ease-in-out)}
+.parallax{will-change:transform}
+
+/* ───────────────── Intro ───────────────── */
+.intro{padding:var(--space-xl) 0 var(--space-l);text-align:center;position:relative}
+.intro .mark{width:54px;height:54px;margin:0 auto 44px;opacity:.9}
+.intro-statement{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,2.9vw,2.5rem);line-height:1.3;max-width:28ch;margin:0 auto;letter-spacing:-.01em}
+.intro-statement em{color:var(--gold-soft)}
+.pillars{display:flex;justify-content:center;gap:clamp(28px,7vw,110px);margin-top:clamp(56px,8vw,96px);flex-wrap:wrap}
+.pillars span{display:flex;align-items:center;gap:18px;font-size:.7rem;letter-spacing:.38em;text-transform:uppercase;color:var(--text-dim)}
+.pillars span::before{content:"";width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+
+/* Split: real lodge */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,140px);align-items:center;padding-bottom:var(--space-xl)}
+.split-media{position:relative;aspect-ratio:4/5;overflow:hidden}
+.split-media img{width:100%;height:118%;object-fit:cover;margin-top:-9%}
+.lodge-real{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:403/405;border:10px solid var(--ink);background:url("assets/ad.webp") no-repeat;background-size:174.4% auto;background-position:100% 28.5%}
+.lodge-real-cap{position:absolute;right:0;bottom:calc(44% * 405/403 + 26px);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);background:var(--ink);padding:6px 12px}
+.split-text .h-m{margin:26px 0 30px}
+.split-text .body-l + .body-l{margin-top:18px}
+.sig{margin-top:44px;padding-top:30px;border-top:1px solid var(--rule);display:flex;gap:48px;flex-wrap:wrap}
+.sig div{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim)}
+.sig strong{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text);margin-bottom:2px}
+
+/* ───────────────── Rooms (ivory chapter) ───────────────── */
+.rooms{background:var(--ivory);color:var(--text-dark);padding:var(--space-l) 0 var(--space-xl)}
+.rooms .kicker{color:var(--gold-deep)}
+.rooms .display em{color:var(--gold-deep)}
+.rooms .body-l{color:var(--text-dark-dim)}
+.chapter-head{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,6vw,100px);align-items:end;margin-bottom:clamp(56px,8vw,110px)}
+.chapter-head .h-l{margin-top:24px}
+.room-grid{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:clamp(20px,3vw,40px)}
+.room{position:relative}
+.room:first-child{grid-row:span 2}
+.room figure{position:relative;overflow:hidden;background:var(--ivory-2)}
+.room:first-child figure{aspect-ratio:4/5}
+.room:not(:first-child) figure{aspect-ratio:16/10}
+.room figure img{width:100%;height:100%;object-fit:cover}
+.room-cap{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-top:20px;border-bottom:1px solid var(--rule-dark);padding-bottom:18px}
+.room-cap h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.25rem,1.8vw,1.6rem);line-height:1.1}
+.room-cap p{font-size:.88rem;color:var(--text-dark-dim);max-width:30ch;margin-top:6px}
+.room-cap .numeral{color:var(--gold-deep)}
+@media (hover:hover) and (pointer:fine){
+  .room figure img{transition:transform 1400ms var(--ease-out)}
+  .room:hover figure img{transform:scale(1.04)}
+}
+.rooms-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:clamp(48px,6vw,80px);flex-wrap:wrap}
+.rooms-foot p{font-family:var(--serif);font-size:1.15rem;color:var(--text-dark)}
+
+/* ───────────────── Experiences ───────────────── */
+.experiences{padding:var(--space-xl) 0}
+.experiences .chapter-head{margin-bottom:clamp(72px,10vw,140px)}
+.exp{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,3vw,40px);align-items:center;margin-bottom:clamp(96px,13vw,180px)}
+.exp:last-child{margin-bottom:0}
+.exp-media{grid-column:1 / span 7;position:relative;overflow:hidden;aspect-ratio:5/4}
+.exp-media img{width:100%;height:118%;object-fit:cover;margin-top:-9%}
+.exp-text{grid-column:9 / span 4}
+.exp.flip .exp-media{grid-column:6 / span 7;grid-row:1}
+.exp.flip .exp-text{grid-column:1 / span 4;grid-row:1}
+.exp-text .numeral{display:block;margin-bottom:22px}
+.exp-text h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,2.8vw,2.6rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:24px}
+.exp-text p{color:var(--text-dim);margin-bottom:28px}
+.exp-text ul{list-style:none;border-top:1px solid var(--rule);margin-bottom:24px}
+.exp-text li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:.86rem;letter-spacing:.04em;color:var(--text)}
+
+/* ───────────────── Celebrations ───────────────── */
+.celebrate{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:var(--space-l) 0}
+.celebrate-bg{position:absolute;inset:-10% 0;z-index:0}
+.celebrate-bg img{width:100%;height:100%;object-fit:cover}
+.celebrate::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(12,10,9,.94) 0%,rgba(12,10,9,.84) 45%,rgba(12,10,9,.66) 100%)}
+.celebrate .wrap{position:relative;z-index:2;width:100%}
+.celebrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,120px);align-items:center}
+.occasions{list-style:none;margin-top:44px}
+.occasions li{border-top:1px solid var(--rule)}
+.occasions li:last-child{border-bottom:1px solid var(--rule)}
+.occasions a{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.7rem);font-weight:300;line-height:1.2;letter-spacing:-.02em;transition:color 300ms ease,padding 500ms var(--ease-out)}
+.occasions a span{font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);transition:color 300ms ease}
+@media (hover:hover) and (pointer:fine){
+  .occasions a:hover{color:var(--gold-soft);padding-left:14px}
+  .occasions a:hover span{color:var(--gold)}
+}
+.celebrate-text .h-l{margin:24px 0 30px}
+.celebrate-text .body-l{color:rgba(237,231,221,.8);margin-bottom:40px}
+
+/* ───────────────── Add-ons ───────────────── */
+.addons{padding:var(--space-xl) 0;border-bottom:1px solid var(--rule)}
+.addons-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,8vw,140px);align-items:start}
+.addons-media{position:sticky;top:120px;aspect-ratio:3/4;overflow:hidden}
+.addons-media img{width:100%;height:100%;object-fit:cover}
+.addon-list{list-style:none;margin-top:56px;counter-reset:a}
+.addon-list li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:30px 0;border-top:1px solid var(--rule)}
+.addon-list li:last-child{border-bottom:1px solid var(--rule)}
+.addon-list li::before{counter-increment:a;content:"0" counter(a);font-family:var(--sans);color:var(--gold);font-size:.75rem;letter-spacing:.2em;line-height:2.6}
+.addon-list h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;letter-spacing:-.02em;line-height:1.15}
+.addon-list p{color:var(--text-dim);font-size:.92rem;margin-top:6px;max-width:44ch}
+
+/* ───────────────── Location ───────────────── */
+.location{position:relative;padding:var(--space-xl) 0;overflow:hidden}
+.loc-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,120px);align-items:center}
+.address{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.03em;line-height:1.08;margin:26px 0 34px}
+.loc-meta{list-style:none;margin-bottom:40px}
+.loc-meta li{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule);font-size:.9rem}
+.loc-meta li span:last-child{color:var(--text-dim)}
+.map-wrap{position:relative}
+.map{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--stone)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.9) sepia(.35) contrast(.85) brightness(.95)}
+.map-photo{position:absolute;left:clamp(-60px,-4vw,-20px);bottom:clamp(-60px,-4vw,-20px);width:38%;aspect-ratio:1;overflow:hidden;border:10px solid var(--ink)}
+.map-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ───────────────── Reserve ───────────────── */
+.reserve{padding:var(--space-xl) 0;background:var(--stone);position:relative;overflow:hidden}
+.reserve::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(201,164,92,.10),transparent 65%);pointer-events:none}
+.reserve-grid{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,8vw,130px)}
+.reserve .h-l{margin:24px 0 30px}
+.contact{margin-top:52px;display:grid;gap:4px}
+.contact a,.contact p{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule);font-family:var(--serif);font-size:1.25rem;font-weight:400}
+.contact small{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim)}
+@media (hover:hover) and (pointer:fine){.contact a{transition:color 250ms ease}.contact a:hover{color:var(--gold-soft)}}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:34px 32px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label,.f .legend{font-size:.6rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.f input,.f select,.f textarea{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--text);background:transparent;border:0;border-bottom:1px solid rgba(237,231,221,.2);padding:8px 0 10px;outline:none;border-radius:0;width:100%;color-scheme:dark;transition:border-color 300ms ease;appearance:none;-webkit-appearance:none}
+.f select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c9a45c'/%3E%3C/svg%3E") no-repeat right 2px center;padding-right:24px;cursor:pointer}
+.f select option{background:var(--stone);font-family:var(--sans);font-size:1rem}
+.f textarea{resize:vertical;min-height:90px}
+.f input::placeholder,.f textarea::placeholder{color:rgba(237,231,221,.3)}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--gold)}
+.f .err{font-size:.75rem;color:#e8a08a;min-height:1em;letter-spacing:.02em}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chip{position:relative}
+.chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid rgba(237,231,221,.18);font-size:.76rem;letter-spacing:.08em;color:var(--text-dim);transition:background-color 250ms ease,border-color 250ms ease,color 250ms ease,transform 160ms var(--ease-out)}
+.chip input:active + span{transform:scale(.97)}
+.chip input:checked + span{border-color:var(--gold);color:var(--text);background:rgba(201,164,92,.12)}
+.chip input:focus-visible + span{outline:1px solid var(--gold);outline-offset:3px}
+.form-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:8px}
+.form-foot p{font-size:.8rem;color:var(--text-dim);max-width:34ch}
+
+/* ───────────────── Footer ───────────────── */
+footer{padding:var(--space-l) 0 40px;text-align:center}
+.foot-word{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,9vw,8rem);line-height:1;letter-spacing:-.045em;color:var(--text)}
+.foot-word em{color:var(--gold-soft)}
+.foot-tag{margin-top:28px;font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
+.foot-row{display:flex;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;margin-top:clamp(64px,8vw,110px);padding-top:28px;border-top:1px solid var(--rule);font-size:.74rem;letter-spacing:.08em;color:var(--text-dim)}
+.foot-row nav{display:flex;gap:28px;flex-wrap:wrap}
+.foot-row a:hover{color:var(--text)}
+
+/* WhatsApp */
+.wa{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:50;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.45);transition:transform 160ms var(--ease-out),opacity 400ms ease,background-color 250ms ease;opacity:0;pointer-events:none}
+.wa.show{opacity:1;pointer-events:auto}
+.wa:active{transform:scale(.94)}
+@media (hover:hover) and (pointer:fine){.wa:hover{background:var(--gold-soft)}}
+.wa svg{width:24px;height:24px}
+
+/* ───────────────── Responsive ───────────────── */
+@media (max-width:1080px){
+  .nav-left,.nav-right .tel,.nav-right .btn{display:none}
+  .nav .wrap{grid-template-columns:48px 1fr 48px}
+  .burger{display:flex;grid-column:3;justify-self:end}
+  .logo{grid-column:2}
+  .bookbar form{grid-template-columns:1fr 1fr}
+  .bb-field:nth-child(3){display:none}
+  .bookbar .btn{grid-column:1/-1;min-height:58px}
+  .split,.chapter-head,.celebrate-grid,.addons-grid,.loc-grid,.reserve-grid{grid-template-columns:1fr}
+  .exp,.exp.flip{grid-template-columns:1fr}
+  .exp-media,.exp.flip .exp-media,.exp-text,.exp.flip .exp-text{grid-column:1;grid-row:auto}
+  .exp-text{max-width:560px}
+  .addons-media{position:relative;top:0;aspect-ratio:16/10}
+  .split-media{aspect-ratio:4/3}
+  .room:first-child figure{aspect-ratio:3/4}
+  .map-photo{display:none}
+  .celebrate::before{background:linear-gradient(180deg,rgba(12,10,9,.75),rgba(12,10,9,.92))}
+}
+@media (max-width:680px){
+  .hero{min-height:620px}
+  .hero-foot .btn-line{display:none}
+  .bb-field{padding:14px 16px}
+  .bb-field:first-child{padding-left:0}
+  .bb-field input{font-size:1rem}
+  .room-grid{grid-template-columns:1fr}
+  .room:first-child{grid-row:auto}
+  .room:first-child figure{aspect-ratio:4/5}
+  .lodge-real{width:52%}
+  .lodge-real-cap{bottom:calc(52% * 405/403 + 26px)}
+  .form{grid-template-columns:1fr}
+  .form-foot .btn{width:100%}
+  .foot-row{justify-content:center;text-align:center}
+}
+
+/* Reduced motion: keep fades, drop movement */
+@media (prefers-reduced-motion:reduce){
+  .hero-media img{animation:fade 600ms ease both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .r{transform:none;transition:opacity 500ms ease}
+  .lines .w > span{transform:none;transition:none}
+  .img-reveal > img{clip-path:none;transform:none;opacity:0;transition:opacity 600ms ease}
+  .img-reveal.in > img{opacity:1}
+  .parallax{transform:none!important}
+  .overlay,.overlay li a{transition:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M11 44 L24 25 L31 34 L38 21 L53 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M33 44 v-5.5 l5 -4 l5 4 V44" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M14 48 H50" stroke="currentColor" stroke-width="1"/>
+  </symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.3-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></symbol>
+</svg>
+
+<!-- ═════════ NAV ═════════ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <ul class="nav-left">
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#celebrate">Celebrations</a></li>
+    </ul>
+    <a href="#top" class="logo" aria-label="054 River Lodge, back to top">
+      <svg style="color:var(--gold)"><use href="#mark"/></svg>
+      <span class="logo-word">054 RIVER</span>
+      <span class="logo-sub">LODGE</span>
+    </a>
+    <div class="nav-right">
+      <a class="tel" href="tel:+27686265578">068 626 5578</a>
+      <a href="#reserve" class="btn btn-solid">Reserve</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay" aria-hidden="true">
+  <ol>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#experiences">Experiences</a></li>
+    <li><a href="#celebrate">Celebrations</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#reserve">Reserve</a></li>
+  </ol>
+  <div class="overlay-foot">
+    <a href="tel:+27686265578">068 626 5578</a>
+    <a href="tel:+27645508793">064 550 8793</a>
+    <span>54 River Street, Mokopane</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ═════════ HERO ═════════ -->
+<section class="hero" aria-label="Welcome">
+  <div class="hero-media">
+    <img class="parallax" data-speed="0.18" src="https://images.unsplash.com/photo-1781039869379-5561fe260d26?auto=format&fit=crop&w=2200&q=80" alt="A low lodge building glowing at dusk beside a softly lit pool" fetchpriority="high">
+  </div>
+  <div class="hero-content wrap">
+    <span class="kicker r">Mokopane &nbsp;·&nbsp; Limpopo</span>
+    <h1 class="display h-xl lines">Relax. Unwind. <em>Enjoy.</em></h1>
+    <div class="hero-foot">
+      <p class="r" style="--d:6">A private retreat in the heart of Mokopane. Restful rooms, slow evenings by the fire, and hospitality that feels like coming home.</p>
+      <a href="#rooms" class="btn btn-line r" style="--d:7">Discover the lodge</a>
+    </div>
+  </div>
+  <div class="bookbar r" style="--d:8">
+    <div class="wrap">
+      <form id="quickBook" aria-label="Check availability">
+        <div class="bb-field"><label for="qbIn">Arrival</label><input type="text" data-date id="qbIn" placeholder="Select date" required></div>
+        <div class="bb-field"><label for="qbOut">Departure</label><input type="text" data-date id="qbOut" placeholder="Select date"></div>
+        <div class="bb-field"><label for="qbGuests">Guests</label>
+          <select id="qbGuests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5+ Guests</option></select>
+        </div>
+        <button type="submit" class="btn btn-solid">Check availability</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ INTRO ═════════ -->
+<section class="intro">
+  <div class="wrap">
+    <svg class="mark r" style="color:var(--gold)" aria-hidden="true"><use href="#mark"/></svg>
+    <p class="intro-statement lines">Whether it's a quiet night away, a milestone worth celebrating or a gathering of colleagues, we make <em>every moment</em> feel considered.</p>
+    <div class="pillars">
+      <span class="r" style="--d:1">Comfort</span>
+      <span class="r" style="--d:2">Cleanliness</span>
+      <span class="r" style="--d:3">Hospitality</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap split">
+  <div class="split-media img-reveal">
+    <img class="parallax" data-speed="0.08" src="https://images.unsplash.com/photo-1779357807511-0256d851d881?auto=format&fit=crop&w=1400&q=80" alt="A guest on a terrace overlooking green bushveld" loading="lazy">
+    <span class="lodge-real-cap">The Lodge</span>
+    <div class="lodge-real" role="img" aria-label="The real 054 River Lodge: a single-storey building with a paved courtyard at golden hour"></div>
+  </div>
+  <div class="split-text">
+    <span class="kicker r">Your home away from home</span>
+    <h2 class="display h-m lines">A quiet address on <em>River Street.</em></h2>
+    <p class="body-l r">Tucked into a residential corner of Mokopane, 054 River Lodge is small by design. Fewer guests means more attention: rooms prepared just so, meals made with care, and a team that remembers how you take your coffee.</p>
+    <p class="body-l r" style="--d:1">Come for business, stay for the stillness. Bring family, bring friends, or come alone and let the afternoon disappear.</p>
+    <div class="sig r" style="--d:2">
+      <div><strong>Stay</strong>Business &amp; leisure</div>
+      <div><strong>Gather</strong>Events &amp; functions</div>
+      <div><strong>Restore</strong>Wellness</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════ ROOMS ═════════ -->
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div>
+        <span class="kicker r">Accommodation</span>
+        <h2 class="display h-l lines">Rest, <em>properly.</em></h2>
+      </div>
+      <p class="body-l r" style="--d:2">Comfortable, spotless rooms with crisp linen and quiet nights. Each one is prepared for the reason you're here, whether that's a working week or a long weekend.</p>
+    </div>
+
+    <div class="room-grid">
+      <article class="room">
+        <figure class="img-reveal"><img src="https://images.unsplash.com/photo-1652400096996-e3670b8c9d6e?auto=format&fit=crop&w=1400&q=80" alt="Warm-toned bedroom with a large bed and timber finishes" loading="lazy"></figure>
+        <div class="room-cap r"><div><h3>The Leisure Stay</h3><p>Slow mornings, pool afternoons and a massage before dinner.</p></div><span class="numeral">01</span></div>
+      </article>
+      <article class="room">
+        <figure class="img-reveal"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?auto=format&fit=crop&w=1200&q=80" alt="Calm bedroom with a large window onto greenery" loading="lazy"></figure>
+        <div class="room-cap r"><div><h3>The Business Stay</h3><p>A calm, close-to-town base with a proper night's rest.</p></div><span class="numeral">02</span></div>
+      </article>
+      <article class="room">
+        <figure class="img-reveal"><img src="https://images.unsplash.com/photo-1699629208190-672f7ef56d7b?auto=format&fit=crop&w=1200&q=80" alt="Bright bedroom with a bed beside a window" loading="lazy"></figure>
+        <div class="room-cap r"><div><h3>The Family Stay</h3><p>Room for everyone, and a braai waiting in the evening.</p></div><span class="numeral">03</span></div>
+      </article>
+    </div>
+
+    <div class="rooms-foot">
+      <p class="r">Tailored packages available on request.</p>
+      <a href="#reserve" class="btn btn-line-dark r" style="--d:1">Enquire about rooms</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ EXPERIENCES ═════════ -->
+<section class="experiences" id="experiences">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div>
+        <span class="kicker r">Experiences</span>
+        <h2 class="display h-l lines">Days that <em>linger.</em></h2>
+      </div>
+      <p class="body-l r" style="--d:2">Everything you need to slow down, without leaving the property. Book one, or let us weave them into a package of your own.</p>
+    </div>
+
+    <article class="exp">
+      <div class="exp-media img-reveal"><img class="parallax" data-speed="0.07" src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1600&q=80" alt="Hands giving a relaxing back massage" loading="lazy"></div>
+      <div class="exp-text">
+        <span class="numeral r">01 &nbsp;Massage &amp; Wellness</span>
+        <h3 class="lines">Because you deserve to feel your best.</h3>
+        <p class="r">Professional massage, unhurried and in-house. Book a session to soften a long drive, or pair one with a weekend stay.</p>
+        <a href="#reserve" class="link-arrow r">Book a treatment <i></i></a>
+      </div>
+    </article>
+
+    <article class="exp flip">
+      <div class="exp-media img-reveal"><img class="parallax" data-speed="0.07" src="https://images.unsplash.com/photo-1634540635012-e0b263fa1903?auto=format&fit=crop&w=1600&q=80" alt="An open fire burning in a fire pit at night" loading="lazy"></div>
+      <div class="exp-text">
+        <span class="numeral r">02 &nbsp;Braai &amp; Fireside</span>
+        <h3 class="lines">Evenings around the fire.</h3>
+        <p class="r">Relaxed braai areas and easy outdoor seating, made for long conversations with friends and family as the Limpopo sky turns gold.</p>
+        <a href="#reserve" class="link-arrow r">Plan an evening <i></i></a>
+      </div>
+    </article>
+
+    <article class="exp">
+      <div class="exp-media img-reveal"><img class="parallax" data-speed="0.07" src="https://images.unsplash.com/photo-1766393524464-e5eb1b05e4c8?auto=format&fit=crop&w=1600&q=80" alt="An outdoor dinner table set beneath palms at dusk" loading="lazy"></div>
+      <div class="exp-text">
+        <span class="numeral r">03 &nbsp;Catering</span>
+        <h3 class="lines">Meals made with care.</h3>
+        <p class="r">From a quiet dinner for two to a full function, our kitchen caters for every occasion and every group size.</p>
+        <a href="#reserve" class="link-arrow r">Discuss a menu <i></i></a>
+      </div>
+    </article>
+
+    <article class="exp flip">
+      <div class="exp-media img-reveal"><img class="parallax" data-speed="0.07" src="https://images.unsplash.com/photo-1759372945658-1e9f56e751bd?auto=format&fit=crop&w=1600&q=80" alt="A pool beside a thatched building at dusk" loading="lazy"></div>
+      <div class="exp-text">
+        <span class="numeral r">04 &nbsp;Pool &amp; Leisure</span>
+        <h3 class="lines">Nowhere to be.</h3>
+        <p class="r">Pool access, shaded corners and the kind of quiet that makes a book last all afternoon.</p>
+        <a href="#reserve" class="link-arrow r">Reserve a day <i></i></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═════════ CELEBRATIONS ═════════ -->
+<section class="celebrate" id="celebrate">
+  <div class="celebrate-bg"><img class="parallax" data-speed="0.14" src="https://images.unsplash.com/photo-1781090876896-2dd07110eb55?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="celebrate-grid">
+      <div class="celebrate-text">
+        <span class="kicker r">Celebrations</span>
+        <h2 class="display h-l lines">Occasions, <em>beautifully</em> hosted.</h2>
+        <p class="body-l r">Venue, catering, décor and rooms for your guests, all arranged in one conversation. Tell us the occasion; we'll take care of the rest.</p>
+        <a href="#reserve" class="btn btn-solid r">Plan an occasion</a>
+      </div>
+      <ul class="occasions">
+        <li class="r"><a href="#reserve" data-occasion="Birthday">Birthdays <span>Intimate to grand</span></a></li>
+        <li class="r" style="--d:1"><a href="#reserve" data-occasion="Anniversary">Anniversaries <span>Decorated rooms</span></a></li>
+        <li class="r" style="--d:2"><a href="#reserve" data-occasion="Bridal shower">Bridal showers <span>Picnic setups</span></a></li>
+        <li class="r" style="--d:3"><a href="#reserve" data-occasion="Corporate event">Corporate events <span>Fully catered</span></a></li>
+        <li class="r" style="--d:4"><a href="#reserve" data-occasion="Year-end function">Year-end functions <span>Teams of any size</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ ADD-ONS ═════════ -->
+<section class="addons">
+  <div class="wrap addons-grid">
+    <div class="addons-media img-reveal"><img src="https://images.unsplash.com/photo-1557686652-6731ba12410f?auto=format&fit=crop&w=1200&q=80" alt="A picnic spread on a blanket outdoors" loading="lazy"></div>
+    <div>
+      <span class="kicker r">The finishing touches</span>
+      <h2 class="display h-m lines" style="margin-top:24px">Extras, <em>thoughtfully</em> arranged.</h2>
+      <ul class="addon-list">
+        <li class="r"><div><h3>Room decorations</h3><p>Flowers, balloons and surprises set up before you arrive, for birthdays, proposals and anniversaries.</p></div></li>
+        <li class="r"><div><h3>Picnic setups</h3><p>A styled picnic in the garden, ready when you are.</p></div></li>
+        <li class="r"><div><h3>Pool access</h3><p>Sun loungers, shade and a cool swim between plans.</p></div></li>
+        <li class="r"><div><h3>Local excursions</h3><p>Transport to nearby attractions, including zoo trips, arranged for you.</p></div></li>
+        <li class="r"><div><h3>Tailored packages</h3><p>Combine any of the above with your stay. Ask, and we'll shape it around you.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ LOCATION ═════════ -->
+<section class="location" id="location">
+  <div class="wrap loc-grid">
+    <div>
+      <span class="kicker r">Location</span>
+      <p class="address lines">54 River Street,<br>Mokopane, <em style="color:var(--gold-soft)">Limpopo</em></p>
+      <ul class="loc-meta">
+        <li class="r"><span>Mokopane town centre</span><span>Minutes away</span></li>
+        <li class="r" style="--d:1"><span>Local attractions</span><span>Transport arranged</span></li>
+        <li class="r" style="--d:2"><span>GPS</span><span>23°24′04.7″S 29°25′04.4″E</span></li>
+      </ul>
+      <a class="link-arrow r" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=-23.4013,29.4179">Get directions <i></i></a>
+    </div>
+    <div class="map-wrap r" style="--d:2">
+      <div class="map"><iframe title="Map showing 054 River Lodge on River Street, Mokopane" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=-23.4013,29.4179&z=15&output=embed"></iframe></div>
+      <div class="map-photo"><img src="https://images.unsplash.com/photo-1698765910854-52564f4a6313?auto=format&fit=crop&w=600&q=80" alt="Bushveld and mountains at sunset" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ RESERVE ═════════ -->
+<section class="reserve" id="reserve">
+  <div class="wrap reserve-grid">
+    <div>
+      <span class="kicker r">Reservations</span>
+      <h2 class="display h-l lines">We look forward to <em>welcoming you.</em></h2>
+      <p class="body-l r">Share your dates and a little about your visit. We'll reply personally on WhatsApp with availability and a quote.</p>
+      <div class="contact">
+        <a class="r" href="tel:+27686265578"><span>068 626 5578</span><small>Reservations</small></a>
+        <a class="r" style="--d:1" href="tel:+27645508793"><span>064 550 8793</span><small>Events</small></a>
+        <a class="r" style="--d:2" href="https://wa.me/27686265578" target="_blank" rel="noopener"><span>WhatsApp</span><small>Fastest reply</small></a>
+      </div>
+    </div>
+
+    <form id="reserveForm" class="form r" style="--d:2" novalidate>
+      <div class="f full"><label for="rName">Full name</label><input id="rName" autocomplete="name" placeholder="Your name"><span class="err" id="rNameErr" aria-live="polite"></span></div>
+      <div class="f"><label for="rIn">Arrival</label><input id="rIn" type="text" data-date placeholder="Select date"><span class="err" id="rInErr" aria-live="polite"></span></div>
+      <div class="f"><label for="rOut">Departure</label><input id="rOut" type="text" data-date placeholder="Select date"><span class="err"></span></div>
+      <div class="f"><label for="rGuests">Guests</label>
+        <select id="rGuests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5–10 Guests</option><option>10+ Guests</option></select>
+      </div>
+      <div class="f"><label for="rType">Enquiry</label>
+        <select id="rType"><option>Accommodation</option><option>Celebration or event</option><option>Massage &amp; wellness</option><option>Catering</option><option>Tailored package</option></select>
+      </div>
+      <fieldset class="f full" style="border:0">
+        <legend class="legend">Finishing touches</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" value="Room decorations"><span>Room decorations</span></label>
+          <label class="chip"><input type="checkbox" value="Massage"><span>Massage</span></label>
+          <label class="chip"><input type="checkbox" value="Picnic setup"><span>Picnic setup</span></label>
+          <label class="chip"><input type="checkbox" value="Pool access"><span>Pool access</span></label>
+          <label class="chip"><input type="checkbox" value="Catering"><span>Catering</span></label>
+          <label class="chip"><input type="checkbox" value="Local excursion"><span>Excursion</span></label>
+        </div>
+      </fieldset>
+      <div class="f full"><label for="rMsg">Notes</label><textarea id="rMsg" rows="3" placeholder="The occasion, special requests, dietary needs…"></textarea></div>
+      <div class="form-foot">
+        <p>No payment required. Your enquiry opens in WhatsApp, ready to send.</p>
+        <button type="submit" class="btn btn-solid">Send enquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-word r">054 River <em>Lodge</em></p>
+    <p class="foot-tag r" style="--d:1">Comfort &nbsp;·&nbsp; Cleanliness &nbsp;·&nbsp; Hospitality</p>
+    <div class="foot-row">
+      <span>© <span id="yr"></span> 054 River Lodge · 54 River Street, Mokopane</span>
+      <nav aria-label="Footer"><a href="#rooms">Rooms</a><a href="#experiences">Experiences</a><a href="#celebrate">Celebrations</a><a href="#reserve">Reserve</a></nav>
+      <span>Concept design · imagery illustrative</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" href="https://wa.me/27686265578" target="_blank" rel="noopener" aria-label="Chat with 054 River Lodge on WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+(() => {
+  const WA = "27686265578";
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  $("#yr").textContent = new Date().getFullYear();
+
+  /* Split headings into masked words */
+  $$(".lines").forEach(el => {
+    let i = 0;
+    const walk = node => [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) { frag.append(" "); return; }
+          const w = document.createElement("span"); w.className = "w";
+          const inner = document.createElement("span"); inner.textContent = t; inner.style.setProperty("--i", i++);
+          w.append(inner); frag.append(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1 && n.tagName !== "BR") walk(n);
+    });
+    walk(el);
+  });
+
+  /* Reveal on view */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { rootMargin: "0px 0px -12% 0px", threshold: 0 });
+  $$(".r, .lines, .img-reveal").forEach(el => io.observe(el));
+  /* Hero plays on load, not on scroll */
+  requestAnimationFrame(() => $$(".hero .r, .hero .lines").forEach(el => el.classList.add("in")));
+
+  /* Nav state + WhatsApp button */
+  const nav = $("#nav"), wa = $("#wa");
+  const onScroll = () => {
+    const y = scrollY;
+    nav.classList.toggle("solid", y > 40);
+    wa.classList.toggle("show", y > innerHeight * 0.8);
+  };
+
+  /* Subtle parallax: transform only, visible elements only */
+  const layers = reduce ? [] : $$(".parallax");
+  const visible = new Set();
+  const pio = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)), { rootMargin: "20% 0px" });
+  layers.forEach(l => pio.observe(l));
+  let ticking = false;
+  const frame = () => {
+    const vh = innerHeight;
+    visible.forEach(el => {
+      const r = el.parentElement.getBoundingClientRect();
+      const p = (r.top + r.height / 2 - vh / 2) / vh;     // -1..1 around centre
+      el.style.transform = `translate3d(0, ${(-p * parseFloat(el.dataset.speed) * 100).toFixed(2)}%, 0)`;
+    });
+    ticking = false;
+  };
+  addEventListener("scroll", () => { onScroll(); if (!ticking && layers.length) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+  addEventListener("resize", () => requestAnimationFrame(frame));
+  onScroll(); frame();
+
+  /* Mobile menu */
+  const burger = $("#burger"), overlay = $("#overlay");
+  const setMenu = open => {
+    document.body.classList.toggle("menu-open", open);
+    burger.setAttribute("aria-expanded", open);
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    overlay.setAttribute("aria-hidden", !open);
+  };
+  burger.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
+  $$("#overlay a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+  addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+
+  /* Dates: show an elegant placeholder until chosen, then a native picker */
+  const asDate = el => { if (el.type !== "date") el.type = "date"; };
+  $$("[data-date]").forEach(el => {
+    const open = () => { asDate(el); try { el.showPicker(); } catch (_) {} };
+    el.addEventListener("focus", () => asDate(el));
+    el.addEventListener("click", open);
+    el.addEventListener("blur", () => { if (!el.value) el.type = "text"; });
+  });
+  const today = new Date().toISOString().slice(0, 10);
+  const pair = (a, b) => {
+    a.min = b.min = today;
+    a.addEventListener("change", () => { b.min = a.value || today; if (b.value && b.value <= a.value) b.value = ""; });
+  };
+  pair($("#qbIn"), $("#qbOut"));
+  pair($("#rIn"), $("#rOut"));
+  const fmt = d => new Date(d + "T00:00").toLocaleDateString("en-ZA", { weekday: "short", day: "numeric", month: "long" });
+  const send = lines => window.open(`https://wa.me/${WA}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
+
+  /* Hero booking bar → carries into full form */
+  $("#quickBook").addEventListener("submit", e => {
+    e.preventDefault();
+    if ($("#qbIn").value) { asDate($("#rIn")); $("#rIn").value = $("#qbIn").value; }
+    $("#rOut").min = $("#qbIn").value || today;
+    if ($("#qbOut").value) { asDate($("#rOut")); $("#rOut").value = $("#qbOut").value; }
+    $("#rGuests").value = [...$("#rGuests").options].find(o => o.text.startsWith($("#qbGuests").value[0]))?.text || "2 Guests";
+    $("#reserve").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    setTimeout(() => $("#rName").focus({ preventScroll: true }), reduce ? 0 : 900);
+  });
+
+  /* Occasion links preselect the enquiry */
+  $$("[data-occasion]").forEach(a => a.addEventListener("click", () => {
+    $("#rType").value = "Celebration or event";
+    const m = $("#rMsg"); if (!m.value) m.value = a.dataset.occasion + ": ";
+  }));
+
+  /* Full enquiry → WhatsApp */
+  $("#reserveForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = $("#rName"), inD = $("#rIn");
+    $("#rNameErr").textContent = name.value.trim() ? "" : "Please add your name.";
+    $("#rInErr").textContent = inD.value ? "" : "Please choose an arrival date.";
+    if (!name.value.trim()) return name.focus();
+    if (!inD.value) return inD.focus();
+    const extras = $$(".chip input:checked").map(i => i.value);
+    const lines = [
+      "Good day 054 River Lodge,",
+      "",
+      `I'd like to enquire about: ${$("#rType").value}`,
+      `Name: ${name.value.trim()}`,
+      `Dates: ${fmt(inD.value)}${$("#rOut").value ? " – " + fmt($("#rOut").value) : ""}`,
+      `Guests: ${$("#rGuests").value}`
+    ];
+    if (extras.length) lines.push(`Extras: ${extras.join(", ")}`);
+    if ($("#rMsg").value.trim()) lines.push("", $("#rMsg").value.trim());
+    send(lines);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ijumba Signature Hotel · Bellville, Cape Town</title>
+<meta name="description" content="Ijumba Signature Hotel: a boutique hotel on Karoo Street, Bellville, 8 km from Cape Town International Airport. Restaurant and bar, free parking, 24-hour front desk.">
+<meta name="theme-color" content="#1F1714">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero.jpg">
+<style>
+  :root {
+    --espresso: #1F1714;
+    --velvet: #34261F;
+    --cocoa: #5A4034;
+    --marble: #F4F1EC;
+    --stone: #E7E1D8;
+    --line: #D8CFC4;
+    --ink: #1F1714;
+    --muted: #675A51;
+    --brass: #A16207;
+    --brass-soft: #D2A55A;
+    --on-dark: #F4F1EC;
+    --on-dark-muted: #BFB3A8;
+
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+    --gutter: clamp(20px, 5vw, 72px);
+    --max: 1280px;
+    --section: clamp(88px, 12vw, 168px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--marble);
+    color: var(--ink);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--brass);
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  .on-dark .eyebrow { color: var(--brass-soft); }
+
+  h1, h2, h3 { margin: 0; font-weight: 300; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
+  h2 { font-size: clamp(36px, 5vw, 64px); }
+  h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 400; letter-spacing: -0.01em; }
+  p { margin: 0; }
+  .lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--muted); line-height: 1.6; max-width: 34em; }
+  .accent { color: var(--brass); }
+  .on-dark .accent { color: var(--brass-soft); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 0 28px;
+    border: 1px solid transparent; border-radius: 2px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-brass { background: var(--brass); color: #fff; }
+  .btn-dark { background: var(--espresso); color: var(--on-dark); }
+  .btn-ghost { border-color: currentColor; background: transparent; }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-brass:hover { background: #8A5306; }
+    .btn-dark:hover { background: var(--velvet); }
+    .btn-ghost:hover { background: rgba(244, 241, 236, 0.1); }
+  }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* Header */
+  .site-header {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    color: var(--on-dark);
+    transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+  }
+  .site-header.solid { background: rgba(244, 241, 236, 0.94); color: var(--ink); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
+  .brand-name { font-size: 21px; font-weight: 600; letter-spacing: 0.32em; }
+  .brand-sub { margin-top: 7px; font-size: 10px; font-weight: 500; letter-spacing: 0.36em; text-transform: uppercase; opacity: 0.75; }
+  .nav { display: flex; align-items: center; gap: 36px; }
+  .nav a:not(.btn) { font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; opacity: 0.85; transition: opacity 200ms ease; }
+  @media (hover: hover) and (pointer: fine) { .nav a:not(.btn):hover { opacity: 1; } }
+  .nav .btn { min-height: 44px; padding: 0 22px; }
+  .menu-btn { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; background: none; border: 0; cursor: pointer; }
+  .menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 22px; height: 1.5px; background: currentColor; position: relative; transition: transform 250ms var(--ease-out), opacity 200ms ease; }
+  .menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; }
+  .menu-btn span::before { top: -7px; } .menu-btn span::after { top: 7px; }
+  .menu-open .menu-btn span { background: transparent; }
+  .menu-open .menu-btn span::before { transform: translateY(7px) rotate(45deg); }
+  .menu-open .menu-btn span::after { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 900px) {
+    .menu-btn { display: inline-flex; }
+    .nav {
+      position: fixed; inset: 80px 0 auto 0; flex-direction: column; align-items: stretch; gap: 0;
+      padding: 8px var(--gutter) 28px; background: var(--marble); color: var(--ink);
+      box-shadow: 0 1px 0 var(--line), 0 20px 40px rgba(31, 23, 20, 0.12);
+      opacity: 0; transform: translateY(-8px); pointer-events: none; visibility: hidden;
+      transition: opacity 200ms ease, transform 250ms var(--ease-out), visibility 0s linear 250ms;
+    }
+    .nav a:not(.btn) { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .nav .btn { margin-top: 20px; min-height: 52px; }
+    .menu-open .nav { opacity: 1; transform: none; pointer-events: auto; visibility: visible; transition: opacity 200ms ease, transform 250ms var(--ease-out), visibility 0s; }
+    .menu-open .site-header { background: var(--marble); color: var(--ink); }
+  }
+
+  /* Hero */
+  .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; color: var(--on-dark); background: var(--espresso); overflow: hidden; }
+  .hero-media { position: absolute; inset: 0; }
+  .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 55%; transform: scale(1.06); transition: transform 2.4s var(--ease-out); }
+  .loaded .hero-media img { transform: scale(1); }
+  .hero::after { content: ""; position: absolute; inset: 0; background:
+      linear-gradient(90deg, rgba(31,23,20,0.88) 0%, rgba(31,23,20,0.62) 45%, rgba(31,23,20,0.2) 100%),
+      linear-gradient(0deg, rgba(31,23,20,0.85) 0%, rgba(31,23,20,0) 45%); }
+  .hero-content { position: relative; z-index: 1; width: 100%; padding-top: 140px; padding-bottom: clamp(32px, 5vw, 56px); }
+  .hero h1 { font-size: clamp(44px, 7.4vw, 104px); max-width: 11.5em; font-weight: 300; }
+  .hero h1 .line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+  .hero h1 .line > span { display: block; transform: translateY(105%); transition: transform 1s var(--ease-out); }
+  .loaded .hero h1 .line > span { transform: none; }
+  .loaded .hero h1 .line:nth-child(2) > span { transition-delay: 90ms; }
+  .hero-sub { margin-top: 28px; max-width: 32em; font-size: clamp(17px, 1.5vw, 20px); color: var(--on-dark-muted); }
+  .hero .eyebrow { margin-bottom: 28px; }
+  .fade-in { opacity: 0; transform: translateY(10px); transition: opacity 800ms ease, transform 800ms var(--ease-out); }
+  .loaded .fade-in { opacity: 1; transform: none; }
+  .loaded .fade-in.d1 { transition-delay: 300ms; } .loaded .fade-in.d2 { transition-delay: 450ms; } .loaded .fade-in.d3 { transition-delay: 600ms; }
+
+  /* Booking bar */
+  .book-bar {
+    margin-top: clamp(40px, 6vw, 72px);
+    display: grid; grid-template-columns: repeat(3, 1fr) auto; align-items: stretch;
+    background: rgba(244, 241, 236, 0.97); color: var(--ink); border-radius: 2px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  }
+  .book-bar .field { padding: 14px 22px; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+  .book-bar label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .book-bar input, .book-bar select { border: 0; background: transparent; padding: 4px 0 0; font-size: 16px; font-weight: 500; min-height: 32px; width: 100%; cursor: pointer; }
+  .book-bar input:focus, .book-bar select:focus { outline: none; }
+  .book-bar .field:focus-within { box-shadow: inset 0 -2px 0 var(--brass); }
+  .book-bar .btn { min-height: 76px; padding: 0 36px; border-radius: 0 2px 2px 0; }
+  @media (max-width: 760px) {
+    .book-bar { grid-template-columns: 1fr 1fr; }
+    .book-bar .field:nth-child(2) { border-right: 0; }
+    .book-bar .field:nth-child(3) { grid-column: 1 / -1; border-right: 0; border-top: 1px solid var(--line); }
+    .book-bar .btn { grid-column: 1 / -1; min-height: 56px; border-radius: 0 0 2px 2px; }
+  }
+
+  /* Facts strip */
+  .facts { background: var(--espresso); color: var(--on-dark); }
+  .facts ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .facts li { display: flex; align-items: center; gap: 14px; padding: 26px 0; font-size: 14px; color: var(--on-dark-muted); }
+  .facts li + li { padding-left: 28px; border-left: 1px solid rgba(244,241,236,0.12); }
+  .facts strong { display: block; color: var(--on-dark); font-weight: 500; font-size: 15px; }
+  .facts svg { flex: none; width: 24px; height: 24px; color: var(--brass-soft); }
+  @media (max-width: 900px) {
+    .facts ul { grid-template-columns: 1fr 1fr; }
+    .facts li + li { padding-left: 0; border-left: 0; }
+    .facts li { padding: 20px 0; border-bottom: 1px solid rgba(244,241,236,0.1); }
+    .facts li:nth-child(even) { padding-left: 20px; }
+  }
+
+  section { position: relative; }
+  .section { padding: var(--section) 0; }
+
+  /* Intro */
+  .intro-grid { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(40px, 7vw, 120px); align-items: center; }
+  .intro-grid h2 { margin-top: 24px; }
+  .intro-grid .lead { margin-top: 28px; }
+  .intro-figure { position: relative; }
+  .intro-figure .main { aspect-ratio: 4 / 5; }
+  .intro-figure .inset { position: absolute; width: 46%; aspect-ratio: 1; left: -14%; bottom: -10%; border: 10px solid var(--marble); }
+  .intro-signature { margin-top: 40px; display: flex; gap: 40px; flex-wrap: wrap; }
+  .intro-signature div { border-top: 1px solid var(--line); padding-top: 16px; min-width: 140px; }
+  .intro-signature b { display: block; font-size: 34px; font-weight: 300; letter-spacing: -0.02em; }
+  .intro-signature span { font-size: 13px; color: var(--muted); }
+  @media (max-width: 900px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .intro-figure { margin-left: 12%; }
+    .intro-figure .inset { left: -16%; }
+  }
+
+  /* Image reveal (clip-path) */
+  .reveal-img { overflow: hidden; background: var(--stone); }
+  .reveal-img img { width: 100%; height: 100%; object-fit: cover; }
+  /* Clip the photo, not its frame: a fully clipped frame never registers as on screen */
+  .js .reveal-img img { clip-path: inset(0 0 100% 0); transform: scale(1.12); transition: clip-path 1.2s var(--ease-in-out), transform 1.6s var(--ease-out); }
+  .js .reveal-img.in img { clip-path: inset(0 0 0 0); transform: scale(1); }
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 700ms ease, transform 900ms var(--ease-out); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  /* Rooms */
+  .rooms { background: var(--stone); }
+  .rooms-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: clamp(48px, 6vw, 88px); }
+  .rooms-head h2 { margin-top: 24px; }
+  .rooms-head .lead { max-width: 26em; }
+  .room { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 5vw, 80px); align-items: center; padding: clamp(32px, 4vw, 48px) 0; border-top: 1px solid var(--line); }
+  .room:nth-child(even) { grid-template-columns: 5fr 7fr; }
+  .room:nth-child(even) .room-media { order: 2; }
+  .room-media { aspect-ratio: 16 / 10; }
+  .room-num { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; color: var(--brass); }
+  .room h3 { margin-top: 14px; font-size: clamp(28px, 3vw, 40px); font-weight: 300; letter-spacing: -0.02em; }
+  .room p { margin-top: 16px; color: var(--muted); max-width: 28em; }
+  .room-specs { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .room-specs li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 100px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  .room-specs svg { width: 16px; height: 16px; color: var(--brass); }
+  .room-cta { margin-top: 28px; display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 12px 0; border-bottom: 1px solid currentColor; }
+  .room-cta svg { width: 16px; height: 16px; transition: transform 250ms var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) { .room-cta:hover svg { transform: translateX(4px); } }
+  @media (max-width: 900px) {
+    .room, .room:nth-child(even) { grid-template-columns: 1fr; }
+    .room:nth-child(even) .room-media { order: 0; }
+  }
+
+  .in-room { margin-top: clamp(48px, 6vw, 80px); padding: 32px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+  .in-room h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .in-room ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 32px; }
+  .in-room li { display: flex; gap: 12px; align-items: center; font-size: 15px; }
+  .in-room svg { width: 20px; height: 20px; color: var(--brass); flex: none; }
+  @media (max-width: 900px) { .in-room { grid-template-columns: 1fr; } .in-room ul { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .in-room ul { grid-template-columns: 1fr; } }
+
+  /* Signature details */
+  .details { background: var(--espresso); color: var(--on-dark); overflow: hidden; }
+  .details-head { max-width: 640px; }
+  .details-head h2 { margin-top: 24px; }
+  .details-head .lead { margin-top: 24px; color: var(--on-dark-muted); }
+  .mosaic { margin-top: clamp(48px, 6vw, 88px); display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(12px, 1.6vw, 24px); }
+  .mosaic figure { margin: 0; }
+  .mosaic .m1 { grid-column: 1 / 8; aspect-ratio: 3 / 2; }
+  .mosaic .m2 { grid-column: 8 / 13; aspect-ratio: 4 / 5; align-self: end; }
+  .mosaic .m3 { grid-column: 2 / 6; aspect-ratio: 1; }
+  .mosaic .m4 { grid-column: 6 / 12; aspect-ratio: 16 / 10; }
+  .mosaic figcaption { margin-top: 14px; font-size: 13px; letter-spacing: 0.06em; color: var(--on-dark-muted); display: flex; gap: 12px; }
+  .mosaic figcaption b { color: var(--brass-soft); font-weight: 600; }
+  @media (max-width: 760px) {
+    .mosaic .m1, .mosaic .m4 { grid-column: 1 / -1; }
+    .mosaic .m2, .mosaic .m3 { grid-column: span 6; aspect-ratio: 4 / 5; }
+  }
+
+  /* Dining */
+  .dining { background: var(--velvet); color: var(--on-dark); overflow: hidden; }
+  .dining-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 120px); align-items: center; }
+  .dining h2 { margin-top: 24px; }
+  .dining .lead { margin-top: 24px; color: var(--on-dark-muted); }
+  .dining-list { margin-top: 36px; list-style: none; padding: 0; }
+  .dining-list li { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(244,241,236,0.14); font-size: 15px; }
+  .dining-list li span:last-child { color: var(--on-dark-muted); text-align: right; }
+  .motif { position: relative; aspect-ratio: 1; max-width: 520px; width: 100%; justify-self: center; color: var(--brass-soft); }
+  .motif svg { width: 100%; height: 100%; }
+  .motif path, .motif rect { fill: none; stroke: currentColor; stroke-width: 1; }
+  .js .motif path, .js .motif rect { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s var(--ease-in-out); }
+  .js .motif.in path, .js .motif.in rect { stroke-dashoffset: 0; }
+  .motif-label { position: absolute; inset: auto 0 -8px 0; text-align: center; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--on-dark-muted); }
+  @media (max-width: 900px) { .dining-grid { grid-template-columns: 1fr; } .motif { max-width: 320px; } }
+
+  /* Who it's for */
+  .stays-grid { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 48px); }
+  .stay { border-top: 1px solid var(--ink); padding-top: 28px; }
+  .stay .n { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; color: var(--brass); }
+  .stay h3 { margin-top: 18px; }
+  .stay p { margin-top: 14px; color: var(--muted); }
+  @media (max-width: 900px) { .stays-grid { grid-template-columns: 1fr; } }
+
+  /* Good to know */
+  .know { background: var(--stone); }
+  .know-grid { display: grid; grid-template-columns: 4fr 7fr; gap: clamp(40px, 6vw, 96px); }
+  .know-grid h2 { margin-top: 24px; }
+  .times { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .times div { background: var(--marble); padding: 28px; }
+  .times span { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .times b { display: block; margin-top: 8px; font-size: clamp(26px, 3vw, 34px); font-weight: 300; letter-spacing: -0.02em; }
+  .times small { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
+  .policies { margin-top: 32px; list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  .policies li { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .policies svg { width: 20px; height: 20px; flex: none; margin-top: 2px; color: var(--brass); }
+  @media (max-width: 900px) { .know-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .times, .policies { grid-template-columns: 1fr; } }
+
+  /* Enquiry */
+  .enquire-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 7vw, 120px); align-items: start; }
+  .enquire-grid h2 { margin-top: 24px; }
+  .enquire-grid .lead { margin-top: 24px; }
+  .contact-lines { margin-top: 40px; display: grid; gap: 18px; }
+  .contact-lines div { display: flex; gap: 14px; align-items: flex-start; }
+  .contact-lines svg { width: 20px; height: 20px; color: var(--brass); flex: none; margin-top: 3px; }
+  .contact-lines small { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  form.enquiry { background: #fff; padding: clamp(28px, 4vw, 48px); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 22px 20px; }
+  .f { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .f.full { grid-column: 1 / -1; }
+  .f label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .f input, .f select, .f textarea {
+    width: 100%; min-height: 50px; padding: 12px 14px; font-size: 16px;
+    background: var(--marble); border: 1px solid var(--line); border-radius: 2px;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .f textarea { min-height: 110px; resize: vertical; }
+  .f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--brass); box-shadow: 0 0 0 3px rgba(161, 98, 7, 0.15); }
+  .f .err { display: none; font-size: 13px; color: #B42318; }
+  .f.invalid input, .f.invalid select { border-color: #B42318; }
+  .f.invalid .err { display: block; }
+  .f .hint { font-size: 13px; color: var(--muted); }
+  form.enquiry .btn { grid-column: 1 / -1; min-height: 56px; }
+  .form-note { grid-column: 1 / -1; font-size: 13px; color: var(--muted); text-align: center; }
+  @media (max-width: 900px) { .enquire-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { form.enquiry { grid-template-columns: 1fr; } }
+
+  /* Location */
+  .location { background: var(--espresso); color: var(--on-dark); }
+  .loc-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+  .loc-grid h2 { margin-top: 24px; }
+  .address { margin-top: 28px; font-size: 20px; font-weight: 300; line-height: 1.5; }
+  .distances { margin-top: 32px; list-style: none; padding: 0; }
+  .distances li { display: flex; justify-content: space-between; padding: 16px 0; border-top: 1px solid rgba(244,241,236,0.14); font-size: 15px; color: var(--on-dark-muted); }
+  .distances b { color: var(--on-dark); font-weight: 500; }
+  .loc-grid .btn { margin-top: 32px; }
+  .map { aspect-ratio: 4 / 3; background: var(--velvet); border: 1px solid rgba(244,241,236,0.12); }
+  .map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.85) sepia(0.25) contrast(1.05); }
+  @media (max-width: 900px) { .loc-grid { grid-template-columns: 1fr; } }
+
+  /* Footer */
+  footer { background: #17110F; color: var(--on-dark-muted); padding: 56px 0 40px; font-size: 14px; }
+  .foot { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-end; }
+  footer .brand { color: var(--on-dark); }
+  .foot-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  .foot-links a { text-decoration: none; }
+  @media (hover: hover) and (pointer: fine) { .foot-links a:hover { color: var(--on-dark); } }
+  .foot-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(244,241,236,0.1); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; }
+
+  /* Sticky mobile CTA */
+  .sticky-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; display: none; transform: translateY(140%); transition: transform 350ms var(--ease-out); }
+  .sticky-cta .btn { width: 100%; box-shadow: 0 12px 30px rgba(31,23,20,0.3); }
+  .sticky-cta.show { transform: none; }
+  @media (max-width: 760px) { .sticky-cta { display: block; } }
+
+  /* Modal */
+  .modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; visibility: hidden; transition: visibility 0s linear 250ms; }
+  .modal.open { visibility: visible; transition: visibility 0s; }
+  .modal-backdrop { position: absolute; inset: 0; background: rgba(23, 17, 15, 0.6); opacity: 0; transition: opacity 250ms ease; }
+  .modal.open .modal-backdrop { opacity: 1; }
+  .modal-card { position: relative; width: 100%; max-width: 520px; max-height: calc(100svh - 40px); overflow: auto; background: var(--marble); padding: clamp(28px, 4vw, 44px); border-radius: 2px;
+    opacity: 0; transform: scale(0.96) translateY(8px); transition: opacity 200ms ease, transform 250ms var(--ease-out); }
+  .modal.open .modal-card { opacity: 1; transform: none; }
+  .modal-card h3 { font-size: 30px; font-weight: 300; margin-top: 18px; }
+  .summary { margin: 24px 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .summary li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .summary li span:first-child { color: var(--muted); }
+  .summary li span:last-child { text-align: right; font-weight: 500; }
+  .modal-actions { display: grid; gap: 12px; }
+  .modal-note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+  .modal-close { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; cursor: pointer; color: var(--muted); }
+  .modal-close svg { width: 20px; height: 20px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 200ms !important; transition-delay: 0ms !important; }
+    .hero-media img, .js .reveal-img img { transform: none !important; }
+    .hero h1 .line > span { transform: none; }
+    .js .reveal-img img { clip-path: none; opacity: 0; transition: opacity 400ms ease !important; }
+    .js .reveal-img.in img { opacity: 1; }
+    .js .reveal { transform: none; }
+    .fade-in { transform: none; }
+    .js .motif path, .js .motif rect { stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2.7-3.6A2 2 0 0 0 13.7 6H8.3a2 2 0 0 0-1.6.8L4 10l-1.5.6A2 2 0 0 0 1 12.5V16c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.6a10 10 0 0 1 14 0"/><path d="M8.5 16.1a5 5 0 0 1 7 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M12 20h.01"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="13" rx="1"/><path d="m17 2-5 5-5-5"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 2.5c-.5 3-2 5-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-nosmoke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20"/><path d="M12 12H2v4h14"/><path d="M22 12v4"/><path d="M18 12h-.5"/><path d="M7 12v4"/><path d="M18 8c0-2.5-2-2.5-2-5"/><path d="M22 8c0-2.5-2-2.5-2-5"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></symbol>
+    <symbol id="i-child" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Ijumba Signature Hotel, back to top">
+      <span class="brand-name">IJUMBA</span>
+      <span class="brand-sub">Signature Hotel</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#rooms">Rooms</a>
+      <a href="#details">The Hotel</a>
+      <a href="#dining">Dining</a>
+      <a href="#location">Location</a>
+      <a class="btn btn-brass" href="#enquire">Book a stay</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Welcome">
+    <div class="hero-media">
+      <img src="images/hero.jpg" alt="A double room at Ijumba Signature Hotel with a dark velvet headboard and crisp white linen" fetchpriority="high">
+    </div>
+    <div class="wrap hero-content">
+      <span class="eyebrow fade-in">Bellville · Cape Town</span>
+      <h1>
+        <span class="line"><span>Quiet comfort,</span></span>
+        <span class="line"><span><span class="accent">close</span> to everything.</span></span>
+      </h1>
+      <p class="hero-sub fade-in d1">A boutique hotel on Karoo Street, 8&nbsp;km from Cape Town International Airport. Velvet, marble and a warm welcome, day or night.</p>
+
+      <form class="book-bar fade-in d2" id="bookBar" aria-label="Check availability">
+        <div class="field">
+          <label for="bbIn">Check in</label>
+          <input type="date" id="bbIn" required>
+        </div>
+        <div class="field">
+          <label for="bbOut">Check out</label>
+          <input type="date" id="bbOut" required>
+        </div>
+        <div class="field">
+          <label for="bbRoom">Room</label>
+          <select id="bbRoom">
+            <option value="">Any room</option>
+            <option>Deluxe Queen Suite</option>
+            <option>Double Room</option>
+            <option>Family Room</option>
+            <option>Triple Room</option>
+            <option>Single Room</option>
+          </select>
+        </div>
+        <button class="btn btn-brass" type="submit">Check availability</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Facts -->
+  <div class="facts on-dark">
+    <div class="wrap">
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-plane"/></svg><div><strong>8 km to the airport</strong>Cape Town International</div></li>
+        <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div><strong>24-hour front desk</strong>Arrive late, leave early</div></li>
+        <li><svg aria-hidden="true"><use href="#i-car"/></svg><div><strong>Free parking</strong>On site, for every guest</div></li>
+        <li><svg aria-hidden="true"><use href="#i-wifi"/></svg><div><strong>Free Wi-Fi</strong>Throughout the hotel</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section" aria-labelledby="introTitle">
+    <div class="wrap intro-grid">
+      <div>
+        <span class="eyebrow reveal">Welcome to Ijumba</span>
+        <h2 id="introTitle" class="reveal">A calm, well-made room in the heart of the <span class="accent">northern suburbs.</span></h2>
+        <p class="lead reveal">Ijumba Signature is a small, modern hotel in Bellville. Every room has its own bathroom, air-conditioning and a hand-finished velvet headboard. Downstairs, there's a restaurant and bar, and someone at the front desk around the clock.</p>
+        <div class="intro-signature reveal">
+          <div><b>5</b><span>Room types</span></div>
+          <div><b>24/7</b><span>Front desk</span></div>
+          <div><b>8 km</b><span>To CPT airport</span></div>
+        </div>
+      </div>
+      <div class="intro-figure">
+        <div class="reveal-img main"><img src="images/suite.jpg" alt="Deluxe Queen Suite with a velvet bed, leather armchair and marble-topped table"></div>
+        <div class="reveal-img inset"><img src="images/detail-chair.jpg" alt="Leather armchair beside a marble table with brass legs"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms -->
+  <section class="section rooms" id="rooms" aria-labelledby="roomsTitle">
+    <div class="wrap">
+      <div class="rooms-head">
+        <div>
+          <span class="eyebrow reveal">Rooms &amp; Suites</span>
+          <h2 id="roomsTitle" class="reveal">Five ways to stay.</h2>
+        </div>
+        <p class="lead reveal">From a single room for a one-night stopover to a family room that sleeps four, each one is non-smoking, air-conditioned and has its own bathroom.</p>
+      </div>
+
+      <div class="room-list">
+        <article class="room">
+          <div class="reveal-img room-media"><img src="images/suite-2.jpg" alt="Deluxe Queen Suite with a queen bed and lounge chair"></div>
+          <div class="reveal">
+            <span class="room-num">01</span>
+            <h3>Deluxe Queen Suite</h3>
+            <p>Our most generous room: a queen bed against a full velvet headboard, with a lounge chair and a marble-topped table for a quiet coffee.</p>
+            <ul class="room-specs">
+              <li><svg aria-hidden="true"><use href="#i-bed"/></svg>1 queen bed</li>
+              <li><svg aria-hidden="true"><use href="#i-users"/></svg>Sleeps 2</li>
+            </ul>
+            <a class="room-cta" href="#enquire" data-room="Deluxe Queen Suite">Enquire about this room <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="reveal-img room-media"><img src="images/double.jpg" alt="Double room with a dark velvet headboard and white bedding"></div>
+          <div class="reveal">
+            <span class="room-num">02</span>
+            <h3>Double Room</h3>
+            <p>A comfortable double with a private bathroom, ideal for couples or business travellers who want a little more space.</p>
+            <ul class="room-specs">
+              <li><svg aria-hidden="true"><use href="#i-bed"/></svg>1 double bed</li>
+              <li><svg aria-hidden="true"><use href="#i-users"/></svg>Sleeps 2</li>
+            </ul>
+            <a class="room-cta" href="#enquire" data-room="Double Room">Enquire about this room <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="reveal-img room-media"><img src="images/family.jpg" alt="Family room with two beds, a sofa and a round table"></div>
+          <div class="reveal">
+            <span class="room-num">03</span>
+            <h3>Family Room</h3>
+            <p>Two beds and a seating area in one room, so the whole family stays together. Children of all ages are welcome.</p>
+            <ul class="room-specs">
+              <li><svg aria-hidden="true"><use href="#i-bed"/></svg>1 double + 1 queen</li>
+              <li><svg aria-hidden="true"><use href="#i-users"/></svg>Sleeps 4</li>
+            </ul>
+            <a class="room-cta" href="#enquire" data-room="Family Room">Enquire about this room <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="reveal-img room-media"><img src="images/triple.jpg" alt="Triple room with velvet headboards and white linen"></div>
+          <div class="reveal">
+            <span class="room-num">04</span>
+            <h3>Triple Room</h3>
+            <p>Room for three friends or colleagues travelling together, with separate beds and a shared private bathroom.</p>
+            <ul class="room-specs">
+              <li><svg aria-hidden="true"><use href="#i-bed"/></svg>Single, double &amp; queen</li>
+              <li><svg aria-hidden="true"><use href="#i-users"/></svg>Sleeps 3</li>
+            </ul>
+            <a class="room-cta" href="#enquire" data-room="Triple Room">Enquire about this room <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="reveal-img room-media"><img src="images/single.jpg" alt="Single room with a bed beside the window"></div>
+          <div class="reveal">
+            <span class="room-num">05</span>
+            <h3>Single Room</h3>
+            <p>Everything a solo traveller needs for a good night before an early flight or a day of meetings.</p>
+            <ul class="room-specs">
+              <li><svg aria-hidden="true"><use href="#i-bed"/></svg>1 single bed</li>
+              <li><svg aria-hidden="true"><use href="#i-users"/></svg>Sleeps 1</li>
+            </ul>
+            <a class="room-cta" href="#enquire" data-room="Single Room">Enquire about this room <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="in-room reveal">
+        <h3>In every room</h3>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-drop"/></svg>Private bathroom &amp; shower</li>
+          <li><svg aria-hidden="true"><use href="#i-snow"/></svg>Air-conditioning</li>
+          <li><svg aria-hidden="true"><use href="#i-tv"/></svg>Flat-screen TV</li>
+          <li><svg aria-hidden="true"><use href="#i-wifi"/></svg>Free Wi-Fi</li>
+          <li><svg aria-hidden="true"><use href="#i-gift"/></svg>Free toiletries</li>
+          <li><svg aria-hidden="true"><use href="#i-nosmoke"/></svg>Non-smoking</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature details -->
+  <section class="section details on-dark" id="details" aria-labelledby="detailsTitle">
+    <div class="wrap">
+      <div class="details-head">
+        <span class="eyebrow reveal">The Signature touch</span>
+        <h2 id="detailsTitle" class="reveal">Velvet, marble <span class="accent">&amp; brass.</span></h2>
+        <p class="lead reveal">The details are what make a room feel looked after: deep velvet headboards, marble-look tiling from floor to shower, leather seating and brass-legged tables.</p>
+      </div>
+      <div class="mosaic">
+        <figure class="m1"><div class="reveal-img" style="height:100%"><img src="images/twin.jpg" alt="Two beds with velvet headboards"></div></figure>
+        <figure class="m2"><div class="reveal-img" style="height:100%"><img src="images/detail-shower.jpg" alt="Marble-look walk-in shower"></div></figure>
+        <figure class="m3"><div class="reveal-img" style="height:100%"><img src="images/detail-chair.jpg" alt="Leather armchair and marble table with brass legs"></div></figure>
+        <figure class="m4"><div class="reveal-img" style="height:100%"><img src="images/bath.jpg" alt="Marble-tiled bathroom with rain shower"></div></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dining -->
+  <section class="section dining on-dark" id="dining" aria-labelledby="diningTitle">
+    <div class="wrap dining-grid">
+      <div>
+        <span class="eyebrow reveal">Restaurant &amp; Bar</span>
+        <h2 id="diningTitle" class="reveal">Stay in for <span class="accent">dinner.</span></h2>
+        <p class="lead reveal">After a long flight or a full day, there's no need to go out again. The hotel's own restaurant and bar are just downstairs, for a proper meal or a quiet drink before bed.</p>
+        <ul class="dining-list reveal">
+          <li><span>Restaurant</span><span>On site</span></li>
+          <li><span>Bar</span><span>On site</span></li>
+          <li><span>Front desk</span><span>24 hours</span></li>
+        </ul>
+      </div>
+      <div class="motif" id="motif" aria-hidden="true">
+        <!-- Line drawing of the hotel's signature headboard -->
+        <svg viewBox="0 0 400 400">
+          <rect x="40" y="60" width="320" height="280" pathLength="1"/>
+          <path d="M40 200 H360" pathLength="1"/>
+          <path d="M120 60 L160 200 L200 60" pathLength="1"/>
+          <path d="M200 60 L240 200 L280 60" pathLength="1"/>
+          <path d="M40 200 L120 340" pathLength="1"/>
+          <path d="M160 200 L200 340 L240 200" pathLength="1"/>
+          <path d="M360 200 L280 340" pathLength="1"/>
+          <path d="M120 340 L160 200" pathLength="1"/>
+          <path d="M280 340 L240 200" pathLength="1"/>
+        </svg>
+        <span class="motif-label">The Ijumba headboard</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="section" aria-labelledby="staysTitle">
+    <div class="wrap">
+      <span class="eyebrow reveal">Who stays with us</span>
+      <h2 id="staysTitle" class="reveal" style="margin-top:24px;max-width:14em">Made for the way people travel <span class="accent">through Cape Town.</span></h2>
+      <div class="stays-grid">
+        <div class="stay reveal">
+          <span class="n">01</span>
+          <h3>Early flights &amp; late arrivals</h3>
+          <p>Check in until 11 pm and check out from 5 am. The airport is a short drive away, and the front desk never closes.</p>
+        </div>
+        <div class="stay reveal">
+          <span class="n">02</span>
+          <h3>Business in Bellville</h3>
+          <p>Stay close to Bellville's offices, hospitals and campuses, with free Wi-Fi, free parking and dinner downstairs.</p>
+        </div>
+        <div class="stay reveal">
+          <span class="n">03</span>
+          <h3>Families visiting the Cape</h3>
+          <p>Family and triple rooms keep everyone together, and children of all ages are welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Good to know -->
+  <section class="section know" aria-labelledby="knowTitle">
+    <div class="wrap know-grid">
+      <div>
+        <span class="eyebrow reveal">Good to know</span>
+        <h2 id="knowTitle" class="reveal">Before you arrive.</h2>
+      </div>
+      <div class="reveal">
+        <div class="times">
+          <div><span>Check in</span><b>2 pm – 11 pm</b><small>Let us know if you'll be late</small></div>
+          <div><span>Check out</span><b>5 am – 10 am</b><small>Early departures are no problem</small></div>
+        </div>
+        <ul class="policies">
+          <li><svg aria-hidden="true"><use href="#i-child"/></svg><span>Children of all ages welcome. Guests 18 and over are charged as adults.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-bed"/></svg><span>Cots and extra beds aren't available.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-nosmoke"/></svg><span>All rooms are non-smoking.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-paw"/></svg><span>Pets aren't allowed.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-x"/></svg><span>No parties or bachelor(ette) events.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Special requests welcome. Just add them to your enquiry.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry -->
+  <section class="section" id="enquire" aria-labelledby="enqTitle">
+    <div class="wrap enquire-grid">
+      <div>
+        <span class="eyebrow reveal">Book direct</span>
+        <h2 id="enqTitle" class="reveal">Reserve your <span class="accent">room.</span></h2>
+        <p class="lead reveal">Send us your dates and we'll confirm availability and your rate. Booking directly with the hotel means you deal with us from start to finish.</p>
+        <div class="contact-lines reveal">
+          <div><svg aria-hidden="true"><use href="#i-pin"/></svg><div><small>Address</small>17 Karoo Street, Bellville, 7530</div></div>
+          <div><svg aria-hidden="true"><use href="#i-clock"/></svg><div><small>Reception</small>Open 24 hours</div></div>
+          <div><svg aria-hidden="true"><use href="#i-chat"/></svg><div><small>Replies</small>Straight to the front desk</div></div>
+        </div>
+      </div>
+
+      <form class="enquiry reveal" id="enquiry" novalidate>
+        <div class="f">
+          <label for="fName">Full name</label>
+          <input id="fName" name="name" autocomplete="name" required>
+          <span class="err">Please enter your name.</span>
+        </div>
+        <div class="f">
+          <label for="fPhone">Phone</label>
+          <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          <span class="err">Please enter a phone number we can reach you on.</span>
+        </div>
+        <div class="f">
+          <label for="fIn">Check in</label>
+          <input id="fIn" name="in" type="date" required>
+          <span class="err">Please choose a check-in date.</span>
+        </div>
+        <div class="f">
+          <label for="fOut">Check out</label>
+          <input id="fOut" name="out" type="date" required>
+          <span class="err">Check-out must be after check-in.</span>
+        </div>
+        <div class="f full">
+          <label for="fRoom">Room</label>
+          <select id="fRoom" name="room">
+            <option value="">No preference</option>
+            <option>Deluxe Queen Suite</option>
+            <option>Double Room</option>
+            <option>Family Room</option>
+            <option>Triple Room</option>
+            <option>Single Room</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="fAdults">Adults</label>
+          <select id="fAdults" name="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+        </div>
+        <div class="f">
+          <label for="fKids">Children</label>
+          <select id="fKids" name="kids"><option selected>0</option><option>1</option><option>2</option><option>3</option></select>
+        </div>
+        <div class="f full">
+          <label for="fMsg">Special requests <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional)</span></label>
+          <textarea id="fMsg" name="msg" placeholder="Arrival time, dietary needs, anything else we should know"></textarea>
+        </div>
+        <button class="btn btn-dark" type="submit">Send enquiry <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <p class="form-note">No payment needed now. We'll confirm your rate before anything is booked.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section location on-dark" id="location" aria-labelledby="locTitle">
+    <div class="wrap loc-grid">
+      <div>
+        <span class="eyebrow reveal">Location</span>
+        <h2 id="locTitle" class="reveal">Easy to find, <span class="accent">easy to reach.</span></h2>
+        <p class="address reveal">17 Karoo Street<br>Bellville, Cape Town, 7530</p>
+        <ul class="distances reveal">
+          <li><span>Cape Town International Airport</span><b>8 km</b></li>
+          <li><span>Parking</span><b>Free, on site</b></li>
+        </ul>
+        <a class="btn btn-ghost reveal" href="https://www.google.com/maps/dir/?api=1&destination=17+Karoo+Street,+Bellville,+7530,+South+Africa" target="_blank" rel="noopener">Get directions <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="map reveal">
+        <iframe title="Map showing Ijumba Signature Hotel at 17 Karoo Street, Bellville" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=17%20Karoo%20Street%2C%20Bellville%2C%207530%2C%20South%20Africa&z=15&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top"><span class="brand-name">IJUMBA</span><span class="brand-sub">Signature Hotel</span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#rooms">Rooms</a><a href="#details">The Hotel</a><a href="#dining">Dining</a><a href="#location">Location</a><a href="#enquire">Book</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>17 Karoo Street, Bellville, 7530 · Cape Town, South Africa</span>
+      <span>Concept design · Not the hotel's official website</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta"><a class="btn btn-brass" href="#enquire">Book a stay</a></div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <span class="eyebrow">Enquiry ready</span>
+    <h3 id="modalTitle">Thank you, <span id="mName"></span>.</h3>
+    <ul class="summary" id="mSummary"></ul>
+    <div class="modal-actions">
+      <a class="btn btn-brass" id="mWhatsApp" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Send on WhatsApp</a>
+      <button class="btn btn-ghost" data-close type="button">Back to the site</button>
+    </div>
+    <p class="modal-note" id="mNote"></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  // The hotel's WhatsApp number in international format, e.g. "27821234567".
+  // Left empty in this concept: add the real number once the hotel confirms it.
+  var WHATSAPP_NUMBER = "";
+
+  var root = document.documentElement;
+  root.classList.add("js");
+  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add("loaded"); }); });
+
+  // Header: solid once past the hero
+  var header = document.getElementById("header");
+  var sticky = document.getElementById("stickyCta");
+  var hero = document.querySelector(".hero");
+  var enquire = document.getElementById("enquire");
+  function onScroll() {
+    var y = window.scrollY;
+    header.classList.toggle("solid", y > 60);
+    var pastHero = y > hero.offsetHeight * 0.8;
+    var r = enquire.getBoundingClientRect();
+    var atForm = r.top < window.innerHeight && r.bottom > 0;
+    sticky.classList.toggle("show", pastHero && !atForm);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var menuBtn = document.getElementById("menuBtn");
+  function setMenu(open) {
+    document.body.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  menuBtn.addEventListener("click", function () { setMenu(!document.body.classList.contains("menu-open")); });
+  document.querySelectorAll("#nav a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+
+  // Reveal on scroll
+  // Checks positions directly on scroll, so nothing can stay hidden
+  var pending = Array.prototype.slice.call(document.querySelectorAll(".reveal, .reveal-img, .motif"));
+  function revealVisible() {
+    var limit = window.innerHeight * 0.95;
+    pending = pending.filter(function (t) {
+      var r = t.getBoundingClientRect();
+      if (r.top < limit && r.bottom > 0) { t.classList.add("in"); return false; }
+      if (r.bottom <= 0) { t.classList.add("in"); return false; } // already scrolled past
+      return true;
+    });
+    if (!pending.length) {
+      window.removeEventListener("scroll", revealVisible);
+      window.removeEventListener("resize", revealVisible);
+    }
+  }
+  window.addEventListener("scroll", revealVisible, { passive: true });
+  window.addEventListener("resize", revealVisible);
+  window.addEventListener("load", revealVisible);
+  revealVisible();
+  // Stagger siblings that reveal together
+  document.querySelectorAll(".stays-grid, .room-specs").forEach(function (g) {
+    Array.prototype.forEach.call(g.children, function (c, i) { c.style.transitionDelay = (i * 70) + "ms"; });
+  });
+
+  // Dates
+  function iso(d) { return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); }
+  var today = new Date(); var tomorrow = new Date(Date.now() + 864e5);
+  var bbIn = document.getElementById("bbIn"), bbOut = document.getElementById("bbOut");
+  var fIn = document.getElementById("fIn"), fOut = document.getElementById("fOut");
+  [bbIn, fIn].forEach(function (el) { el.min = iso(today); });
+  [bbOut, fOut].forEach(function (el) { el.min = iso(tomorrow); });
+  function linkDates(a, b) {
+    a.addEventListener("change", function () {
+      if (!a.value) return;
+      var next = new Date(a.value); next.setDate(next.getDate() + 1);
+      b.min = iso(next);
+      if (!b.value || b.value <= a.value) b.value = iso(next);
+    });
+  }
+  linkDates(bbIn, bbOut); linkDates(fIn, fOut);
+  // Start with tonight's stay filled in, so no empty "yyyy/mm/dd" boxes
+  bbIn.value = iso(today); bbOut.value = iso(tomorrow);
+
+  // Hero bar -> enquiry form
+  var fRoom = document.getElementById("fRoom");
+  document.getElementById("bookBar").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (bbIn.value) fIn.value = bbIn.value;
+    if (bbOut.value) fOut.value = bbOut.value;
+    fOut.min = bbOut.min;
+    if (document.getElementById("bbRoom").value) fRoom.value = document.getElementById("bbRoom").value;
+    enquire.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    setTimeout(function () { document.getElementById("fName").focus({ preventScroll: true }); }, 700);
+  });
+  document.querySelectorAll("[data-room]").forEach(function (a) {
+    a.addEventListener("click", function () { fRoom.value = a.getAttribute("data-room"); });
+  });
+
+  // Enquiry
+  var form = document.getElementById("enquiry");
+  function check(id, ok) {
+    var f = document.getElementById(id).closest(".f");
+    f.classList.toggle("invalid", !ok);
+    return ok;
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("fName").value.trim();
+    var phone = document.getElementById("fPhone").value.trim();
+    var ok = [
+      check("fName", name.length > 1),
+      check("fPhone", phone.replace(/\D/g, "").length >= 9),
+      check("fIn", !!fIn.value),
+      check("fOut", !!fOut.value && fOut.value > fIn.value)
+    ];
+    var firstBad = form.querySelector(".invalid input, .invalid select");
+    if (firstBad) { firstBad.focus(); return; }
+    openModal({
+      name: name, phone: phone, in: fIn.value, out: fOut.value,
+      room: fRoom.value || "No preference",
+      adults: document.getElementById("fAdults").value,
+      kids: document.getElementById("fKids").value,
+      msg: document.getElementById("fMsg").value.trim()
+    });
+  });
+  form.addEventListener("input", function (e) {
+    var f = e.target.closest(".f"); if (f) f.classList.remove("invalid");
+  });
+
+  function fmt(v) { return new Date(v + "T12:00:00").toLocaleDateString("en-ZA", { weekday: "short", day: "numeric", month: "short", year: "numeric" }); }
+  var modal = document.getElementById("modal"), lastFocus;
+  function openModal(d) {
+    var nights = Math.round((new Date(d.out) - new Date(d.in)) / 864e5);
+    document.getElementById("mName").textContent = d.name.split(" ")[0];
+    var rows = [
+      ["Check in", fmt(d.in)], ["Check out", fmt(d.out)],
+      ["Nights", String(nights)], ["Room", d.room],
+      ["Guests", d.adults + " adult" + (d.adults === "1" ? "" : "s") + (d.kids !== "0" ? ", " + d.kids + " child" + (d.kids === "1" ? "" : "ren") : "")]
+    ];
+    var ul = document.getElementById("mSummary"); ul.innerHTML = "";
+    rows.forEach(function (r) {
+      var li = document.createElement("li");
+      var a = document.createElement("span"); a.textContent = r[0];
+      var b = document.createElement("span"); b.textContent = r[1];
+      li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+    });
+    var text = "Hello Ijumba Signature Hotel, I'd like to book a stay.\n\n" +
+      "Name: " + d.name + "\nPhone: " + d.phone +
+      "\nCheck in: " + fmt(d.in) + "\nCheck out: " + fmt(d.out) + " (" + nights + " night" + (nights === 1 ? "" : "s") + ")" +
+      "\nRoom: " + d.room + "\nGuests: " + rows[4][1] +
+      (d.msg ? "\nRequests: " + d.msg : "");
+    var wa = document.getElementById("mWhatsApp");
+    var note = document.getElementById("mNote");
+    if (WHATSAPP_NUMBER) {
+      wa.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+      wa.style.display = ""; note.textContent = "This opens WhatsApp with your enquiry ready to send. We'll reply to confirm availability and your rate.";
+    } else {
+      wa.style.display = "none";
+      note.textContent = "Concept preview: on the live site, this enquiry goes straight to the hotel's WhatsApp, with every detail already filled in.";
+    }
+    lastFocus = document.activeElement;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    setTimeout(function () { modal.querySelector(".modal-close").focus(); }, 50);
+  }
+  function closeModal() {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  modal.querySelectorAll("[data-close]").forEach(function (el) { el.addEventListener("click", closeModal); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { if (modal.classList.contains("open")) closeModal(); else setMenu(false); }
+  });
+})();
+</script>
+</body>
+</html>
