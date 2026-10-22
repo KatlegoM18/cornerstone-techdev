@@ -116,8 +116,19 @@ document.documentElement.classList.add("cs-js");
         });
     };
 
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+    // at most once per frame, however fast scroll events arrive
+    let queued = false;
+    const schedule = () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+            queued = false;
+            update();
+        });
+    };
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
     update();
 
 })();

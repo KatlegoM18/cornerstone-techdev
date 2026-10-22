@@ -782,15 +782,17 @@ if (!canvas) {
 
         function resize() {
 
+            /*
+             * Render at half the CSS size and let
+             * the browser scale it up. The texture
+             * is soft and faded, so it looks the
+             * same, but the GPU shades a quarter
+             * of the pixels (1/16 on retina) and
+             * scrolling stays smooth.
+             */
+
             const dpr =
-                Math.min(
-
-                    window.devicePixelRatio ||
-                    1,
-
-                    2
-
-                );
+                0.5;
 
 
             const width =
