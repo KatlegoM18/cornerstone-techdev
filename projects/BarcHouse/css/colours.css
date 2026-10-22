@@ -1,0 +1,402 @@
+/* =========================================================
+   BARC HOUSE — ROOM COLOURS (TRY-OUT)
+   The three wall colours from the rooms (deep green, mustard
+   yellow, warm peach) layered over site.css.
+   Irene = yellow, Karoo = green, peach = the accent in between.
+
+   To switch off: remove the <link ... colours.css> line from
+   each page. Nothing else depends on this file.
+
+   Rule of thumb used here: colour goes on surfaces (section
+   tints, icon tiles, badges, numbers, the call-to-action band);
+   text stays dark so everything stays easy to read.
+========================================================= */
+
+:root {
+    /* Deep green (Karoo lounge pillar) */
+    --green: #2e5b4c;
+    --green-ink: #24493d;
+    --green-soft: #d3e6db;
+    --green-tint: #e2efe7;
+
+    /* Mustard yellow (Irene Room 7 and 10 walls) */
+    --yellow: #e3a922;
+    --yellow-bright: #f2c14e;
+    --yellow-ink: #6b4d04;
+    --yellow-soft: #f7d77a;
+    --yellow-tint: #fbe7a8;
+
+    /* Warm peach (Irene Room 14, Karoo Room 12 walls) */
+    --peach: #de8e64;
+    --peach-ink: #86401c;
+    --peach-soft: #f4bc9b;
+    --peach-tint: #f9d8c3;
+
+    /* Signature stripe: the three walls side by side */
+    --stripe: linear-gradient(90deg,
+        var(--green) 0 33.33%,
+        var(--yellow) 33.33% 66.66%,
+        var(--peach) 66.66% 100%);
+}
+
+
+/* =========================================================
+   SITE-WIDE
+========================================================= */
+
+:focus-visible {
+    outline-color: var(--green);
+}
+
+.eyebrow {
+    color: var(--green-ink);
+}
+
+.eyebrow.on-dark {
+    color: var(--yellow-bright);
+}
+
+.btn-primary:hover {
+    background: var(--green-ink);
+}
+
+.text-link {
+    border-bottom: 2px solid var(--yellow);
+}
+
+.text-link:hover {
+    border-color: var(--green);
+}
+
+/* The three-colour stripe under the header and above the footer */
+.site-header {
+    border-bottom: none;
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background: var(--stripe);
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.site-header.scrolled::after {
+    opacity: 1;
+}
+
+.site-footer {
+    position: relative;
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 8px;
+    background: var(--stripe);
+}
+
+.site-footer h3 {
+    color: var(--yellow-bright);
+}
+
+/* Icon tiles take turns: green, yellow, peach */
+.feature:nth-child(3n + 1) .feature-icon,
+.contact-list li:nth-child(3n + 1) .feature-icon {
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.feature:nth-child(3n + 2) .feature-icon,
+.contact-list li:nth-child(3n + 2) .feature-icon {
+    background: var(--yellow-soft);
+    color: var(--yellow-ink);
+}
+
+.feature:nth-child(3n) .feature-icon,
+.contact-list li:nth-child(3n) .feature-icon {
+    background: var(--peach-soft);
+    color: var(--peach-ink);
+}
+
+.feature-tag {
+    color: var(--peach-ink);
+}
+
+/* Tiles and cards sit white on the coloured sections */
+.section.alt .feature,
+.section.alt .contact-list a,
+.section.alt .contact-list div {
+    background: var(--surface);
+}
+
+/* Campus chips take turns too */
+.chip-list li:nth-child(3n + 1) { background: var(--green-tint);  border-color: var(--green-soft); }
+.chip-list li:nth-child(3n + 2) { background: var(--yellow-tint); border-color: var(--yellow-soft); }
+.chip-list li:nth-child(3n)     { background: var(--peach-tint);  border-color: var(--peach-soft); }
+.chip-list li:nth-child(3n + 1) i { color: var(--green); }
+.chip-list li:nth-child(3n + 2) i { color: var(--yellow-ink); }
+.chip-list li:nth-child(3n) i     { color: var(--peach-ink); }
+
+/* Call-to-action band: deep green with yellow and peach glows */
+.cta-band {
+    background: var(--green);
+}
+
+.cta-band::after {
+    background: radial-gradient(circle, rgba(242, 193, 78, .6), transparent 70%);
+}
+
+.cta-band::before {
+    content: "";
+    position: absolute;
+    left: -80px;
+    bottom: -140px;
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(222, 142, 100, .55), transparent 70%);
+}
+
+.cta-band .btn-light {
+    background: var(--yellow-bright);
+    color: var(--ink);
+}
+
+.cta-band .btn-light:hover {
+    background: #f6cf6e;
+}
+
+/* Coloured sections: body text one step darker so it stays
+   easy to read on the stronger yellow and peach */
+#included,
+.section.alt:has(.steps),
+.res-irene #rooms, .res-karoo #rooms,
+.res-irene #gallery, .res-karoo #gallery,
+.res-irene #contact, .res-karoo #contact {
+    --muted: #464d57;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.hero h1 em {
+    color: var(--yellow-bright);
+}
+
+/* A coloured line on top of each hero fact */
+.hero-facts {
+    border-top: none;
+    gap: 0 20px;
+}
+
+.hero-fact,
+.hero-fact + .hero-fact {
+    padding: 22px 0 0;
+    border-left: none;
+    border-top: 4px solid var(--yellow-bright);
+}
+
+.hero-fact:nth-child(2) { border-top-color: #7fae98; }
+.hero-fact:nth-child(3) { border-top-color: var(--peach); }
+.hero-fact:nth-child(4) { border-top-color: var(--yellow-bright); }
+
+/* Residence cards: Irene is yellow, Karoo is green */
+.residence-card {
+    border-top: 6px solid var(--yellow);
+}
+
+.residence-card:nth-child(2) {
+    border-top-color: var(--green);
+}
+
+.residence-card:nth-child(1) .residence-badge {
+    background: var(--yellow-bright);
+    color: var(--ink);
+}
+
+.residence-card:nth-child(2) .residence-badge {
+    background: var(--green);
+    color: #fff;
+}
+
+.residence-card:nth-child(1) .residence-address i { color: var(--yellow); }
+.residence-card:nth-child(2) .residence-address i { color: var(--green); }
+
+.residence-card:nth-child(1) .meta-list li { background: var(--yellow-tint); border-color: var(--yellow-soft); }
+.residence-card:nth-child(2) .meta-list li { background: var(--green-tint);  border-color: var(--green-soft); }
+
+.residence-card:nth-child(1) .meta-list i { color: var(--yellow-ink); }
+.residence-card:nth-child(2) .meta-list i { color: var(--green); }
+
+/* Address cards on the home location section match */
+.address-card:nth-child(1) .feature-icon { background: var(--yellow-soft); color: var(--yellow-ink); }
+.address-card:nth-child(2) .feature-icon { background: var(--green-soft);  color: var(--green); }
+
+/* Section colours */
+#included {
+    background: var(--green-tint);
+    border-color: var(--green-soft);
+}
+
+.section.alt:has(.steps) {
+    background: var(--yellow-tint);
+    border-color: var(--yellow-soft);
+}
+
+/* How to apply: each step gets its own colour */
+.step {
+    border-top: 5px solid var(--green);
+}
+
+.step::before {
+    color: var(--green);
+}
+
+.step:nth-child(2) {
+    border-top-color: var(--yellow);
+}
+
+.step:nth-child(2)::before {
+    color: var(--yellow-ink);
+}
+
+.step:nth-child(3) {
+    border-top-color: var(--peach);
+}
+
+.step:nth-child(3)::before {
+    color: var(--peach-ink);
+}
+
+/* NSFAS note under the residence cards, in peach */
+.funding-note {
+    background: var(--peach-tint);
+    border-color: var(--peach-soft);
+}
+
+.funding-note i {
+    color: var(--peach-ink);
+}
+
+.apply-note i {
+    color: var(--yellow-bright);
+}
+
+
+/* =========================================================
+   RESIDENCE PAGES
+   <body class="res-irene"> (yellow) / <body class="res-karoo"> (green)
+========================================================= */
+
+.res-irene { --accent: var(--yellow); --accent-ink: var(--yellow-ink); --accent-soft: var(--yellow-soft); --accent-tint: var(--yellow-tint); }
+.res-karoo { --accent: var(--green);  --accent-ink: var(--green-ink);  --accent-soft: var(--green-soft);  --accent-tint: var(--green-tint); }
+
+.res-irene .page-hero .residence-address i,
+.res-karoo .page-hero .residence-address i {
+    color: var(--yellow-bright);
+}
+
+.res-irene .sub-nav-links a.active::after,
+.res-karoo .sub-nav-links a.active::after {
+    height: 3px;
+    background: var(--accent);
+}
+
+.res-irene .facts-card,
+.res-karoo .facts-card {
+    border-top: 6px solid var(--accent);
+}
+
+/* Rooms in the residence's own colour; gallery and contact use
+   the other two colours, so each page shows all three */
+.res-irene #rooms,
+.res-karoo #rooms {
+    background: var(--accent-tint);
+    border-color: var(--accent-soft);
+}
+
+.res-irene #gallery {
+    background: var(--peach-tint);
+    border-color: var(--peach-soft);
+}
+
+.res-karoo #gallery {
+    background: var(--yellow-tint);
+    border-color: var(--yellow-soft);
+}
+
+.res-irene #contact {
+    background: var(--green-tint);
+    border-color: var(--green-soft);
+}
+
+.res-karoo #contact {
+    background: var(--peach-tint);
+    border-color: var(--peach-soft);
+}
+
+.res-irene .room-card,
+.res-karoo .room-card {
+    border-top: 5px solid var(--accent);
+}
+
+.res-irene .room-body .meta-list li,
+.res-karoo .room-body .meta-list li {
+    background: var(--accent-tint);
+    border-color: var(--accent-soft);
+}
+
+.res-irene .room-body .meta-list i,
+.res-karoo .room-body .meta-list i {
+    color: var(--accent-ink);
+}
+
+
+/* =========================================================
+   ROOMS PAGES + APPLICATION
+========================================================= */
+
+/* "Every room includes" icons take turns */
+.included li:nth-child(3n + 1) i { color: var(--green); }
+.included li:nth-child(3n + 2) i { color: var(--yellow-ink); }
+.included li:nth-child(3n) i     { color: var(--peach-ink); }
+
+.room-card .status-pill {
+    color: var(--green);
+}
+
+/* Application page: "How it works" panel in deep green */
+.apply-aside {
+    background: var(--green);
+}
+
+.apply-steps li::before {
+    border-color: rgba(242, 193, 78, .7);
+    color: var(--yellow-bright);
+}
+
+.apply-help i {
+    color: var(--yellow-bright);
+}
+
+.form-section h2 {
+    color: var(--green-ink);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(46, 91, 76, .18);
+}

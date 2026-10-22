@@ -1,0 +1,713 @@
+/* =========================================================
+   BARC HOUSE — "STUDENT HOUSE" LOOK
+   The style of the original barchouse.co.za: deep teal and
+   cream, yellow buttons, Syne headings, a brush-script
+   wordmark, rounded photos and peach-topped cream cards.
+
+   Loaded last, after site.css and colours.css.
+========================================================= */
+
+:root {
+    /* Original Barc House palette */
+    --teal: #006863;
+    --teal-deep: #00504c;
+    --teal-mid: #306966;
+    --cream: #e8e1d5;
+    --cream-light: #f4efe6;
+    --dark: #232929;
+
+    /* Feed the palette into the shared tokens */
+    --paper: var(--cream-light);
+    --charcoal: var(--dark);
+    --ink: #1f2525;
+    --line: #ddd4c4;
+    --line-strong: #cbbfa9;
+
+    --green: var(--teal);
+    --green-ink: var(--teal-deep);
+    --green-soft: #cbe2df;
+    --green-tint: #deedeb;
+
+    --yellow: #e7c648;
+    --yellow-bright: #e7c648;
+
+    --peach: #e0855f;
+
+    /* Type */
+    --font-display: "Syne", "Segoe UI", sans-serif;
+    --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-script: "Mr Dafoe", "Brush Script MT", cursive;
+
+    --radius: 18px;
+    --radius-photo: 32px;
+}
+
+
+/* =========================================================
+   TYPE
+========================================================= */
+
+body {
+    font-size: 17px;
+}
+
+h1,
+h2 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.eyebrow {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: .2em;
+}
+
+
+/* =========================================================
+   BUTTONS: yellow and chunky, like the original
+========================================================= */
+
+.btn {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.btn-accent,
+.btn-yellow,
+.site-header .btn-primary,
+.mobile-nav .btn-primary,
+.cta-band .btn-light {
+    background: var(--yellow);
+    color: var(--dark);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, .18);
+}
+
+.btn-accent:hover,
+.btn-yellow:hover,
+.site-header .btn-primary:hover,
+.mobile-nav .btn-primary:hover,
+.cta-band .btn-light:hover {
+    background: #f0d469;
+}
+
+.btn-primary {
+    background: var(--teal);
+}
+
+.btn-primary:hover {
+    background: var(--teal-deep);
+}
+
+
+/* =========================================================
+   HEADER: teal, white links, script wordmark
+========================================================= */
+
+.site-header {
+    background: var(--teal);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.site-header .brand img {
+    border-color: transparent;
+}
+
+.brand-name {
+    font-family: var(--font-script);
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: .9;
+}
+
+.site-header .brand-name,
+.site-header .main-nav a,
+.site-header .login-link {
+    color: #fff;
+}
+
+.site-header .brand-tag {
+    color: rgba(255, 255, 255, .9);
+    letter-spacing: .22em;
+}
+
+.site-header .main-nav a:hover,
+.site-header .login-link:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+}
+
+.site-header .main-nav a[aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--yellow);
+    border-radius: 0;
+}
+
+.site-header .nav-toggle {
+    border-color: rgba(255, 255, 255, .4);
+    color: #fff;
+}
+
+@media (max-width: 960px) {
+    .mobile-nav {
+        background: var(--teal);
+        border-top-color: rgba(255, 255, 255, .15);
+    }
+
+    .mobile-nav a:not(.btn) {
+        color: #fff;
+        border-bottom-color: rgba(255, 255, 255, .15);
+    }
+
+    .mobile-nav .btn-outline {
+        border-color: rgba(255, 255, 255, .45);
+        background: transparent;
+        color: #fff;
+    }
+}
+
+
+/* =========================================================
+   HOME HERO: wordmark + cut-out students
+========================================================= */
+
+.house-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse 60% 55% at 50% 72%, rgba(255, 255, 255, .13), transparent 70%),
+        radial-gradient(ellipse 45% 40% at 85% 15%, rgba(231, 198, 72, .12), transparent 70%),
+        linear-gradient(180deg, var(--teal) 0%, #005c58 100%);
+    color: #fff;
+    isolation: isolate;
+}
+
+/* Fine grain, like printed paper */
+.house-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .18;
+    background-image: radial-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px);
+    background-size: 4px 4px;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+}
+
+.house-hero .container {
+    position: relative;
+    padding-top: clamp(28px, 5vw, 56px);
+    text-align: center;
+}
+
+.wordmark {
+    margin: 0;
+    font-family: var(--font-script);
+    font-size: clamp(76px, 13vw, 184px);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: 0;
+    color: #fff;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, .18);
+}
+
+.wordmark-tag {
+    margin-top: 6px;
+    font-family: var(--font-display);
+    font-size: clamp(13px, 1.6vw, 20px);
+    font-weight: 700;
+    letter-spacing: .38em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.wordmark-where {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, .75);
+}
+
+.hero-students {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(100%, 1060px);
+    height: auto;
+    margin: clamp(8px, 2vw, 20px) auto 0;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .25));
+
+    /* The photo's side edges cut through shoulders: fade them out */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
+}
+
+/* Apply (left) and Contact Donna (right) float beside the photo */
+/* Sits in the gap between the wordmark and the students' heads */
+.hero-side {
+    position: absolute;
+    top: clamp(232px, 20.5vw, 300px);
+    z-index: 2;
+}
+
+.hero-side.left {
+    left: var(--gutter);
+}
+
+.hero-side.right {
+    right: var(--gutter);
+}
+
+.contact-card {
+    width: 250px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: rgba(35, 41, 41, .88);
+    border-top: 4px solid var(--yellow);
+    text-align: left;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .25);
+}
+
+.contact-card h2 {
+    margin-bottom: 8px;
+    font-size: 19px;
+    color: #fff;
+}
+
+.contact-card a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, .9);
+}
+
+.contact-card a:hover {
+    color: var(--yellow);
+}
+
+.contact-card i {
+    width: 16px;
+    color: var(--yellow);
+}
+
+@media (max-width: 960px) {
+    .hero-side {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .hero-side.right {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   FEATURE CARD (overlaps the bottom of the hero photo)
+========================================================= */
+
+.feature-strip-wrap {
+    position: relative;
+    z-index: 3;
+    margin-top: clamp(-120px, -9vw, -60px);
+}
+
+.feature-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 40px);
+    padding: clamp(28px, 4vw, 48px);
+    border-radius: var(--radius);
+    background: var(--cream);
+    border-top: 10px solid var(--peach);
+    box-shadow: 0 30px 60px rgba(0, 40, 38, .22);
+    text-align: center;
+}
+
+.feature-strip .round-icon {
+    margin: 0 auto 16px;
+}
+
+.feature-strip h3 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.feature-strip p {
+    font-size: 15.5px;
+    color: #4b5252;
+}
+
+.round-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, .12);
+}
+
+@media (max-width: 760px) {
+    .feature-strip {
+        grid-template-columns: 1fr;
+    }
+
+    /* Show more of the students on phones */
+    .feature-strip-wrap {
+        margin-top: -28px;
+    }
+}
+
+
+/* =========================================================
+   TEAL STORY ROWS: text beside big rounded photos
+========================================================= */
+
+.teal-band {
+    position: relative;
+    background: var(--teal);
+    color: rgba(255, 255, 255, .86);
+}
+
+.teal-band h2,
+.teal-band h3 {
+    color: #fff;
+}
+
+.teal-band .eyebrow {
+    color: var(--yellow);
+}
+
+.story-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: center;
+}
+
+.story-row + .story-row {
+    margin-top: clamp(64px, 9vw, 112px);
+}
+
+.story-row.flip .story-photo {
+    order: -1;
+}
+
+.story-photo {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-photo);
+    overflow: hidden;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, .25);
+}
+
+.story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-text h2 {
+    font-size: clamp(28px, 3.4vw, 40px);
+    margin-bottom: 18px;
+}
+
+.story-text p {
+    font-size: 17px;
+}
+
+.story-text p + p {
+    margin-top: 12px;
+}
+
+.story-text .chip-list li {
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .2);
+    color: #fff;
+}
+
+.story-text .chip-list i {
+    color: var(--yellow);
+}
+
+.story-text .text-link {
+    color: #fff;
+    border-color: var(--yellow);
+}
+
+.info-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 6px;
+    list-style: none;
+}
+
+.info-list li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.info-list i {
+    margin-top: 4px;
+    color: var(--yellow);
+}
+
+.info-list strong {
+    color: #fff;
+}
+
+.info-list .nsfas {
+    margin-top: 6px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(224, 133, 95, .22);
+    border: 1px solid rgba(224, 133, 95, .55);
+}
+
+.info-list .nsfas i {
+    color: #ffb48f;
+}
+
+@media (max-width: 860px) {
+    .story-row {
+        grid-template-columns: 1fr;
+    }
+
+    .story-row.flip .story-photo {
+        order: 0;
+    }
+
+    .story-photo {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+/* =========================================================
+   CREAM SECTIONS + "THE PREMISES"
+========================================================= */
+
+.cream-band {
+    background: var(--cream);
+}
+
+.big-title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--dark);
+}
+
+.premises-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.premises-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 22px);
+}
+
+.premises-grid button {
+    padding: 0;
+    border: none;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: var(--line);
+    cursor: zoom-in;
+    box-shadow: 0 14px 30px rgba(0, 40, 38, .12);
+}
+
+.premises-grid button:nth-child(3n + 2) {
+    transform: translateY(28px);
+}
+
+.premises-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s var(--ease);
+}
+
+.premises-grid button:hover img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 760px) {
+    .premises-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .premises-grid button:nth-child(3n + 2) {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 32px);
+}
+
+.quote-card {
+    position: relative;
+    padding: clamp(28px, 4vw, 40px);
+    border-radius: var(--radius);
+    background: var(--cream);
+    border-top: 8px solid var(--peach);
+    color: #3f4646;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, .18);
+}
+
+.quote-card:nth-child(2) {
+    border-top-color: var(--yellow);
+}
+
+.quote-card blockquote {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.quote-card blockquote::before {
+    content: "\201C";
+    display: block;
+    height: 36px;
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-style: normal;
+    line-height: 1;
+    color: var(--teal);
+}
+
+.quote-card figcaption {
+    margin-top: 18px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.quote-card figcaption span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7171;
+}
+
+@media (max-width: 760px) {
+    .quote-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   SHARED PIECES ACROSS ALL PAGES
+========================================================= */
+
+/* Rounded photos everywhere */
+.residence-media,
+.split-media,
+.mosaic button,
+.room-media,
+.map-frame {
+    border-radius: 22px;
+}
+
+.residence-card,
+.room-card,
+.facts-card,
+.form-card,
+.feature-grid {
+    border-radius: var(--radius);
+}
+
+/* Section titles in Syne */
+.section-head h2,
+.prose h2,
+.cta-band h2,
+.page-hero h1,
+.residence-body h3,
+.room-body h3,
+.facts-card h3,
+.form-card > h3,
+.apply-aside h2,
+.modal-card h3,
+.success-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+/* Feature icons as round badges, like the original */
+.feature-icon {
+    border-radius: 50%;
+}
+
+/* Call to action band in teal */
+.cta-band {
+    background: var(--teal);
+}
+
+/* Residence page heroes: no colour wash, so the building photo
+   shows in its true colours. A neutral shade sits only behind the
+   text (bottom-left) to keep it readable. */
+.page-hero::before {
+    background:
+        linear-gradient(90deg, rgba(12, 15, 16, .72) 0%, rgba(12, 15, 16, .38) 45%, rgba(12, 15, 16, 0) 75%),
+        linear-gradient(0deg, rgba(12, 15, 16, .72) 0%, rgba(12, 15, 16, .2) 50%, rgba(12, 15, 16, 0) 80%);
+}
+
+/* Only on photo heroes, not the plain cream ones */
+.page-hero:not(.plain) h1,
+.page-hero:not(.plain) .page-hero-lead,
+.page-hero:not(.plain) .residence-address,
+.page-hero:not(.plain) .breadcrumb {
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
+}
+
+.page-hero h1 {
+    letter-spacing: -0.03em;
+}
+
+.page-hero.plain {
+    background: var(--cream);
+}
+
+/* Footer: the original's near-black */
+.site-footer {
+    background: var(--dark);
+}
+
+.footer-brand .brand-name {
+    font-size: 40px;
+}

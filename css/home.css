@@ -672,6 +672,13 @@
 .cs-feature-copy > p:not(.cs-work-index) { margin: 16px 0 20px; color: var(--text-muted); line-height: 1.7; }
 .cs-feature-links { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 28px; }
 
+/* Second feature: picture on the right */
+.cs-feature.is-flipped { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
+.cs-feature.is-flipped .cs-feature-shot { order: 2; }
+
+/* "Concept work" heading between the features and the grid */
+.cs-work-subhead { margin-top: clamp(40px, 6vw, 72px); }
+
 .cs-work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .cs-card-work .cs-frame { margin-bottom: 20px; }
 .cs-card-work h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; }
@@ -770,7 +777,9 @@
     .cs-hero-copy { max-width: 640px; }
     .cs-layers { grid-template-columns: 1fr; }
     .cs-iso-wrap { min-height: 380px; }
-    .cs-feature { grid-template-columns: 1fr; }
+    .cs-feature,
+    .cs-feature.is-flipped { grid-template-columns: 1fr; }
+    .cs-feature.is-flipped .cs-feature-shot { order: 0; }
     .cs-work-grid { grid-template-columns: 1fr 1fr; }
     .cs-work-grid > :last-child { grid-column: 1 / -1; max-width: calc(50% - 14px); }
     .cs-faq { grid-template-columns: 1fr; }

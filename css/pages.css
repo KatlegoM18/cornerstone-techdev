@@ -336,6 +336,26 @@
 }
 .pj-yours p { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; color: var(--white); }
 
+/* A published client project in a slot */
+.pj-live > a:first-of-type { display: block; overflow: hidden; }
+.pj-live img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.pj-live > a:first-of-type:hover img { transform: scale(1.03); }
+.pj-live-body { display: grid; gap: 10px; padding: 20px 22px 22px; }
+.pj-live-tag { font-family: var(--cs-mono); font-size: 0.74rem; color: var(--cs-gold); }
+.pj-live h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; }
+.pj-live h3 a { color: var(--white); text-decoration: none; }
+.pj-live h3 a:hover { color: var(--cs-gold); }
+.pj-live-body > p:not(.pj-live-tag) { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+.pj-live-links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 6px; }
+.pj-live .pj-slot-foot b { color: var(--cs-ok); }
+
 .pj-includes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 34px; list-style: none; }
 .pj-includes li {
     display: flex;
@@ -349,7 +369,7 @@
 }
 .pj-includes li::before { content: "✓"; color: var(--cs-ok); font-family: var(--cs-mono); }
 
-.pj-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pj-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .pj-strip .cs-frame span { font-size: 0.66rem; }
 
 
@@ -823,7 +843,6 @@ body.modal-open { overflow: hidden; }
     .pg-split .cs-h2 { position: static; }
     .pf-piece:nth-child(even) .cs-frame { order: 0; }
     .pj-grid { grid-template-columns: 1fr 1fr; }
-    .pj-grid > :last-child { display: none; }
     .pj-strip { grid-template-columns: 1fr 1fr; }
     .ab-principles { grid-template-columns: 1fr 1fr; }
     .case-story { grid-template-columns: 1fr; }
@@ -836,8 +855,6 @@ body.modal-open { overflow: hidden; }
     .pg-lede { font-size: 1.02rem; }
     .svc { padding: 24px 20px; }
     .pj-grid { grid-template-columns: 1fr; }
-    .pj-grid > :last-child { display: flex; }
-    .pj-grid > :first-child { display: none; }
     .pj-includes { grid-template-columns: 1fr; }
     .ab-principles { grid-template-columns: 1fr; }
     .contact-form { grid-template-columns: 1fr; }

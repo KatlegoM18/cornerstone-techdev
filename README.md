@@ -17,11 +17,12 @@ service businesses and more.
 
 ## How it solves it
 
-- **Shows the work, not just a sales pitch.** Real client projects sit under
-  Projects; self-initiated concepts (Paddle Out, Lesedi, Six Strings Higher,
-  Hut Nine) and redesign concepts for real businesses (Ijumba Signature
-  Hotel, 054 River Lodge) sit under Portfolio, each with a write-up of the idea and the
-  build, so a business owner can see what's possible before they enquire.
+- **Shows the work, not just a sales pitch.** Live client projects (Barc
+  House, Paddle Out) are featured on the homepage and under Projects;
+  self-initiated concepts (Lesedi, Six Strings Higher, Hut Nine) and redesign
+  concepts for real businesses (Ijumba Signature Hotel, 054 River Lodge) sit
+  under Portfolio, each with a write-up of the idea and the build, so a
+  business owner can see what's possible before they enquire.
 - **Makes it easy to get in touch.** The contact form sends enquiries
   straight to the business inbox through a serverless function, with a
   WhatsApp link for people who'd rather message.
