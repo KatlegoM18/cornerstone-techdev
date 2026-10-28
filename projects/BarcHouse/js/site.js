@@ -166,13 +166,49 @@ let lightboxItems = [];
 let lightboxIndex = 0;
 let lightboxOpener = null;
 
+// Every photo has a small copy in a "thumbs" folder next to it
+function thumbOf(src) {
+    return src.replace(/\/([^/]+)$/, "/thumbs/$1");
+}
+
+// Full-size photos already fetched (or on their way)
+const lightboxCache = new Map();
+
+function fetchPhoto(src) {
+    if (!lightboxCache.has(src)) {
+        const photo = new Image();
+        photo.decoding = "async";
+        photo.src = src;
+        lightboxCache.set(src, photo);
+    }
+    return lightboxCache.get(src);
+}
+
 function showLightboxImage(index) {
     lightboxIndex = (index + lightboxItems.length) % lightboxItems.length;
     const item = lightboxItems[lightboxIndex];
-    lightboxImage.src = item.dataset.src;
+    const src = item.dataset.src;
+    const full = fetchPhoto(src);
+
+    // Show the small copy straight away, then swap in the sharp one
+    if (full.complete && full.naturalWidth) {
+        lightboxImage.src = src;
+    } else {
+        lightboxImage.src = thumbOf(src);
+        full.addEventListener("load", () => {
+            if (lightboxItems[lightboxIndex] === item) lightboxImage.src = src;
+        }, { once: true });
+    }
+
     lightboxImage.alt = item.dataset.caption || "";
     lightboxCaption.textContent = item.dataset.caption || "";
     lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxItems.length}`;
+
+    // Get the photos either side ready, so the next click is instant
+    [1, -1, 2].forEach((step) => {
+        const next = lightboxItems[(lightboxIndex + step + lightboxItems.length) % lightboxItems.length];
+        if (next) fetchPhoto(next.dataset.src);
+    });
 }
 
 function openLightbox(group, startItem) {
@@ -186,16 +222,45 @@ function openLightbox(group, startItem) {
 
     lightboxOpener = startItem;
     showLightboxImage(Math.max(start, 0));
+
+    // A history step for the viewer, so a phone's Back button
+    // closes it instead of leaving the page
+    if (!lightbox.classList.contains("open")) {
+        history.pushState({ lightbox: true }, "");
+    }
+
     lightbox.classList.add("open");
     document.body.classList.add("no-scroll");
     lightbox.querySelector(".lightbox-close").focus();
 }
 
-function closeLightbox() {
+function hideLightbox() {
+    if (!lightbox.classList.contains("open")) return;
     lightbox.classList.remove("open");
     document.body.classList.remove("no-scroll");
     if (lightboxOpener) lightboxOpener.focus();
 }
+
+// X, Escape or tapping outside: undo the viewer's history step
+// (the popstate listener below then hides it)
+function closeLightbox() {
+    if (history.state && history.state.lightbox) {
+        history.back();
+    } else {
+        hideLightbox();
+    }
+}
+
+window.addEventListener("popstate", hideLightbox);
+
+// Coming back to the page from the browser's cache: never
+// with the viewer still open
+window.addEventListener("pageshow", () => {
+    hideLightbox();
+    if (history.state && history.state.lightbox) {
+        history.replaceState(null, "");
+    }
+});
 
 if (document.querySelector("[data-lightbox]")) {
     document.body.appendChild(lightbox);
@@ -240,34 +305,119 @@ if (document.querySelector("[data-lightbox]")) {
 
 // ==========================================
 // ENQUIRY FORM (IRENE + KAROO PAGES)
-// Note: the message isn't saved or emailed yet —
-// see GO-LIVE-CHECKLIST item 1.
+// Online, Netlify Forms receives it and emails Donna (until the
+// portal is hosted). On this computer it goes to the backend, which
+// saves it for the management dashboard (Enquiries) and emails Donna.
 // ==========================================
+const ENQUIRY_URL = "http://localhost:8080/api/enquiries";
+const ENQUIRY_VIA_NETLIFY = window.BARC_PREVIEW;
+
 const contactForm = document.getElementById("contact-form");
 const formSuccess = document.getElementById("form-success");
+
+// Netlify can't check the "I'm human" widget, so it isn't shown there
+// (Netlify's spam filter and the honeypot protect the form instead)
+if (contactForm && ENQUIRY_VIA_NETLIFY) {
+    contactForm.querySelector(".cf-turnstile")?.remove();
+}
 
 function closeSuccess() {
     formSuccess.classList.remove("open");
     document.body.classList.remove("no-scroll");
 }
 
+function showSuccess() {
+    formSuccess.classList.add("open");
+    document.body.classList.add("no-scroll");
+    formSuccess.querySelector("button").focus();
+}
+
+function showEnquiryProblem(text) {
+    const problem = document.getElementById("form-problem");
+    if (!problem) return alert(text);
+    problem.textContent = text;
+    problem.hidden = false;
+    problem.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+// "I'm human" check: each token works once, so reset after a failed try
+function enquiryCaptchaToken() {
+    const field = contactForm.querySelector('[name="cf-turnstile-response"]');
+    return field ? field.value : "";
+}
+
+function resetEnquiryCaptcha() {
+    if (window.turnstile && contactForm.querySelector(".cf-turnstile")) window.turnstile.reset();
+}
+
 if (contactForm && formSuccess) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        // Preview mode: the contact form doesn't send yet
-        if (window.BARC_PREVIEW) {
-            formSuccess.querySelector("h3").textContent =
-                "Thank you for your interest!";
-            formSuccess.querySelector("p").textContent =
-                "Our contact form isn't live yet. Please send us a " +
-                "WhatsApp on 083 443 2592 and we'll get back to you.";
+        if (!ENQUIRY_VIA_NETLIFY && !enquiryCaptchaToken()) {
+            showEnquiryProblem("Please complete the \"I'm human\" check above the button.");
+            return;
         }
 
-        formSuccess.classList.add("open");
-        document.body.classList.add("no-scroll");
-        formSuccess.querySelector("button").focus();
-        contactForm.reset();
+        const problem = document.getElementById("form-problem");
+        if (problem) problem.hidden = true;
+
+        const button = contactForm.querySelector("button[type=submit]");
+        const buttonHtml = button.innerHTML;
+        button.disabled = true;
+        button.textContent = "Sending…";
+
+        const value = (id) => {
+            const field = contactForm.querySelector("#" + id);
+            return field ? field.value.trim() : "";
+        };
+
+        try {
+            if (ENQUIRY_VIA_NETLIFY) {
+                contactForm.elements.subject.value =
+                    "New Barc House enquiry: " + value("name") +
+                    " (" + contactForm.elements.residence.value + ")";
+            }
+
+            const response = ENQUIRY_VIA_NETLIFY
+                ? await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(new FormData(contactForm)).toString()
+                })
+                : await fetch(ENQUIRY_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        name: value("name"),
+                        email: value("email"),
+                        phone: value("phone"),
+                        institution: value("institution"),
+                        residence: document.body.classList.contains("res-karoo") ? "Karoo" : "Irene",
+                        message: value("message"),
+                        captchaToken: enquiryCaptchaToken(),
+                        website: value("website")
+                    })
+                });
+
+            if (response.ok) {
+                contactForm.reset();
+                resetEnquiryCaptcha();
+                showSuccess();
+            } else {
+                const data = await response.json().catch(() => ({}));
+                showEnquiryProblem(data.message ||
+                    "Your enquiry couldn't be sent. Please try again, or WhatsApp us on 083 443 2592.");
+                resetEnquiryCaptcha();
+            }
+        } catch (error) {
+            showEnquiryProblem(
+                "Your enquiry couldn't be sent right now. Please WhatsApp us on 083 443 2592.");
+            resetEnquiryCaptcha();
+        }
+
+        button.disabled = false;
+        button.innerHTML = buttonHtml;
     });
 
     formSuccess.addEventListener("click", (event) => {
@@ -303,6 +453,29 @@ if (revealItems.length && "IntersectionObserver" in window) {
 } else {
     revealItems.forEach((item) => item.classList.add("in"));
 }
+
+
+// ==========================================
+// PHOTO SKELETONS
+// A photo's frame shimmers until the photo has loaded,
+// then the photo fades in (styles in site.css).
+// ==========================================
+const photoFrames = document.querySelectorAll(
+    ".page-hero, .residence-media, .room-media, .thumb-row button, " +
+    ".mosaic button, .premises-grid button, .story-photo");
+
+photoFrames.forEach((frame) => {
+    const photo = frame.querySelector(":scope > img");
+    if (!photo) return;
+
+    frame.classList.add("photo-frame");
+    if (photo.complete && photo.naturalWidth) return;
+
+    frame.classList.add("is-loading");
+    const done = () => frame.classList.remove("is-loading");
+    photo.addEventListener("load", done, { once: true });
+    photo.addEventListener("error", done, { once: true });
+});
 
 
 // ==========================================

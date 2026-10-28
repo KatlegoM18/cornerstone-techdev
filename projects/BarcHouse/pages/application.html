@@ -39,7 +39,7 @@
     <div class="container">
 
         <a href="../index.html" class="brand" aria-label="Barc House home">
-            <img src="../images/barchouse-logo.jpg" alt="">
+            <img decoding="async" src="../images/barchouse-logo-small.jpg" alt="">
             <span class="brand-text">
                 <span class="brand-name">Barc House</span>
                 <span class="brand-tag">Student Accommodation</span>
@@ -156,7 +156,16 @@
 
                 <!-- APPLICATION FORM -->
 
-                <form id="application-form" class="form-card application-form">
+                <!-- While the portal isn't hosted, Netlify Forms receives
+                     applications and emails them to Donna (set up in
+                     Netlify: Forms > Form notifications). -->
+                <form id="application-form" class="form-card application-form"
+                      name="application" method="POST"
+                      data-netlify="true" netlify-honeypot="website">
+
+                    <input type="hidden" name="form-name" value="application">
+                    <input type="hidden" name="subject" data-remove-prefix value="New Barc House application">
+                    <input type="hidden" name="age" value="">
 
                     <!-- PERSONAL DETAILS -->
 
@@ -170,20 +179,25 @@
                                 <input type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone number</label>
-                                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Your phone number" required>
+                                <label for="dateOfBirth">Date of birth</label>
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" autocomplete="bday" min="1920-01-01" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
+                                <label for="phone">Phone number</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Your phone number" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="email">Email address</label>
                                 <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
                             </div>
-                            <div class="form-group">
-                                <label for="occupation">Occupation <span class="optional">(optional)</span></label>
-                                <input type="text" id="occupation" name="occupation" placeholder="e.g. Student at CPUT">
-                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occupation">Occupation <span class="optional">(optional)</span></label>
+                            <input type="text" id="occupation" name="occupation" placeholder="e.g. Student at CPUT">
                         </div>
 
                     </div>
@@ -211,11 +225,10 @@
                                 <select id="room" name="room" required>
                                     <option value="">Select a residence first</option>
                                     <option value="Karoo Room 7 - R7 000 per month" data-residence="Karoo" data-key="karoo-7">Karoo Room 7 - R7 000 per month</option>
-                                    <option value="Karoo Room 12 - R6 750 per month" data-residence="Karoo" data-key="karoo-12">Karoo Room 12 - R6 750 per month</option>
+                                    <option value="Karoo Room 18 - R6 750 per month" data-residence="Karoo" data-key="karoo-18">Karoo Room 18 - R6 750 per month</option>
                                     <option value="Irene Room 3 - R6 000 per month" data-residence="Irene" data-key="irene-3">Irene Room 3 - R6 000 per month</option>
                                     <option value="Irene Room 7 - R7 250 per month" data-residence="Irene" data-key="irene-7">Irene Room 7 - R7 250 per month</option>
                                     <option value="Irene Room 10 - R5 750 per month" data-residence="Irene" data-key="irene-10">Irene Room 10 - R5 750 per month</option>
-                                    <option value="Irene Room 14 - R4 900 per month" data-residence="Irene" data-key="irene-14">Irene Room 14 - R4 900 per month</option>
                                 </select>
                             </div>
 
@@ -246,11 +259,9 @@
                         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                     </div>
 
-                    <!-- "I'm human" check.
-                         data-sitekey is Cloudflare's TEST key (always passes).
-                         Replace it with your real Turnstile SITE key before
-                         going live. The site key is public; the SECRET key
-                         belongs only on the backend. -->
+                    <!-- "I'm human" check (Cloudflare Turnstile, widget
+                         "Barc House"). The site key is public; the SECRET
+                         key belongs only on the backend. -->
                     <div class="cf-turnstile captcha"
                          data-sitekey="0x4AAAAAAFgS69ctehwr6pY_"
                          data-theme="light"
@@ -364,28 +375,25 @@
 
 <script>
 
-    function showPreviewNotice() {
+    // Online (Netlify) the portal isn't hosted yet, so applications go
+    // through Netlify Forms, which emails them to Donna. On this computer
+    // they go to the portal as before.
+    const SEND_VIA_NETLIFY = window.BARC_PREVIEW;
 
-        let notice =
-            document.getElementById("preview-notice");
+    // Netlify can't check the "I'm human" widget, so it isn't shown there
+    // (Netlify's own spam filter and the honeypot protect the form instead)
+    if (SEND_VIA_NETLIFY) {
+        document.querySelector(".cf-turnstile")?.remove();
+    }
 
-        if (!notice) {
-            notice = document.createElement("div");
-            notice.id = "preview-notice";
-            notice.className = "notice";
-            notice.setAttribute("role", "status");
-            notice.innerHTML =
-                "<strong>Online applications open soon.</strong><br>" +
-                "Thank you for your interest in Barc House. For now, please " +
-                "send us a WhatsApp on <strong>083 443 2592</strong> with the details " +
-                "above and we'll get back to you.";
-
-            document
-                .getElementById("application-form")
-                .appendChild(notice);
-        }
-
-        notice.scrollIntoView({ behavior: "smooth", block: "center" });
+    function ageFrom(dateOfBirth) {
+        const born = new Date(dateOfBirth);
+        const today = new Date();
+        let age = today.getFullYear() - born.getFullYear();
+        const birthdayToCome =
+            today.getMonth() < born.getMonth() ||
+            (today.getMonth() === born.getMonth() && today.getDate() < born.getDate());
+        return birthdayToCome ? age - 1 : age;
     }
 
 
@@ -422,7 +430,7 @@
     }
 
     function resetCaptcha() {
-        if (window.turnstile) {
+        if (window.turnstile && document.querySelector(".cf-turnstile")) {
             window.turnstile.reset();
         }
     }
@@ -443,15 +451,8 @@
         event.preventDefault();
 
 
-        // Preview mode: applications can't be sent yet
-        if (window.BARC_PREVIEW) {
-            showPreviewNotice();
-            return;
-        }
-
-
-        // "I'm human" check must be done first
-        if (!captchaToken()) {
+        // "I'm human" check must be done first (portal only)
+        if (!SEND_VIA_NETLIFY && !captchaToken()) {
             showFormProblem("Please complete the \"I'm human\" check below.");
             return;
         }
@@ -466,6 +467,7 @@
 
         const application = {
             name: document.getElementById("name").value.trim(),
+            dateOfBirth: document.getElementById("dateOfBirth").value,
             phone: document.getElementById("phone").value.trim(),
             email: document.getElementById("email").value.trim(),
             occupation: document.getElementById("occupation").value.trim(),
@@ -483,33 +485,57 @@
 
 
         // ==========================================
-        // SEND TO SPRING BOOT
+        // SEND TO NETLIFY (ONLINE) OR SPRING BOOT
         // ==========================================
 
-        fetch("http://localhost:8080/api/applications", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(application)
-        })
+        let sending;
 
-        .then(async response => {
-            if (!response.ok) {
-                // The server explains what's wrong (e.g. "I'm human"
-                // check not done, too many applications, too long)
-                const data = await response.json().catch(() => ({}));
-                const error = new Error(data.message || "Application submission failed.");
-                error.fromServer = true;
-                throw error;
-            }
-            return response.json();
-        })
+        if (SEND_VIA_NETLIFY) {
+            applicationForm.elements.age.value = ageFrom(application.dateOfBirth);
+            applicationForm.elements.subject.value =
+                "New Barc House application: " + application.name +
+                " (" + application.residence + ")";
+
+            sending = fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(new FormData(applicationForm)).toString()
+            })
+            .then(response => {
+                if (!response.ok) {
+                    const error = new Error(
+                        "Sorry, your application couldn't be sent. Please try again, " +
+                        "or WhatsApp us on 083 443 2592.");
+                    error.fromServer = true;
+                    throw error;
+                }
+                return { sentBy: "Netlify" };
+            });
+        } else {
+            sending = fetch("http://localhost:8080/api/applications", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(application)
+            })
+            .then(async response => {
+                if (!response.ok) {
+                    // The server explains what's wrong (e.g. "I'm human"
+                    // check not done, too many applications, too long)
+                    const data = await response.json().catch(() => ({}));
+                    const error = new Error(data.message || "Application submission failed.");
+                    error.fromServer = true;
+                    throw error;
+                }
+                return response.json();
+            });
+        }
 
 
         // ==========================================
         // SUCCESS
         // ==========================================
 
-        .then(data => {
+        sending.then(data => {
             console.log("Application submitted:", data);
 
             applicationForm.style.display = "none";
@@ -530,6 +556,9 @@
             showFormProblem(
                 error.fromServer
                     ? error.message
+                    : SEND_VIA_NETLIFY
+                    ? "Unable to send your application. Please check your " +
+                      "internet connection and try again, or WhatsApp us on 083 443 2592."
                     : "Unable to submit your application. Please make sure " +
                       "the Barc House server is running and try again."
             );
@@ -582,6 +611,11 @@
     }
 
     residenceSelect.addEventListener("change", updateRoomOptions);
+
+
+    // Date of birth can't be in the future
+    document.getElementById("dateOfBirth").max =
+        new Date().toISOString().slice(0, 10);
 
 
     // ==========================================

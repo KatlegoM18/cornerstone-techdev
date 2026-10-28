@@ -2392,7 +2392,86 @@ h3 {
     transform: none;
 }
 
+/* =========================================================
+   PAGE TRANSITIONS
+   Moving between pages cross-fades instead of flashing
+   blank; the header stays put. Browsers without support
+   (e.g. Firefox) just change page as before.
+========================================================= */
+
+@view-transition {
+    navigation: auto;
+}
+
+.site-header {
+    view-transition-name: site-header;
+}
+
+::view-transition-old(root) {
+    animation: page-out .18s ease-in both;
+}
+
+::view-transition-new(root) {
+    animation: page-in .32s var(--ease) both;
+}
+
+@keyframes page-out {
+    to { opacity: 0; }
+}
+
+@keyframes page-in {
+    from { opacity: 0; transform: translateY(8px); }
+}
+
+
+/* =========================================================
+   PHOTO SKELETONS
+   site.js adds .is-loading to a photo's frame until the
+   photo arrives: the frame shimmers, then the photo fades in.
+========================================================= */
+
+.is-loading {
+    background-color: var(--line);
+    background-image: linear-gradient(100deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, .55) 50%,
+        rgba(255, 255, 255, 0) 70%);
+    background-size: 220% 100%;
+    animation: photo-shimmer 1.4s linear infinite;
+}
+
+.page-hero.is-loading {
+    background-color: var(--charcoal);
+    background-image: linear-gradient(100deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, .07) 50%,
+        rgba(255, 255, 255, 0) 70%);
+}
+
+.is-loading > img {
+    opacity: 0;
+}
+
+/* Fade in only: hiding a photo that's still loading is instant */
+.photo-frame:not(.is-loading) > img {
+    transition: opacity .4s ease;
+}
+
+@keyframes photo-shimmer {
+    from { background-position: 120% 0; }
+    to   { background-position: -120% 0; }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
+    @view-transition {
+        navigation: none;
+    }
+
+    .is-loading {
+        animation: none;
+    }
+
     html {
         scroll-behavior: auto;
     }
@@ -2408,4 +2487,17 @@ h3 {
         opacity: 1;
         transform: none;
     }
+}
+
+
+/* =========================================================
+   PORTAL LINKS: HIDDEN FOR NOW (28 October 2026)
+   The "Resident login" links in the header, phone menu and
+   footer stay in the pages but are hidden until the portal
+   is online. To bring them back, delete this block.
+========================================================= */
+
+[data-portal-link],
+li:has(> [data-portal-link]) {
+    display: none !important;
 }
